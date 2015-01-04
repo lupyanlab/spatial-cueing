@@ -1,0 +1,11 @@
+---
+subj_id: default
+seed: num
+---
+keys:
+    f: left
+    j: right
+timeout: 5.0
+---
+quit_key: q
+---
