@@ -1,8 +1,8 @@
 from psychopy import visual
 from psychopy.iohub import ioHubExperimentRuntime, EventConstants
-from psychopy.iohub.util import DeviceEventTrigger, InstructionsScreen
+from psychopy.iohub.util import DeviceEventTrigger, InstructionScreen
 
-from ..util.screenstates import TargetDetection
+# from util.screenstates import TargetDetection
 
 class SpatialCueing(ioHubExperimentRuntime):
 
@@ -14,7 +14,7 @@ class SpatialCueing(ioHubExperimentRuntime):
         # self.hub.createTrialHandlerRecordTable(trials)
 
         display = self.hub.devices.display
-        window = visual.Window(display.getPixelResolution(),
+        self.window = visual.Window(display.getPixelResolution(),
                 monitor = display.getPsychopyMonitorName(),
                 units = display.getCoordinateType(),
                 fullscr = True, allowGUI = False,
@@ -30,7 +30,7 @@ class SpatialCueing(ioHubExperimentRuntime):
                 event_attribute_conditions = {'key': 'q'},
                 trigger_function = self.request_quit)
         instructions = InstructionScreen(self, timeout = 1 * 60.0,
-                text_font = 'Consolas', eventTriggers = [advance, quit],
+                eventTriggers = [advance, quit],
                 text = "Press SPACEBAR to advance, or press 'q' to quit.")
 
         instructions.switchTo()
