@@ -3,3 +3,10 @@ doc/
 
 # Python files
 *.pyc
+
+# iohub files
+.iohpid
+
+# Vim files
+*.swp
+*~
