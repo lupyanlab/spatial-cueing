@@ -5,6 +5,8 @@ from psychopy.iohub.util import (ScreenState, TimeTrigger,
 
 from util.dynamicmask import DynamicMask
 
+REFRESH_RATE = 0.01 # delay between screen flips during mask
+
 class TargetDetection(ScreenState):
     """
     Visuals
@@ -35,8 +37,32 @@ class TargetDetection(ScreenState):
         self.stim.update({'target': target})
         self.stimNames.append('target')
 
+	refresh = TimeTrigger(start_time = self.interval,
+			delay = REFRESH_RATE,
+			repeat_count = -1,
+			trigger_function = self.refresh)
+	self.addEventTrigger(refresh)
+	self.last_frame = None
+
         keyboard = experimentRuntime.keyboard
         responder = DeviceEventTrigger(device = keyboard,
             event_type = EventConstants.KEYBOARD_PRESS,
             event_attribute_conditions = {'key': ['f', 'j']})
         self.addEventTrigger(responder)
+
+    def interval(self):
+	""" Return the time of the last flip.
+
+	For the first interval, start when the ScreenState flips. For subsequent
+	intervals, return the last_frame variable which is updated when the 
+	screen is rebuilt.
+	"""
+	if self.last_frame == None:
+	    self.last_frame = self.getStateStartTime()
+	return self.last_frame
+
+    def refresh(self, *args, **kwargs):
+	""" Triggered when it's been REFRESH_RATE since last flip. """
+	self.dirty = True
+	self.last_frame = self.flip()
+	return False
