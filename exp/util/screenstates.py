@@ -34,7 +34,7 @@ class TargetDetection(ScreenState):
         self.stimNames.append('fix')
 
         target = visual.Circle(window, radius = 10, pos = (-300, 0), 
-		fillColor = 'white')
+		fillColor = 'white', opacity = 0.0)
         self.stim.update({'target': target})
         self.stimNames.append('target')
 
@@ -44,6 +44,12 @@ class TargetDetection(ScreenState):
 			trigger_function = self.refresh)
 	self.addEventTrigger(refresh)
 	self.last_frame = None
+
+	target_onset = 1.0 # TEMPORARY
+	onset = TimeTrigger(start_time = self.getStateStartTime,
+			delay = target_onset, repeat_count = 1,
+			trigger_function = self.reveal)
+	self.addEventTrigger(onset)
 
         keyboard = experimentRuntime.keyboard
         responder = DeviceEventTrigger(device = keyboard,
@@ -67,3 +73,8 @@ class TargetDetection(ScreenState):
 	self.dirty = True
 	self.last_frame = self.flip()
 	return False
+
+    def reveal(self, *args, **kwargs):
+	""" Triggered when it's been target_onset since switching. """
+	self.stim['target'].setOpacity(1.0)
+	self.refresh()
