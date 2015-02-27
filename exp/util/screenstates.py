@@ -3,7 +3,7 @@ from psychopy.iohub import ioHubExperimentRuntime, EventConstants
 from psychopy.iohub.util import (ScreenState, TimeTrigger, 
                                  DeviceEventTrigger)
 
-from util import DynamicMask
+from util.dynamicmask import DynamicMask
 
 class TargetDetection(ScreenState):
     """
@@ -15,11 +15,11 @@ class TargetDetection(ScreenState):
     target: circle to detect, appears overlapping with left or right mask
     """
     def __init__(self, experimentRuntime):
-        super(TargetDetection).__init__(self, experimentRuntime)
+        super(TargetDetection, self).__init__(experimentRuntime, timeout = 10.0)
 
-        window = self.experimentRuntime().window
+        window = experimentRuntime.window
 
-        mask_kwargs = {'window': window, 'width': 80, 'height': 80}
+        mask_kwargs = {'win': window, 'size': [80, 80]}
         masks = {}
         masks['left']  = DynamicMask(pos = (-200, 0), **mask_kwargs)
         masks['right'] = DynamicMask(pos = (200, 0), **mask_kwargs)
@@ -35,7 +35,7 @@ class TargetDetection(ScreenState):
         self.stim.update({'target': target})
         self.stimNames.append('target')
 
-        keyboard = self.experimentRuntime().keyboard
+        keyboard = experimentRuntime.keyboard
         responder = DeviceEventTrigger(device = keyboard,
             event_type = EventConstants.KEYBOARD_PRESS,
             event_attribute_conditions = {'key': ['f', 'j']})
