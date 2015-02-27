@@ -9,10 +9,6 @@ class SpatialCueing(ioHubExperimentRuntime):
     def run(self, *args, **kwargs):
         self.running = True 
 
-        # conditions = importConditions('trial_conditions.xlsx')
-        # trials = TrialHandler(conditions, 1)
-        # self.hub.createTrialHandlerRecordTable(trials)
-
         display = self.hub.devices.display
         self.window = visual.Window(display.getPixelResolution(),
                 monitor = display.getPsychopyMonitorName(),
@@ -38,10 +34,13 @@ class SpatialCueing(ioHubExperimentRuntime):
         instructions.switchTo()
 	if not self.running: return
 
-	start, duration, event = detect_target.switchTo()
-	print start
-	print duration
-	print event
+        staircase = StairHandler(0.5, stepSizes = 0.1,
+                nTrials = 10, nUp = 2, nDown = 2, stepType = 'lin',
+                minVal = 0.0, maxVal = 1.0)
+
+        for current_opacity in self.staircase:
+            # first arg is start time, which we don't care about
+           _, rt, event = detect_target.switchTo(opacity = current_opacity)
 
     def request_quit(self, *args, **kwargs):
         """ User requested to quit the experiment. """
