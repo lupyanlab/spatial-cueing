@@ -39,9 +39,6 @@ class SpatialCueing(ioHubExperimentRuntime):
                 event_type = EventConstants.KEYBOARD_PRESS,
                 event_attribute_conditions = {'key': self.keys.keys()})
 
-        # assume a few session variables
-        subj_code = 'SCP101'
-
         # screens
         instructions = InstructionScreen(self, timeout = 1 * 60.0,
                 eventTriggers = [advance, quit],
@@ -74,14 +71,14 @@ class SpatialCueing(ioHubExperimentRuntime):
                 nTrials=10, nUp=2, nDown=2, minVal=0.0, maxVal=1.0)
 
         for opacity in staircase:
-            present_or_absent = choice(['present','absent'], p = [0.8, 0.2])
+            present_or_absent = choice(['present','absent'], p = [0.8,0.2])
 
             if present_or_absent == 'present':
                 location_name = choice(['left', 'right'])
             else:
                 location_name = None
 
-            _,rt,event = self.detect_target.switchTo(opacity, location_name)
+            _,rt,event = self.detect_target.switchTo(opacity,location_name)
 
             if not self.running:
                 break
@@ -93,12 +90,13 @@ class SpatialCueing(ioHubExperimentRuntime):
             core.wait(1.0)
 
             trial = [subj_code,
+                    staircase.thisTrialN,
                     present_or_absent,
                     opacity,
                     location_name,
                     response,
                     rt,
-                    graded]
+                    int(graded)]
 
             row = '\t'.join(map(str, trial))
             output.write(row + '\n')
@@ -119,5 +117,6 @@ class SpatialCueing(ioHubExperimentRuntime):
 if __name__ == '__main__':
     from psychopy.iohub import module_directory
     module = module_directory(SpatialCueing.run)
-    runtime = SpatialCueing(module, "experiment_config.yaml")
+    exp = Path(module, 'spatial-cueing')
+    runtime = SpatialCueing(module, Path(exp, 'experiment_config.yaml')
     runtime.start()
