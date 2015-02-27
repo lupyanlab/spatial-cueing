@@ -21,19 +21,20 @@ class TargetDetection(ScreenState):
 
         window = experimentRuntime.window
 
-        mask_kwargs = {'win': window, 'size': [80, 80]}
+        mask_kwargs = {'win': window, 'size': [200, 200]}
         masks = {}
-        masks['left']  = DynamicMask(pos = (-200, 0), **mask_kwargs)
-        masks['right'] = DynamicMask(pos = (200, 0), **mask_kwargs)
+        masks['left']  = DynamicMask(pos = (-300, 0), **mask_kwargs)
+        masks['right'] = DynamicMask(pos = (300, 0), **mask_kwargs)
         self.stim.update(masks)
         self.stimNames.extend(['left', 'right'])
 
-        fix = visual.TextStim(window, text = '+', font = 'Consolas',
-                height = 10)
+        fix = visual.TextStim(window, text = '+', height = 40,
+		font = 'Consolas', color = 'black')
         self.stim.update({'fix': fix})
         self.stimNames.append('fix')
 
-        target = visual.Circle(window, radius = 10)
+        target = visual.Circle(window, radius = 10, pos = (-300, 0), 
+		fillColor = 'white')
         self.stim.update({'target': target})
         self.stimNames.append('target')
 
