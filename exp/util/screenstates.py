@@ -45,6 +45,7 @@ class TargetDetection(ScreenState):
 	self.addEventTrigger(refresh)
 	self.last_frame = None
 
+	self.target_opacity = None  # will be set on switch
 	target_onset = 1.0 # TEMPORARY
 	onset = TimeTrigger(start_time = self.getStateStartTime,
 			delay = target_onset, repeat_count = 1,
@@ -76,5 +77,10 @@ class TargetDetection(ScreenState):
 
     def reveal(self, *args, **kwargs):
 	""" Triggered when it's been target_onset since switching. """
-	self.stim['target'].setOpacity(1.0)
+	self.stim['target'].setOpacity(self.target_opacity)
 	self.refresh()
+
+    def switchTo(self, opacity):
+        """ Set the target opacity and run the trial """
+        self.target_opacity = opacity
+	return super(TargetDetection, self).switchTo()

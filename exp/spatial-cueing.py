@@ -1,4 +1,5 @@
-from psychopy import visual
+from psychopy import visual, core
+from psychopy.data import StairHandler
 from psychopy.iohub import ioHubExperimentRuntime, EventConstants
 from psychopy.iohub.util import DeviceEventTrigger, InstructionScreen
 
@@ -38,9 +39,11 @@ class SpatialCueing(ioHubExperimentRuntime):
                 nTrials = 10, nUp = 2, nDown = 2, stepType = 'lin',
                 minVal = 0.0, maxVal = 1.0)
 
-        for current_opacity in self.staircase:
-            # first arg is start time, which we don't care about
-           _, rt, event = detect_target.switchTo(opacity = current_opacity)
+#         for current_opacity in staircase:
+#             # first arg is start time, which we don't care about
+	current_opacity = staircase.next()
+        _, rt, event = detect_target.switchTo(opacity = current_opacity)
+	core.wait(1.0)
 
     def request_quit(self, *args, **kwargs):
         """ User requested to quit the experiment. """
