@@ -1,4 +1,5 @@
 from numpy.random import choice
+from unipath import Path
 
 from psychopy import visual, core
 from psychopy.data import StairHandler
@@ -38,6 +39,9 @@ class SpatialCueing(ioHubExperimentRuntime):
                 event_type = EventConstants.KEYBOARD_PRESS,
                 event_attribute_conditions = {'key': self.keys.keys()})
 
+        # assume a few session variables
+        subj_code = 'SCP101'
+
         # screens
         instructions = InstructionScreen(self, timeout = 1 * 60.0,
                 eventTriggers = [advance, quit],
@@ -61,19 +65,23 @@ class SpatialCueing(ioHubExperimentRuntime):
         pass
 
     def calibrate(self):
+        subj_code = 'SPC101'
+        output_name = Path('spatial-cueing','calibration',subj_code+'.txt')
+        output = open(output_name, 'wb')
+
         staircase = StairHandler(0.5,
                 nReversals = 2, stepSizes = [0.1, 0.05], stepType = 'log',
-                nTrials = 10, nUp = 2, nDown = 2, minVal = 0.0, maxVal = 1.0)
+                nTrials=10, nUp=2, nDown=2, minVal=0.0, maxVal=1.0)
 
         for opacity in staircase:
-            present_or_absent = choice(['present', 'absent'], p = [0.8, 0.2])
+            present_or_absent = choice(['present','absent'], p = [0.8, 0.2])
 
             if present_or_absent == 'present':
                 location_name = choice(['left', 'right'])
             else:
                 location_name = None
 
-            _, rt, event = self.detect_target.switchTo(opacity, location_name)
+            _,rt,event = self.detect_target.switchTo(opacity, location_name)
 
             if not self.running:
                 break
@@ -83,6 +91,19 @@ class SpatialCueing(ioHubExperimentRuntime):
             staircase.addResponse(graded)
 
             core.wait(1.0)
+
+            trial = [subj_code,
+                    present_or_absent,
+                    opacity,
+                    location_name,
+                    response,
+                    rt,
+                    graded]
+
+            row = '\t'.join(map(str, trial))
+            output.write(row + '\n')
+
+        output.close()
 
         if not self.running:
             return
