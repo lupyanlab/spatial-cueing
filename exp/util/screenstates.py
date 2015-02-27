@@ -16,25 +16,30 @@ class TargetDetection(ScreenState):
     cue: the thing to present before the target
     target: circle to detect, appears overlapping with left or right mask
     """
-    def __init__(self, experimentRuntime):
-        super(TargetDetection, self).__init__(experimentRuntime, timeout = 10.0)
+    def __init__(self, experimentRuntime, eventTriggers):
+        super(TargetDetection, self).__init__(experimentRuntime, timeout = 10.0,
+		eventTriggers = eventTriggers)
 
         window = experimentRuntime.window
 
+	gutter = -300  # x-distance between left and right locations
+	self.location_map = {'left': (-gutter, 0), 'right': (gutter, 0)}
         mask_kwargs = {'win': window, 'size': [200, 200]}
         masks = {}
-        masks['left']  = DynamicMask(pos = (-300, 0), **mask_kwargs)
-        masks['right'] = DynamicMask(pos = (300, 0), **mask_kwargs)
+        masks['left']  = DynamicMask(pos = self.location_map['left'], 
+			**mask_kwargs)
+        masks['right'] = DynamicMask(pos = self.location_map['right'],
+			**mask_kwargs)
         self.stim.update(masks)
         self.stimNames.extend(['left', 'right'])
 
         fix = visual.TextStim(window, text = '+', height = 40,
-		font = 'Consolas', color = 'black')
+			font = 'Consolas', color = 'black')
         self.stim.update({'fix': fix})
         self.stimNames.append('fix')
 
         target = visual.Circle(window, radius = 10, pos = (-300, 0), 
-		fillColor = 'white', opacity = 0.0)
+			fillColor = 'white', opacity = 0.0)
         self.stim.update({'target': target})
         self.stimNames.append('target')
 
@@ -51,12 +56,6 @@ class TargetDetection(ScreenState):
 			delay = target_onset, repeat_count = 1,
 			trigger_function = self.reveal)
 	self.addEventTrigger(onset)
-
-        keyboard = experimentRuntime.keyboard
-        responder = DeviceEventTrigger(device = keyboard,
-            event_type = EventConstants.KEYBOARD_PRESS,
-            event_attribute_conditions = {'key': ['f', 'j']})
-        self.addEventTrigger(responder)
 
     def interval(self):
 	""" Return the time of the last flip.
@@ -80,7 +79,15 @@ class TargetDetection(ScreenState):
 	self.stim['target'].setOpacity(self.target_opacity)
 	self.refresh()
 
-    def switchTo(self, opacity):
+    def switchTo(self, opacity, location_name):
         """ Set the target opacity and run the trial """
-        self.target_opacity = opacity
+	if location_name: # target present trial
+	    self.target_opacity = opacity
+	    location = self.location_map[location_name]
+	else:        # target absent trial
+	    self.target_opactiy = 0.0
+	    location = (0, 0)
+
+	self.stim['target'].setPos(location)
+	self.stim['target'].setOpacity(0.0)  # start with target hidden
 	return super(TargetDetection, self).switchTo()

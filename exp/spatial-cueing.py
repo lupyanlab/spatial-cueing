@@ -1,3 +1,5 @@
+import random
+
 from psychopy import visual, core
 from psychopy.data import StairHandler
 from psychopy.iohub import ioHubExperimentRuntime, EventConstants
@@ -30,7 +32,12 @@ class SpatialCueing(ioHubExperimentRuntime):
                 eventTriggers = [advance, quit],
                 text = "Press SPACEBAR to advance, or press 'q' to quit.")
 
-	detect_target = TargetDetection(self)
+	response_keys = {'y': 'present', 'n': 'absent'}
+        responder = DeviceEventTrigger(device = self.keyboard,
+		event_type = EventConstants.KEYBOARD_PRESS,
+		event_attribute_conditions = {'key': response_keys.keys()})
+	detect_target = TargetDetection(self, 
+		eventTriggers = [responder, quit])
 
         instructions.switchTo()
 	if not self.running: return
@@ -39,11 +46,29 @@ class SpatialCueing(ioHubExperimentRuntime):
                 nTrials = 10, nUp = 2, nDown = 2, stepType = 'lin',
                 minVal = 0.0, maxVal = 1.0)
 
-#         for current_opacity in staircase:
-#             # first arg is start time, which we don't care about
-	current_opacity = staircase.next()
-        _, rt, event = detect_target.switchTo(opacity = current_opacity)
-	core.wait(1.0)
+        for current_opacity in staircase:
+            # first arg is start time, which we don't care about
+	    opacity = staircase.next()
+	    print "Using opacity:", opacity
+	    
+	    # will want to update this to control percentages
+	    present = random.choice(['present', 'absent'])
+
+	    if present == 'present':
+		location_name = random.choice(['left', 'right'])
+	    else:
+		location_name = None
+	    
+            _, rt, event = detect_target.switchTo(
+			opacity = opacity, location_name = location_name)
+
+	    if not self.running: break
+
+	    response = response_keys[event.key]
+	    graded = (response == present)
+	    print "Grade:", graded
+	    staircase.addResponse(graded)
+	    core.wait(1.0)
 
     def request_quit(self, *args, **kwargs):
         """ User requested to quit the experiment. """
