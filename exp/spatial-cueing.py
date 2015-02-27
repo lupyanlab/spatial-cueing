@@ -33,7 +33,7 @@ class SpatialCueing(ioHubExperimentRuntime):
                 event_attribute_conditions = {'key': 'q'},
                 trigger_function = self.request_quit)
         ## for responding if the target was present or absent
-        response_keys = {'y': 'present', 'n': 'absent'}
+        self.response_keys = {'y': 'present', 'n': 'absent'}
         responder = DeviceEventTrigger(device = self.keyboard,
                 event_type = EventConstants.KEYBOARD_PRESS,
                 event_attribute_conditions = {'key': response_keys.keys()})
@@ -42,7 +42,7 @@ class SpatialCueing(ioHubExperimentRuntime):
         instructions = InstructionScreen(self, timeout = 1 * 60.0,
                 eventTriggers = [advance, quit],
                 text = "Press SPACEBAR to advance, or press 'q' to quit.")
-        detect_target = TargetDetection(self,
+        self.detect_target = TargetDetection(self,
                 eventTriggers = [responder, quit])
 
         # Show instructions
@@ -52,29 +52,42 @@ class SpatialCueing(ioHubExperimentRuntime):
         if not self.running:
             return
 
-        # Calibrate opacity
-        # -----------------
-        staircase = StairHandler(0.5, stepSizes = 0.1,
-                nTrials = 10, nUp = 2, nDown = 2, stepType = 'lin',
-                minVal = 0.0, maxVal = 1.0)
+        # Calibrate
+        # ---------
+        critical = self.calibrate()
+
+        # Test
+        # ----
+        pass
+
+    def calibrate(self):
+        staircase = StairHandler(0.5,
+                nReversals = 2, stepSizes = [0.1, 0.05], stepType = 'log',
+                nTrials = 10, nUp = 2, nDown = 2, minVal = 0.0, maxVal = 1.0)
 
         for opacity in staircase:
-            present = choice(['present', 'absent'], p = [0.8, 0.2])
+            present_or_absent = choice(['present', 'absent'], p = [0.8, 0.2])
 
-            if present == 'present':
+            if present_or_absent == 'present':
                 location_name = choice(['left', 'right'])
             else:
                 location_name = None
 
-            _, rt, event = detect_target.switchTo(opacity, location_name)
+            _, rt, event = self.detect_target.switchTo(opacity, location_name)
 
             if not self.running:
                 break
 
-            response = response_keys[event.key]
-            graded = (response == present)
+            response = self.response_keys[event.key]
+            graded = (response == present_or_absent)
             staircase.addResponse(graded)
+
             core.wait(1.0)
+
+        if not self.running:
+            return
+
+        return staircase.calculateNextIntensity()
 
     def request_quit(self, *args, **kwargs):
         """ User requested to quit the experiment. """
