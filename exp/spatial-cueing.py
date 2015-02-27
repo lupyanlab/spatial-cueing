@@ -33,10 +33,10 @@ class SpatialCueing(ioHubExperimentRuntime):
                 event_attribute_conditions = {'key': 'q'},
                 trigger_function = self.request_quit)
         ## for responding if the target was present or absent
-        self.response_keys = {'y': 'present', 'n': 'absent'}
+        self.keys = {'y': 'present', 'n': 'absent'}
         responder = DeviceEventTrigger(device = self.keyboard,
                 event_type = EventConstants.KEYBOARD_PRESS,
-                event_attribute_conditions = {'key': response_keys.keys()})
+                event_attribute_conditions = {'key': self.keys.keys()})
 
         # screens
         instructions = InstructionScreen(self, timeout = 1 * 60.0,
@@ -78,7 +78,7 @@ class SpatialCueing(ioHubExperimentRuntime):
             if not self.running:
                 break
 
-            response = self.response_keys[event.key]
+            response = self.keys[event.key]
             graded = (response == present_or_absent)
             staircase.addResponse(graded)
 
