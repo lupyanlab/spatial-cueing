@@ -7,6 +7,10 @@ doc/
 # iohub files
 .iohpid
 
+# R files
+.Rhistory
+.Rproj.user/
+
 # Vim files
 *.swp
 *~
