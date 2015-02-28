@@ -88,7 +88,7 @@ class TargetDetection(ScreenState):
 
     def probe(self, *args, **kwargs):
         """ Hide the masks, show the probe """
-        self.stimNames = ['left_mask', 'right_mask', 'probe']
+        self.stimNames = ['left', 'right', 'probe']
         return self.refresh()
 
     def switchTo(self, opacity, location_name):
@@ -106,5 +106,5 @@ class TargetDetection(ScreenState):
         self.stim['target'].setOpacity(0.0)  # start with target hidden
         
         # start trial with masks, fixation, and invisible target
-        self.stimNames = ['left_mask', 'right_mask', 'fix', 'target']
+        self.stimNames = ['left', 'right', 'fix', 'target']
         return super(TargetDetection, self).switchTo()

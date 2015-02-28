@@ -132,6 +132,5 @@ class SpatialCueing(ioHubExperimentRuntime):
 if __name__ == '__main__':
     from psychopy.iohub import module_directory
     module = module_directory(SpatialCueing.run)
-    exp = Path(module, 'spatial-cueing')
-    runtime = SpatialCueing(module, Path(exp, 'experiment_config.yaml')
+    runtime = SpatialCueing(module, 'experiment_config.yaml')
     runtime.start()
