@@ -17,8 +17,8 @@ class TargetDetection(ScreenState):
     target: circle to detect, appears overlapping with left or right mask
     """
     def __init__(self, experimentRuntime, eventTriggers):
-        super(TargetDetection, self).__init__(experimentRuntime, timeout = 10.0,
-                eventTriggers = eventTriggers)
+        super(TargetDetection, self).__init__(experimentRuntime,
+                timeout = 10.0, eventTriggers = eventTriggers)
 
         window = experimentRuntime.window
 
@@ -32,17 +32,18 @@ class TargetDetection(ScreenState):
         masks['left']  = DynamicMask(pos = left, **mask_kwargs)
         masks['right'] = DynamicMask(pos = right, **mask_kwargs)
         self.stim.update(masks)
-        self.stimNames.extend(['left', 'right'])
 
-        fix = visual.TextStim(window, text = '+', height = 40,
-                font = 'Consolas', color = 'black')
+        text_kwargs = {'height': 40, 'font': 'Consolas', 'color': 'black'}
+        fix = visual.TextStim(window, text = '+', **text_kwargs)
         self.stim.update({'fix': fix})
-        self.stimNames.append('fix')
 
         target = visual.Circle(window, radius = 10, pos = (-300, 0),
                 fillColor = 'white', opacity = 0.0)
         self.stim.update({'target': target})
-        self.stimNames.append('target')
+
+        # probe for response
+        probe = visual.TextStim(window, text = '?', **text_kwargs)
+        self.stim.update({'probe': probe})
 
         self.last_frame = None
         refresh = TimeTrigger(start_time = self.interval,
@@ -51,18 +52,24 @@ class TargetDetection(ScreenState):
         self.addEventTrigger(refresh)
 
         self.target_opacity = None  # will be set on switch
-        target_onset = 1.0          # TEMPORARY
+        target_onset = 0.5          # TEMPORARY
         onset = TimeTrigger(start_time = self.getStateStartTime,
                 delay = target_onset, repeat_count = 1,
                 trigger_function = self.reveal)
         self.addEventTrigger(onset)
 
+        probe_onset = 1.0
+        probe_for_response = TimeTrigger(start_time=self.getStateStartTime,
+                delay = probe_onset, repeat_count = 1,
+                trigger_function = self.probe)
+        self.addEventTrigger(probe_for_response)
+
     def interval(self):
         """ Return the time of the last flip.
 
-        For the first interval, start when the ScreenState flips. For subsequent
-        intervals, return the last_frame variable which is updated when the
-        screen is rebuilt.
+        For the first interval, start when the ScreenState flips. For
+        subsequent intervals, return the last_frame variable which is 
+        updated when the screen is rebuilt.
         """
         if self.last_frame == None:
             self.last_frame = self.getStateStartTime()
@@ -77,7 +84,12 @@ class TargetDetection(ScreenState):
     def reveal(self, *args, **kwargs):
         """ TimeTriggered when it's been target_onset since screen start. """
         self.stim['target'].setOpacity(self.target_opacity)
-        self.refresh()
+        return self.refresh()
+
+    def probe(self, *args, **kwargs):
+        """ Hide the masks, show the probe """
+        self.stimNames = ['left_mask', 'right_mask', 'probe']
+        return self.refresh()
 
     def switchTo(self, opacity, location_name):
         """ Set the target opacity and run the trial. """
@@ -92,4 +104,7 @@ class TargetDetection(ScreenState):
 
         self.stim['target'].setPos(location)
         self.stim['target'].setOpacity(0.0)  # start with target hidden
+        
+        # start trial with masks, fixation, and invisible target
+        self.stimNames = ['left_mask', 'right_mask', 'fix', 'target']
         return super(TargetDetection, self).switchTo()
