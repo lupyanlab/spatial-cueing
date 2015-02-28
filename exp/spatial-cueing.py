@@ -1,3 +1,4 @@
+from numpy import array
 from numpy.random import choice
 from unipath import Path
 
@@ -120,7 +121,7 @@ class SpatialCueing(ioHubExperimentRuntime):
         if not self.running:
             return
 
-        final_opacity = np.array(staircase.intensities[-10:]).mean()
+        final_opacity = array(staircase.intensities[-10:]).mean()
         return final_opacity
 
     def request_quit(self, *args, **kwargs):
