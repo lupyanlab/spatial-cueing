@@ -66,9 +66,17 @@ class SpatialCueing(ioHubExperimentRuntime):
         output_name = Path('spatial-cueing','calibration',subj_code+'.txt')
         output = open(output_name, 'wb')
 
-        staircase = StairHandler(0.5,
-                nReversals = 2, stepSizes = [0.1, 0.05], stepType = 'log',
-                nTrials=10, nUp=2, nDown=2, minVal=0.0, maxVal=1.0)
+        desired_accuracy = 0.5
+        nDown = desired_accuracy * 10
+        nUp = 10 - desired_accuracy * 10
+
+        starting_opacity = 0.8
+        stepSizes = [0.2, 0.1, 0.06, 0.03]
+        nTrials = 100
+
+        staircase = StairHandler(starting_opacity, minVal=0.01, maxVal=1.0,
+                stepSizes = stepSizes, stepType = 'lin',
+                nTrials = nTrials, nUp = nUp, nDown = nDown)
 
         for opacity in staircase:
             present_or_absent = choice(['present','absent'], p = [0.8,0.2])
@@ -85,9 +93,11 @@ class SpatialCueing(ioHubExperimentRuntime):
 
             response = self.keys[event.key]
             graded = (response == present_or_absent)
-            staircase.addResponse(graded)
 
-            core.wait(1.0)
+            # only update the opacity staircase if opacity was
+            # relevant to the trial
+            if present_or_absent == 'present':
+                staircase.addResponse(graded)
 
             trial = [subj_code,
                     staircase.thisTrialN,
@@ -106,7 +116,8 @@ class SpatialCueing(ioHubExperimentRuntime):
         if not self.running:
             return
 
-        return staircase.calculateNextIntensity()
+        final_opacity = np.array(staircase.intensities[-10:]).mean()
+        return final_opacity
 
     def request_quit(self, *args, **kwargs):
         """ User requested to quit the experiment. """
