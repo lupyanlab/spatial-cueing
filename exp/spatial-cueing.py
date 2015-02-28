@@ -1,3 +1,4 @@
+from numpy import array
 from numpy.random import choice
 from unipath import Path
 
