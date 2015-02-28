@@ -4,7 +4,8 @@ from unipath import Path
 from psychopy import visual, core
 from psychopy.data import StairHandler
 from psychopy.iohub import ioHubExperimentRuntime, EventConstants
-from psychopy.iohub.util import DeviceEventTrigger, InstructionScreen
+from psychopy.iohub.util import (DeviceEventTrigger, InstructionScreen,
+        ClearScreen)
 
 from util.screenstates import TargetDetection
 
@@ -45,6 +46,7 @@ class SpatialCueing(ioHubExperimentRuntime):
                 text = "Press SPACEBAR to advance, or press 'q' to quit.")
         self.detect_target = TargetDetection(self,
                 eventTriggers = [responder, quit])
+        self.intertrial = ClearScreen(self, timeout = 0.5)
 
         # Show instructions
         # -----------------
@@ -110,6 +112,8 @@ class SpatialCueing(ioHubExperimentRuntime):
 
             row = '\t'.join(map(str, trial))
             output.write(row + '\n')
+
+            self.intertrial.switchTo()
 
         output.close()
 
