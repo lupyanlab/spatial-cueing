@@ -14,24 +14,19 @@ getTime = core.getTime
 
 class ScreenState(object):
     _currentState = None
-    experimentRuntime = None
-    window = None
 
-    def __init__(self, hubServer, window, eventTriggers = None, 
+    def __init__(self, window, hubServer, eventTriggers = list(),
             timeout = None, background_color = (255, 255, 255)):
-        self.hub = hubServer
         self.window = window
+        self.hub = hubServer
 
         w, h = self.window.size
         self._screen_background_fill = visual.Rect(self.window, w, h,
-                                                   lineColor=background_color,
-                                                   lineColorSpace='rgb255',
-                                                   fillColor=background_color,
-                                                   fillColorSpace='rgb255',
-                                                   units='pix',
-                                                   name='BACKGROUND',
-                                                   opacity=1.0,
-                                                   interpolate=False)
+               lineColor = background_color, lineColorSpace = 'rgb255',
+               fillColor = background_color, fillColorSpace = 'rgb255',
+               units = 'pix', name = 'BACKGROUND', opacity = 1.0,
+               interpolate = False)
+
         self.stim = dict()
         self.stimNames = []
 
@@ -46,11 +41,10 @@ class ScreenState(object):
         self.dirty = True
 
     def setScreenColor(self, rgbColor):
-        #self.window().setColor(rgbColor,'rgb255')
-        self._screen_background_fill.setFillColor(color=rgbColor,
-                                                  colorSpace='rgb255')
-        self._screen_background_fill.setLineColor(color=rgbColor,
-                                                  colorSpace='rgb255')
+        self._screen_background_fill.setFillColor(color = rgbColor,
+                                                  colorSpace = 'rgb255')
+        self._screen_background_fill.setLineColor(color = rgbColor,
+                                                  colorSpace = 'rgb255')
         self.dirty = True
 
     def setEventTriggers(self, triggers):
@@ -75,54 +69,25 @@ class ScreenState(object):
     def setTimeout(self, timeout):
         self.timeout = timeout
 
-    # switches to screen state (draws and flips)
-    # records flip time as start time for timer if timeout has been specified.
-    # monitors the device.getEvents function ptrs that are available and if any events are returned,
-    # checks the events against the event masks dict provided. If an event matches, it causes method to return
-    # then, if no event masks are provided and an event is received, it will cause the method to return regardless
-    # of event type for that device.
-    # Otherwise method does not reurn until timeout seconds has passed.
-    # Returns: [flip_time, time_since_flip, event]
-    #          all elements but flip_time may be None. All times are in sec.msec
-    def switchTo(self,clearEvents=True, msg=None):
+    def switchTo(self, clearEvents = True, msg = None):
+        """ Show the screen state.
+
+        Stimuli are drawn and a flip occurs. Three conditions cause the
+        switchTo method to return. In all cases, a tuple of three values
+        is returned, some elements of which may be None.
+
+            1. Nothing to monitor (no timeout or DeviceEventTriggers)::
+
+                (stateStartTime, None, None)
+
+            2. Reached timeout::
+
+                (stateStartTime, stateDuration, None)
+
+            3. DeviceEventTrigger returned True::
+
+                (startStartTime, stateDuration, exitTriggeringEvent)
         """
-        Switches to the screen state defined by the class instance. The screen
-        stim are built and a flip occurs.
-
-        Three conditions can cause the switchTo method to then return,
-        based on whether a timeout and / or DeviceEventTriggers
-        have been set with the Screen state when switchTo is called. In all cases
-        a tuple of three values is returned, some elements of which may be None
-        depending on what resulted in the state exit. The three conditions are:
-
-            #. If no timeout or DeviceEventTriggers have been specified with the ScreenState, switchto() returns after the window.flip() with::
-
-                    (stateStartTime, None, None)
-
-               where stateStartTime is the time the call to flip() returned.
-
-            #. If a timeout has been specified, and that amount of time elapses from the startStartTime, then switchTo() returns with::
-
-                    (stateStartTime, stateDuration, None)
-
-               where:
-
-                      * stateStartTime is the time the call to flip() returned.
-                      * stateDuration is the time switchTo() returned minus
-                      * stateStartTime; so it should be close to the timeout specified. It may be rounded to the next flip() time interval if something in the state is causing the screen to be updated each frame.
-
-            #. If 1 - N DeviceEventTriggers have been set with the ScreenState, they are monitored to determine if any have triggered.
-               If a DeviceEventTrigger has triggered, the triggering event and the triggers callback function are retrieved.
-               The deviceEventTrigger is then reset, and the callback is called.
-
-        If a callback returns True, the ScreenState is exited, returning (stateStartTime, stateDuration, exitTriggeringEvent), where:
-
-                * **stateStartTime** is the time the call to flip() returned.
-                * **stateDuration** is the time switchTo() returned minus stateStartTime; so it should be close to the timeout specified. It may be rounded to the next flip() time interval if something in the state is causing the screen to be updated each frame.
-                * **exitTriggeringEvent** is the Device event (in dict form) that caused the ScreenState to exit.
-
-        If the callback returns False, the ScreenState is not exited, and the the timeout period and DeviceEventTriggers cintinue to be checked.
-         """
         # ER = self.experimentRuntime()
         localClearEvents = self.hub.clearEvents
         if clearEvents is False:
@@ -233,13 +198,9 @@ class TargetDetection(ScreenState):
     cue: the thing to present before the target
     target: circle to detect, appears overlapping with left or right mask
     """
-    def __init__(self, experimentRuntime = None, eventTriggers = [], 
-            hubServer = None, window = None,
-            timeout = 60.0, background_color = (255, 255, 255)):
-        hubServer = hubServer or experimentRuntime.hub
-        window = window or experimentRuntime.window
-        super(TargetDetection, self).__init__(hubServer, window,
-                timeout = 10.0, eventTriggers = eventTriggers)
+    def __init__(self, window, hubServer, eventTriggers = list()):
+        super(TargetDetection, self).__init__(window, hubServer,
+                eventTriggers = eventTriggers, timeout = 60.0)
 
         gutter = 300  # distance from centroid to left/right locations
         left = (-gutter, 0)

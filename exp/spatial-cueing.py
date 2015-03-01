@@ -45,7 +45,7 @@ class SpatialCueing(ioHubExperimentRuntime):
         instructions = InstructionScreen(self, timeout = 1 * 60.0,
                 eventTriggers = [advance, quit],
                 text = "Press SPACEBAR to advance, or press 'q' to quit.")
-        self.detect_target = TargetDetection(self,
+        self.detect_target = TargetDetection(self.window, self.hub,
                 eventTriggers = [responder, quit])
         self.intertrial = ClearScreen(self, timeout = 0.5)
 
