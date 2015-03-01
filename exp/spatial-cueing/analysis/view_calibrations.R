@@ -8,7 +8,7 @@ calibrations <- compile("calibration", key = "SPC",
                         headername = "calibration-header.txt")
 
 calibrations <- calibrations %>% group_by(subj_code) %>%
-  mutate(rolling = rollmean(accuracy, k = 5, fill = NA))
+  mutate(rolling = rollmean(accuracy, k = 10, fill = NA))
 
 # should converge
 ggplot(calibrations, aes(x = trial_ix, y = rolling, group = subj_code)) +

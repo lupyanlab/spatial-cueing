@@ -117,3 +117,18 @@ class TargetDetection(ScreenState):
         # start trial with masks, fixation, and invisible target
         self.stimNames = ['left', 'right', 'fix', 'target']
         return super(TargetDetection, self).switchTo()
+
+if __name__ == '__main__':
+    from psychopy.iohub import launchHubServer
+    io = launchHubServer()
+
+    responder_keys = {'y': 'present', 'n':'absent'}
+    responder = DeviceEventTrigger(device = io.devices.keyboard,
+            event_type = EventConstants.KEYBOARD_PRESS,
+            event_attribute_conditions = {'key': responder_keys.keys()})
+
+    detect_target = TargetDetect(io, eventTriggers = [responder, ])
+
+    _,rt,event = detect_target.switchTo(opacity = 1.0,
+            location_name = 'right')
+    print rt, event.key
