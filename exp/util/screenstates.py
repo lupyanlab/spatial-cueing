@@ -1,7 +1,9 @@
+import weakref
+
 from psychopy import visual
 from psychopy.iohub import ioHubExperimentRuntime, EventConstants
-from psychopy.iohub.util import (ScreenState, TimeTrigger,
-                                 DeviceEventTrigger)
+from psychopy.iohub.util import (ScreenState, Trigger,
+                                 TimeTrigger, DeviceEventTrigger)
 
 from util.dynamicmask import DynamicMask
 
@@ -16,9 +18,36 @@ class TargetDetection(ScreenState):
     cue: the thing to present before the target
     target: circle to detect, appears overlapping with left or right mask
     """
-    def __init__(self, experimentRuntime, eventTriggers):
-        super(TargetDetection, self).__init__(experimentRuntime,
-                timeout = 10.0, eventTriggers = eventTriggers)
+    def __init__(self, experimentRuntime, eventTriggers,
+            timeout = 60.0, background_color = (255, 255, 255)):
+#         super(TargetDetection, self).__init__(experimentRuntime,
+#                 timeout = 10.0, eventTriggers = eventTriggers)
+
+        # override ScreenState.__init__ so that a window object
+        # can be provided when using the launchHubServer() shortcut
+        if ScreenState.experimentRuntime is None:
+             ScreenState.experimentRuntime = weakref.ref(experimentRuntime)
+             ScreenState.window = weakref.ref(experimentRuntime.window)
+
+        w,h = self.experimentRuntime().devices.display.getPixelResolution()
+        self._screen_background_fill = visual.Rect(self.window(), w, h,
+                lineColor = background_color, lineColorSpace = 'rgb255',
+                fillColor = background_color, fillColorSpace = 'rgb255',
+                units = 'pix', name = 'BACKGROUND', opacity = 1.0,
+                interpolate = False)
+
+        self.stim = dict()
+        self.stimNames = []
+
+        if isinstance(eventTriggers, Trigger):
+            eventTriggers = [eventTriggers, ]
+        elif eventTriggers is None:
+            eventTriggers = []
+
+        self.event_triggers = eventTriggers
+        self._start_time = None
+        self.timeout = timeout
+        self.dirty = True
 
         window = experimentRuntime.window
 
@@ -127,7 +156,7 @@ if __name__ == '__main__':
             event_type = EventConstants.KEYBOARD_PRESS,
             event_attribute_conditions = {'key': responder_keys.keys()})
 
-    detect_target = TargetDetect(io, eventTriggers = [responder, ])
+    detect_target = TargetDetection(io, eventTriggers = [responder, ])
 
     _,rt,event = detect_target.switchTo(opacity = 1.0,
             location_name = 'right')
