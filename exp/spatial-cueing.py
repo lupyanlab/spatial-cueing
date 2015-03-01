@@ -92,7 +92,7 @@ class SpatialCueing(ioHubExperimentRuntime):
             _,rt,event = self.detect_target.switchTo(opacity,location_name)
 
             if not self.running:
-                break
+                return
 
             response = self.keys[event.key]
             graded = (response == present_or_absent)
@@ -123,6 +123,39 @@ class SpatialCueing(ioHubExperimentRuntime):
 
         final_opacity = array(staircase.intensities[-10:]).mean()
         return final_opacity
+
+    def test(self, subj_code, opacity):
+        output_name = Path('spatial-cueing', 'testing', subj_code+'.txt')
+        output = open(output_name, 'wb')
+
+        _,rt,event = self.detect_target.switchTo(opacity, 'left')
+
+        if not self.running:
+            return
+
+        response = self.keys[event.key]
+        graded = (response == present_absent)
+
+        trial = [subj_code,
+                trialN,
+                cue_type,
+                cue_dir,
+                present_or_absent,
+                opacity,
+                location_name,
+                response,
+                rt,
+                int(graded)]
+
+        row = '\t'.join(map(str, trial))
+        output.write(row + '\n')
+
+        self.intertrial.switchTo()
+   
+        output.close()
+
+        if not self.running:
+            return
 
     def request_quit(self, *args, **kwargs):
         """ User requested to quit the experiment. """

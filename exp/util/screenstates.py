@@ -27,7 +27,8 @@ class TargetDetection(ScreenState):
         right = (gutter, 0)
         self.location_map = {'left': left, 'right': right}
 
-        mask_kwargs = {'win': window, 'size': [200, 200]}
+        mask_size = 200
+        mask_kwargs = {'win': window, 'size': [mask_size, mask_size]}
         masks = {}
         masks['left']  = DynamicMask(pos = left, **mask_kwargs)
         masks['right'] = DynamicMask(pos = right, **mask_kwargs)
@@ -37,8 +38,15 @@ class TargetDetection(ScreenState):
         fix = visual.TextStim(window, text = '+', **text_kwargs)
         self.stim.update({'fix': fix})
 
-        target = visual.Circle(window, radius = 10, pos = (-300, 0),
-                fillColor = 'white', opacity = 0.0)
+        target_kwargs = {'radius': 10, 'fillColor': 'white'}
+
+        cues = {}
+        # make the dot just like the target
+        cues['dot'] = visual.Circle(window, **target_kwargs)
+        # cues['arrow'] = visual.ImageStim()
+        cues['word'] = visual.TextStim(window, **text_kwargs)
+
+        target = visual.Circle(window, opacity = 0.0, **target_kwargs)
         self.stim.update({'target': target})
 
         # probe for response
@@ -91,7 +99,8 @@ class TargetDetection(ScreenState):
         self.stimNames = ['left', 'right', 'probe']
         return self.refresh()
 
-    def switchTo(self, opacity, location_name):
+    def switchTo(self, opacity, location_name,
+                cue_type = None, cue_location = None):
         """ Set the target opacity and run the trial. """
         if location_name:
             # target present trial
