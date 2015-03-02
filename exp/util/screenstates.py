@@ -8,7 +8,13 @@ from psychopy.iohub.util import win32MessagePump
 
 from util.dynamicmask import DynamicMask
 
-REFRESH_RATE = 0.01 # delay between screen flips during mask
+REFRESH_RATE = 0.01       # delay between screen flips during mask
+FIXATION_DURATION = 0.5   # duration of fixation cross prior to cue/target
+CUE_DURATION = 0.2        # duration of cueing interval
+CUE_TARGET_INTERVAL = 0.5 # duration between cue offset and target onset
+## start of RT timer
+TARGET_DURATION = 0.5     # duration target visible
+RESPONSE_WINDOW = 2.0
 
 getTime = core.getTime
 
@@ -214,10 +220,25 @@ class TargetDetection(ScreenState):
         masks['right'] = DynamicMask(pos = right, **mask_kwargs)
         self.stim.update(masks)
 
+        # refresh timer draws a new mask image every REFRESH_RATE ms
+        self.last_frame = None
+        refresh = TimeTrigger(start_time = self.interval,
+                delay = REFRESH_RATE, repeat_count = -1,
+                trigger_function = self.refresh)
+        self.addEventTrigger(refresh)
+
+        # text args apply to fixation, word cue, and prompt objects
         text_kwargs = {'height': 40, 'font': 'Consolas', 'color': 'black'}
+
+        # fixation cross is shown for the first FIXATION_DURATION of trial
         fix = visual.TextStim(self.window, text = '+', **text_kwargs)
         self.stim.update({'fix': fix})
+        self.end_fixation = TimeTrigger(start_time = self.getStateStartTime,
+                delay = FIXATION_DURATION, repeat_count = 1,
+                trigger_function = self.cue)
+        self.addEventTrigger(self.end_fixation)
 
+        # target args apply to cue and target
         target_kwargs = {'radius': 10, 'fillColor': 'white'}
 
         cues = {}
@@ -225,6 +246,22 @@ class TargetDetection(ScreenState):
         cues['dot'] = visual.Circle(self.window, **target_kwargs)
         # cues['arrow'] = visual.ImageStim()
         cues['word'] = visual.TextStim(self.window, **text_kwargs)
+        self.stim.update({'dot': cues['dot'], 'word': cues['word']})
+
+        # timer for cue duration
+        self.cue_onset = None  ## needs to get set when fix ended
+        self.end_cueing = TimeTrigger(start_time = self.cue_onset,
+                delay = CUE_DURATION, repeat_count = 1,
+                trigger_function = self.wait)
+        ## don't add to eventTriggers until fixation is ended
+
+        # timer for interstimulus interval
+        self.target_opacity = None  # will be set on switch
+        self.cue_offset = None  ## needs to get set when cue ended
+        self.end_interval = TimeTrigger(start_time = self.cue_offset,
+                delay = CUE_TARGET_INTERVAL, repeat_count = 1,
+                trigger_function = self.reveal)
+        ## don't add to eventTriggers until cue is ended
 
         target = visual.Circle(self.window, opacity = 0.0, **target_kwargs)
         self.stim.update({'target': target})
@@ -233,24 +270,11 @@ class TargetDetection(ScreenState):
         probe = visual.TextStim(self.window, text = '?', **text_kwargs)
         self.stim.update({'probe': probe})
 
-        self.last_frame = None
-        refresh = TimeTrigger(start_time = self.interval,
-                delay = REFRESH_RATE, repeat_count = -1,
-                trigger_function = self.refresh)
-        self.addEventTrigger(refresh)
-
-        self.target_opacity = None  # will be set on switch
-        target_onset = 0.5          # TEMPORARY
-        onset = TimeTrigger(start_time = self.getStateStartTime,
-                delay = target_onset, repeat_count = 1,
-                trigger_function = self.reveal)
-        self.addEventTrigger(onset)
-
-        probe_onset = 1.0
-        probe_for_response = TimeTrigger(start_time=self.getStateStartTime,
-                delay = probe_onset, repeat_count = 1,
+        self.target_onset = None ## needs to be set when target is revealed
+        self.end_target = TimeTrigger(start_time = self.target_onset,
+                delay = TARGET_DURATION, repeat_count = 1,
                 trigger_function = self.probe)
-        self.addEventTrigger(probe_for_response)
+        ## don't add until target_onset is set
 
     def interval(self):
         """ Return the time of the last flip.
@@ -269,19 +293,54 @@ class TargetDetection(ScreenState):
         self.last_frame = self.flip()
         return False
 
-    def reveal(self, *args, **kwargs):
-        """ TimeTriggered when it's been target_onset since screen start. """
+    ## not sure what the TimeTrigger returns
+    def cue(self, stateStart, stateDuration, nullEvent = None):
+        """ TimeTriggered when it's been FIXATION_DURATION since start. """
+        self.event_triggers.remove(self.end_fixation)
+        self.stimNames.remove('fix')
+
+        if self.cue_name:
+            self.stimNames.append(self.cue_name)
+
+        # save cue_onset time which determines when to end cueing
+        self.cue_onset = stateStart + stateDuration
+        self.addEventTrigger(self.end_cueing)
+        return self.refresh()
+
+    def wait(self, stateStart, stateDuration, nullEvent = None):
+        """ TimeTriggered when it's been CUE_DURATION since cue_onset. """
+        self.event_triggers.remove(self.end_cueing)
+        if self.cue_name:
+            self.stimNames.remove(self.cue_name)
+
+        # save cue_offset time which determines when to end the interval
+        self.cue_offset = stateStart + stateDuration
+        self.addEventTrigger(self.end_interval)
+        return self.refresh()
+
+    def reveal(self, stateStart, stateDuration, nullEvent = None):
+        """ TimeTriggered when it's been target_onset since screen start """
+        self.event_triggers.remove(self.end_interval)
         self.stim['target'].setOpacity(self.target_opacity)
+
+        self.target_onset = stateStart + stateDuration
+        self.addEventTrigger(self.end_target)
         return self.refresh()
 
     def probe(self, *args, **kwargs):
         """ Hide the masks, show the probe """
-        self.stimNames = ['left', 'right', 'probe']
+        self.event_triggers.remove(self.end_target)
+
+        self.stimNames.remove('target')
+        self.stimNames.append('probe')
         return self.refresh()
 
     def switchTo(self, opacity, location_name,
                 cue_type = None, cue_location = None):
         """ Set the target opacity and run the trial. """
+        self.cue_name = 'word'
+        self.stim[self.cue_name].setText('left')
+
         if location_name:
             # target present trial
             self.target_opacity = opacity
