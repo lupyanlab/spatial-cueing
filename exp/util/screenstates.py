@@ -240,7 +240,7 @@ class TargetDetection(ScreenState):
         self.addEventTrigger(self.end_fixation)
 
         # target args apply to cue and target
-        target_kwargs = {'radius': 20, 'fillColor': 'white'}
+        target_kwargs = {'radius': 15, 'fillColor': 'white'}
 
         cues = {}
         # make the dot just like the target
@@ -376,8 +376,7 @@ if __name__ == '__main__':
             help = 'Which version of the cue should be shown')
 
     args = parser.parse_args()
-    if args.cue and not args.location:
-        parser.error('Location must be specified')
+    args.location = args.location or args.target
 
     io = launchHubServer()
 
