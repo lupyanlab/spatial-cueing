@@ -8,7 +8,7 @@ from psychopy.iohub.util import win32MessagePump
 
 from util.dynamicmask import DynamicMask
 
-REFRESH_RATE = 0.01       # delay between screen flips during mask
+REFRESH_RATE = 0.02       # delay between screen flips during mask
 FIXATION_DURATION = 0.5   # duration of fixation cross prior to cue/target
 CUE_DURATION = 0.2        # duration of cueing interval
 CUE_TARGET_INTERVAL = 0.5 # duration between cue offset and target onset
@@ -214,7 +214,8 @@ class TargetDetection(ScreenState):
         self.location_map = {'left': left, 'right': right}
 
         mask_size = 200
-        mask_kwargs = {'win': self.window, 'size': [mask_size, mask_size]}
+        mask_kwargs = {'win': self.window, 'size': [mask_size, mask_size],
+                'opacity': 0.8}
         masks = {}
         masks['left']  = DynamicMask(pos = left, **mask_kwargs)
         masks['right'] = DynamicMask(pos = right, **mask_kwargs)
@@ -239,7 +240,7 @@ class TargetDetection(ScreenState):
         self.addEventTrigger(self.end_fixation)
 
         # target args apply to cue and target
-        target_kwargs = {'radius': 10, 'fillColor': 'white'}
+        target_kwargs = {'radius': 20, 'fillColor': 'white'}
 
         cues = {}
         # make the dot just like the target
@@ -336,17 +337,19 @@ class TargetDetection(ScreenState):
         return self.refresh()
 
     def switchTo(self, opacity, location_name,
-                cue_type = None, cue_location = None):
+                 cue_type = None, cue_location = None):
         """ Set the target opacity and run the trial. """
-        self.cue_name = 'word'
-        self.stim[self.cue_name].setText('left')
+        if cue_type == 'word':
+            self.stim[cue_type].setText(cue_location)
+        elif cue_type == 'dot':
+            self.stim[cue_type].setPos(self.location_map[cue_location])
+        self.cue_name = cue_type
 
         if location_name:
             # target present trial
             self.target_opacity = opacity
             location = self.location_map[location_name]
-        else:
-            # target absent trial
+        else: # target absent trial
             self.target_opacity = 0.0
             location = (0, 0)
 
@@ -359,7 +362,23 @@ class TargetDetection(ScreenState):
         return super(TargetDetection, self).switchTo()
 
 if __name__ == '__main__':
+    import argparse
     from psychopy.iohub import launchHubServer
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('target', choices = ['left', 'right'],
+            default = 'left', help = 'Where should the target be shown')
+    parser.add_argument('-o', '--opacity', type = float,
+            default = 1.0, help = 'Opacity of the target')
+    parser.add_argument('-cue', choices = ['dot', 'arrow', 'word'],
+            help = 'Which cue should be used.')
+    parser.add_argument('-loc', '--location', choices = ['left', 'right'],
+            help = 'Which version of the cue should be shown')
+
+    args = parser.parse_args()
+    if args.cue and not args.location:
+        parser.error('Location must be specified')
+
     io = launchHubServer()
 
     display = io.devices.display
@@ -377,6 +396,7 @@ if __name__ == '__main__':
     detect_target = TargetDetection(eventTriggers = [responder, ],
             hubServer = io, window = window)
 
-    _,rt,event = detect_target.switchTo(opacity = 1.0,
-            location_name = 'right')
+    _,rt,event = detect_target.switchTo(opacity = args.opacity,
+            location_name = args.target,
+            cue_type = args.cue, cue_location = args.location)
     print rt, event.key
