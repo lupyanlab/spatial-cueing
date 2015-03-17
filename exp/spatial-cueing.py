@@ -11,7 +11,13 @@ from psychopy.iohub.util import (DeviceEventTrigger, InstructionScreen,
 from util.screenstates import TargetDetection
 
 class SpatialCueing(ioHubExperimentRuntime):
-
+    """
+    ScreenStates
+    ------------
+    instructions
+    detect_target
+    intertrial
+    """
     def run(self, *args, **kwargs):
         self.running = True
 
@@ -35,18 +41,14 @@ class SpatialCueing(ioHubExperimentRuntime):
                 event_type = EventConstants.KEYBOARD_PRESS,
                 event_attribute_conditions = {'key': 'q'},
                 trigger_function = self.request_quit)
-        ## for responding if the target was present or absent
-        self.keys = {'y': 'present', 'n': 'absent'}
-        responder = DeviceEventTrigger(device = self.keyboard,
-                event_type = EventConstants.KEYBOARD_PRESS,
-                event_attribute_conditions = {'key': self.keys.keys()})
 
         # screens
         instructions = InstructionScreen(self, timeout = 1 * 60.0,
                 eventTriggers = [advance, quit],
                 text = "Press SPACEBAR to advance, or press 'q' to quit.")
+        self.keys = {'y': 'present', 'n': 'absent'}
         self.detect_target = TargetDetection(self.window, self.hub,
-                eventTriggers = [responder, quit])
+                keys = self.keys.keys(), eventTriggers = [quit, ])
         self.intertrial = ClearScreen(self, timeout = 0.5)
 
         # Show instructions
@@ -59,6 +61,9 @@ class SpatialCueing(ioHubExperimentRuntime):
         # Calibrate
         # ---------
         critical = self.calibrate()
+
+        if not self.running:
+            return
 
         # Test
         # ----
@@ -151,7 +156,7 @@ class SpatialCueing(ioHubExperimentRuntime):
         output.write(row + '\n')
 
         self.intertrial.switchTo()
-   
+
         output.close()
 
         if not self.running:

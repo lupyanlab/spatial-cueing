@@ -262,7 +262,7 @@ class TargetDetection(ScreenState):
     start : self.getStateStartTime()
     delay : [fixation, cue, ..., prompt]
     """
-    def __init__(self, window, hubServer, eventTriggers = list()):
+    def __init__(self, window, hubServer, keys, eventTriggers = list()):
         """
         Visual Objects
         --------------
@@ -338,8 +338,7 @@ class TargetDetection(ScreenState):
         # -------
         REFRESH_RATE = 0.02
         refresh = RefreshTrigger(start_time = self.getStateStartTime,
-                delay = REFRESH_RATE, repeat_count = -1,
-                trigger_function = self.refresh)
+                delay = REFRESH_RATE, trigger_function = self.refresh)
         self.addEventTrigger(refresh)
 
         # delay
@@ -352,9 +351,16 @@ class TargetDetection(ScreenState):
         self.delays['prompt']   = self.delays['target']   + 2.0
 
         delay = TimeTrigger(start_time = self.getStateStartTime,
-                delay = self.delay, # callable, force update
-                repeat_count = -1, trigger_function = self.transition)
+                delay = self.get_delay, # callable, force update
+                trigger_function = self.transition)
         self.addEventTrigger(delay)
+
+        # Responses
+        # ---------
+        responder = DeviceEventTrigger(device = hubServer.devices.keyboard,
+                event_type = EventConstants.KEYBOARD_PRESS,
+                event_attribute_conditions = {'key': keys},
+                trigger_function = self.response)
 
     def refresh(self, *args, **kwargs):
         """ Redraw the screen to update the masks """
@@ -362,11 +368,12 @@ class TargetDetection(ScreenState):
         self.flip()
         return False
 
-    def delay(self):
+    def get_delay(self):
         """ Return the current delay """
         return self.delays[self.state]
 
     def transition(self, *args, **kwargs):
+        """ Update the stimuli on the screen """
         self.delays.pop(self.state)  # done with current state
 
         try:
@@ -379,6 +386,13 @@ class TargetDetection(ScreenState):
         self.dirty = True
         self.flip()
         return False
+
+    def response(self, *args, **kwargs):
+        """ User hit one of the response keys """
+        if self.state in ['target', 'prompt']:
+            return True
+        else:
+            return False
 
     def switchTo(self, opacity, location_name,
                  cue_type = None, cue_location = None):
@@ -433,14 +447,8 @@ if __name__ == '__main__':
             fullscr = True, allowGUI = False,
             screen = display.getIndex())
 
-    responder_keys = {'y': 'present', 'n':'absent'}
-    responder = DeviceEventTrigger(device = io.devices.keyboard,
-            event_type = EventConstants.KEYBOARD_PRESS,
-            event_attribute_conditions = {'key': responder_keys.keys()})
-
-    detect_target = TargetDetection(eventTriggers = [responder, ],
-            hubServer = io, window = window)
-
+    keys = ['y', 'n']
+    detect_target = TargetDetection(hubServer=io, window=window, keys=keys)
     _,rt,event = detect_target.switchTo(opacity = args.opacity,
             location_name = args.target,
             cue_type = args.cue, cue_location = args.location)
