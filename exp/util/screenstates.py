@@ -267,17 +267,17 @@ class TargetDetection(ScreenState):
         Visual Objects
         --------------
         masks (2)
-        fixation : text stim "+"
-        cue - dot : rect stim
-            - arrow : pic stim, rotated as needed
-            - word : text stim "left" or "right"
-        target : rect stim, presented in the left or right mask
-        prompt : text stim "?" presented centrally after the target
+        fixation: text stim "+"
+        cue - dot: rect stim
+            - arrow: pic stim, rotated as needed
+            - word: text stim "left" or "right"
+        target: rect stim, presented in the left or right mask
+        prompt: text stim "?" presented centrally after the target
 
         Timer Objects
         -------------
-        refresh : to redraw the masks, should be close to refresh rate
-        delay : when changes in the visuals should occur
+        refresh: to redraw the masks, should be close to refresh rate
+        delay: when changes in the visuals should occur
         """
         super(TargetDetection, self).__init__(window, hubServer,
                 eventTriggers = eventTriggers, timeout = 60.0)
@@ -293,6 +293,7 @@ class TargetDetection(ScreenState):
         left = (-gutter, 0)
         right = (gutter, 0)
         self.location_map = {'left': left, 'right': right}
+        ## location_map also used for dot cues and targets
 
         size = 200
         mask_kwargs = {'win': self.window, 'size': [size,size], 'opacity': 0.8}
@@ -325,10 +326,10 @@ class TargetDetection(ScreenState):
         mask_names = ['left', 'right']
         self.visuals = {}
         self.visuals['fixation'] = mask_names + ['fix', ]
-        self.visuals['cue'] = mask_names + ['cue', ]
+        self.visuals['cue']      = mask_names + ['cue', ]
         self.visuals['interval'] = mask_names
-        self.visuals['target'] = mask_names + ['target', ]
-        self.visuals['prompt'] = mask_names + ['prompt', ]
+        self.visuals['target']   = mask_names + ['target', ]
+        self.visuals['prompt']   = mask_names + ['prompt', ]
 
         # Timer Objects
         # =============
@@ -343,33 +344,35 @@ class TargetDetection(ScreenState):
 
         # delay
         # -----
-        self.durations = OrderedDict()
-        self.durations['fixation'] = 0.5
-        self.durations['cue'] = 0.2
-        self.durations['interval'] = 0.5
-        self.durations['target'] = 0.5
-        self.durations['prompt'] = 2.0
+        self.delays = OrderedDict()
+        self.delays['fixation'] = 0.5
+        self.delays['cue']      = self.delays['fixation'] + 0.2
+        self.delays['interval'] = self.delays['cue']      + 0.5
+        self.delays['target']   = self.delays['interval'] + 0.5
+        self.delays['prompt']   = self.delays['target']   + 2.0
 
         delay = TimeTrigger(start_time = self.getStateStartTime,
-                delay = self.state_duration, # callable, force update
+                delay = self.delay, # callable, force update
                 repeat_count = -1, trigger_function = self.transition)
         self.addEventTrigger(delay)
 
     def refresh(self, *args, **kwargs):
+        """ Redraw the screen to update the masks """
         self.dirty = True
-        self.delays['refresh'] += self.flip()
+        self.flip()
         return False
 
     def delay(self):
-        return self.durations[self.state]
+        """ Return the current delay """
+        return self.delays[self.state]
 
     def transition(self, *args, **kwargs):
-        self.durations.pop(self.state)  # done with current state
+        self.delays.pop(self.state)  # done with current state
 
         try:
-            self.state = next(iter(self.durations))
+            self.state = next(iter(self.delays))
         except StopIteration:
-            # trial timeout
+            # trial has timed out without a response
             return True
 
         self.stimNames = self.visuals[self.state]
