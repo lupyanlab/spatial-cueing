@@ -191,35 +191,8 @@ class ScreenState(object):
     def getCurrentScreenState(cls):
         return cls._currentState
 
-class RefreshTrigger(Trigger):
-    """
-    TimeTrigger's are used by ScreenState objects. A TimeTrigger
-    associates a delay from the provided start_time parameter to when
-    the classes triggered() method returns True. start_time and delay can be
-    sec.msec float, or a callable object (that takes no parameters).
-    """
-    __slots__=['startTime', 'delay', '_start_time']
-    def __init__(self, start_time, delay, repeat_count=0,
-                 trigger_function = lambda a, b, c: True==True, user_kwargs={}):
-        Trigger.__init__(self, trigger_function, user_kwargs, repeat_count)
-
-        self._start_time = start_time
-
-        if start_time is None or not callable(start_time):
-            def startTimeFunc():
-                if self._start_time is None:
-                    self._start_time = getTime()
-                return self._start_time
-            self.startTime = startTimeFunc
-        else:
-            self.startTime = start_time
-
-        self.delay = delay
-        if not callable(delay):
-            def delayFunc():
-                return delay
-            self.delay = delayFunc
-
+class RefreshTrigger(TimeTrigger):
+    """ TimeTrigger every X msec """
     def triggered(self, **kwargs):
         if Trigger.triggered(self) is False:
             return False
@@ -234,6 +207,8 @@ class RefreshTrigger(Trigger):
         else:
             delay = self.delay()
 
+        # RefreshTrigger functionality:
+        # Count delay from time of last trigger (not from state start time)
         ct = getTime()
         if not self._last_triggered_time:
             self._last_triggered_time = start_time
@@ -243,11 +218,6 @@ class RefreshTrigger(Trigger):
             self.triggered_count += 1
             return True
         return False
-
-    def resetTrigger(self):
-        self.resetLastTriggeredInfo()
-        self.triggered_count = 0
-        self._start_time = None
 
 class TargetDetection(ScreenState):
     """
@@ -264,7 +234,7 @@ class TargetDetection(ScreenState):
     """
     def __init__(self, window, hubServer, keys, eventTriggers = list()):
         """
-        Visual Objects
+        Visual objects
         --------------
         masks (2)
         fixation: text stim "+"
@@ -274,7 +244,7 @@ class TargetDetection(ScreenState):
         target: rect stim, presented in the left or right mask
         prompt: text stim "?" presented centrally after the target
 
-        Timer Objects
+        Timer objects
         -------------
         refresh: to redraw the masks, should be close to refresh rate
         delay: when changes in the visuals should occur
@@ -282,7 +252,7 @@ class TargetDetection(ScreenState):
         super(TargetDetection, self).__init__(window, hubServer,
                 eventTriggers = eventTriggers, timeout = 60.0)
 
-        # Visual Objects
+        # Visual objects
         # ==============
         exp = Path(__file__).absolute().ancestor(2)
         stim = Path(exp, 'stimuli')
@@ -331,7 +301,7 @@ class TargetDetection(ScreenState):
         self.visuals['target']   = mask_names + ['target', ]
         self.visuals['prompt']   = mask_names + ['prompt', ]
 
-        # Timer Objects
+        # Timer objects
         # =============
 
         # refresh
@@ -345,12 +315,12 @@ class TargetDetection(ScreenState):
         # -----
         self.delays = OrderedDict()
         self.delays['fixation'] = 0.5
-        self.delays['cue']      = self.delays['fixation'] + 0.2
-        self.delays['interval'] = self.delays['cue']      + 0.5
-        self.delays['target']   = self.delays['interval'] + 0.5
-        self.delays['prompt']   = self.delays['target']   + 2.0
+        self.delays['cue']      = 0.2
+        self.delays['interval'] = 0.5
+        self.delays['target']   = 0.5
+        self.delays['prompt']   = 2.0
 
-        delay = TimeTrigger(start_time = self.getStateStartTime,
+        delay = RefreshTrigger(start_time = self.getStateStartTime,
                 delay = self.get_delay, # callable, force update
                 trigger_function = self.transition)
         self.addEventTrigger(delay)
@@ -398,12 +368,12 @@ class TargetDetection(ScreenState):
                  cue_type = None, cue_location = None):
         """ Set the target opacity and run the trial. """
         if cue_type:
-            self.stim['cue'] = self.cues[cue_type]
-
             if cue_type == 'dot':
-                self.stim['cue'].setPos(self.location_map[cue_location])
+                self.cues[cue_type].setPos(self.location_map[cue_location])
             elif cue_type == 'word':
-                self.stim['cue'].setText(cue_location)
+                self.cues[cue_type].setText(cue_location)
+
+            self.stim['cue'] = self.cues[cue_type]
 
         if location_name:
             # target present trial
