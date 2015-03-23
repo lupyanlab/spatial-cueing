@@ -11,7 +11,13 @@ from psychopy.iohub.util import (DeviceEventTrigger, InstructionScreen,
 from util.screenstates import TargetDetection
 
 class SpatialCueing(ioHubExperimentRuntime):
-
+    """
+    ScreenStates
+    ------------
+    instructions
+    detect_target
+    intertrial
+    """
     def run(self, *args, **kwargs):
         self.running = True
 
@@ -35,19 +41,20 @@ class SpatialCueing(ioHubExperimentRuntime):
                 event_type = EventConstants.KEYBOARD_PRESS,
                 event_attribute_conditions = {'key': 'q'},
                 trigger_function = self.request_quit)
-        ## for responding if the target was present or absent
-        self.keys = {'y': 'present', 'n': 'absent'}
-        responder = DeviceEventTrigger(device = self.keyboard,
-                event_type = EventConstants.KEYBOARD_PRESS,
-                event_attribute_conditions = {'key': self.keys.keys()})
 
         # screens
         instructions = InstructionScreen(self, timeout = 1 * 60.0,
                 eventTriggers = [advance, quit],
                 text = "Press SPACEBAR to advance, or press 'q' to quit.")
+        self.keys = {'y': 'present', 'n': 'absent'}
         self.detect_target = TargetDetection(self.window, self.hub,
-                eventTriggers = [responder, quit])
+                keys = self.keys.keys(), eventTriggers = [quit, ])
         self.intertrial = ClearScreen(self, timeout = 0.5)
+
+        # Get session variables
+        # ---------------------
+        subj_code = 'SPC101'
+        cue_type = 'word'
 
         # Show instructions
         # -----------------
@@ -58,15 +65,17 @@ class SpatialCueing(ioHubExperimentRuntime):
 
         # Calibrate
         # ---------
-        critical = self.calibrate()
+        critical = self.calibrate(subj_code)
+
+        if not self.running:
+            return
 
         # Test
         # ----
-        pass
+        self.test(subj_code, critical, cue_type)
 
-    def calibrate(self):
-        subj_code = 'SPC101'
-        output_name = Path('spatial-cueing','calibration',subj_code+'.txt')
+    def calibrate(self, subj_code):
+        output_name = Path('spatial-cueing', 'calibration', subj_code+'.txt')
         output = open(output_name, 'wb')
 
         desired_accuracy = 0.5
@@ -102,14 +111,16 @@ class SpatialCueing(ioHubExperimentRuntime):
             if present_or_absent == 'present':
                 staircase.addResponse(graded)
 
-            trial = [subj_code,
-                    staircase.thisTrialN,
-                    present_or_absent,
-                    opacity,
-                    location_name,
-                    response,
-                    rt,
-                    int(graded)]
+            trial = [
+                subj_code,
+                staircase.thisTrialN,
+                present_or_absent,
+                opacity,
+                location_name,
+                response,
+                rt,
+                int(graded),
+            ]
 
             row = '\t'.join(map(str, trial))
             output.write(row + '\n')
@@ -124,19 +135,31 @@ class SpatialCueing(ioHubExperimentRuntime):
         final_opacity = array(staircase.intensities[-10:]).mean()
         return final_opacity
 
-    def test(self, subj_code, opacity):
+    def test(self, subj_code, opacity, cue_type):
         output_name = Path('spatial-cueing', 'testing', subj_code+'.txt')
         output = open(output_name, 'wb')
 
-        _,rt,event = self.detect_target.switchTo(opacity, 'left')
+        for trial_ix in range(200):
+            present_or_absent = choice(['present','absent'], p = [0.8,0.2])
 
-        if not self.running:
-            return
+            if present_or_absent == 'present':
+                location_name = choice(['left', 'right'])
+            else:
+                location_name = None
 
-        response = self.keys[event.key]
-        graded = (response == present_absent)
+            cue_location = location_name  # all cues are valid
 
-        trial = [subj_code,
+            _,rt,event = self.detect_target.switchTo(opacity, 'left',
+                cue_type = cue_type, cue_location = cue_location)
+
+            if not self.running:
+                return
+
+            response = self.keys[event.key]
+            graded = (response == present_absent)
+
+            trial = [
+                subj_code,
                 trialN,
                 cue_type,
                 cue_dir,
@@ -145,13 +168,14 @@ class SpatialCueing(ioHubExperimentRuntime):
                 location_name,
                 response,
                 rt,
-                int(graded)]
+                int(graded),
+            ]
 
-        row = '\t'.join(map(str, trial))
-        output.write(row + '\n')
+            row = '\t'.join(map(str, trial))
+            output.write(row + '\n')
 
-        self.intertrial.switchTo()
-   
+            self.intertrial.switchTo()
+
         output.close()
 
         if not self.running:

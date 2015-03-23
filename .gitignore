@@ -1,5 +1,6 @@
 # Project files
 doc/
+slides/
 
 # Python files
 *.pyc
