@@ -483,7 +483,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     subparsers = parser.add_subparsers(dest = 'view')
 
-    trial_parser = subparsers.add_parser('trial')
+    trial_parser = subparsers.add_parser('trial', 
+            help = 'Show a sample trial')
     trial_parser.add_argument('target', choices = ['left', 'right'],
             default = 'left', help = 'Where should the target be shown')
     trial_parser.add_argument('-o', '--opacity', type = float,
@@ -494,11 +495,12 @@ if __name__ == '__main__':
             choices = ['left', 'right'],
             help = 'Which version of the cue should be shown')
 
-    instruct_parser = subparsers.add_parser('instruct')
+    instruct_parser = subparsers.add_parser('instruct',
+            help = 'Show the instructions')
     possible_screen_names = ['welcome', 'target', 'cue', 'ready']
     instruct_parser.add_argument('screen_name',
             choices = possible_screen_names + ['all', ],
-            help = 'Which screen should be shown')
+            default = 'all', help = 'Which screen should be shown')
 
     args = parser.parse_args() 
    
