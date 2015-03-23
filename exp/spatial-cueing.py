@@ -43,9 +43,8 @@ class SpatialCueing(ioHubExperimentRuntime):
                 trigger_function = self.request_quit)
 
         # screens
-        instructions = InstructionScreen(self, timeout = 1 * 60.0,
-                eventTriggers = [advance, quit],
-                text = "Press SPACEBAR to advance, or press 'q' to quit.")
+        instructions = TargetDetectionInstruction(self.window, self.hub,
+                eventTriggers = [advance, quit])
         self.keys = {'y': 'present', 'n': 'absent'}
         self.detect_target = TargetDetection(self.window, self.hub,
                 keys = self.keys.keys(), eventTriggers = [quit, ])
@@ -58,8 +57,11 @@ class SpatialCueing(ioHubExperimentRuntime):
 
         # Show instructions
         # -----------------
-        instructions.switchTo()
+        instructions.switchTo('welcome')
+        if not self.running:
+            return
 
+        instructions.switchTo('target')
         if not self.running:
             return
 

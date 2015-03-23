@@ -191,6 +191,41 @@ class ScreenState(object):
     def getCurrentScreenState(cls):
         return cls._currentState
 
+# Overwrite psychopy.iohub.util.visualUtil InstructionScreen class to
+# use the modified ScreenState class, above
+class InstructionScreen(ScreenState):
+    def __init__(self, window, hubServer, eventTriggers = list(),
+                timeout = 10 * 60.0, background_color = (255, 255, 255)):
+        super(InstructionScreen, self).__init__(window, hubServer,
+                eventTriggers, timeout, background_color)
+
+        l, t, r, b = self.experimentRuntime().devices.display.getBounds()
+        self.stim['TEXTLINE'] = visual.TextStim(self.window(), text=text,
+                    pos=text_pos, height=text_height, color=text_color,
+                    colorSpace='rgb255', alignHoriz='center',
+                    alignVert='center', units='pix', wrapWidth=(r-l)*.9)
+        self.stimNames.append('TEXTLINE')
+
+    def setText(self, text):
+        self.stim['TEXTLINE'].setText(text)
+        self.dirty = True
+
+    def setTextColor(self, rgbColor):
+        self.stim['TEXTLINE'].setColor(rgbColor, 'rgb255')
+        self.dirty = True
+
+    def setTextSize(self,size):
+        self.stim['TEXTLINE'].setSize(size)
+        self.dirty = True
+
+    def setTextPosition(self, pos):
+        self.stim['TEXTLINE'].setPos(pos)
+
+    def flip(self, text=''):
+        if text is None:
+            text = "INSTRUCT_SCREEN SYNC: [%s] [%s] "%(self.stim['TEXTLINE'].text[0:30], text)
+        return ScreenState.flip(self, text)
+
 class RefreshTrigger(TimeTrigger):
     """ TimeTrigger every X msec """
     def triggered(self, **kwargs):
@@ -302,14 +337,16 @@ class TargetDetection(ScreenState):
 
         # Timer objects
         # =============
+        self.triggers = {}  # like self.stim, but for triggers
 
         # refresh
         # -------
         REFRESH_RATE = 0.02
-        refresh = RefreshTrigger(start_time = self.getStateStartTime,
+        refresh_trig = RefreshTrigger(self.getStateStartTime,
                 delay = REFRESH_RATE, trigger_function = self.refresh,
                 repeat_count = -1)
-        self.addEventTrigger(refresh)
+        self.triggers['refresh_trig'] = refresh_trig
+        self.addEventTrigger(refresh_trig) # by default, add refresh
 
         # delay
         # -----
@@ -320,10 +357,10 @@ class TargetDetection(ScreenState):
         self.delays['target']   = 0.5
         self.delays['prompt']   = 2.0
 
-        delay = RefreshTrigger(start_time = self.getStateStartTime,
+        delay_trig = RefreshTrigger(self.getStateStartTime,
                 delay = self.get_delay, # callable, force update
                 trigger_function = self.transition, repeat_count = -1)
-        self.addEventTrigger(delay)
+        self.addEventTrigger(delay_trig)
 
         # Responses
         # ---------
@@ -331,6 +368,7 @@ class TargetDetection(ScreenState):
                 event_type = EventConstants.KEYBOARD_PRESS,
                 event_attribute_conditions = {'key': keys},
                 trigger_function = self.response)
+        self.triggers['response_trig'] = responder
         self.addEventTrigger(responder)
 
     def refresh(self, *args, **kwargs):
@@ -394,25 +432,62 @@ class TargetDetection(ScreenState):
         self.current_state_delay = self.delays[self.state]
         return super(TargetDetection, self).switchTo()
 
+class TargetDetectionInstructions(TargetDetection):
+    def __init__(self, window, hubServer, keys, eventTriggers = list()):
+        super(TargetDetectionInstructions, self).__init__(window, 
+                hubServer, eventTriggers = eventTriggers, timeout = 60.0)
+
+        (l, t, r, b) = hubServer.devices.display.getBounds()
+        text_kwargs = {'win': window, 'wrapWidth': (r - l) * 0.9, 
+                'color': 'black'}
+        self.stim['title'] = visual.TextStim(pos = (0,50), height = 40,
+                **text_kwargs)
+        self.stim['text'] = visual.TextStim(pos = (0,0), height = 20,
+                **text_kwargs)
+
+        advance_trig = DeviceEventTrigger(hubServer.devices.keyboard,
+                event_type = EventConstants.KEYBOARD_PRESS,
+                event_attribute_conditions = {'key': keys})
+        self.triggers['advance_trig'] = advance_trig
+        
+        spc_yaml = Path(exp, 'spatial-cueing.yaml')
+        self.instructions = yaml.load(open(spc_yaml, 'r'))
+    
+    def switchTo(self, screen_name):
+        details = self.instructions[screen_name]
+
+        self.stim['title'].setText(details['title'])
+        self.stim['text'].setText(details['text'])
+        
+        self.stimNames = details['visuals']
+        self.event_triggers = [self.triggers[trig_name] \
+                for trig_name in details['triggers']]
+
+        super(TargetDetectionInstructions).switchTo()
+
 if __name__ == '__main__':
     import argparse
     from psychopy.iohub import launchHubServer
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('target', choices = ['left', 'right'],
+    subparsers = parser.add_subparsers()
+
+    trial_parser = subparser.add_parser('trial')
+    trial_parser.add_argument('target', choices = ['left', 'right'],
             default = 'left', help = 'Where should the target be shown')
-    parser.add_argument('-o', '--opacity', type = float,
+    trial_parser.add_argument('-o', '--opacity', type = float,
             default = 1.0, help = 'Opacity of the target')
-    parser.add_argument('-cue', choices = ['dot', 'arrow', 'word'],
+    trial_parser.add_argument('-cue', choices = ['dot', 'arrow', 'word'],
             help = 'Which cue should be used.')
-    parser.add_argument('-loc', '--location', choices = ['left', 'right'],
+    trial_parser.add_argument('-loc', '--location', 
+            choices = ['left', 'right'],
             help = 'Which version of the cue should be shown')
 
-    args = parser.parse_args()
-    args.location = args.location or args.target
+    instruct_parser = subparser.add_parser('instruct')
+
+    args = parser.parse_args() 
 
     io = launchHubServer()
-
     display = io.devices.display
     window = visual.Window(display.getPixelResolution(),
             monitor = display.getPsychopyMonitorName(),
@@ -420,9 +495,15 @@ if __name__ == '__main__':
             fullscr = True, allowGUI = False,
             screen = display.getIndex())
 
-    keys = ['y', 'n']
-    detect_target = TargetDetection(hubServer=io, window=window, keys=keys)
-    _,rt,event = detect_target.switchTo(opacity = args.opacity,
-            location_name = args.target,
-            cue_type = args.cue, cue_location = args.location)
-    print rt, event.key
+    if args.target:
+        args.location = args.location or args.target
+
+        keys = ['y', 'n']
+        detect_target = TargetDetection(hubServer=io, window=window, keys=keys)
+        _,rt,event = detect_target.switchTo(opacity = args.opacity,
+                location_name = args.target,
+                cue_type = args.cue, cue_location = args.location)
+        print rt, event.key
+    else:
+        instructions = TargetDetectionInstructions(window, io)
+        instructions.switchTo()
