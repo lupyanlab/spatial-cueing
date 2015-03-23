@@ -407,13 +407,16 @@ class TargetDetection(ScreenState):
     def switchTo(self, location_name, opacity = 0.0,
                  cue_type = None, cue_location = None):
         """ Set the target opacity and run the trial. """
-        if cue_type:
-            if cue_type == 'dot':
-                self.cues[cue_type].setPos(self.location_map[cue_location])
-            elif cue_type == 'word':
-                self.cues[cue_type].setText(cue_location)
+        if cue_type == 'dot':
+            self.cues[cue_type].setPos(self.location_map[cue_location])
+        elif cue_type == 'word':
+            self.cues[cue_type].setText(cue_location)
+        else:
+            # no cue trial
+            cue_type = 'dot'
+            self.cues[cue_type].setOpacity(0.0)
 
-            self.stim['cue'] = self.cues[cue_type]
+        self.stim['cue'] = self.cues[cue_type]
 
         if location_name:
             # target present trial
@@ -472,7 +475,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     subparsers = parser.add_subparsers()
 
-    trial_parser = subparser.add_parser('trial')
+    trial_parser = subparsers.add_parser('trial')
     trial_parser.add_argument('target', choices = ['left', 'right'],
             default = 'left', help = 'Where should the target be shown')
     trial_parser.add_argument('-o', '--opacity', type = float,
@@ -483,10 +486,10 @@ if __name__ == '__main__':
             choices = ['left', 'right'],
             help = 'Which version of the cue should be shown')
 
-    instruct_parser = subparser.add_parser('instruct')
+    instruct_parser = subparsers.add_parser('instruct')
 
     args = parser.parse_args() 
-
+   
     io = launchHubServer()
     display = io.devices.display
     window = visual.Window(display.getPixelResolution(),
