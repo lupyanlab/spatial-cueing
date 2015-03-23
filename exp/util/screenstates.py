@@ -210,6 +210,7 @@ class RefreshTrigger(TimeTrigger):
         # RefreshTrigger functionality:
         # Count delay from time of last trigger (not from state start time)
         ct = getTime()
+        
         if not self._last_triggered_time:
             self._last_triggered_time = start_time
         if ct-self._last_triggered_time >= delay:
@@ -219,14 +220,12 @@ class RefreshTrigger(TimeTrigger):
             return True
         return False
 
+    def resetLastTriggeredInfo(self):
+        self._last_triggered_event = None
+        # don't reset self._last_triggered_event
+
 class TargetDetection(ScreenState):
     """
-    ┌────────┐     ┌────────┐     ┌────────┐     ┌────────┐     ┌────────┐
-    │        │     │        │     │        │     │        │     │        │
-    │fixation│─────│  cue   │─────│interval│─────│ target │─────│ prompt │
-    │        │     │        │     │        │     │        │     │        │
-    └────────┘     └────────┘     └────────┘     └────────┘     └────────┘
-                                                 ┼─── response time ──▶
     Variable delays
     ---------------
     start : self.getStateStartTime()
@@ -281,7 +280,7 @@ class TargetDetection(ScreenState):
 
         # target
         # ------
-        target_kwargs = {'radius': 15, 'fillColor': 'white'}
+        target_kwargs = {'radius': 25, 'fillColor': 'white'}
         target = visual.Circle(self.window, opacity = 0.0, **target_kwargs)
         self.stim.update({'target': target})
 
@@ -289,7 +288,7 @@ class TargetDetection(ScreenState):
         # ----
         self.cues = {}
         self.cues['dot'] = visual.Circle(self.window, **target_kwargs)
-        self.cues['arrow'] = visual.ImageStim(self.window, Path(stim, 'arrow.png'))
+        #self.cues['arrow'] = visual.ImageStim(self.window, Path(stim, 'arrow.png'))
         self.cues['word'] = visual.TextStim(self.window, **text_kwargs)
         # cues added to self.stim on switchTo
 
@@ -308,7 +307,8 @@ class TargetDetection(ScreenState):
         # -------
         REFRESH_RATE = 0.02
         refresh = RefreshTrigger(start_time = self.getStateStartTime,
-                delay = REFRESH_RATE, trigger_function = self.refresh)
+                delay = REFRESH_RATE, trigger_function = self.refresh,
+                repeat_count = -1)
         self.addEventTrigger(refresh)
 
         # delay
@@ -322,7 +322,7 @@ class TargetDetection(ScreenState):
 
         delay = RefreshTrigger(start_time = self.getStateStartTime,
                 delay = self.get_delay, # callable, force update
-                trigger_function = self.transition)
+                trigger_function = self.transition, repeat_count = -1)
         self.addEventTrigger(delay)
 
         # Responses
@@ -331,11 +331,12 @@ class TargetDetection(ScreenState):
                 event_type = EventConstants.KEYBOARD_PRESS,
                 event_attribute_conditions = {'key': keys},
                 trigger_function = self.response)
+        self.addEventTrigger(responder)
 
     def refresh(self, *args, **kwargs):
         """ Redraw the screen to update the masks """
         self.dirty = True
-        self.flip()
+        ft = self.flip()
         return False
 
     def get_delay(self):
@@ -364,7 +365,7 @@ class TargetDetection(ScreenState):
         else:
             return False
 
-    def switchTo(self, opacity, location_name,
+    def switchTo(self, location_name, opacity = 0.0,
                  cue_type = None, cue_location = None):
         """ Set the target opacity and run the trial. """
         if cue_type:
@@ -377,15 +378,15 @@ class TargetDetection(ScreenState):
 
         if location_name:
             # target present trial
-            self.target_opacity = opacity
             location = self.location_map[location_name]
         else:
             # target absent trial
             # still draw it, but invisibly
-            self.target_opacity = 0.0
+            opacity = 0.0
             location = (0, 0)
 
         self.stim['target'].setPos(location)
+        self.stim['target'].setOpacity(opacity)
 
         self.state = 'fixation'
         self.stimNames = self.visuals[self.state]
