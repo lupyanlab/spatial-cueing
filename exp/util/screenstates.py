@@ -210,7 +210,7 @@ class RefreshTrigger(TimeTrigger):
         # RefreshTrigger functionality:
         # Count delay from time of last trigger (not from state start time)
         ct = getTime()
-        
+
         if not self._last_triggered_time:
             self._last_triggered_time = start_time
         if ct-self._last_triggered_time >= delay:
@@ -336,12 +336,12 @@ class TargetDetection(ScreenState):
     def refresh(self, *args, **kwargs):
         """ Redraw the screen to update the masks """
         self.dirty = True
-        ft = self.flip()
+        self.flip()
         return False
 
     def get_delay(self):
         """ Return the current delay """
-        return self.delays[self.state]
+        return self.current_state_delay
 
     def transition(self, *args, **kwargs):
         """ Update the stimuli on the screen """
@@ -354,6 +354,7 @@ class TargetDetection(ScreenState):
             return True
 
         self.stimNames = self.visuals[self.state]
+        self.current_state_delay = self.delays[self.state]
         self.dirty = True
         self.flip()
         return False
@@ -390,6 +391,7 @@ class TargetDetection(ScreenState):
 
         self.state = 'fixation'
         self.stimNames = self.visuals[self.state]
+        self.current_state_delay = self.delays[self.state]
         return super(TargetDetection, self).switchTo()
 
 if __name__ == '__main__':
