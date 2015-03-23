@@ -1,5 +1,6 @@
 import weakref
 import time
+import yaml
 from unipath import Path
 from collections import OrderedDict
 
@@ -266,7 +267,8 @@ class TargetDetection(ScreenState):
     start : self.getStateStartTime()
     delay : [fixation, cue, ..., prompt]
     """
-    def __init__(self, window, hubServer, keys, eventTriggers = list()):
+    def __init__(self, window, hubServer, keys = ['y', 'n'], 
+            eventTriggers = list(), timeout = 60.0):
         """
         Visual objects
         --------------
@@ -284,12 +286,12 @@ class TargetDetection(ScreenState):
         delay: when changes in the visuals should occur
         """
         super(TargetDetection, self).__init__(window, hubServer,
-                eventTriggers = eventTriggers, timeout = 60.0)
+                eventTriggers = eventTriggers, timeout = timeout)
 
         # Visual objects
         # ==============
-        exp = Path(__file__).absolute().ancestor(2)
-        stim = Path(exp, 'stimuli')
+        self.exp = Path(__file__).absolute().ancestor(2)
+        stim = Path(self.exp, 'stimuli')
 
         # masks
         # -----
@@ -404,7 +406,7 @@ class TargetDetection(ScreenState):
         else:
             return False
 
-    def switchTo(self, location_name, opacity = 0.0,
+    def prepare_trial(self, location_name, opacity = 0.0,
                  cue_type = None, cue_location = None):
         """ Set the target opacity and run the trial. """
         if cue_type == 'dot':
@@ -433,47 +435,53 @@ class TargetDetection(ScreenState):
         self.state = 'fixation'
         self.stimNames = self.visuals[self.state]
         self.current_state_delay = self.delays[self.state]
-        return super(TargetDetection, self).switchTo()
 
 class TargetDetectionInstructions(TargetDetection):
-    def __init__(self, window, hubServer, keys, eventTriggers = list()):
+    def __init__(self, window, hubServer, eventTriggers = list()):
         super(TargetDetectionInstructions, self).__init__(window, 
                 hubServer, eventTriggers = eventTriggers, timeout = 60.0)
 
         (l, t, r, b) = hubServer.devices.display.getBounds()
-        text_kwargs = {'win': window, 'wrapWidth': (r - l) * 0.9, 
-                'color': 'black'}
-        self.stim['title'] = visual.TextStim(pos = (0,50), height = 40,
+        title_y = -(t - b)/2 - 40
+        text_y = -(t - b)/2 - 100
+        text_kwargs = {'win': window, 'wrapWidth': (r - l) * 0.5, 
+                'color': 'black', 'alignVert': 'top'}
+        self.stim['title'] = visual.TextStim(pos = (0,title_y), height = 40,
                 **text_kwargs)
-        self.stim['text'] = visual.TextStim(pos = (0,0), height = 20,
+        self.stim['text'] = visual.TextStim(pos = (0,text_y), height = 20,
                 **text_kwargs)
 
         advance_trig = DeviceEventTrigger(hubServer.devices.keyboard,
                 event_type = EventConstants.KEYBOARD_PRESS,
-                event_attribute_conditions = {'key': keys})
+                event_attribute_conditions = {'key': [' ', ]})
         self.triggers['advance_trig'] = advance_trig
         
-        spc_yaml = Path(exp, 'spatial-cueing.yaml')
+        spc_yaml = Path(self.exp, 'spatial-cueing.yaml')
         self.instructions = yaml.load(open(spc_yaml, 'r'))
     
-    def switchTo(self, screen_name):
+    def prepare_instructions(self, screen_name):
         details = self.instructions[screen_name]
 
         self.stim['title'].setText(details['title'])
         self.stim['text'].setText(details['text'])
+
+        if screen_name == 'target':
+            self.stim['target'].setPos(self.location_map['left'])
+            self.stim['target'].setOpacity(1.0)
+        elif screen_name == 'cue':
+            self.cues['word'].setText('left')
+            self.stim['cue'] = self.cues['word']
         
         self.stimNames = details['visuals']
         self.event_triggers = [self.triggers[trig_name] \
                 for trig_name in details['triggers']]
-
-        super(TargetDetectionInstructions).switchTo()
 
 if __name__ == '__main__':
     import argparse
     from psychopy.iohub import launchHubServer
 
     parser = argparse.ArgumentParser()
-    subparsers = parser.add_subparsers()
+    subparsers = parser.add_subparsers(dest = 'view')
 
     trial_parser = subparsers.add_parser('trial')
     trial_parser.add_argument('target', choices = ['left', 'right'],
@@ -487,6 +495,10 @@ if __name__ == '__main__':
             help = 'Which version of the cue should be shown')
 
     instruct_parser = subparsers.add_parser('instruct')
+    possible_screen_names = ['welcome', 'target', 'cue', 'ready']
+    instruct_parser.add_argument('screen_name',
+            choices = possible_screen_names + ['all', ],
+            help = 'Which screen should be shown')
 
     args = parser.parse_args() 
    
@@ -498,15 +510,21 @@ if __name__ == '__main__':
             fullscr = True, allowGUI = False,
             screen = display.getIndex())
 
-    if args.target:
+    if args.view == 'trial':
         args.location = args.location or args.target
 
         keys = ['y', 'n']
         detect_target = TargetDetection(hubServer=io, window=window, keys=keys)
-        _,rt,event = detect_target.switchTo(opacity = args.opacity,
-                location_name = args.target,
+        detect_target.prepare_trial(args.target, args.opacity,
                 cue_type = args.cue, cue_location = args.location)
+        _,rt,event = detect_target.switchTo()
         print rt, event.key
-    else:
+    else:  # view == 'instruct'
         instructions = TargetDetectionInstructions(window, io)
-        instructions.switchTo()
+        if args.screen_name == 'all':
+            for screen_name in possible_screen_names:
+                instructions.prepare_instructions(screen_name)
+                instructions.switchTo()
+        else:
+            instructions.prepare_instructions(args.screen_name)
+            instructions.switchTo()
