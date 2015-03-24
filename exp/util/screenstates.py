@@ -1,6 +1,8 @@
-import weakref
+import random
 import time
+import weakref
 import yaml
+
 from unipath import Path
 from collections import OrderedDict
 
@@ -295,14 +297,20 @@ class TargetDetection(ScreenState):
 
         # masks
         # -----
-        gutter = 300
-        left = (-gutter, 0)
-        right = (gutter, 0)
+        gutter = 400
+        left = (-gutter/2, 0)
+        right = (gutter/2, 0)
         self.location_map = {'left': left, 'right': right}
         ## location_map also used for dot cues and targets
+        self.angle_from_name = {'left': -90, 'right': 90}
+        ## used to turn the arrow cue
 
-        size = 200
-        mask_kwargs = {'win': self.window, 'size': [size,size], 'opacity': 0.8}
+        mask_size = 200
+        mask_kwargs = {
+            'win': self.window,
+            'size': [mask_size,mask_size], 
+            'opacity': 0.8,
+        }
         masks = {}
         masks['left']  = DynamicMask(pos = left,  **mask_kwargs)
         masks['right'] = DynamicMask(pos = right, **mask_kwargs)
@@ -317,14 +325,19 @@ class TargetDetection(ScreenState):
 
         # target
         # ------
-        target_kwargs = {'radius': 25, 'fillColor': 'white'}
-        target = visual.Circle(self.window, opacity = 0.0, **target_kwargs)
+        target_size = 50
+        target_kwargs = {
+            'win': self.window,
+            'size': [target_size, target_size],
+            'fillColor': 'white',
+        }
+        target = visual.Rect(opacity = 0.0, **target_kwargs)
         self.stim.update({'target': target})
 
         # cues
         # ----
         self.cues = {}
-        self.cues['dot'] = visual.Circle(self.window, **target_kwargs)
+        self.cues['dot'] = visual.Rect(opacity = 1.0, **target_kwargs)
         #self.cues['arrow'] = visual.ImageStim(self.window, Path(stim, 'arrow.png'))
         self.cues['word'] = visual.TextStim(self.window, **text_kwargs)
         # cues added to self.stim on switchTo
@@ -336,6 +349,12 @@ class TargetDetection(ScreenState):
         self.visuals['interval'] = mask_names
         self.visuals['target']   = mask_names + ['target', ]
         self.visuals['prompt']   = mask_names + ['prompt', ]
+
+        # create a jitter function for target positions
+        edge_buffer = target_size/4
+        outer_edge = mask_size/2 
+        inner_edge = outer_edge - target_size/2 - edge_buffer
+        self.jitter = lambda: random.uniform(-inner_edge/2, inner_edge/2)
 
         # Timer objects
         # =============
@@ -406,31 +425,50 @@ class TargetDetection(ScreenState):
         else:
             return False
 
-    def prepare_trial(self, location_name, opacity = 0.0,
-                 cue_type = None, cue_location = None):
+    def jitter_pos(self, pos):
+        return jittered_pos
+         
+    def prepare_trial(self, target_location_name, opacity = 0.0,
+                 cue_type = None, cue_location_name = None):
         """ Set the target opacity and run the trial. """
+        if target_location_name:
+            # target present trial
+            target_location = self.location_map[target_location_name]
+            # jitter position of target
+            target_location = [p + self.jitter() for p in target_location]
+            print target_location
+        else:
+            # target absent trial
+            # still draw it, but invisibly
+            opacity = 0.0
+            target_location = (0, 0)
+
+        self.stim['target'].setPos(target_location)
+        self.stim['target'].setOpacity(opacity)
+
         if cue_type == 'dot':
-            self.cues[cue_type].setPos(self.location_map[cue_location])
+            # if the cue is a dot, need to determine where to draw it
+            if cue_location_name == target_location_name:
+                # 1. if cue is valid, use same pos for cue and target
+                dot_location = target_location
+            else:
+                # 2. if cue is invalid (either wrong loc or no target),
+                #    jitter the centroid position of the cue location name
+                dot_location = self.location_map[cue_location_name]
+                dot_location = [p + self.jitter() for p in dot_location]
+            # draw the cue in the determined location
+            self.cues[cue_type].setPos(dot_location)
         elif cue_type == 'word':
-            self.cues[cue_type].setText(cue_location)
+            self.cues[cue_type].setText(cue_location_name)
+        elif cue_type == 'arrow':
+            angle_from_vert = self.name_to_angle[cue_location_name]
+            self.cue[cue_type].setOri(angle_from_vert)
         else:
             # no cue trial
             cue_type = 'dot'
             self.cues[cue_type].setOpacity(0.0)
 
         self.stim['cue'] = self.cues[cue_type]
-
-        if location_name:
-            # target present trial
-            location = self.location_map[location_name]
-        else:
-            # target absent trial
-            # still draw it, but invisibly
-            opacity = 0.0
-            location = (0, 0)
-
-        self.stim['target'].setPos(location)
-        self.stim['target'].setOpacity(opacity)
 
         self.state = 'fixation'
         self.stimNames = self.visuals[self.state]
@@ -518,7 +556,7 @@ if __name__ == '__main__':
         keys = ['y', 'n']
         detect_target = TargetDetection(hubServer=io, window=window, keys=keys)
         detect_target.prepare_trial(args.target, args.opacity,
-                cue_type = args.cue, cue_location = args.location)
+                cue_type = args.cue, cue_location_name = args.location)
         _,rt,event = detect_target.switchTo()
         print rt, event.key
     else:  # view == 'instruct'
