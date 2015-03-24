@@ -141,14 +141,28 @@ class SpatialCueing(ioHubExperimentRuntime):
             present_or_absent = choice(['present','absent'], p = [0.8,0.2])
 
             if present_or_absent == 'present':
-                location_name = choice(['left', 'right'])
+                target_location_name = choice(['left', 'right'])
             else:
-                location_name = None
+                target_location_name = None
 
-            cue_location = location_name  # all cues are valid
-
-            _,rt,event = self.detect_target.switchTo(opacity, 'left',
-                cue_type = cue_type, cue_location = cue_location)
+            # select a cue location
+            # cues are present on half of all trials
+            cue_present_or_absent = choice(['present', 'absent'])
+            if cue_present_or_absent == 'present':
+                # if the cue is present, it points to the target if
+                # there is one, otherwise it is selected at random
+                # in other words: cues never point to the incorrect location
+                cue_location_name = target_location_name or choice(['left', 'right'])
+            else:
+                cue_location_name = None
+            
+            self.detect_target.prepare_trial(
+                target_location_name = target_location_name, 
+                opacity = opacity,
+                cue_type = cue_type,
+                cue_location_name = cue_location_name,
+            )
+            _, rt, event = self.detect_target.switchTo()
 
             if not self.running:
                 return
