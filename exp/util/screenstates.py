@@ -348,7 +348,7 @@ class TargetDetection(ScreenState):
         self.visuals['cue']      = mask_names + ['cue', ]
         self.visuals['interval'] = mask_names
         self.visuals['target']   = mask_names + ['target', ]
-        self.visuals['prompt']   = mask_names + ['prompt', ]
+        self.visuals['prompt']   = ['prompt', ]
 
         # create a jitter function for target positions
         edge_buffer = target_size/4
