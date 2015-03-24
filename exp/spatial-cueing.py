@@ -17,21 +17,21 @@ class SpatialCueing(ioHubExperimentRuntime):
     instructions
     detect_target
     intertrial
+    break
     """
     def run(self, *args, **kwargs):
         self.running = True
 
-        # visuals
+        # devices 
         display = self.hub.devices.display
         self.window = visual.Window(display.getPixelResolution(),
                 monitor = display.getPsychopyMonitorName(),
                 units = display.getCoordinateType(),
                 fullscr = True, allowGUI = False,
                 screen = display.getIndex())
-
-        # devices
         self.keyboard = self.hub.devices.keyboard
 
+        # global triggers
         ## for advancing the screen past the instructions
         advance = DeviceEventTrigger(device = self.keyboard,
                 event_type = EventConstants.KEYBOARD_PRESS,
@@ -57,11 +57,7 @@ class SpatialCueing(ioHubExperimentRuntime):
 
         # Show instructions
         # -----------------
-        instructions.switchTo('welcome')
-        if not self.running:
-            return
-
-        instructions.switchTo('target')
+        instructions.switchTo('all')
         if not self.running:
             return
 

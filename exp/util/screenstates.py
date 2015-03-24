@@ -514,6 +514,15 @@ class TargetDetectionInstructions(TargetDetection):
         self.event_triggers = [self.triggers[trig_name] \
                 for trig_name in details['triggers']]
 
+    def switchTo(self, screen_name = 'all'):
+        if screen_name == 'all':
+            for screen in self.instructions['all']:
+                self.prepare_instructions(screen)
+                return super(TargetDetection, self).switchTo()
+        else:
+            self.prepare_screen(screen_name)
+            return super(TargetDetection, self).switchTo() 
+
 if __name__ == '__main__':
     import argparse
     from psychopy.iohub import launchHubServer
@@ -561,10 +570,4 @@ if __name__ == '__main__':
         print rt, event.key
     else:  # view == 'instruct'
         instructions = TargetDetectionInstructions(window, io)
-        if args.screen_name == 'all':
-            for screen_name in possible_screen_names:
-                instructions.prepare_instructions(screen_name)
-                instructions.switchTo()
-        else:
-            instructions.prepare_instructions(args.screen_name)
-            instructions.switchTo()
+        instructions.switchTo(args.screen_name)

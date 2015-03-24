@@ -1,5 +1,5 @@
 ---
-order: [welcome, target, cue, ready]
+all: [welcome, target, cue, ready]
 welcome:
     visuals: [title, text] 
     triggers: [advance_trig, ] 
