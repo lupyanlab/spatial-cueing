@@ -1,3 +1,4 @@
+import yaml
 from numpy import array
 from numpy.random import choice
 from unipath import Path
@@ -9,7 +10,7 @@ from psychopy.iohub.util import (DeviceEventTrigger, InstructionScreen,
         ClearScreen)
 
 from util.psychopy_helper import enter_subj_info
-from util.screenstates import TargetDetection
+from util.screenstates import TargetDetection, TargetDetectionInstructions
 
 class SpatialCueing(ioHubExperimentRuntime):
     """ Measure spatial cueing effects when targets are hard to see
@@ -28,6 +29,17 @@ class SpatialCueing(ioHubExperimentRuntime):
     """
     def run(self, *args, **kwargs):
         self.running = True  # flags whether the user is trying to quit
+
+        # Load experiment information
+        # ---------------------------
+        self.exp_info = yaml.load(open('spatial-cueing.yaml', 'r'))
+
+        # Get session variables
+        # ---------------------
+        subj_info_fields = self.exp_info['subj_info']
+        self.subj_info, self.data_file = enter_subj_info(
+            exp_name = 'spatial-cueing', options = subj_info_fields,
+            exp_dir = './', data_dir = 'spatial-cueing-data')
 
         # iohub devices
         # -------------
@@ -50,14 +62,10 @@ class SpatialCueing(ioHubExperimentRuntime):
                 event_attribute_conditions = {'key': 'q'},
                 trigger_function = self.request_quit)
 
-        # Load experiment information
-        # ---------------------------
-        self.exp_info = yaml.load(open('spatial-cueing.yaml', 'r'))
-
         # Create experiment screens
         # -------------------------
         loaded_instructions = self.exp_info['instructions']
-        instructions = TargetDetectionInstruction(self.window, self.hub,
+        instructions = TargetDetectionInstructions(self.window, self.hub,
                 eventTriggers = [advance, quit],
                 instructions = loaded_instructions)
 
@@ -66,16 +74,9 @@ class SpatialCueing(ioHubExperimentRuntime):
                 keys = self.keys.keys(), eventTriggers = [quit, ])
         self.intertrial = ClearScreen(self, timeout = 0.5)
 
-        self.breakscreen = InstructionScreen(self,
+        self.break_screen = InstructionScreen(self,
                 eventTriggers = [advance, quit],
                 text = self.exp_info['break_screen'])
-
-        # Get session variables
-        # ---------------------
-        subj_info_fields = self.exp_info['subj_info']
-        self.subj_info, self.data_file = enter_subj_info(
-            exp_name = 'spatial-cueing', options = subj_info_fields,
-            exp_dir = './', data_dir = 'spatial-cueing-data')
 
         # Show instructions
         # -----------------
@@ -85,7 +86,8 @@ class SpatialCueing(ioHubExperimentRuntime):
 
         # Calibrate target opacity
         # ------------------------
-        critical_opacity = self.calibrate_target_opacity(subj_code)
+        subj_id = self.subj_info['subj_id']
+        critical_opacity = self.calibrate_target_opacity(subj_id)
 
         if not self.running:
             return
@@ -93,7 +95,7 @@ class SpatialCueing(ioHubExperimentRuntime):
         # Test cueing effect
         # ------------------
         cue_type = self.subj_info['cue_type']
-        self.test_cueing_effect(subj_code, critical_opacity, cue_type)
+        self.test_cueing_effect(subj_id, critical_opacity, cue_type)
 
         if not self.running:
             return
@@ -104,8 +106,8 @@ class SpatialCueing(ioHubExperimentRuntime):
         self.break_screen.setText(end_of_experiment)
         self.break_screen.switchTo()
 
-    def calibrate_target_opacity(self, subj_code):
-        output_name = Path('spatial-cueing','calibration',subj_code+'.txt')
+    def calibrate_target_opacity(self, subj_id):
+        output_name = Path('spatial-cueing','calibration',subj_id+'.txt')
         output = open(output_name, 'wb')
 
         starting_opacity = 0.8
@@ -123,11 +125,11 @@ class SpatialCueing(ioHubExperimentRuntime):
             present_or_absent = choice(['present','absent'], p = [0.8,0.2])
 
             if present_or_absent == 'present':
-                location_name = choice(['left', 'right'])
+                target_location_name = choice(['left', 'right'])
             else:
-                location_name = None
+                target_location_name = None
 
-            self.detect_target.prepare_trial(target_location, opacity)
+            self.detect_target.prepare_trial(target_location_name, opacity)
             rt, event = self.detect_target.run_trial()
 
             if not self.running:
@@ -142,11 +144,11 @@ class SpatialCueing(ioHubExperimentRuntime):
                 staircase.addResponse(graded)
 
             trial = [
-                subj_code,
+                subj_id,
                 staircase.thisTrialN,
                 present_or_absent,
                 opacity,
-                location_name,
+                target_location_name,
                 response,
                 rt,
                 int(graded),
@@ -169,8 +171,8 @@ class SpatialCueing(ioHubExperimentRuntime):
         final_opacity = staircase.quantile()
         return final_opacity
 
-    def test_cueing_effect(self, subj_code, opacity, cue_type):
-        output_name = Path('spatial-cueing', 'testing', subj_code+'.txt')
+    def test_cueing_effect(self, subj_id, opacity, cue_type):
+        output_name = Path('spatial-cueing', 'testing', subj_id+'.txt')
         output = open(output_name, 'wb')
 
         for trial_ix in range(200):
@@ -207,7 +209,7 @@ class SpatialCueing(ioHubExperimentRuntime):
             graded = (response == present_absent)
 
             trial = [
-                subj_code,
+                subj_id,
                 trial_ix,
                 cue_type,
                 cue_location_name,

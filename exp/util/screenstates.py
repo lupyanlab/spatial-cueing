@@ -411,7 +411,7 @@ class TargetDetection(ScreenState):
         self.dirty = True
         flip_time = self.flip()
         if self.state == 'target' and not self.rt_start:
-            self.rt_start = flip_time
+            self.rt_start = flip_time - self._start_time
         return False
 
     def response(self, *args, **kwargs):
@@ -480,10 +480,10 @@ class TargetDetection(ScreenState):
 
         self.rt_start = None  # reset between trials
 
-        _, total_time, event = self.switchTo()
-
-       rt = total_time - self.rt_start 
-       return rt, event
+        x, total_time, event = self.switchTo()
+        print "x: {}, total_time: {}, rt_start: {}".format(x, total_time, self.rt_start)
+        rt = total_time - self.rt_start
+        return rt, event
 
 class TargetDetectionInstructions(TargetDetection):
     def __init__(self, window, hubServer, eventTriggers = list(),
@@ -577,7 +577,7 @@ if __name__ == '__main__':
         detect_target = TargetDetection(hubServer=io, window=window, keys=keys)
         detect_target.prepare_trial(args.target, args.opacity,
                 cue_type = args.cue, cue_location_name = args.location)
-        _,rt,event = detect_target.switchTo()
+        rt,event = detect_target.run_trial()
         print rt, event.key
     else:  # view == 'instruct'
         instructions = TargetDetectionInstructions(window, io)
