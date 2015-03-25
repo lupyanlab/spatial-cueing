@@ -15,6 +15,11 @@ subj_info:
         prompt: Experiment initials
         options: any
         default: XXX
+    4:
+        name: cue_type
+        prompt: Type of cue
+        options: dot, arrow, verbal    
+        default: dot
 instructions:
     all: [welcome, target, cue, ready]
     welcome:
@@ -54,3 +59,15 @@ instructions:
             the experimenter.
 
             If you are ready to begin, press the SPACEBAR.
+break_screen: >
+    Take a break to refresh your eyes. For example, you could close 
+    your eyes for a few seconds. When you are ready to continue, press
+    the SPACEBAR.
+end_of_experiment: >
+    You finished the experiment. The last thing for you to do is to
+    answer a few questions about the experiment. The questions will
+    appear in a web browser after you exit this screen. If you do not
+    see any questions, let the experimenter know. When you have submitted
+    your answers to the questions, you are free to go.
+
+    Press the SPACEBAR to exit this screen, and see the questions.
