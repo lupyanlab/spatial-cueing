@@ -1,39 +1,56 @@
 ---
-all: [welcome, target, cue, ready]
-welcome:
-    visuals: [title, text] 
-    triggers: [advance_trig, ] 
-    title: Welcome to the SPC experiment
-    text: >
-        Today we will be measuring how easy it is for you to
-        notice a target when it is flashed briefly on the screen.
-        You will see a target on half of the trials. The other half
-        of the time you won't see anything.
+subj_info:
+    1:
+        name: subj_id
+        prompt: EXP_XXX
+        options: any
+        default: EXP_100
+    2:
+        name: seed
+        prompt: Seed
+        options: any
+        default: 101
+    3:
+        name: initials
+        prompt: Experiment initials
+        options: any
+        default: XXX
+instructions:
+    all: [welcome, target, cue, ready]
+    welcome:
+        visuals: [title, text]
+        triggers: [advance_trig, ]
+        title: Welcome to the SPC experiment
+        text: >
+            Today we will be measuring how easy it is for you to
+            notice a target when it is flashed briefly on the screen.
+            You will see a target on half of the trials. The other half
+            of the time you won't see anything.
 
-        Press the SPACEBAR to continue the instructions.
-target:
-    visuals: [title, text, left, right, target]
-    triggers: [refresh_trig, advance_trig] 
-    title: Here's what the target looks like
-    text: >
-        Below is a sample trial. The target is presented in one of the squares.
-        If you see a target in either square, press the 'y' key for "Yes, I saw
-        a target." If you don't see a target, press the 'n' key for "No, I
-        didn't see a target".
+            Press the SPACEBAR to continue the instructions.
+    target:
+        visuals: [title, text, left, right, target]
+        triggers: [refresh_trig, advance_trig]
+        title: Here's what the target looks like
+        text: >
+            Below is a sample trial. The target is presented in one of the squares.
+            If you see a target in either square, press the 'y' key for "Yes, I saw
+            a target." If you don't see a target, press the 'n' key for "No, I
+            didn't see a target".
 
-        Press the SPACEBAR to continue the instructions.
-cue:
-    visuals: [title, text, left, right, cue]
-    triggers: [refresh_trig, advance_trig]
-    title: Here's what a cue looks like
-    text: >
-        Here's what a cue looks like.
-ready:
-    visuals: [title, text]
-    triggers: [advance_trig, ]
-    title: Are you ready to begin?
-    text: >
-        If you have any questions, now is the time to ask
-        the experimenter.
+            Press the SPACEBAR to continue the instructions.
+    cue:
+        visuals: [title, text, left, right, cue]
+        triggers: [refresh_trig, advance_trig]
+        title: Here's what a cue looks like
+        text: >
+            Here's what a cue looks like.
+    ready:
+        visuals: [title, text]
+        triggers: [advance_trig, ]
+        title: Are you ready to begin?
+        text: >
+            If you have any questions, now is the time to ask
+            the experimenter.
 
-        If you are ready to begin, press the SPACEBAR.
+            If you are ready to begin, press the SPACEBAR.

@@ -269,7 +269,7 @@ class TargetDetection(ScreenState):
     start : self.getStateStartTime()
     delay : [fixation, cue, ..., prompt]
     """
-    def __init__(self, window, hubServer, keys = ['y', 'n'], 
+    def __init__(self, window, hubServer, keys = ['y', 'n'],
             eventTriggers = list(), timeout = 60.0):
         """
         Visual objects
@@ -308,7 +308,7 @@ class TargetDetection(ScreenState):
         mask_size = 200
         mask_kwargs = {
             'win': self.window,
-            'size': [mask_size,mask_size], 
+            'size': [mask_size,mask_size],
             'opacity': 0.8,
         }
         masks = {}
@@ -352,7 +352,7 @@ class TargetDetection(ScreenState):
 
         # create a jitter function for target positions
         edge_buffer = target_size/4
-        outer_edge = mask_size/2 
+        outer_edge = mask_size/2
         inner_edge = outer_edge - target_size/2 - edge_buffer
         self.jitter = lambda: random.uniform(-inner_edge/2, inner_edge/2)
 
@@ -427,7 +427,7 @@ class TargetDetection(ScreenState):
 
     def jitter_pos(self, pos):
         return jittered_pos
-         
+
     def prepare_trial(self, target_location_name, opacity = 0.0,
                  cue_type = None, cue_location_name = None):
         """ Set the target opacity and run the trial. """
@@ -475,14 +475,15 @@ class TargetDetection(ScreenState):
         self.current_state_delay = self.delays[self.state]
 
 class TargetDetectionInstructions(TargetDetection):
-    def __init__(self, window, hubServer, eventTriggers = list()):
-        super(TargetDetectionInstructions, self).__init__(window, 
+    def __init__(self, window, hubServer, eventTriggers = list(),
+            instructions = None):
+        super(TargetDetectionInstructions, self).__init__(window,
                 hubServer, eventTriggers = eventTriggers, timeout = 60.0)
 
         (l, t, r, b) = hubServer.devices.display.getBounds()
         title_y = -(t - b)/2 - 40
         text_y = -(t - b)/2 - 100
-        text_kwargs = {'win': window, 'wrapWidth': (r - l) * 0.5, 
+        text_kwargs = {'win': window, 'wrapWidth': (r - l) * 0.5,
                 'color': 'black', 'alignVert': 'top'}
         self.stim['title'] = visual.TextStim(pos = (0,title_y), height = 40,
                 **text_kwargs)
@@ -493,10 +494,9 @@ class TargetDetectionInstructions(TargetDetection):
                 event_type = EventConstants.KEYBOARD_PRESS,
                 event_attribute_conditions = {'key': [' ', ]})
         self.triggers['advance_trig'] = advance_trig
-        
-        spc_yaml = Path(self.exp, 'spatial-cueing.yaml')
-        self.instructions = yaml.load(open(spc_yaml, 'r'))
-    
+
+        self.instructions = instructions
+
     def prepare_instructions(self, screen_name):
         details = self.instructions[screen_name]
 
@@ -509,7 +509,7 @@ class TargetDetectionInstructions(TargetDetection):
         elif screen_name == 'cue':
             self.cues['word'].setText('left')
             self.stim['cue'] = self.cues['word']
-        
+
         self.stimNames = details['visuals']
         self.event_triggers = [self.triggers[trig_name] \
                 for trig_name in details['triggers']]
@@ -521,7 +521,7 @@ class TargetDetectionInstructions(TargetDetection):
                 return super(TargetDetection, self).switchTo()
         else:
             self.prepare_screen(screen_name)
-            return super(TargetDetection, self).switchTo() 
+            return super(TargetDetection, self).switchTo()
 
 if __name__ == '__main__':
     import argparse
@@ -530,7 +530,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     subparsers = parser.add_subparsers(dest = 'view')
 
-    trial_parser = subparsers.add_parser('trial', 
+    trial_parser = subparsers.add_parser('trial',
             help = 'Show a sample trial')
     trial_parser.add_argument('target', choices = ['left', 'right'],
             default = 'left', help = 'Where should the target be shown')
@@ -538,7 +538,7 @@ if __name__ == '__main__':
             default = 1.0, help = 'Opacity of the target')
     trial_parser.add_argument('-cue', choices = ['dot', 'arrow', 'word'],
             help = 'Which cue should be used.')
-    trial_parser.add_argument('-loc', '--location', 
+    trial_parser.add_argument('-loc', '--location',
             choices = ['left', 'right'],
             help = 'Which version of the cue should be shown')
 
@@ -549,8 +549,8 @@ if __name__ == '__main__':
             choices = possible_screen_names + ['all', ],
             default = 'all', help = 'Which screen should be shown')
 
-    args = parser.parse_args() 
-   
+    args = parser.parse_args()
+
     io = launchHubServer()
     display = io.devices.display
     window = visual.Window(display.getPixelResolution(),

@@ -8,6 +8,7 @@ from psychopy.iohub import ioHubExperimentRuntime, EventConstants
 from psychopy.iohub.util import (DeviceEventTrigger, InstructionScreen,
         ClearScreen)
 
+from util.psychopy_helper import enter_subj_info
 from util.screenstates import TargetDetection
 
 class SpatialCueing(ioHubExperimentRuntime):
@@ -22,7 +23,7 @@ class SpatialCueing(ioHubExperimentRuntime):
     def run(self, *args, **kwargs):
         self.running = True
 
-        # devices 
+        # devices
         display = self.hub.devices.display
         self.window = visual.Window(display.getPixelResolution(),
                 monitor = display.getPsychopyMonitorName(),
@@ -42,9 +43,16 @@ class SpatialCueing(ioHubExperimentRuntime):
                 event_attribute_conditions = {'key': 'q'},
                 trigger_function = self.request_quit)
 
-        # screens
+        # Load experiment information
+        # ---------------------------
+        self.exp_info = yaml.load(open('spatial-cueing.yaml', 'r'))
+
+        # Create experiment screens
+        # -------------------------
+        loaded_instructions = self.exp_info['instructions']
         instructions = TargetDetectionInstruction(self.window, self.hub,
-                eventTriggers = [advance, quit])
+                eventTriggers = [advance, quit],
+                instructions = loaded_instructions)
         self.keys = {'y': 'present', 'n': 'absent'}
         self.detect_target = TargetDetection(self.window, self.hub,
                 keys = self.keys.keys(), eventTriggers = [quit, ])
@@ -52,8 +60,10 @@ class SpatialCueing(ioHubExperimentRuntime):
 
         # Get session variables
         # ---------------------
-        subj_code = 'SPC101'
-        cue_type = 'word'
+        subj_info_fields = self.exp_info['subj_info']
+        self.subj_info, self.data_file = enter_subj_info(
+            exp_name = 'spatial-cueing', options = subj_info_fields,
+            exp_dir = './', data_dir = 'spatial-cueing-data')
 
         # Show instructions
         # -----------------
@@ -155,9 +165,9 @@ class SpatialCueing(ioHubExperimentRuntime):
                 cue_location_name = target_location_name or choice(['left', 'right'])
             else:
                 cue_location_name = None
-            
+
             self.detect_target.prepare_trial(
-                target_location_name = target_location_name, 
+                target_location_name = target_location_name,
                 opacity = opacity,
                 cue_type = cue_type,
                 cue_location_name = cue_location_name,
