@@ -3,7 +3,7 @@ from numpy.random import choice
 from unipath import Path
 
 from psychopy import visual, core
-from psychopy.data import StairHandler
+from psychopy.data import QuestHandler
 from psychopy.iohub import ioHubExperimentRuntime, EventConstants
 from psychopy.iohub.util import (DeviceEventTrigger, InstructionScreen,
         ClearScreen)
@@ -86,17 +86,15 @@ class SpatialCueing(ioHubExperimentRuntime):
         output_name = Path('spatial-cueing', 'calibration', subj_code+'.txt')
         output = open(output_name, 'wb')
 
-        desired_accuracy = 0.5
-        nDown = desired_accuracy * 10
-        nUp = 10 - desired_accuracy * 10
-
+        desired_accuracy = 0.63
         starting_opacity = 0.8
-        stepSizes = [0.2, 0.1, 0.06, 0.03]
         nTrials = 100
 
-        staircase = StairHandler(starting_opacity, minVal=0.01, maxVal=1.0,
-                stepSizes = stepSizes, stepType = 'lin',
-                nTrials = nTrials, nUp = nUp, nDown = nDown)
+        staircase = QuestHandler(startVal = starting_opacity, startValSd = 0.4,
+                pThreshold = desired_accuracy,
+                nTrials = nTrials, stopInterval = None,
+                method = 'quantile', stepType = 'lin',
+                minVal = 0.01, maxVal = 1.0)
 
         for opacity in staircase:
             present_or_absent = choice(['present','absent'], p = [0.8,0.2])
@@ -140,7 +138,8 @@ class SpatialCueing(ioHubExperimentRuntime):
         if not self.running:
             return
 
-        final_opacity = array(staircase.intensities[-10:]).mean()
+        # use quantile
+        final_opacity = staircase.quantile()
         return final_opacity
 
     def test(self, subj_code, opacity, cue_type):
