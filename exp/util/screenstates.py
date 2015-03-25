@@ -263,12 +263,6 @@ class RefreshTrigger(TimeTrigger):
         # don't reset self._last_triggered_event
 
 class TargetDetection(ScreenState):
-    """
-    Variable delays
-    ---------------
-    start : self.getStateStartTime()
-    delay : [fixation, cue, ..., prompt]
-    """
     def __init__(self, window, hubServer, keys = ['y', 'n'],
             eventTriggers = list(), timeout = 60.0):
         """
@@ -300,10 +294,10 @@ class TargetDetection(ScreenState):
         gutter = 400
         left = (-gutter/2, 0)
         right = (gutter/2, 0)
+        # location_map also used for dot cues and targets
         self.location_map = {'left': left, 'right': right}
-        ## location_map also used for dot cues and targets
+        # used to turn the arrow cue
         self.angle_from_name = {'left': -90, 'right': 90}
-        ## used to turn the arrow cue
 
         mask_size = 200
         mask_kwargs = {
@@ -415,7 +409,9 @@ class TargetDetection(ScreenState):
         self.stimNames = self.visuals[self.state]
         self.current_state_delay = self.delays[self.state]
         self.dirty = True
-        self.flip()
+        flip_time = self.flip()
+        if self.state == 'target' and not self.rt_start:
+            self.rt_start = flip_time
         return False
 
     def response(self, *args, **kwargs):
@@ -425,35 +421,42 @@ class TargetDetection(ScreenState):
         else:
             return False
 
-    def jitter_pos(self, pos):
-        return jittered_pos
+    def prepare_trial(self, target_location_name=None, target_opacity=0.0,
+            cue_type=None, cue_location_name=None):
+        """ Set the presentation parameters for the trial
 
-    def prepare_trial(self, target_location_name, opacity = 0.0,
-                 cue_type = None, cue_location_name = None):
-        """ Set the target opacity and run the trial. """
+        Parameters
+        ----------
+        target_location_name: str, 'left', 'right', or None (default) for
+            target absent trials.
+        target_opacity: float, between 0.0 and 1.0
+        cue_type: str, 'dot', 'arrow', 'verbal', or None (default) for
+            no cue trials.
+        cue_location_name: str, 'left', 'right', or None (default) for
+            no cue trials.
+        """
+        # target present trial
         if target_location_name:
-            # target present trial
             target_location = self.location_map[target_location_name]
             # jitter position of target
             target_location = [p + self.jitter() for p in target_location]
-            print target_location
+        # target absent trial
         else:
-            # target absent trial
             # still draw it, but invisibly
-            opacity = 0.0
+            target_opacity = 0.0
             target_location = (0, 0)
 
         self.stim['target'].setPos(target_location)
-        self.stim['target'].setOpacity(opacity)
+        self.stim['target'].setOpacity(target_opacity)
 
+        # determine where to draw the dot
         if cue_type == 'dot':
-            # if the cue is a dot, need to determine where to draw it
+            # if cue is valid, use same pos for cue and target
             if cue_location_name == target_location_name:
-                # 1. if cue is valid, use same pos for cue and target
                 dot_location = target_location
+            # if cue is invalid (either wrong loc or no target),
+            # jitter the centroid position of the cue location name
             else:
-                # 2. if cue is invalid (either wrong loc or no target),
-                #    jitter the centroid position of the cue location name
                 dot_location = self.location_map[cue_location_name]
                 dot_location = [p + self.jitter() for p in dot_location]
             # draw the cue in the determined location
@@ -470,9 +473,17 @@ class TargetDetection(ScreenState):
 
         self.stim['cue'] = self.cues[cue_type]
 
+    def run_trial(self):
         self.state = 'fixation'
         self.stimNames = self.visuals[self.state]
         self.current_state_delay = self.delays[self.state]
+
+        self.rt_start = None  # reset between trials
+
+        _, total_time, event = self.switchTo()
+
+       rt = total_time - self.rt_start 
+       return rt, event
 
 class TargetDetectionInstructions(TargetDetection):
     def __init__(self, window, hubServer, eventTriggers = list(),

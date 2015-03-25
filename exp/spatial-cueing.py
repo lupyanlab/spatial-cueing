@@ -105,14 +105,15 @@ class SpatialCueing(ioHubExperimentRuntime):
         self.break_screen.switchTo()
 
     def calibrate_target_opacity(self, subj_code):
-        output_name = Path('spatial-cueing', 'calibration', subj_code+'.txt')
+        output_name = Path('spatial-cueing','calibration',subj_code+'.txt')
         output = open(output_name, 'wb')
 
-        desired_accuracy = 0.63
         starting_opacity = 0.8
+        desired_accuracy = 0.63
         nTrials = 100
 
-        staircase = QuestHandler(startVal = starting_opacity, startValSd = 0.4,
+        staircase = QuestHandler(startVal = starting_opacity,
+                startValSd = 0.4,
                 pThreshold = desired_accuracy,
                 nTrials = nTrials, stopInterval = None,
                 method = 'quantile', stepType = 'lin',
@@ -127,12 +128,7 @@ class SpatialCueing(ioHubExperimentRuntime):
                 location_name = None
 
             self.detect_target.prepare_trial(target_location, opacity)
-            trial_data = self.detect_target.run_trial()
-            trial_data.update({})
-            # write trial_data to self.data_file
-            
-
-            _,rt,event = self.detect_target.switchTo(opacity,location_name)
+            rt, event = self.detect_target.run_trial()
 
             if not self.running:
                 return
@@ -160,6 +156,9 @@ class SpatialCueing(ioHubExperimentRuntime):
             output.write(row + '\n')
 
             self.intertrial.switchTo()
+
+            if staircase.thisTrialN % 40 == 0:
+                self.break_screen.switchTo()
 
         output.close()
 
@@ -199,7 +198,7 @@ class SpatialCueing(ioHubExperimentRuntime):
                 cue_type = cue_type,
                 cue_location_name = cue_location_name,
             )
-            _, rt, event = self.detect_target.switchTo()
+            rt, event = self.detect_target.run_trial()
 
             if not self.running:
                 return
@@ -209,7 +208,7 @@ class SpatialCueing(ioHubExperimentRuntime):
 
             trial = [
                 subj_code,
-                trialN,
+                trial_ix,
                 cue_type,
                 cue_location_name,
                 present_or_absent,
@@ -224,6 +223,9 @@ class SpatialCueing(ioHubExperimentRuntime):
             output.write(row + '\n')
 
             self.intertrial.switchTo()
+
+            if trial_ix % 40 == 0:
+                self.break_screen.switchTo()
 
         output.close()
 
