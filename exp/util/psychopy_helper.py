@@ -28,7 +28,7 @@ def enter_subj_info(exp_name, options, unique = True, exp_dir = './',
         return [True,'']
 
     while not info_accepted:
-        version_pth = os.path.join(exp_dir, exp_name, '_last_params.pickle')
+        version_pth = os.path.join(exp_dir, exp_name + '_last_params.pickle')
 
         try:
             expInfo = misc.fromFile(version_pth)
@@ -61,9 +61,7 @@ def enter_subj_info(exp_name, options, unique = True, exp_dir = './',
 
     data_handle = open(data_file, 'w')
 
-    expInfo['room'] = socket.gethostname()
-    expInfo['seed'] = int(expInfo['seed'])
-
+    expInfo['computer'] = socket.gethostname()
     return expInfo, data_handle
 
 def import_trials(fileName, method="sequential", seed=random.randint(1,100)):

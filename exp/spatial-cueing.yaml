@@ -6,20 +6,15 @@ subj_info:
         options: any
         default: EXP_100
     2:
-        name: seed
-        prompt: Seed
-        options: any
-        default: 101
+        name: cue_type
+        prompt: Type of cue
+        options: dot, arrow, verbal
+        default: dot
     3:
         name: initials
         prompt: Experiment initials
         options: any
         default: XXX
-    4:
-        name: cue_type
-        prompt: Type of cue
-        options: dot, arrow, verbal    
-        default: dot
 instructions:
     all: [welcome, target, cue, ready]
     welcome:
@@ -60,7 +55,7 @@ instructions:
 
             If you are ready to begin, press the SPACEBAR.
 break_screen: >
-    Take a break to refresh your eyes. For example, you could close 
+    Take a break to refresh your eyes. For example, you could close
     your eyes for a few seconds. When you are ready to continue, press
     the SPACEBAR.
 end_of_experiment: >

@@ -381,10 +381,12 @@ class TargetDetection(ScreenState):
         # ---------
         responder = DeviceEventTrigger(device = hubServer.devices.keyboard,
                 event_type = EventConstants.KEYBOARD_PRESS,
-                event_attribute_conditions = {'key': keys},
+                event_attribute_conditions = {'key': response_map.keys()},
                 trigger_function = self.response)
         self.triggers['response_trig'] = responder
         self.addEventTrigger(responder)
+        self.response_map = response_map
+        self.response_map['timeout'] = 'timeout'
 
     def refresh(self, *args, **kwargs):
         """ Redraw the screen to update the masks """
@@ -434,6 +436,11 @@ class TargetDetection(ScreenState):
             no cue trials.
         cue_location_name: str, 'left', 'right', or None (default) for
             no cue trials.
+
+        Returns
+        -------
+        dict, keys: cue_type, cue_loc, interval, target_loc, target_pos,
+            target_opacity
         """
         # target present trial
         if target_location_name:
@@ -473,17 +480,41 @@ class TargetDetection(ScreenState):
 
         self.stim['cue'] = self.cues[cue_type]
 
-    def run_trial(self):
+        trial_vars = {
+            'cue_type': cue_type,
+            'cue_loc': cue_location_name,
+            'target_loc': target_location_name,
+            'target_pos': target_location,
+            'target_opacity': target_opacity
+        }
+        return trial_vars
+
+    def run_trial(self, expected_response):
+        """
+        Returns
+        -------
+        dict, keys: rt, key, response, is_correct
+        """
         self.state = 'fixation'
         self.stimNames = self.visuals[self.state]
         self.current_state_delay = self.delays[self.state]
 
         self.rt_start = None  # reset between trials
 
-        x, total_time, event = self.switchTo()
-        print "x: {}, total_time: {}, rt_start: {}".format(x, total_time, self.rt_start)
-        rt = total_time - self.rt_start
-        return rt, event
+        exp_time, total_trial_time, triggered_event = self.switchTo()
+
+        rt = total_trial_time - self.rt_start if total_trial_time else 0.0
+        key = triggered_event.key if triggered_event else 'timeout'
+        response = self.response_map[key]
+        is_correct = (response == expected_response)
+
+        response_vars = {
+            'rt': rt,
+            'key': key,
+            'response': response,
+            'is_correct': is_correct,
+        }
+        return response_vars
 
 class TargetDetectionInstructions(TargetDetection):
     def __init__(self, window, hubServer, eventTriggers = list(),

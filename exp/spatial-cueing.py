@@ -1,4 +1,5 @@
 import yaml
+from collections import OrderedDict
 from numpy import array
 from numpy.random import choice
 from unipath import Path
@@ -39,7 +40,32 @@ class SpatialCueing(ioHubExperimentRuntime):
         subj_info_fields = self.exp_info['subj_info']
         self.subj_info, self.data_file = enter_subj_info(
             exp_name = 'spatial-cueing', options = subj_info_fields,
-            exp_dir = './', data_dir = 'spatial-cueing-data')
+            exp_dir = './', data_dir = './spatial-cueing/data/')
+
+        # Determine structure of data file
+        # --------------------------------
+        self.trial_data = OrderedDict()
+
+        # session vars
+        session_vars = ['subj_id', 'date', 'computer', 'experimenter']
+        for session_var in session_vars:
+            self.trial_data[session_var] = self.subj_info[session_var]
+
+        # trial vars
+        trial_vars = ['part', 'trial_ix',
+                      'cue_type', 'cue_loc',
+                      'target_loc', 'target_pos', 'target_opacity']
+        for trial_var in trial_vars:
+            self.trial_data[trial_var] = ''
+
+        # response vars
+        response_vars = ['rt', 'key', 'response', 'is_correct']
+        for response_var in response_vars:
+            self.trial_data[response_var] = ''
+
+        # write header to each subject's data file
+        row = '\t'.join(self.trial_data.keys())
+        self.data_file.write(row + '\n')
 
         # iohub devices
         # -------------
@@ -69,9 +95,9 @@ class SpatialCueing(ioHubExperimentRuntime):
                 eventTriggers = [advance, quit],
                 instructions = loaded_instructions)
 
-        self.keys = {'y': 'present', 'n': 'absent'}
+        self.response_keys = {'y': 'present', 'n': 'absent'}
         self.detect_target = TargetDetection(self.window, self.hub,
-                keys = self.keys.keys(), eventTriggers = [quit, ])
+                keys = self.response_keys, eventTriggers = [quit, ])
         self.intertrial = ClearScreen(self, timeout = 0.5)
 
         self.break_screen = InstructionScreen(self,
@@ -86,8 +112,7 @@ class SpatialCueing(ioHubExperimentRuntime):
 
         # Calibrate target opacity
         # ------------------------
-        subj_id = self.subj_info['subj_id']
-        critical_opacity = self.calibrate_target_opacity(subj_id)
+        critical_opacity = self.calibrate_target_opacity()
 
         if not self.running:
             return
@@ -95,7 +120,7 @@ class SpatialCueing(ioHubExperimentRuntime):
         # Test cueing effect
         # ------------------
         cue_type = self.subj_info['cue_type']
-        self.test_cueing_effect(subj_id, critical_opacity, cue_type)
+        self.test_cueing_effect(cue_type, critical_opacity)
 
         if not self.running:
             return
@@ -105,14 +130,12 @@ class SpatialCueing(ioHubExperimentRuntime):
         end_of_experiment = self.exp_info['end_of_experiment']
         self.break_screen.setText(end_of_experiment)
         self.break_screen.switchTo()
+        self.data_file.close()
 
-    def calibrate_target_opacity(self, subj_id):
-        output_name = Path('spatial-cueing','calibration',subj_id+'.txt')
-        output = open(output_name, 'wb')
-
+    def calibrate_target_opacity(self):
         starting_opacity = 0.8
-        desired_accuracy = 0.63
-        nTrials = 100
+        desired_accuracy = 0.63  # bring them close to threshold
+        nTrials = 100            # run 100 trials (don't use stopInterval)
 
         staircase = QuestHandler(startVal = starting_opacity,
                 startValSd = 0.4,
@@ -121,118 +144,94 @@ class SpatialCueing(ioHubExperimentRuntime):
                 method = 'quantile', stepType = 'lin',
                 minVal = 0.01, maxVal = 1.0)
 
-        for opacity in staircase:
-            present_or_absent = choice(['present','absent'], p = [0.8,0.2])
+        self.trial_data['part'] = 'calibration'
+        for target_opacity in staircase:
+            target_present = choice([True, False], p = [0.8, 0.2])
 
-            if present_or_absent == 'present':
+            if target_present:
                 target_location_name = choice(['left', 'right'])
             else:
                 target_location_name = None
 
-            self.detect_target.prepare_trial(target_location_name, opacity)
-            rt, event = self.detect_target.run_trial()
+            self.trial_data['trial_ix'] = staircase.thisTrialN
+            trial_vars = self.detect_target.prepare_trial(
+                    target_location_name = target_location_name,
+                    target_opacity = target_opacity)
+            self.trial_data.update(trial_vars)
+
+            expected_response = 'present' if target_present else 'absent'
+            response_vars = self.detect_target.run_trial(expected_response)
+            self.trial_data.update(response_vars)
 
             if not self.running:
                 return
 
-            response = self.keys[event.key]
-            graded = (response == present_or_absent)
-
             # only update the opacity staircase if opacity was
             # relevant to the trial
-            if present_or_absent == 'present':
-                staircase.addResponse(graded)
+            if target_present:
+                staircase.addResponse(response_vars['is_correct'])
 
-            trial = [
-                subj_id,
-                staircase.thisTrialN,
-                present_or_absent,
-                opacity,
-                target_location_name,
-                response,
-                rt,
-                int(graded),
-            ]
-
-            row = '\t'.join(map(str, trial))
-            output.write(row + '\n')
+            row = '\t'.join(map(str, self.trial_data.values()))
+            self.data_file.write(row + '\n')
 
             self.intertrial.switchTo()
 
-            if staircase.thisTrialN % 40 == 0:
+            trial_ix = self.trial_data['trial_ix']
+            if trial_ix > 0 and trial_ix % 40 == 0:
                 self.break_screen.switchTo()
-
-        output.close()
 
         if not self.running:
             return
 
         # use quantile
-        final_opacity = staircase.quantile()
-        return final_opacity
+        critical_opacity = staircase.quantile()
+        print 'Using final_opacity: ', critical_opacity
+        return critical_opacity
 
-    def test_cueing_effect(self, subj_id, opacity, cue_type):
-        output_name = Path('spatial-cueing', 'testing', subj_id+'.txt')
-        output = open(output_name, 'wb')
-
+    def test_cueing_effect(self, cue_type, critical_opacity):
+        self.trial_data['part'] = 'cueing_effect'
         for trial_ix in range(200):
-            present_or_absent = choice(['present','absent'], p = [0.8,0.2])
+            target_present = choice([True, False], p = [0.8, 0.2])
 
-            if present_or_absent == 'present':
+            if target_present:
                 target_location_name = choice(['left', 'right'])
             else:
                 target_location_name = None
 
             # select a cue location
             # cues are present on half of all trials
-            cue_present_or_absent = choice(['present', 'absent'])
-            if cue_present_or_absent == 'present':
+            cue_present = choice([True, False])
+            if cue_present:
                 # if the cue is present, it points to the target if
                 # there is one, otherwise it is selected at random
                 # in other words: cues never point to the incorrect location
-                cue_location_name = target_location_name or choice(['left', 'right'])
+                cue_location_name = target_location_name \
+                    or choice(['left', 'right'])
             else:
                 cue_location_name = None
 
-            self.detect_target.prepare_trial(
-                target_location_name = target_location_name,
-                opacity = opacity,
-                cue_type = cue_type,
-                cue_location_name = cue_location_name,
-            )
-            rt, event = self.detect_target.run_trial()
+            self.trial_data['trial_ix'] = trial_ix
+            trial_vars = self.detect_target.prepare_trial(
+                    target_location_name = target_location_name,
+                    target_opacity = critical_opacity,
+                    cue_type = cue_type,
+                    cue_location_name = cue_location_name)
+            self.trial_data.update(trial_vars)
+
+            expected_response = 'present' if target_present else 'absent'
+            response_vars = self.detect_target.run_trial(expected_response)
+            self.trial_data.update(response_vars)
 
             if not self.running:
                 return
 
-            response = self.keys[event.key]
-            graded = (response == present_absent)
-
-            trial = [
-                subj_id,
-                trial_ix,
-                cue_type,
-                cue_location_name,
-                present_or_absent,
-                opacity,
-                target_location_name,
-                response,
-                rt,
-                int(graded),
-            ]
-
-            row = '\t'.join(map(str, trial))
-            output.write(row + '\n')
+            row = '\t'.join(map(str, self.trial_data.values()))
+            self.data_file.write(row + '\n')
 
             self.intertrial.switchTo()
 
-            if trial_ix % 40 == 0:
+            if trial_ix > 0 and trial_ix % 40 == 0:
                 self.break_screen.switchTo()
-
-        output.close()
-
-        if not self.running:
-            return
 
     def request_quit(self, *args, **kwargs):
         """ User requested to quit the experiment. """
