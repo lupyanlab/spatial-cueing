@@ -335,6 +335,8 @@ class TargetDetection(ScreenState):
         self.cues['dot'] = visual.Rect(opacity = 1.0, **target_kwargs)
         #self.cues['arrow'] = visual.ImageStim(self.window, Path(stim, 'arrow.png'))
         self.cues['word'] = visual.TextStim(self.window, **text_kwargs)
+        self.cues['nocue'] = visual.Rect(opacity = 0.0, pos = (500,500),
+                **target_kwargs)
         # cues added to self.stim on switchTo
 
         mask_names = ['left', 'right']
@@ -424,8 +426,8 @@ class TargetDetection(ScreenState):
         else:
             return False
 
-    def prepare_trial(self, target_location_name=None, target_opacity=0.0,
-            cue_type=None, cue_location_name=None):
+    def prepare_trial(self, target_location_name='', target_opacity=0.0,
+            cue_type='', cue_location_name=''):
         """ Set the presentation parameters for the trial
 
         Parameters
@@ -473,11 +475,10 @@ class TargetDetection(ScreenState):
             self.cues[cue_type].setText(cue_location_name)
         elif cue_type == 'arrow':
             angle_from_vert = self.name_to_angle[cue_location_name]
-            self.cue[cue_type].setOri(angle_from_vert)
+            self.cues[cue_type].setOri(angle_from_vert)
         else:
             # no cue trial
-            cue_type = 'dot'
-            self.cues[cue_type].setOpacity(0.0)
+            cue_type = 'nocue'
 
         self.stim['cue'] = self.cues[cue_type]
 
@@ -485,7 +486,8 @@ class TargetDetection(ScreenState):
             'cue_type': cue_type,
             'cue_loc': cue_location_name,
             'target_loc': target_location_name,
-            'target_pos': target_location,
+            'target_pos_x': target_location[0],
+            'target_pos_y': target_location[1],
             'target_opacity': target_opacity
         }
         return trial_vars
@@ -524,7 +526,7 @@ class TargetDetection(ScreenState):
 
 class TargetDetectionInstructions(TargetDetection):
     def __init__(self, window, hubServer, eventTriggers = list(),
-            instructions = None):
+            texts = None):
         super(TargetDetectionInstructions, self).__init__(window,
                 hubServer, eventTriggers = eventTriggers, timeout = 60.0)
 
@@ -538,7 +540,7 @@ class TargetDetectionInstructions(TargetDetection):
                 **text_kwargs)
         self.stim['body'] = visual.TextStim(pos = (0, body_y), height = 20,
                 **text_kwargs)
-        self.stim['footer'] = visua.TextStim(pos = (0, footer_y), height = 20,
+        self.stim['footer'] = visual.TextStim(pos = (0, footer_y), height = 20,
                 **text_kwargs)
 
         advance_trig = DeviceEventTrigger(hubServer.devices.keyboard,
@@ -546,14 +548,15 @@ class TargetDetectionInstructions(TargetDetection):
                 event_attribute_conditions = {'key': ' '})
         self.triggers['advance_trig'] = advance_trig
 
-        self.instructions = instructions or \
-                yaml.load(open('spatial-cueing.yaml', 'r'))['instructions']
+        self.texts = texts or \
+                yaml.load(open('spatial-cueing.yaml', 'r'))['texts']
 
-    def show_instruction(self, screen_name):
-        details = self.instructions[screen_name]
+    def show_text(self, screen_name):
+        details = self.texts[screen_name]
 
         self.stim['title'].setText(details['title'])
-        self.stim['text'].setText(details['text'])
+        self.stim['body'].setText(details['body'])
+        self.stim['footer'].setText(details['footer'])
 
         if screen_name == 'target':
             self.stim['target'].setPos(self.location_map['left'])

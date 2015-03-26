@@ -56,8 +56,11 @@ class SpatialCueing(ioHubExperimentRuntime):
         for session_var in session_vars:
             self.trial_data[session_var] = self.subj_info[session_var]
 
-        trial_vars = ['part', 'trial_ix', 'cue_type', 'cue_loc',
-                      'target_loc', 'target_pos', 'target_opacity']
+        trial_vars = ['part', 'trial_ix',
+                      'cue_present', 'cue_type', 'cue_loc',
+                      'target_present', 'target_loc',
+                      'target_pos_x', 'target_pos_y',
+                      'target_opacity']
         for trial_var in trial_vars:
             self.trial_data[trial_var] = ''
 
@@ -138,13 +141,13 @@ class SpatialCueing(ioHubExperimentRuntime):
         if target_present:
             target_location_name = choice(['left', 'right'])
         else:
-            target_location_name = None
+            target_location_name = '' 
 
         if cue_present:
             cue_location_name = target_location_name \
                 or choice(['left', 'right'])
         else:
-            cue_location_name = None
+            cue_location_name = '' 
 
         trial_vars = self.detect_target.prepare_trial(
                 target_location_name = target_location_name,
@@ -192,8 +195,8 @@ class SpatialCueing(ioHubExperimentRuntime):
             cue_present = False
 
             self.trial_data['trial_ix'] = staircase.thisTrialN
-            self.run_trial(target_opacity = target_opacity,
-                    target_opacity = target_opacity, cue_present = False)
+            self.run_trial(target_present, cue_present,
+                    target_opacity = target_opacity)
 
             if target_present:
                 staircase.addResponse(self.trial_data['is_correct'])
