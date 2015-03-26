@@ -32,15 +32,14 @@ class SpatialCueing(ioHubExperimentRuntime):
     the target is presented to the left.
     """
     def run(self, *args, **kwargs):
-        self.running = True  # flags whether the user is trying to quit
+        # Load the experiment info
+        # ------------------------
+        exp_info = yaml.load(open('spatial-cueing.yaml', 'r'))
+        subj_info_fields = exp_info['subj_info']
+        text_screen_states = exp_info['texts']
 
-        # Load experiment information
-        # ---------------------------
-        self.exp_info = yaml.load(open('spatial-cueing.yaml', 'r'))
-
-        # Get session variables
-        # ---------------------
-        subj_info_fields = self.exp_info['subj_info']
+        # Get the session info
+        # --------------------
         self.subj_info, self.data_file = enter_subj_info(
             exp_name = 'spatial-cueing', options = subj_info_fields,
             exp_dir = './spatial-cueing/', data_dir = './spatial-cueing/data/')
@@ -52,19 +51,36 @@ class SpatialCueing(ioHubExperimentRuntime):
         # response_vars: variables generated based on the subject's response
         self.trial_data = OrderedDict()
 
-        session_vars = ['subj_id', 'date', 'computer', 'experimenter']
+        session_vars = [
+            'subj_id',
+            'date',
+            'computer',
+            'experimenter',
+        ]
         for session_var in session_vars:
             self.trial_data[session_var] = self.subj_info[session_var]
 
-        trial_vars = ['part', 'trial_ix',
-                      'cue_present', 'cue_type', 'cue_loc',
-                      'target_present', 'target_loc',
-                      'target_pos_x', 'target_pos_y',
-                      'target_opacity']
+        trial_vars = [
+            'part',
+            'trial_ix',
+            'cue_present',
+            'cue_type',
+            'cue_loc',
+            'target_present',
+            'target_loc',
+            'target_pos_x',
+            'target_pos_y',
+            'target_opacity',
+        ]
         for trial_var in trial_vars:
             self.trial_data[trial_var] = ''
 
-        response_vars = ['rt', 'key', 'response', 'is_correct']
+        response_vars = [
+            'rt',
+            'key',
+            'response',
+            'is_correct',
+        ]
         for response_var in response_vars:
             self.trial_data[response_var] = ''
 
@@ -80,29 +96,16 @@ class SpatialCueing(ioHubExperimentRuntime):
                 units = display.getCoordinateType(),
                 fullscr = True, allowGUI = False,
                 screen = display.getIndex())
-        self.keyboard = self.hub.devices.keyboard
 
-        # global quit trigger
-        quit = DeviceEventTrigger(device = self.keyboard,
-                event_type = EventConstants.KEYBOARD_PRESS,
-                event_attribute_conditions = {'key': 'q'},
-                trigger_function = self.request_quit)
-
-        texts = self.exp_info['texts']
-        self.text_screen = TargetDetectionInstructions(self.window, self.hub,
-                eventTriggers = [quit, ], texts = texts)
-
-        self.response_keys = {'y': 'present', 'n': 'absent'}
-        self.detect_target = TargetDetection(self.window, self.hub,
-                response_map = self.response_keys, eventTriggers = [quit, ])
+        self.text_screen = TargetDetectionInstructions(self.window, self.hub)
+        self.detect_target = TargetDetection(self.window, self.hub)
         self.intertrial = ClearScreen(self, timeout = 0.5)
 
         # Show instructions
         # -----------------
         for screen in ['welcome', 'target']:
-            self.text_screen.show_text(screen)
-            if not self.running:
-                return
+            details = text_screen_states[screen]
+            self.text_screen.show_text(details)
 
         # Run practice trials
         # -------------------
@@ -141,13 +144,13 @@ class SpatialCueing(ioHubExperimentRuntime):
         if target_present:
             target_location_name = choice(['left', 'right'])
         else:
-            target_location_name = '' 
+            target_location_name = ''
 
         if cue_present:
             cue_location_name = target_location_name \
                 or choice(['left', 'right'])
         else:
-            cue_location_name = '' 
+            cue_location_name = ''
 
         trial_vars = self.detect_target.prepare_trial(
                 target_location_name = target_location_name,

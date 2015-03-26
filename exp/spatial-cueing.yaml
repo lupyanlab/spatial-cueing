@@ -29,11 +29,12 @@ texts:
     target:
         visuals: [title, body, footer, left, right, target]
         triggers: [refresh_trig, advance_trig]
-        title: Here's what the target looks like
+        title: Do you see the target inside the left square?
         body: >
             Below is a sample trial. The target is presented in one of the squares.
             If you see a target in either square, press the 'y' key for "Yes, I saw
-            a target." If you don't see a target, press the 'n' key for "No, I
+            a target."
+            If you don't see a target, press the 'n' key for "No, I
             didn't see a target".
         footer: Press the SPACEBAR to continue the instructions.
     practice:

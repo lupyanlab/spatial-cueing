@@ -263,9 +263,7 @@ class RefreshTrigger(TimeTrigger):
         # don't reset self._last_triggered_event
 
 class TargetDetection(ScreenState):
-    def __init__(self, window, hubServer,
-            response_map = {'y': 'present', 'n': 'absent'},
-            eventTriggers = list(), timeout = 60.0):
+    def __init__(self, window, hubServer):
         """
         Visual objects
         --------------
@@ -283,7 +281,7 @@ class TargetDetection(ScreenState):
         delay: when changes in the visuals should occur
         """
         super(TargetDetection, self).__init__(window, hubServer,
-                eventTriggers = eventTriggers, timeout = timeout)
+                eventTriggers = list(), timeout = 60.0)
 
         # Visual objects
         # ==============
@@ -295,7 +293,7 @@ class TargetDetection(ScreenState):
         gutter = 400
         left = (-gutter/2, 0)
         right = (gutter/2, 0)
-        # location_map also used for dot cues and targets
+        # location_map also used for targets
         self.location_map = {'left': left, 'right': right}
         # used to turn the arrow cue
         self.angle_from_name = {'left': -90, 'right': 90}
@@ -333,10 +331,9 @@ class TargetDetection(ScreenState):
         # ----
         self.cues = {}
         self.cues['dot'] = visual.Rect(opacity = 1.0, **target_kwargs)
-        #self.cues['arrow'] = visual.ImageStim(self.window, Path(stim, 'arrow.png'))
+        self.cues['arrow'] = visual.ImageStim(self.window, Path(stim, 'arrow.png'))
         self.cues['word'] = visual.TextStim(self.window, **text_kwargs)
-        self.cues['nocue'] = visual.Rect(opacity = 0.0, pos = (500,500),
-                **target_kwargs)
+        self.cues['nocue'] = visual.Rect(opacity = 0.0, **target_kwargs)
         # cues added to self.stim on switchTo
 
         mask_names = ['left', 'right']
@@ -382,13 +379,13 @@ class TargetDetection(ScreenState):
 
         # Responses
         # ---------
+        self.response_map = {'y': 'present', 'n': 'absent'}
         responder = DeviceEventTrigger(device = hubServer.devices.keyboard,
                 event_type = EventConstants.KEYBOARD_PRESS,
                 event_attribute_conditions = {'key': response_map.keys()},
                 trigger_function = self.response)
         self.triggers['response_trig'] = responder
         self.addEventTrigger(responder)
-        self.response_map = response_map
         self.response_map['timeout'] = 'timeout'
 
     def refresh(self, *args, **kwargs):
@@ -398,7 +395,7 @@ class TargetDetection(ScreenState):
         return False
 
     def get_delay(self):
-        """ Return the current delay """
+        """ Return the delay for the current state """
         return self.current_state_delay
 
     def transition(self, *args, **kwargs):
@@ -492,7 +489,7 @@ class TargetDetection(ScreenState):
         }
         return trial_vars
 
-    def run_trial(self, expected_response):
+    def run_trial(self):
         """
         Returns
         -------
@@ -525,10 +522,9 @@ class TargetDetection(ScreenState):
         return response_vars
 
 class TargetDetectionInstructions(TargetDetection):
-    def __init__(self, window, hubServer, eventTriggers = list(),
-            texts = None):
+    def __init__(self, window, hubServer):
         super(TargetDetectionInstructions, self).__init__(window,
-                hubServer, eventTriggers = eventTriggers, timeout = 60.0)
+                hubServer, eventTriggers = list(), timeout = 60.0)
 
         (l, t, r, b) = hubServer.devices.display.getBounds()
         title_y = -(t - b)/2 - 40
@@ -536,34 +532,27 @@ class TargetDetectionInstructions(TargetDetection):
         footer_y = (t - b)/2 + 100
         text_kwargs = {'win': window, 'wrapWidth': (r - l) * 0.5,
                 'color': 'black', 'alignVert': 'top'}
-        self.stim['title'] = visual.TextStim(pos = (0,title_y), height = 40,
+        self.stim['title'] = visual.TextStim(pos = (0, title_y), height = 40,
                 **text_kwargs)
         self.stim['body'] = visual.TextStim(pos = (0, body_y), height = 20,
                 **text_kwargs)
         self.stim['footer'] = visual.TextStim(pos = (0, footer_y), height = 20,
                 **text_kwargs)
 
+        # Set example target
+        # ------------------
+        self.stim['target'].setPos(self.location_map['left'])
+        self.stim['target'].setOpacity(1.0)
+
         advance_trig = DeviceEventTrigger(hubServer.devices.keyboard,
                 event_type = EventConstants.KEYBOARD_PRESS,
                 event_attribute_conditions = {'key': ' '})
         self.triggers['advance_trig'] = advance_trig
 
-        self.texts = texts or \
-                yaml.load(open('spatial-cueing.yaml', 'r'))['texts']
-
-    def show_text(self, screen_name):
-        details = self.texts[screen_name]
-
-        self.stim['title'].setText(details['title'])
-        self.stim['body'].setText(details['body'])
-        self.stim['footer'].setText(details['footer'])
-
-        if screen_name == 'target':
-            self.stim['target'].setPos(self.location_map['left'])
-            self.stim['target'].setOpacity(1.0)
-        elif screen_name == 'cue':
-            self.cues['word'].setText('left')
-            self.stim['cue'] = self.cues['word']
+    def show_text(self, details):
+        for text_stim in ['title', 'body', 'footer']:
+            if text_stim in details:
+                self.stim[text_stim].setText(details[text_stim])
 
         self.stimNames = details['visuals']
         self.event_triggers = [self.triggers[trig_name] \
@@ -592,9 +581,8 @@ if __name__ == '__main__':
 
     instruct_parser = subparsers.add_parser('instruct',
             help = 'Show the instructions')
-    possible_screen_names = ['welcome', 'target', 'cue', 'ready']
     instruct_parser.add_argument('screen_name',
-            choices = possible_screen_names + ['all', ],
+            choices = ['welcome', 'target', 'cue', 'ready'],
             default = 'all', help = 'Which screen should be shown')
 
     args = parser.parse_args()
@@ -618,4 +606,5 @@ if __name__ == '__main__':
         print rt, event.key
     else:  # view == 'instruct'
         instructions = TargetDetectionInstructions(window, io)
-        instructions.show_instruction(args.screen_name)
+        texts = yaml.load(open('spatial-cueing.yaml', 'r'))['texts']
+        instructions.show_instruction(texts[args.screen_name])
