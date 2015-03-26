@@ -1,1 +1,0 @@
-subj_code	trial_ix	present	opacity	location	response	rt	accuracy

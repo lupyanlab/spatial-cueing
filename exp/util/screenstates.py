@@ -511,7 +511,7 @@ class TargetDetection(ScreenState):
             response = self.response_map[key]
         except KeyError:
             # trial was quit
-            return dict() 
+            return dict()
         is_correct = (response == expected_response)
 
         response_vars = {
@@ -530,17 +530,20 @@ class TargetDetectionInstructions(TargetDetection):
 
         (l, t, r, b) = hubServer.devices.display.getBounds()
         title_y = -(t - b)/2 - 40
-        text_y = -(t - b)/2 - 100
+        body_y = -(t - b)/2 - 100
+        footer_y = (t - b)/2 + 100
         text_kwargs = {'win': window, 'wrapWidth': (r - l) * 0.5,
                 'color': 'black', 'alignVert': 'top'}
         self.stim['title'] = visual.TextStim(pos = (0,title_y), height = 40,
                 **text_kwargs)
-        self.stim['text'] = visual.TextStim(pos = (0,text_y), height = 20,
+        self.stim['body'] = visual.TextStim(pos = (0, body_y), height = 20,
+                **text_kwargs)
+        self.stim['footer'] = visua.TextStim(pos = (0, footer_y), height = 20,
                 **text_kwargs)
 
         advance_trig = DeviceEventTrigger(hubServer.devices.keyboard,
                 event_type = EventConstants.KEYBOARD_PRESS,
-                event_attribute_conditions = {'key': [' ', ]})
+                event_attribute_conditions = {'key': ' '})
         self.triggers['advance_trig'] = advance_trig
 
         self.instructions = instructions or \
