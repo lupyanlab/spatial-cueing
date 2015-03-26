@@ -263,7 +263,8 @@ class RefreshTrigger(TimeTrigger):
         # don't reset self._last_triggered_event
 
 class TargetDetection(ScreenState):
-    def __init__(self, window, hubServer, keys = ['y', 'n'],
+    def __init__(self, window, hubServer,
+            response_map = {'y': 'present', 'n': 'absent'},
             eventTriggers = list(), timeout = 60.0):
         """
         Visual objects
@@ -537,9 +538,10 @@ class TargetDetectionInstructions(TargetDetection):
                 event_attribute_conditions = {'key': [' ', ]})
         self.triggers['advance_trig'] = advance_trig
 
-        self.instructions = instructions
+        self.instructions = instructions or \
+                yaml.load(open('spatial-cueing.yaml', 'r'))['instructions']
 
-    def prepare_instructions(self, screen_name):
+    def show_instruction(self, screen_name):
         details = self.instructions[screen_name]
 
         self.stim['title'].setText(details['title'])
@@ -556,14 +558,7 @@ class TargetDetectionInstructions(TargetDetection):
         self.event_triggers = [self.triggers[trig_name] \
                 for trig_name in details['triggers']]
 
-    def switchTo(self, screen_name = 'all'):
-        if screen_name == 'all':
-            for screen in self.instructions['all']:
-                self.prepare_instructions(screen)
-                return super(TargetDetection, self).switchTo()
-        else:
-            self.prepare_screen(screen_name)
-            return super(TargetDetection, self).switchTo()
+        self.switchTo()
 
 if __name__ == '__main__':
     import argparse
@@ -612,4 +607,4 @@ if __name__ == '__main__':
         print rt, event.key
     else:  # view == 'instruct'
         instructions = TargetDetectionInstructions(window, io)
-        instructions.switchTo(args.screen_name)
+        instructions.show_instruction(args.screen_name)

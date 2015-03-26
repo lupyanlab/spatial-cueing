@@ -11,12 +11,11 @@ subj_info:
         options: dot, arrow, verbal
         default: dot
     3:
-        name: initials
+        name: experimenter 
         prompt: Experiment initials
         options: any
         default: XXX
 instructions:
-    all: [welcome, target, cue, ready]
     welcome:
         visuals: [title, text]
         triggers: [advance_trig, ]

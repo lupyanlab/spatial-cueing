@@ -3,6 +3,8 @@ import os
 import random
 import socket
 
+from unipath import Path
+
 from psychopy import core, event, visual, data, gui, misc #, sound
 
 def enter_subj_info(exp_name, options, unique = True, exp_dir = './',
@@ -20,6 +22,12 @@ def enter_subj_info(exp_name, options, unique = True, exp_dir = './',
     data_dir: relative path, where to look for the data files.
     """
     info_accepted = False
+
+    if not Path(exp_dir).exists():
+        Path(exp_dir).mkdir()
+
+    if not Path(data_dir).exists():
+        Path(data_dir).mkdir()
 
     def inputsOK(options,expInfo):
         for curOption in sorted(options.items()):

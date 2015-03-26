@@ -97,7 +97,7 @@ class SpatialCueing(ioHubExperimentRuntime):
 
         self.response_keys = {'y': 'present', 'n': 'absent'}
         self.detect_target = TargetDetection(self.window, self.hub,
-                keys = self.response_keys, eventTriggers = [quit, ])
+                response_map = self.response_keys, eventTriggers = [quit, ])
         self.intertrial = ClearScreen(self, timeout = 0.5)
 
         self.break_screen = InstructionScreen(self,
@@ -106,7 +106,17 @@ class SpatialCueing(ioHubExperimentRuntime):
 
         # Show instructions
         # -----------------
-        instructions.switchTo('all')
+        instructions.prepare_instructions('welcome')
+        instructions.switchTo()
+
+        instructions.prepare_instructions('target')
+        instructions.switchTo()
+
+        instructions.prepare_instructions('cue')
+        instructions.switchTo()
+
+        instructions.prepare_instructions('ready')
+        instructions.switchTo()
         if not self.running:
             return
 

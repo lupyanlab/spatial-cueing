@@ -2,10 +2,9 @@
 doc/
 slides/
 
-# Python files
+# Python files, psychopy files, iohub files
 *.pyc
-
-# iohub files
+*.pickle
 .iohpid
 
 # R files
