@@ -152,19 +152,53 @@ class SpatialCueing(ioHubExperimentRuntime):
         else:
             cue_location_name = ''
 
-        trial_vars = self.detect_target.prepare_trial(
-                target_location_name = target_location_name,
-                target_opacity = target_opacity,
-                cue_type = cue_type,
-                cue_location_name = cue_location_name)
-        self.trial_data.update(trial_vars)
+        # # target present trial
+        # if target_location_name:
+        #     target_location = self.location_map[target_location_name]
+        #     # jitter position of target
+        #     target_location = [p + self.jitter() for p in target_location]
+        # # target absent trial
+        # else:
+        #     # still draw it, but invisibly
+        #     target_opacity = 0.0
+        #     target_location = (0, 0)
+        #
+        # self.stim['target'].setPos(target_location)
+        # self.stim['target'].setOpacity(target_opacity)
+        #
+        # # determine where to draw the dot
+        # if cue_type == 'dot':
+        #     # if cue is valid, use same pos for cue and target
+        #     if cue_location_name == target_location_name:
+        #         dot_location = target_location
+        #     # if cue is invalid (either wrong loc or no target),
+        #     # jitter the centroid position of the cue location name
+        #     else:
+        #         dot_location = self.location_map[cue_location_name]
+        #         dot_location = [p + self.jitter() for p in dot_location]
+        #     # draw the cue in the determined location
+        #     self.cues[cue_type].setPos(dot_location)
+        # elif cue_type == 'word':
+        #     self.cues[cue_type].setText(cue_location_name)
+        # elif cue_type == 'arrow':
+        #     angle_from_vert = self.name_to_angle[cue_location_name]
+        #     self.cues[cue_type].setOri(angle_from_vert)
+        # else:
+        #     # no cue trial
+        #     cue_type = 'nocue'
+        #
+        # self.stim['cue'] = self.cues[cue_type]
 
-        expected_response = 'present' if target_present else 'absent'
-        response_vars = self.detect_target.run_trial(expected_response)
+        # # create a jitter function for target positions
+        # edge_buffer = target_size/4
+        # outer_edge = mask_size/2
+        # inner_edge = outer_edge - target_size/2 - edge_buffer
+        # self.jitter = lambda: random.uniform(-inner_edge/2, inner_edge/2)
+
+
+
+        response_vars = self.detect_target.run_trial(self.trial_data)
         self.trial_data.update(response_vars)
-
-        if not self.running:
-            return
 
         row = '\t'.join(map(str, self.trial_data.values()))
         self.data_file.write(row + '\n')

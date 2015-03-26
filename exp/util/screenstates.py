@@ -262,24 +262,8 @@ class RefreshTrigger(TimeTrigger):
         self._last_triggered_event = None
         # don't reset self._last_triggered_event
 
-class TargetDetection(ScreenState):
+class SpatialCueing(ScreenState):
     def __init__(self, window, hubServer):
-        """
-        Visual objects
-        --------------
-        masks (2)
-        fixation: text stim "+"
-        cue - dot: rect stim
-            - arrow: pic stim, rotated as needed
-            - word: text stim "left" or "right"
-        target: rect stim, presented in the left or right mask
-        prompt: text stim "?" presented centrally after the target
-
-        Timer objects
-        -------------
-        refresh: to redraw the masks, should be close to refresh rate
-        delay: when changes in the visuals should occur
-        """
         super(TargetDetection, self).__init__(window, hubServer,
                 eventTriggers = list(), timeout = 60.0)
 
@@ -336,6 +320,25 @@ class TargetDetection(ScreenState):
         self.cues['nocue'] = visual.Rect(opacity = 0.0, **target_kwargs)
         # cues added to self.stim on switchTo
 
+        # texts
+        # -----
+        (l, t, r, b) = hubServer.devices.display.getBounds()
+        top = -(t - b)/2 - 40
+        mid = -(t - b)/2 - 100
+        bot =  (t - b)/2 + 100
+        text_kwargs = {'win': window, 'wrapWidth': (r - l) * 0.5,
+                'color': 'black', 'alignVert': 'top'}
+        texts = {}
+        texts['title'] = visual.TextStim(pos=(0,top), height=40, **text_kwargs)
+        texts['body'] = visual.TextStim(pos =(0,mid), height=20, **text_kwargs)
+        texts['footer'] =visual.TextStim(pos=(0,bot), height=20, **text_kwargs)
+        self.stim.update(texts)
+
+        # Parts
+        # =====
+        self.segments = OrderedDict()
+        self.segments['fixation'] =
+
         mask_names = ['left', 'right']
         self.visuals = {}
         self.visuals['fixation'] = mask_names + ['fix', ]
@@ -344,27 +347,6 @@ class TargetDetection(ScreenState):
         self.visuals['target']   = mask_names + ['target', ]
         self.visuals['prompt']   = ['prompt', ]
 
-        # create a jitter function for target positions
-        edge_buffer = target_size/4
-        outer_edge = mask_size/2
-        inner_edge = outer_edge - target_size/2 - edge_buffer
-        self.jitter = lambda: random.uniform(-inner_edge/2, inner_edge/2)
-
-        # Timer objects
-        # =============
-        self.triggers = {}  # like self.stim, but for triggers
-
-        # refresh
-        # -------
-        REFRESH_RATE = 0.02
-        refresh_trig = RefreshTrigger(self.getStateStartTime,
-                delay = REFRESH_RATE, trigger_function = self.refresh,
-                repeat_count = -1)
-        self.triggers['refresh_trig'] = refresh_trig
-        self.addEventTrigger(refresh_trig) # by default, add refresh
-
-        # delay
-        # -----
         self.delays = OrderedDict()
         self.delays['fixation'] = 0.5
         self.delays['cue']      = 0.2
@@ -372,21 +354,106 @@ class TargetDetection(ScreenState):
         self.delays['target']   = 0.5
         self.delays['prompt']   = 2.0
 
-        delay_trig = RefreshTrigger(self.getStateStartTime,
-                delay = self.get_delay, # callable, force update
-                trigger_function = self.transition, repeat_count = -1)
-        self.addEventTrigger(delay_trig)
+        # Triggers
+        # ========
+        self.triggers = {}  # like self.stim, but for triggers
 
-        # Responses
+        # responses
         # ---------
         self.response_map = {'y': 'present', 'n': 'absent'}
         responder = DeviceEventTrigger(device = hubServer.devices.keyboard,
                 event_type = EventConstants.KEYBOARD_PRESS,
-                event_attribute_conditions = {'key': response_map.keys()},
+                event_attribute_conditions = {'key': self.response_map.keys()},
                 trigger_function = self.response)
-        self.triggers['response_trig'] = responder
-        self.addEventTrigger(responder)
-        self.response_map['timeout'] = 'timeout'
+        self.triggers['response'] = responder
+
+        advance_trig = DeviceEventTrigger(hubServer.devices.keyboard,
+                event_type = EventConstants.KEYBOARD_PRESS,
+                event_attribute_conditions = {'key': ' '})
+        self.triggers['advance'] = advance_trig
+
+        # refresh
+        # -------
+        REFRESH_RATE = 0.02
+        refresh_trig = RefreshTrigger(self.getStateStartTime,
+                delay = REFRESH_RATE, trigger_function = self.refresh,
+                repeat_count = -1)
+        self.triggers['refresh'] = refresh_trig
+
+        # delay
+        # -----
+        delay_trig = RefreshTrigger(self.getStateStartTime,
+                delay = self.get_delay, # callable, force update
+                trigger_function = self.delay_reached, repeat_count = -1)
+        self.triggers['delay']
+
+    def show_text(self, details):
+        for text_stim in ['title', 'body', 'footer']:
+            if text_stim in details:
+                self.stim[text_stim].setText(details[text_stim])
+
+        self.stimNames = details['visuals']
+        self.event_triggers = [self.triggers[trig_name] \
+                for trig_name in details['triggers']]
+
+        self.switchTo()
+
+    def run_trial(self, settings):
+        """ Set the presentation parameters and run the trial
+
+        Settings
+        --------
+        target_present
+        target_pos_x, target_pos_y
+        target_opacity
+        cue_present
+        cue_type
+        cue_location
+        cue_pos_x, cue_pos_y
+
+        Response
+        --------
+        rt
+        key
+        response
+        is_correct
+        """
+        target_pos = (settings['target_pos_x'], settings['target_pos_y'])
+        self.stim['target'].setPos(target_pos)
+        self.stim['target'].setOpacity(settings['target_opacity'])
+
+        cue_type = settings['cue_type']
+        if cue_type == 'dot':
+            dot_pos = (settings['cue_pos_x'], settings['cue_pos_y'])
+            self.cues['dot'].setPos(dot_pos)
+        elif cue_type == 'arrow':
+            self.cues['arrow'].setOri()
+        elif cue_type == 'verbal':
+            raise Exception('Verbal cues are not implemented')
+        else:
+            assert cue_type == 'nocue', cue_type + ' not implemented'
+        self.stim['cue'] = self.cues[cue_type]
+
+        self.target_onset = 0.0
+        self.state = 'fixation'
+        self.stimNames = self.visuals[self.state]
+        self.event_triggers = [self.triggers[name] \
+                for name in ['refresh', 'delay', 'response_trig']]
+        self.current_state_delay = self.delays[self.state]
+        stateStartTime, stateDuration, triggeringEvent = self.switchTo()
+
+        rt = stateDuration - self.target_onset
+        key = triggeringEvent.key
+        response = self.response_map[key]
+        is_correct = int(response == settings['target_present'])
+
+        response_vars = {
+            'rt': rt,
+            'key': key,
+            'response': response,
+            'is_correct': is_correct,
+        }
+        settings.update(response_vars)
 
     def refresh(self, *args, **kwargs):
         """ Redraw the screen to update the masks """
@@ -398,7 +465,7 @@ class TargetDetection(ScreenState):
         """ Return the delay for the current state """
         return self.current_state_delay
 
-    def transition(self, *args, **kwargs):
+    def delay_reached(self, *args, **kwargs):
         """ Update the stimuli on the screen """
         self.all_states.remove(self.state)
 
@@ -423,121 +490,14 @@ class TargetDetection(ScreenState):
         else:
             return False
 
-    def prepare_trial(self, target_location_name='', target_opacity=0.0,
-            cue_type='', cue_location_name=''):
-        """ Set the presentation parameters for the trial
 
-        Parameters
-        ----------
-        target_location_name: str, 'left', 'right', or None (default) for
-            target absent trials.
-        target_opacity: float, between 0.0 and 1.0
-        cue_type: str, 'dot', 'arrow', 'verbal', or None (default) for
-            no cue trials.
-        cue_location_name: str, 'left', 'right', or None (default) for
-            no cue trials.
-
-        Returns
-        -------
-        dict, keys: cue_type, cue_loc, interval, target_loc, target_pos,
-            target_opacity
-        """
-        # target present trial
-        if target_location_name:
-            target_location = self.location_map[target_location_name]
-            # jitter position of target
-            target_location = [p + self.jitter() for p in target_location]
-        # target absent trial
-        else:
-            # still draw it, but invisibly
-            target_opacity = 0.0
-            target_location = (0, 0)
-
-        self.stim['target'].setPos(target_location)
-        self.stim['target'].setOpacity(target_opacity)
-
-        # determine where to draw the dot
-        if cue_type == 'dot':
-            # if cue is valid, use same pos for cue and target
-            if cue_location_name == target_location_name:
-                dot_location = target_location
-            # if cue is invalid (either wrong loc or no target),
-            # jitter the centroid position of the cue location name
-            else:
-                dot_location = self.location_map[cue_location_name]
-                dot_location = [p + self.jitter() for p in dot_location]
-            # draw the cue in the determined location
-            self.cues[cue_type].setPos(dot_location)
-        elif cue_type == 'word':
-            self.cues[cue_type].setText(cue_location_name)
-        elif cue_type == 'arrow':
-            angle_from_vert = self.name_to_angle[cue_location_name]
-            self.cues[cue_type].setOri(angle_from_vert)
-        else:
-            # no cue trial
-            cue_type = 'nocue'
-
-        self.stim['cue'] = self.cues[cue_type]
-
-        trial_vars = {
-            'cue_type': cue_type,
-            'cue_loc': cue_location_name,
-            'target_loc': target_location_name,
-            'target_pos_x': target_location[0],
-            'target_pos_y': target_location[1],
-            'target_opacity': target_opacity
-        }
-        return trial_vars
-
-    def run_trial(self):
-        """
-        Returns
-        -------
-        dict, keys: rt, key, response, is_correct
-        """
-        self.all_states = self.delays.keys()
-        self.state = 'fixation'
-        self.stimNames = self.visuals[self.state]
-        self.current_state_delay = self.delays[self.state]
-
-        self.rt_start = None  # reset between trials
-
-        exp_time, total_trial_time, triggered_event = self.switchTo()
-
-        rt = total_trial_time - self.rt_start if total_trial_time else 0.0
-        key = triggered_event.key if triggered_event else 'timeout'
-        try:
-            response = self.response_map[key]
-        except KeyError:
-            # trial was quit
-            return dict()
-        is_correct = (response == expected_response)
-
-        response_vars = {
-            'rt': rt,
-            'key': key,
-            'response': response,
-            'is_correct': is_correct,
-        }
-        return response_vars
 
 class TargetDetectionInstructions(TargetDetection):
     def __init__(self, window, hubServer):
         super(TargetDetectionInstructions, self).__init__(window,
                 hubServer, eventTriggers = list(), timeout = 60.0)
 
-        (l, t, r, b) = hubServer.devices.display.getBounds()
-        title_y = -(t - b)/2 - 40
-        body_y = -(t - b)/2 - 100
-        footer_y = (t - b)/2 + 100
-        text_kwargs = {'win': window, 'wrapWidth': (r - l) * 0.5,
-                'color': 'black', 'alignVert': 'top'}
-        self.stim['title'] = visual.TextStim(pos = (0, title_y), height = 40,
-                **text_kwargs)
-        self.stim['body'] = visual.TextStim(pos = (0, body_y), height = 20,
-                **text_kwargs)
-        self.stim['footer'] = visual.TextStim(pos = (0, footer_y), height = 20,
-                **text_kwargs)
+
 
         # Set example target
         # ------------------
@@ -549,16 +509,6 @@ class TargetDetectionInstructions(TargetDetection):
                 event_attribute_conditions = {'key': ' '})
         self.triggers['advance_trig'] = advance_trig
 
-    def show_text(self, details):
-        for text_stim in ['title', 'body', 'footer']:
-            if text_stim in details:
-                self.stim[text_stim].setText(details[text_stim])
-
-        self.stimNames = details['visuals']
-        self.event_triggers = [self.triggers[trig_name] \
-                for trig_name in details['triggers']]
-
-        self.switchTo()
 
 if __name__ == '__main__':
     import argparse
