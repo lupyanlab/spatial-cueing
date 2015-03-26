@@ -401,11 +401,11 @@ class TargetDetection(ScreenState):
 
     def transition(self, *args, **kwargs):
         """ Update the stimuli on the screen """
-        self.delays.pop(self.state)  # done with current state
+        self.all_states.remove(self.state)
 
-        try:
-            self.state = next(iter(self.delays))
-        except StopIteration:
+        if self.all_states:
+            self.state = self.all_states[0]
+        else:
             # trial has timed out without a response
             return True
 
@@ -496,6 +496,7 @@ class TargetDetection(ScreenState):
         -------
         dict, keys: rt, key, response, is_correct
         """
+        self.all_states = self.delays.keys()
         self.state = 'fixation'
         self.stimNames = self.visuals[self.state]
         self.current_state_delay = self.delays[self.state]
@@ -506,7 +507,11 @@ class TargetDetection(ScreenState):
 
         rt = total_trial_time - self.rt_start if total_trial_time else 0.0
         key = triggered_event.key if triggered_event else 'timeout'
-        response = self.response_map[key]
+        try:
+            response = self.response_map[key]
+        except KeyError:
+            # trial was quit
+            return dict() 
         is_correct = (response == expected_response)
 
         response_vars = {

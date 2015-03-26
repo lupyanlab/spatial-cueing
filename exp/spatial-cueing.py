@@ -27,6 +27,11 @@ class SpatialCueing(ioHubExperimentRuntime):
     - Spatial cues are identical to the target.
     - Symbolic cues are arrows, pointing to the left or the right mask.
     - Auditory symbolic cues are the spoken words "left" or "right".
+
+    The presence of a cue does not predict whether or not a target will
+    be presented on the trial. Cue direction is never invalid, e.g.,
+    there are no trial in which the subject is cued to the right and
+    the target is presented to the left.
     """
     def run(self, *args, **kwargs):
         self.running = True  # flags whether the user is trying to quit
@@ -106,19 +111,10 @@ class SpatialCueing(ioHubExperimentRuntime):
 
         # Show instructions
         # -----------------
-        instructions.prepare_instructions('welcome')
-        instructions.switchTo()
-
-        instructions.prepare_instructions('target')
-        instructions.switchTo()
-
-        instructions.prepare_instructions('cue')
-        instructions.switchTo()
-
-        instructions.prepare_instructions('ready')
-        instructions.switchTo()
-        if not self.running:
-            return
+        for screen in ['welcome', 'target', 'cue', 'ready']:
+            instructions.show_instruction(screen)
+            if not self.running:
+                return
 
         # Calibrate target opacity
         # ------------------------
