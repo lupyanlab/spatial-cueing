@@ -427,7 +427,7 @@ class SpatialCueing(ScreenState):
             dot_pos = (settings['cue_pos_x'], settings['cue_pos_y'])
             self.cues['dot'].setPos(dot_pos)
         elif cue_type == 'word':
-            self.cues['word'].setText(dot_pos)
+            self.cues['word'].setText(target_loc)
         # elif cue_type == 'arrow':
         #     cue_loc = settings['cue_loc']
         #     angle_from_name = {'left': -90, 'right': 90}
