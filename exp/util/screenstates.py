@@ -320,7 +320,7 @@ class SpatialCueing(ScreenState):
         # cues
         # ----
         self.cues = {}
-        self.cues['dot'] = visual.TextStim(self.window, **text_kwargs)
+        self.cues['dot'] = visual.TextStim(self.window, text = 'x', **text_kwargs)
         self.cues['word'] = visual.TextStim(self.window, **text_kwargs)
         # self.cues['arrow'] = visual.ImageStim(self.window, Path(stim, 'arrow.png'))
         self.cues['nocue'] = visual.Rect(opacity = 0.0, **target_kwargs)
