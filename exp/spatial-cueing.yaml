@@ -8,7 +8,7 @@ subj_info:
     2:
         name: cue_type
         prompt: Type of cue
-        options: dot, arrow, verbal
+        options: dot, word
         default: dot
     3:
         name: experimenter

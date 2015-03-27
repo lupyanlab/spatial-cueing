@@ -280,8 +280,6 @@ class SpatialCueing(ScreenState):
         right = (gutter/2, 0)
         # location_map also used for targets
         self.location_map = {'left': left, 'right': right}
-        # used to turn the arrow cue
-        self.angle_from_name = {'left': -90, 'right': 90}
 
         mask_size = 200
         mask_kwargs = {
@@ -322,9 +320,9 @@ class SpatialCueing(ScreenState):
         # cues
         # ----
         self.cues = {}
-        self.cues['dot'] = visual.Rect(opacity = 1.0, **target_kwargs)
-        self.cues['arrow'] = visual.ImageStim(self.window, Path(stim, 'arrow.png'))
+        self.cues['dot'] = visual.TextStim(self.window, **text_kwargs)
         self.cues['word'] = visual.TextStim(self.window, **text_kwargs)
+        # self.cues['arrow'] = visual.ImageStim(self.window, Path(stim, 'arrow.png'))
         self.cues['nocue'] = visual.Rect(opacity = 0.0, **target_kwargs)
 
         # texts
@@ -424,12 +422,13 @@ class SpatialCueing(ScreenState):
         if cue_type == 'dot':
             dot_pos = (settings['cue_pos_x'], settings['cue_pos_y'])
             self.cues['dot'].setPos(dot_pos)
-        elif cue_type == 'arrow':
-            cue_loc = settings['cue_loc']
-            arrow_ori = self.angle_from_name[cue_loc]
-            self.cues['arrow'].setOri(arrow_ori)
-        elif cue_type == 'verbal':
-            raise Exception('Verbal cues are not implemented')
+        elif cue_type == 'word':
+            self.cues['word'].setText(dot_pos)
+        # elif cue_type == 'arrow':
+        #     cue_loc = settings['cue_loc']
+        #     angle_from_name = {'left': -90, 'right': 90}
+        #     arrow_ori = angle_from_name[cue_loc]
+        #     self.cues['arrow'].setOri(arrow_ori)
         else:
             assert cue_type == '', cue_type + ' not implemented'
             cue_type = 'nocue'
@@ -505,7 +504,7 @@ if __name__ == '__main__':
             default = 'left', help = 'Where should the target be shown')
     trial_parser.add_argument('-o', '--opacity', type = float,
             default = 1.0, help = 'Opacity of the target')
-    trial_parser.add_argument('-cue', choices = ['dot', 'arrow', 'word'],
+    trial_parser.add_argument('-cue', choices = ['dot', 'word'],
             help = 'Which cue should be used.')
     trial_parser.add_argument('-loc', '--location',
             choices = ['left', 'right'],

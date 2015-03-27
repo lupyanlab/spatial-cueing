@@ -36,7 +36,7 @@ class SpatialCueing(ioHubExperimentRuntime):
         # ------------------------
         exp_info = yaml.load(open('spatial-cueing.yaml', 'r'))
         subj_info_fields = exp_info['subj_info']
-        text_screen_states = exp_info['texts']
+        text_info = exp_info['texts']
 
         # Get the session info
         # --------------------
@@ -99,12 +99,14 @@ class SpatialCueing(ioHubExperimentRuntime):
                 fullscr = True, allowGUI = False,
                 screen = display.getIndex())
 
-        self.screen = TargetDetection(self.window, self.hub)
+        # runs trials and shows instructions
+        self.screen = SpatialCueing(self.window, self.hub)
+        self.intertrial = ClearScreen(self, timeout = 0.5)
 
         # Show instructions
         # -----------------
         for screen in ['welcome', 'target', 'practice']:
-            details = text_screen_states[screen]
+            details = text_info[screen]
             self.screen.show_text(details)
 
         # Run practice trials
@@ -113,13 +115,13 @@ class SpatialCueing(ioHubExperimentRuntime):
 
         # Calibrate target opacity
         # ------------------------
-        ready_text_details = text_screen_states['ready']
+        ready_text_details = text_info['ready']
         self.screen.show_text(ready_text_details)
         critical_opacity = self.calibrate_target_opacity()
 
         # Test cueing effect
         # ------------------
-        introduce_cue = text_screen_states['cue']
+        introduce_cue = text_info['cue']
         self.text_screen.show_text(introduce_cue)
         cue_type = self.subj_info['cue_type']
         self.test_cueing_effect(cue_type, critical_opacity)
@@ -133,8 +135,13 @@ class SpatialCueing(ioHubExperimentRuntime):
     def run_trial(self, target_present, target_opacity, cue_type = None):
         """ Prepare the trial, run it, and save the data to disk
 
-        If it's a target present trial, pick a location at random. If it's
-        a cue present trial, pick a location based on where the target is.
+        On target present trials, randomly assigns targets to the left or
+        right mask, and selects a location within that mask. Target opacity
+        is provided.
+
+        On cue present trials, assign cue location (and position, for spatial
+        cues). If a cue and a target are both present on the same trial,
+        the cue is always valid.
         """
         if target_present:
             target_loc = choice(['left', 'right'])
@@ -165,7 +172,7 @@ class SpatialCueing(ioHubExperimentRuntime):
                     cue_pos_x, cue_pos_y = target_pos_x, target_pos_y
                 else:
                     cue_pos = self.location_map[cue_loc]
-                    cue_pos_x, cue_pos_y = self.screen.jitter(cue_pos)
+                    cue_pos_x, cue_pos_y = cue_pos  # show dot cue centrally
 
         self.trial_data['cue_present'] = int(cue_present)
         self.trial_data['cue_type'] = cue_type
@@ -173,7 +180,7 @@ class SpatialCueing(ioHubExperimentRuntime):
         self.trial_data['cue_pos_x'] = cue_pos_x
         self.trial_data['cue_pos_y'] = cue_pos_y
 
-        self.detect_target.run_trial(self.trial_data)
+        self.trial_data = self.detect_target.run_trial(self.trial_data)
 
         row = '\t'.join(map(str, self.trial_data.values()))
         self.data_file.write(row + '\n')
