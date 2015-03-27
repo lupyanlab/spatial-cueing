@@ -345,10 +345,10 @@ class SpatialCueing(ScreenState):
 
         # responses
         # ---------
-        self.response_map = {'y': 'present', 'n': 'absent'}
+        self.response_map = {'y': 'present', 'u': 'absent'}
         responder = DeviceEventTrigger(device = hubServer.devices.keyboard,
                 event_type = EventConstants.KEYBOARD_PRESS,
-                event_attribute_conditions = {'key': self.response_map.keys()}, trigger_function = self.response)
+                event_attribute_conditions = {'key': self.response_map.keys()})
         self.triggers['response'] = responder
 
         advance_trig = DeviceEventTrigger(hubServer.devices.keyboard,
@@ -375,7 +375,7 @@ class SpatialCueing(ScreenState):
         self.trial_parts['fixation'] = {
             'duration': 0.5,
             'stim': ['left', 'right', 'fix'],
-            'trig': ['response', 'refresh', ]}
+            'trig': ['response', 'refresh', ]}  # triggers have to be present at state start
         self.trial_parts['cue'] = {
             'duration': 0.2,
             'stim': ['left', 'right', 'cue'],
@@ -392,10 +392,6 @@ class SpatialCueing(ScreenState):
             'duration': 2.0,
             'stim': ['prompt', ],
             'trig': ['response']}
-
-    def response(self, *args, **kwargs):
-        print 'response'
-        return True
 
     def show_text(self, details):
         for text_stim in ['title', 'body', 'footer']:

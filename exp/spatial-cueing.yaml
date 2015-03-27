@@ -68,6 +68,7 @@ texts:
         footer: When you are ready to continue, press the SPACEBAR
     timeout:
         visuals: [title, body, footer]
+        triggers: [advance, ]    
         title: You didn't respond in time
         body: >
             Please response as quickly as possible. Take your best

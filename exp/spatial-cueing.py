@@ -223,7 +223,7 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
 
             trial_ix = self.trial_data['trial_ix']
             if trial_ix > 0 and trial_ix % 40 == 0:
-                self.text_screen.show_text('break')
+                self.screen.show_text(self.text_info['break'])
 
         # use quantile
         critical_opacity = staircase.quantile()
