@@ -21,28 +21,38 @@ texts:
         triggers: [advance, ]
         title: Welcome to the SPC experiment
         body: >
-            Today we will be measuring how easy it is for you to
-            notice a target when it is flashed briefly on the screen.
-            You will see a target on half of the trials. The other half
-            of the time you won't see anything.
-        footer: Press the SPACEBAR to continue the instructions.
+            Today we want to measure your peripheral vision:
+            how well can you see a faint target object presented to the
+            left or the right of where you are looking? On most of the
+            trials you will see a target, but there will be some trials
+            where you don't see anything. We're interested in how
+            quickly you can spot the targets when they are there, and
+            how accurately you can tell if they're not. All you have to
+            do is decide, for each trial, "Did I see the target?"
+        footer: Press the SPACEBAR to see an example target.
     target:
-        visuals: [title, body, footer, left, right, target]
+        visuals: [title, body, footer, left, right, fix, target]
         triggers: [refresh, advance]
         title: Do you see the target inside the left square?
         body: >
-            Below is a sample trial. The target is presented in one of the squares.
-            If you see a target in either square, press the 'y' key for "Yes, I saw
-            a target."
-            If you don't see a target, press the 'n' key for "No, I
-            didn't see a target".
-        footer: Press the SPACEBAR to continue the instructions.
+            Below is a sample trial. Do you see the target? The targets
+            will appear in either the left or the right flashing square.
+            In the actual experiment, the target will appear and disappear
+            very quickly. Your best strategy is to stare in the middle of 
+            the two squares, directly at the "+" sign.
+        footer: Press the SPACEBAR to continue.
     practice:
         visuals: [title, body, footer]
         triggers: [advance, ]
         title: Ready for some practice trials?
         body: >
-            We'll start with some practice trials.
+            We'll start with some practice trials. On each trial, 
+            try to observe both flashing squares by fixating in
+            the center of the screen, right where the "+" appears.
+            If you see a target appear, press the "y" key on the
+            keyboard. If you do not see a target, press the "u" key.
+            y key: Yes, I saw a target.
+            u key: No, I did not see a target.
         footer: Press the SPACEBAR to start the practice trials.
     cue:
         visuals: [title, body, footer, left, right, cue]
@@ -53,18 +63,21 @@ texts:
     ready:
         visuals: [title, body, footer]
         triggers: [advance, ]
-        title: Are you ready to begin?
+        title: Done with the practice trials. 
         body: >
             If you have any questions, now is the time to ask
-            the experimenter.
+            the experimenter. For the next part, the targets
+            are going to get harder and harder to see, so you
+            might be less and less certain that you are seeing
+            a target. Please do your best, but know that you
+            are expected to get some of them wrong.
         footer: If you are ready to begin, press the SPACEBAR.
     break:
         visuals: [title, body, footer]
         triggers: [advance, ]
         title: Take a break!
         body: >
-            Take a break to refresh your eyes. For example, you could close
-            your eyes for a few seconds.
+            Take a break to refresh your eyes.
         footer: When you are ready to continue, press the SPACEBAR
     timeout:
         visuals: [title, body, footer]
@@ -74,6 +87,8 @@ texts:
             Please response as quickly as possible. Take your best
             guess if you have to. Remember that the trials are
             designed to be difficult.  
+            y key: Yes, I saw the target
+            u key: No, I didn't see the target
         footer: Press the SPACEBAR to resume the experiment.
     end_of_experiment:
         visuals: [title, body, footer]

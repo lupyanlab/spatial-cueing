@@ -216,6 +216,7 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
             target_present = choice([True, False], p = [0.8, 0.2])
 
             self.trial_data['trial_ix'] = staircase.thisTrialN
+            print "Using target opacity", target_opacity
             self.run_trial(target_present, target_opacity, cue_type = None)
 
             if target_present:

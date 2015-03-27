@@ -328,9 +328,9 @@ class SpatialCueing(ScreenState):
         # texts
         # -----
         (l, t, r, b) = hubServer.devices.display.getBounds()
-        top = -(t - b)/2 - 40
-        mid = -(t - b)/2 - 100
-        bot =  (t - b)/2 + 100
+        top = -(t - b)/2 - 60
+        mid = -(t - b)/2 - 140
+        bot =  (t - b)/2 + 150
         text_kwargs = {'win': window, 'wrapWidth': (r - l) * 0.5,
                 'color': 'black', 'alignVert': 'top'}
         texts = {}
@@ -373,7 +373,7 @@ class SpatialCueing(ScreenState):
 
         self.trial_parts = OrderedDict()
         self.trial_parts['fixation'] = {
-            'duration': 0.5,
+            'duration': 0.8,
             'stim': ['left', 'right', 'fix'],
             'trig': ['response', 'refresh', ]}  # triggers have to be present at state start
         self.trial_parts['cue'] = {
@@ -385,7 +385,7 @@ class SpatialCueing(ScreenState):
             'stim': ['left', 'right'],
             'trig': ['refresh', ]}
         self.trial_parts['target'] = {
-            'duration': 0.5,
+            'duration': 0.2,
             'stim': ['left', 'right', 'target'],
             'trig': ['response', 'refresh', ]}
         self.trial_parts['prompt'] = {
