@@ -301,7 +301,7 @@ class SpatialCueing(ScreenState):
 
         # target
         # ------
-        target_size = 50
+        target_size = 80
         target_kwargs = {
             'win': self.window,
             'size': [target_size, target_size],
@@ -348,7 +348,7 @@ class SpatialCueing(ScreenState):
         self.response_map = {'y': 'present', 'u': 'absent'}
         responder = DeviceEventTrigger(device = hubServer.devices.keyboard,
                 event_type = EventConstants.KEYBOARD_PRESS,
-                event_attribute_conditions = {'key': self.response_map.keys()})
+                event_attribute_conditions = {'key': self.response_map.keys()}, trigger_function = self.response)
         self.triggers['response'] = responder
 
         advance_trig = DeviceEventTrigger(hubServer.devices.keyboard,
@@ -471,6 +471,13 @@ class SpatialCueing(ScreenState):
         self.event_triggers = [self.triggers[name] \
                 for name in trigNames]
         print 'Triggers:', trigNames
+
+
+    def response(self, *args, **kwargs):
+        if self.state != 'fixation':
+            return True
+        else:
+            return False
 
     def refresh(self, *args, **kwargs):
         """ Redraw the screen to update the masks """

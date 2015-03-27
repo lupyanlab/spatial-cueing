@@ -122,7 +122,7 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
         # Test cueing effect
         # ------------------
         introduce_cue = self.text_info['cue']
-        self.text_screen.show_text(introduce_cue)
+        self.screen.show_text(introduce_cue)
         cue_type = self.subj_info['cue_type']
         self.test_cueing_effect(cue_type, critical_opacity)
 
@@ -243,7 +243,8 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
             self.run_trial(target_present, critical_opacity, cue_this_trial)
 
             if trial_ix > 0 and trial_ix % 40 == 0:
-                self.text_screen.show_text('break')
+                break_details = self.text_info['break']
+                self.screen.show_text(break_details)
 
 if __name__ == '__main__':
     from psychopy.iohub import module_directory
