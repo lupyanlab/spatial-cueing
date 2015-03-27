@@ -455,7 +455,8 @@ class SpatialCueing(ScreenState):
             key = ''
             response = 'timeout'
 
-        is_correct = int(response == settings['target_present'])
+        grader = {'present': 1, 'absent': 0, 'timeout': -1}
+        is_correct = int(grader[response] == settings['target_present'])
 
         response_vars = {
             'rt': rt,
