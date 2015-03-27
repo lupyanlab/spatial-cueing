@@ -18,7 +18,7 @@ subj_info:
 texts:
     welcome:
         visuals: [title, body, footer]
-        triggers: [advance_trig, ]
+        triggers: [advance, ]
         title: Welcome to the SPC experiment
         body: >
             Today we will be measuring how easy it is for you to
@@ -28,7 +28,7 @@ texts:
         footer: Press the SPACEBAR to continue the instructions.
     target:
         visuals: [title, body, footer, left, right, target]
-        triggers: [refresh_trig, advance_trig]
+        triggers: [refresh, advance]
         title: Do you see the target inside the left square?
         body: >
             Below is a sample trial. The target is presented in one of the squares.
@@ -39,20 +39,20 @@ texts:
         footer: Press the SPACEBAR to continue the instructions.
     practice:
         visuals: [title, body, footer]
-        triggers: [advance_trig, ]
+        triggers: [advance, ]
         title: Ready for some practice trials?
         body: >
             We'll start with some practice trials.
         footer: Press the SPACEBAR to start the practice trials.
     cue:
         visuals: [title, body, footer, left, right, cue]
-        triggers: [refresh_trig, advance_trig]
+        triggers: [refresh, advance]
         title: Here's what a cue looks like
         body: Here's what a cue looks like.
         footer: Press the SPACEBAR to continue
     ready:
         visuals: [title, body, footer]
-        triggers: [advance_trig, ]
+        triggers: [advance, ]
         title: Are you ready to begin?
         body: >
             If you have any questions, now is the time to ask
@@ -60,7 +60,7 @@ texts:
         footer: If you are ready to begin, press the SPACEBAR.
     break:
         visuals: [title, body, footer]
-        triggers: [advance_trig, ]
+        triggers: [advance, ]
         title: Take a break!
         body: >
             Take a break to refresh your eyes. For example, you could close
@@ -68,7 +68,7 @@ texts:
         footer: When you are ready to continue, press the SPACEBAR
     end_of_experiment:
         visuals: [title, body, footer]
-        triggers: [advance_trig, ]
+        triggers: [advance, ]
         title: You've finished the experiment.
         body: >
             You finished the experiment. The last thing for you to do is to

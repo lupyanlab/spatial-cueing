@@ -9,9 +9,9 @@ from psychopy.iohub import ioHubExperimentRuntime, EventConstants
 from psychopy.iohub.util import DeviceEventTrigger, ClearScreen
 
 from util.psychopy_helper import enter_subj_info
-from util.screenstates import TargetDetection, TargetDetectionInstructions
+from util.screenstates import SpatialCueing
 
-class SpatialCueing(ioHubExperimentRuntime):
+class SpatialCueingExperiment(ioHubExperimentRuntime):
     """ Measure spatial cueing effects when targets are hard to see
 
     On each trial, participants are looking for a target to appear within
@@ -93,7 +93,7 @@ class SpatialCueing(ioHubExperimentRuntime):
         # Create experiment screens
         # -------------------------
         display = self.hub.devices.display
-        window = visual.Window(display.getPixelResolution(),
+        self.window = visual.Window(display.getPixelResolution(),
                 monitor = display.getPsychopyMonitorName(),
                 units = display.getCoordinateType(),
                 fullscr = True, allowGUI = False,
@@ -145,10 +145,10 @@ class SpatialCueing(ioHubExperimentRuntime):
         """
         if target_present:
             target_loc = choice(['left', 'right'])
-            target_pos = self.location_map[target_loc]
+            target_pos = self.screen.location_map[target_loc]
             target_pos_x, target_pos_y = self.screen.jitter(target_pos)
         else:
-            target_location_name = ''
+            target_loc = ''
             target_pos_x, target_pos_y = '', ''
             target_opacity = ''
 
@@ -171,7 +171,7 @@ class SpatialCueing(ioHubExperimentRuntime):
                 if target_present:
                     cue_pos_x, cue_pos_y = target_pos_x, target_pos_y
                 else:
-                    cue_pos = self.location_map[cue_loc]
+                    cue_pos = self.screen.location_map[cue_loc]
                     cue_pos_x, cue_pos_y = cue_pos  # show dot cue centrally
 
         self.trial_data['cue_present'] = int(cue_present)
@@ -180,7 +180,7 @@ class SpatialCueing(ioHubExperimentRuntime):
         self.trial_data['cue_pos_x'] = cue_pos_x
         self.trial_data['cue_pos_y'] = cue_pos_y
 
-        self.trial_data = self.detect_target.run_trial(self.trial_data)
+        self.trial_data = self.screen.run_trial(self.trial_data)
 
         row = '\t'.join(map(str, self.trial_data.values()))
         self.data_file.write(row + '\n')
@@ -242,6 +242,6 @@ class SpatialCueing(ioHubExperimentRuntime):
 
 if __name__ == '__main__':
     from psychopy.iohub import module_directory
-    module = module_directory(SpatialCueing.run)
-    runtime = SpatialCueing(module, 'experiment_config.yaml')
+    module = module_directory(SpatialCueingExperiment.run)
+    runtime = SpatialCueingExperiment(module, 'experiment_config.yaml')
     runtime.start()
