@@ -55,10 +55,12 @@ texts:
             u key: No, I did not see a target.
         footer: Press the SPACEBAR to start the practice trials.
     cue:
-        visuals: [title, body, footer, left, right, cue]
-        triggers: [refresh, advance]
-        title: Here's what a cue looks like
-        body: Here's what a cue looks like.
+        visuals: [title, body, footer]
+        triggers: [advance, ]
+        title: Now we are going to add a cue before the target
+        body: >
+            On each trial, you will see a word like "left" or "right",
+            but your task is exactly the same. 
         footer: Press the SPACEBAR to continue
     ready:
         visuals: [title, body, footer]

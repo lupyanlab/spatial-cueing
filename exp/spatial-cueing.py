@@ -119,17 +119,38 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
         self.screen.show_text(ready_text_details)
         critical_opacity = self.calibrate_target_opacity()
 
-        # Test cueing effect
-        # ------------------
+        # Introduce cue
+        # -------------
+        cue_type = self.subj_info['cue_type']
         introduce_cue = self.text_info['cue']
         self.screen.show_text(introduce_cue)
-        cue_type = self.subj_info['cue_type']
+        
+        # Test cueing effect: easy_block
+        # ------------------------------
+        #easy_block = self.text_info['easy']
+        #self.screen.show_text(easy_block)
+        self.test_cueing_effect(cue_type, 0.8)
+
+        # Test cueing effect: hard block
+        # ------------------------------
+        #hard_block = self.text_info['hard']
+        #self.screen.show_text(hard_block)
         self.test_cueing_effect(cue_type, critical_opacity)
+
+        # Test cueing effect: easy block
+        # ------------------------------
+        #self.screen.show_text(easy_block)
+        self.test_cueing_effect(cue_type, 0.8)
+
+        # Test cueing effect: hard block
+        # ------------------------------
+        #self.screen.show_text(hard_block)
+        self.text_cueing_effect(cue_type, critical_opacity)
 
         # End of experiment
         # -----------------
-        end_details = text_screen_states['end_of_experiment']
-        self.text_screen.show_text(end_details)
+        end_details = self.text_info['end_of_experiment']
+        self.screen.show_text(end_details)
         self.data_file.close()
 
     def run_trial(self, target_present, target_opacity, cue_type = None):
@@ -234,7 +255,7 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
     def test_cueing_effect(self, cue_type, critical_opacity):
         """ Determine the effect of cueing on near-threshold detection """
         self.trial_data['part'] = 'cueing_effect'
-        for trial_ix in range(200):
+        for trial_ix in range(80):
             target_present = choice([True, False], p = [0.8, 0.2])
             cue_present = choice([True, False])
             cue_this_trial = cue_type if cue_present else None
