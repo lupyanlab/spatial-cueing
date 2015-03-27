@@ -36,7 +36,7 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
         # ------------------------
         exp_info = yaml.load(open('spatial-cueing.yaml', 'r'))
         subj_info_fields = exp_info['subj_info']
-        text_info = exp_info['texts']
+        self.text_info = exp_info['texts']
 
         # Get the session info
         # --------------------
@@ -106,7 +106,7 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
         # Show instructions
         # -----------------
         for screen in ['welcome', 'target', 'practice']:
-            details = text_info[screen]
+            details = self.text_info[screen]
             self.screen.show_text(details)
 
         # Run practice trials
@@ -115,13 +115,13 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
 
         # Calibrate target opacity
         # ------------------------
-        ready_text_details = text_info['ready']
+        ready_text_details = self.text_info['ready']
         self.screen.show_text(ready_text_details)
         critical_opacity = self.calibrate_target_opacity()
 
         # Test cueing effect
         # ------------------
-        introduce_cue = text_info['cue']
+        introduce_cue = self.text_info['cue']
         self.text_screen.show_text(introduce_cue)
         cue_type = self.subj_info['cue_type']
         self.test_cueing_effect(cue_type, critical_opacity)
@@ -184,7 +184,11 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
 
         row = '\t'.join(map(str, self.trial_data.values()))
         self.data_file.write(row + '\n')
-        self.intertrial.switchTo()
+
+        if self.trial_data['response'] == 'timeout':
+            self.screen.show_text(self.text_info['timeout'])
+        else:
+            self.intertrial.switchTo()
 
     def run_practice_trials(self):
         """ Run a few practice trials with highly visible targets """

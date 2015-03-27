@@ -66,6 +66,14 @@ texts:
             Take a break to refresh your eyes. For example, you could close
             your eyes for a few seconds.
         footer: When you are ready to continue, press the SPACEBAR
+    timeout:
+        visuals: [title, body, footer]
+        title: You didn't respond in time
+        body: >
+            Please response as quickly as possible. Take your best
+            guess if you have to. Remember that the trials are
+            designed to be difficult.  
+        footer: Press the SPACEBAR to resume the experiment.
     end_of_experiment:
         visuals: [title, body, footer]
         triggers: [advance, ]
