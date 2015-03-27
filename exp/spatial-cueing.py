@@ -66,6 +66,8 @@ class SpatialCueing(ioHubExperimentRuntime):
             'cue_present',
             'cue_type',
             'cue_loc',
+            'cue_pos_x',
+            'cue_pos_y',
             'target_present',
             'target_loc',
             'target_pos_x',
@@ -91,114 +93,87 @@ class SpatialCueing(ioHubExperimentRuntime):
         # Create experiment screens
         # -------------------------
         display = self.hub.devices.display
-        self.window = visual.Window(display.getPixelResolution(),
+        window = visual.Window(display.getPixelResolution(),
                 monitor = display.getPsychopyMonitorName(),
                 units = display.getCoordinateType(),
                 fullscr = True, allowGUI = False,
                 screen = display.getIndex())
 
-        self.text_screen = TargetDetectionInstructions(self.window, self.hub)
-        self.detect_target = TargetDetection(self.window, self.hub)
-        self.intertrial = ClearScreen(self, timeout = 0.5)
+        self.screen = TargetDetection(self.window, self.hub)
 
         # Show instructions
         # -----------------
-        for screen in ['welcome', 'target']:
+        for screen in ['welcome', 'target', 'practice']:
             details = text_screen_states[screen]
-            self.text_screen.show_text(details)
+            self.screen.show_text(details)
 
         # Run practice trials
         # -------------------
-        self.text_screen.show_text('practice')
         self.run_practice_trials()
-        if not self.running:
-            return
 
         # Calibrate target opacity
         # ------------------------
-        self.text_screen.show_text('ready')
+        ready_text_details = text_screen_states['ready']
+        self.screen.show_text(ready_text_details)
         critical_opacity = self.calibrate_target_opacity()
-        if not self.running:
-            return
 
         # Test cueing effect
         # ------------------
-        self.text_screen.show_text('cue')
+        introduce_cue = text_screen_states['cue']
+        self.text_screen.show_text(introduce_cue)
         cue_type = self.subj_info['cue_type']
         self.test_cueing_effect(cue_type, critical_opacity)
-        if not self.running:
-            return
 
         # End of experiment
         # -----------------
-        self.text_screen.show_text('end_of_experiment')
+        end_details = text_screen_states['end_of_experiment']
+        self.text_screen.show_text(end_details)
         self.data_file.close()
 
-    def run_trial(self, target_present, cue_present, target_opacity,
-            cue_type = None):
+    def run_trial(self, target_present, target_opacity, cue_type = None):
         """ Prepare the trial, run it, and save the data to disk
 
         If it's a target present trial, pick a location at random. If it's
         a cue present trial, pick a location based on where the target is.
         """
         if target_present:
-            target_location_name = choice(['left', 'right'])
+            target_loc = choice(['left', 'right'])
+            target_pos = self.location_map[target_loc]
+            target_pos_x, target_pos_y = self.screen.jitter(target_pos)
         else:
             target_location_name = ''
+            target_pos_x, target_pos_y = '', ''
+            target_opacity = ''
 
-        if cue_present:
-            cue_location_name = target_location_name \
-                or choice(['left', 'right'])
+        self.trial_data['target_present'] = int(target_present)
+        self.trial_data['target_loc'] = target_loc
+        self.trial_data['target_pos_x'] = target_pos_x
+        self.trial_data['target_pos_y'] = target_pos_y
+        self.trial_data['target_opacity'] = target_opacity
+
+        cue_pos_x = ''
+        cue_pos_y = ''
+        if not cue_type:
+            cue_present = False
+            cue_loc = ''
+            cue_type = ''
         else:
-            cue_location_name = ''
+            cue_present = True
+            cue_loc = target_loc or choice(['left', 'right'])
+            if cue_type == 'dot':
+                if target_present:
+                    cue_pos_x, cue_pos_y = target_pos_x, target_pos_y
+                else:
+                    cue_pos = self.location_map[cue_loc]
+                    cue_pos_x, cue_pos_y = self.screen.jitter(cue_pos)
 
-        # # target present trial
-        # if target_location_name:
-        #     target_location = self.location_map[target_location_name]
-        #     # jitter position of target
-        #     target_location = [p + self.jitter() for p in target_location]
-        # # target absent trial
-        # else:
-        #     # still draw it, but invisibly
-        #     target_opacity = 0.0
-        #     target_location = (0, 0)
-        #
-        # self.stim['target'].setPos(target_location)
-        # self.stim['target'].setOpacity(target_opacity)
-        #
-        # # determine where to draw the dot
-        # if cue_type == 'dot':
-        #     # if cue is valid, use same pos for cue and target
-        #     if cue_location_name == target_location_name:
-        #         dot_location = target_location
-        #     # if cue is invalid (either wrong loc or no target),
-        #     # jitter the centroid position of the cue location name
-        #     else:
-        #         dot_location = self.location_map[cue_location_name]
-        #         dot_location = [p + self.jitter() for p in dot_location]
-        #     # draw the cue in the determined location
-        #     self.cues[cue_type].setPos(dot_location)
-        # elif cue_type == 'word':
-        #     self.cues[cue_type].setText(cue_location_name)
-        # elif cue_type == 'arrow':
-        #     angle_from_vert = self.name_to_angle[cue_location_name]
-        #     self.cues[cue_type].setOri(angle_from_vert)
-        # else:
-        #     # no cue trial
-        #     cue_type = 'nocue'
-        #
-        # self.stim['cue'] = self.cues[cue_type]
+        self.trial_data['cue_present'] = int(cue_present)
+        self.trial_data['cue_type'] = cue_type
+        self.trial_data['cue_loc'] = cue_loc
+        self.trial_data['cue_pos_x'] = cue_pos_x
+        self.trial_data['cue_pos_y'] = cue_pos_y
 
-        # # create a jitter function for target positions
-        # edge_buffer = target_size/4
-        # outer_edge = mask_size/2
-        # inner_edge = outer_edge - target_size/2 - edge_buffer
-        # self.jitter = lambda: random.uniform(-inner_edge/2, inner_edge/2)
-
-
-
-        response_vars = self.detect_target.run_trial(self.trial_data)
-        self.trial_data.update(response_vars)
+        self.detect_target.run_trial(self.trial_data)
 
         row = '\t'.join(map(str, self.trial_data.values()))
         self.data_file.write(row + '\n')
@@ -209,10 +184,9 @@ class SpatialCueing(ioHubExperimentRuntime):
         self.trial_data['part'] = 'practice'
         for trial_ix in range(10):
             target_present = choice([True, False], p = [0.8, 0.2])
-            cue_present = False
 
             self.trial_data['trial_ix'] = trial_ix
-            self.run_trial(target_present, cue_present, target_opacity = 1.0)
+            self.run_trial(target_present, 1.0, cue_type = None)
 
     def calibrate_target_opacity(self):
         """ Adjust the target opacity until performance is around 50% """
@@ -229,11 +203,9 @@ class SpatialCueing(ioHubExperimentRuntime):
 
         for target_opacity in staircase:
             target_present = choice([True, False], p = [0.8, 0.2])
-            cue_present = False
 
             self.trial_data['trial_ix'] = staircase.thisTrialN
-            self.run_trial(target_present, cue_present,
-                    target_opacity = target_opacity)
+            self.run_trial(target_present, target_opacity, cue_type = None)
 
             if target_present:
                 staircase.addResponse(self.trial_data['is_correct'])
@@ -241,9 +213,6 @@ class SpatialCueing(ioHubExperimentRuntime):
             trial_ix = self.trial_data['trial_ix']
             if trial_ix > 0 and trial_ix % 40 == 0:
                 self.text_screen.show_text('break')
-
-        if not self.running:
-            return
 
         # use quantile
         critical_opacity = staircase.quantile()
@@ -256,22 +225,13 @@ class SpatialCueing(ioHubExperimentRuntime):
         for trial_ix in range(200):
             target_present = choice([True, False], p = [0.8, 0.2])
             cue_present = choice([True, False])
+            cue_this_trial = cue_type if cue_present else None
 
             self.trial_data['trial_ix'] = trial_ix
-            self.run_trial(target_present, cue_present,
-                    target_opacity = critical_opacity, cue_type = cue_type)
-
-            if not self.running:
-                return
+            self.run_trial(target_present, critical_opacity, cue_this_trial)
 
             if trial_ix > 0 and trial_ix % 40 == 0:
                 self.text_screen.show_text('break')
-
-    def request_quit(self, *args, **kwargs):
-        """ User requested to quit the experiment. """
-        self.running = False
-        print "Quit requested..."
-        return True  # exits the screenstate
 
 if __name__ == '__main__':
     from psychopy.iohub import module_directory

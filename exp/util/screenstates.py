@@ -264,11 +264,12 @@ class RefreshTrigger(TimeTrigger):
 
 class SpatialCueing(ScreenState):
     def __init__(self, window, hubServer):
+        """ Create all visual stims and event triggers """
         super(TargetDetection, self).__init__(window, hubServer,
                 eventTriggers = list(), timeout = 60.0)
 
-        # Visual objects
-        # ==============
+        # Visual stims
+        # ============
         self.exp = Path(__file__).absolute().ancestor(2)
         stim = Path(self.exp, 'stimuli')
 
@@ -285,7 +286,7 @@ class SpatialCueing(ScreenState):
         mask_size = 200
         mask_kwargs = {
             'win': self.window,
-            'size': [mask_size,mask_size],
+            'size': [mask_size, mask_size],
             'opacity': 0.8,
         }
         masks = {}
@@ -311,6 +312,13 @@ class SpatialCueing(ScreenState):
         target = visual.Rect(opacity = 0.0, **target_kwargs)
         self.stim.update({'target': target})
 
+        # create a jitter function for target positions
+        edge_buffer = target_size/4
+        outer_edge = mask_size/2
+        inner_edge = outer_edge - target_size/2 - edge_buffer
+        self.jitter = lambda p: (p + random.uniform(-inner_edge/2, inner_edge/2),
+                                 p + random.uniform(-inner_edge/2, inner_edge/2))
+
         # cues
         # ----
         self.cues = {}
@@ -318,7 +326,6 @@ class SpatialCueing(ScreenState):
         self.cues['arrow'] = visual.ImageStim(self.window, Path(stim, 'arrow.png'))
         self.cues['word'] = visual.TextStim(self.window, **text_kwargs)
         self.cues['nocue'] = visual.Rect(opacity = 0.0, **target_kwargs)
-        # cues added to self.stim on switchTo
 
         # texts
         # -----
@@ -334,29 +341,9 @@ class SpatialCueing(ScreenState):
         texts['footer'] =visual.TextStim(pos=(0,bot), height=20, **text_kwargs)
         self.stim.update(texts)
 
-        # Parts
-        # =====
-        self.segments = OrderedDict()
-        self.segments['fixation'] =
-
-        mask_names = ['left', 'right']
-        self.visuals = {}
-        self.visuals['fixation'] = mask_names + ['fix', ]
-        self.visuals['cue']      = mask_names + ['cue', ]
-        self.visuals['interval'] = mask_names
-        self.visuals['target']   = mask_names + ['target', ]
-        self.visuals['prompt']   = ['prompt', ]
-
-        self.delays = OrderedDict()
-        self.delays['fixation'] = 0.5
-        self.delays['cue']      = 0.2
-        self.delays['interval'] = 0.5
-        self.delays['target']   = 0.5
-        self.delays['prompt']   = 2.0
-
-        # Triggers
-        # ========
-        self.triggers = {}  # like self.stim, but for triggers
+        # Event triggers
+        # ==============
+        self.triggers = {}  # like self.stim
 
         # responses
         # ---------
@@ -385,38 +372,49 @@ class SpatialCueing(ScreenState):
         delay_trig = RefreshTrigger(self.getStateStartTime,
                 delay = self.get_delay, # callable, force update
                 trigger_function = self.delay_reached, repeat_count = -1)
-        self.triggers['delay']
+        self.triggers['delay'] = delay_trig
+
+        self.trial_parts = OrderedDict()
+        self.trial_parts['fixation'] = {
+            'duration': 0.5,
+            'stim': ['left', 'right', 'fix'],
+            'trig': ['refresh', ]}
+        self.trial_parts['cue'] = {
+            'duration': 0.2,
+            'stim': ['left', 'right', 'cue'],
+            'trig': ['refresh', ]}
+        self.trial_parts['interval'] = {
+            'duration': 0.5,
+            'stim': ['left', 'right'],
+            'trig': ['refresh', ]}
+        self.trial_parts['target'] = {
+            'duration': 0.5,
+            'stim': ['left', 'right', 'target'],
+            'trig': ['refresh', 'response']}
+        self.trial_parts['prompt'] = {
+            'duration': 2.0,
+            'stim': ['prompt', ],
+            'trig': ['response']}
 
     def show_text(self, details):
         for text_stim in ['title', 'body', 'footer']:
             if text_stim in details:
-                self.stim[text_stim].setText(details[text_stim])
-
-        self.stimNames = details['visuals']
-        self.event_triggers = [self.triggers[trig_name] \
-                for trig_name in details['triggers']]
-
+                self.stim[text_stim].setText(details[text_stim]])
+        if 'target' in details['visuals']:
+            self.stim['target'].setPos(self.location_map['left'])
+            self.stim['target'].setOpacity(0.8)
+        self.prepare(details['visuals'], details['trigs'])
         self.switchTo()
 
     def run_trial(self, settings):
-        """ Set the presentation parameters and run the trial
-
-        Settings
-        --------
-        target_present
+        """
+        Required settings
+        -----------------
         target_pos_x, target_pos_y
         target_opacity
-        cue_present
         cue_type
-        cue_location
+        cue_loc
         cue_pos_x, cue_pos_y
-
-        Response
-        --------
-        rt
-        key
-        response
-        is_correct
         """
         target_pos = (settings['target_pos_x'], settings['target_pos_y'])
         self.stim['target'].setPos(target_pos)
@@ -427,19 +425,22 @@ class SpatialCueing(ScreenState):
             dot_pos = (settings['cue_pos_x'], settings['cue_pos_y'])
             self.cues['dot'].setPos(dot_pos)
         elif cue_type == 'arrow':
-            self.cues['arrow'].setOri()
+            cue_loc = settings['cue_loc']
+            arrow_ori = self.angle_from_name[cue_loc]
+            self.cues['arrow'].setOri(arrow_ori)
         elif cue_type == 'verbal':
             raise Exception('Verbal cues are not implemented')
         else:
-            assert cue_type == 'nocue', cue_type + ' not implemented'
+            assert cue_type == '', cue_type + ' not implemented'
+            cue_type = 'nocue'
         self.stim['cue'] = self.cues[cue_type]
 
-        self.target_onset = 0.0
         self.state = 'fixation'
-        self.stimNames = self.visuals[self.state]
-        self.event_triggers = [self.triggers[name] \
-                for name in ['refresh', 'delay', 'response_trig']]
-        self.current_state_delay = self.delays[self.state]
+        start_part = self.trial_parts[self.state]
+        self.current_state_delay = start_part['duration']
+        self.prepare(start_part['stim'], start_part['trig'])
+
+        self.target_onset = None
         stateStartTime, stateDuration, triggeringEvent = self.switchTo()
 
         rt = stateDuration - self.target_onset
@@ -454,6 +455,12 @@ class SpatialCueing(ScreenState):
             'is_correct': is_correct,
         }
         settings.update(response_vars)
+        return settings
+
+    def prepare(self, stimNames, trigNames):
+        self.stimNames = stimNames
+        self.event_triggers = [self.triggers[name] \
+                for name in trigNames]
 
     def refresh(self, *args, **kwargs):
         """ Redraw the screen to update the masks """
@@ -467,48 +474,23 @@ class SpatialCueing(ScreenState):
 
     def delay_reached(self, *args, **kwargs):
         """ Update the stimuli on the screen """
-        self.all_states.remove(self.state)
-
-        if self.all_states:
-            self.state = self.all_states[0]
-        else:
-            # trial has timed out without a response
+        print 'Finished state:', self.state, ', trigger args:', args
+        ordered_parts = self.trial_parts.keys()
+        next_part_ix = ordered_parts.index(self.state) + 1
+        try:
+            self.state = ordered_parts[next_part_ix]
+        except IndexError:
             return True
 
-        self.stimNames = self.visuals[self.state]
-        self.current_state_delay = self.delays[self.state]
+        next_part = self.trial_parts[self.state]
+        self.current_state_delay = next_part['duration']
+        self.prepare(next_part['stim'], next_part['trig'])
         self.dirty = True
         flip_time = self.flip()
-        if self.state == 'target' and not self.rt_start:
-            self.rt_start = flip_time - self._start_time
+        print 'Starting state:', self.state, ', at time:', flip_time
+        if self.state == 'target' and not self.target_onset:
+            self.target_onset = flip_time - self._start_time
         return False
-
-    def response(self, *args, **kwargs):
-        """ User hit one of the response keys """
-        if self.state in ['target', 'prompt']:
-            return True
-        else:
-            return False
-
-
-
-class TargetDetectionInstructions(TargetDetection):
-    def __init__(self, window, hubServer):
-        super(TargetDetectionInstructions, self).__init__(window,
-                hubServer, eventTriggers = list(), timeout = 60.0)
-
-
-
-        # Set example target
-        # ------------------
-        self.stim['target'].setPos(self.location_map['left'])
-        self.stim['target'].setOpacity(1.0)
-
-        advance_trig = DeviceEventTrigger(hubServer.devices.keyboard,
-                event_type = EventConstants.KEYBOARD_PRESS,
-                event_attribute_conditions = {'key': ' '})
-        self.triggers['advance_trig'] = advance_trig
-
 
 if __name__ == '__main__':
     import argparse
@@ -545,16 +527,26 @@ if __name__ == '__main__':
             fullscr = True, allowGUI = False,
             screen = display.getIndex())
 
+    screen = TargetDetection(window = window, hubServer = io)
+
     if args.view == 'trial':
         args.location = args.location or args.target
+        target_pos_x, target_pos_y = screen.location_map[args.target]
+        cue_pos_x = ''
+        cue_pos_y = ''
+        if args.cue == 'dot':
+            cue_pos_x, cue_pos_y = screen.location_map[args.location]
 
-        keys = ['y', 'n']
-        detect_target = TargetDetection(hubServer=io, window=window, keys=keys)
-        detect_target.prepare_trial(args.target, args.opacity,
-                cue_type = args.cue, cue_location_name = args.location)
-        rt,event = detect_target.run_trial()
-        print rt, event.key
+        settings = {
+            'target_pos_x': target_pos_x,
+            'target_pox_y': target_pos_y,
+            'target_opacity': args.opacity,
+            'cue_type': args.cue,
+            'cue_loc': args.location,
+            'cue_pos_x': cue_pos_x,
+            'cue_pos_y': cue_pos_y,
+        }
+        print screen.run_trial(settings)
     else:  # view == 'instruct'
-        instructions = TargetDetectionInstructions(window, io)
         texts = yaml.load(open('spatial-cueing.yaml', 'r'))['texts']
-        instructions.show_instruction(texts[args.screen_name])
+        screen.show_text(texts[args.screen_name])
