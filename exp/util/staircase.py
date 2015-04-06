@@ -53,8 +53,8 @@ def simulate_real_threshold(staircase, opacity_cutoff):
     print 'Final opacity = {}'.format(np.array(staircase.intensities[-10:]).mean())
     print 'Final accuracy = {}'.format(np.array(staircase.data).mean())
 
-staircase = new_staircase(desired_accuracy = 0.9)
-simulate_real_threshold(staircase, opacity_cutoff = 0.5)
+#staircase = new_staircase(desired_accuracy = 0.9)
+#simulate_real_threshold(staircase, opacity_cutoff = 0.5)
 
 # notes
 # - whether or not a staircase will work depends on the relative relationship
