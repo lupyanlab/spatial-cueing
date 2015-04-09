@@ -8,7 +8,7 @@ subj_info:
     2:
         name: cue_type
         prompt: Type of cue
-        options: dot, word
+        options: dot, text, sound
         default: dot
     3:
         name: experimenter
@@ -22,24 +22,24 @@ texts:
         title: Welcome to the SPC experiment
         body: >
             Today we want to measure your peripheral vision:
-            how well can you see a faint target object presented to the
+            how well can you see a faint shape presented to the
             left or the right of where you are looking? On most of the
             trials you will see a target, but there will be some trials
             where you don't see anything. We're interested in how
             quickly you can spot the targets when they are there, and
             how accurately you can tell if they're not. All you have to
-            do is decide, for each trial, "Did I see the target?"
+            do is decide, for each trial, "Did I see a white square appear?"
         footer: Press the SPACEBAR to see an example target.
     target:
         visuals: [title, body, footer, left, right, fix, target]
         triggers: [refresh, advance]
         title: Do you see the target inside the left square?
         body: >
-            Below is a sample trial. Do you see the target? The targets
+            Below is a sample trial. Do you see the target, a white square? The targets
             will appear in either the left or the right flashing square.
             In the actual experiment, the target will appear and disappear
-            very quickly. Your best strategy is to stare in the middle of 
-            the two squares, directly at the "+" sign.
+            very quickly. For the experiment we ask that you stare in the middle of 
+            the two squares, directly at the "+" sign, during the trial.
         footer: Press the SPACEBAR to continue.
     practice:
         visuals: [title, body, footer]
@@ -51,17 +51,18 @@ texts:
             the center of the screen, right where the "+" appears.
             If you see a target appear, press the "y" key on the
             keyboard. If you do not see a target, press the "u" key.
-            y key: Yes, I saw a target.
-            u key: No, I did not see a target.
-        footer: Press the SPACEBAR to start the practice trials.
+        footer: Place two fingers of your dominant hand over the y and u keys. Then press the SPACEBAR to start the practice trials.
     cue:
         visuals: [title, body, footer]
         triggers: [advance, ]
         title: Now we are going to add a cue before the target
         body: >
-            On each trial, you will see a word like "left" or "right",
-            but your task is exactly the same. 
-        footer: Press the SPACEBAR to continue
+            Please put the headphones on. Most of the trials will be exactly the same.
+            But on some of the trials you will see or hear a cue before the target appears.
+            For example, you might see an X in one of the boxes, or hear a word like "left".
+            Your task is exactly the same: stare at the fixation "+" during the entire trial
+            and respond "yes" if you see the target in either square, and "no" if you do not.
+        footer: Press the SPACEBAR to continue. Please try to stare at the center of the screen during the trials.
     ready:
         visuals: [title, body, footer]
         triggers: [advance, ]
