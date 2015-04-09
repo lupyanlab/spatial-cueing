@@ -180,7 +180,7 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
     def run_practice_trials(self):
         """ Run a few practice trials with highly visible targets """
         self.trial_data['part'] = 'practice'
-        for trial_ix in range(10):
+        for trial_ix in range(20):
             target_present = choice([True, False], p = [0.8, 0.2])
 
             self.trial_data['trial_ix'] = trial_ix
@@ -195,7 +195,7 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
         staircase = QuestHandler(startVal = 0.8,
             startValSd = 0.4,
             pThreshold = 0.63,   # bring them close to threshold
-            nTrials = 100,       # run 100 trials (don't use stopInterval)
+            nTrials = 120,       # run 120 trials (don't use stopInterval)
             stopInterval = None,
             method = 'quantile',
             stepType = 'lin',
@@ -227,7 +227,7 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
         self.screen.show_text(introduce_cue)
 
         self.trial_data['part'] = 'cueing_effect'
-        for trial_ix in range(80):
+        for trial_ix in range(200):
             target_present = choice([True, False], p = [0.8, 0.2])
             cue_present = choice([True, False])
             cue_this_trial = cue_type if cue_present else None
