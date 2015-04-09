@@ -359,7 +359,7 @@ class SpatialCueing(ScreenState):
         advance_trig = DeviceEventTrigger(hubServer.devices.keyboard,
                 event_type = EventConstants.KEYBOARD_PRESS,
                 event_attribute_conditions = {'key': ' '},
-                trigger_functon = self.response)
+                trigger_function = self.response)
         self.triggers['advance'] = advance_trig
 
         # refresh
