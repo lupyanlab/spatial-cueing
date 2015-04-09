@@ -12,7 +12,7 @@ from psychopy.iohub.util import Trigger, TimeTrigger, DeviceEventTrigger
 from psychopy.iohub.util import win32MessagePump
 
 from util.dynamicmask import DynamicMask
-from util.psychopyhelper import load_sounds
+from util.psychopy_helper import load_sounds
 
 getTime = core.getTime
 
@@ -330,9 +330,6 @@ class SpatialCueing(ScreenState):
         self.sounds['left'] = load_sounds(stim, '*left*.wav')
         self.sounds['right'] = load_sounds(stim, '*right*.wav')
 
-        print self.sounds
-        print self.sounds['left']
-
         # texts
         # -----
         (l, t, r, b) = hubServer.devices.display.getBounds()
@@ -437,7 +434,9 @@ class SpatialCueing(ScreenState):
         elif cue_type == 'text':
             self.cues['text'].setText(target_loc)
         elif cue_type == 'sound':
-            sound_version = random.choice(self.sounds[target_loc])
+            sound_options = self.sounds[target_loc].values()
+            sound_version = random.choice(sound_options)
+            sound_version.reset()
             self.cues['sound'] = sound_version
         # elif cue_type == 'arrow':
         #     cue_loc = settings['cue_loc']
@@ -560,7 +559,13 @@ if __name__ == '__main__':
         target_loc = args.target
         target_pos_x, target_pos_y = screen.location_map[target_loc]
         cue_type = args.cue or ''
-        cue_loc = args.location if args.location else ''
+        if args.location:
+            cue_loc = args.location
+        elif cue_type:
+            print 'setting cue to target'
+            cue_loc = target_loc
+        else:
+            cue_loc = ''
         cue_pos_x = ''
         cue_pos_y = ''
         if args.cue == 'dot':

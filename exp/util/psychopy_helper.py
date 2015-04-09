@@ -5,7 +5,7 @@ import socket
 
 from unipath import Path
 
-from psychopy import core, event, visual, data, gui, misc #, sound
+from psychopy import core, event, visual, data, gui, misc, sound
 
 def enter_subj_info(exp_name, options, unique = True, exp_dir = './',
         data_dir = './'):
@@ -139,13 +139,23 @@ def load_images(image_dir, ext, **kwargs):
 
     return images
 
+class SoundDraw(sound.Sound):
+    TRIGGERED = False
+    def draw(self):
+        if not self.TRIGGERED:
+            self.play()
+            self.TRIGGERED = True
+    
+    def reset(self):
+        self.TRIGGERED = False
+
 def load_sounds(sound_dir, pattern):
     sound_dir = Path(sound_dir)
-    sound_name = sound_dir.listdir(pattern = pattern)
+    sound_names = sound_dir.listdir(pattern = pattern)
     sounds = {}
     for snd_name in sound_names:
         snd_path = os.path.join(sound_dir, snd_name)
-        sounds[snd_name] = sound.Sound(snd_path)
+        sounds[snd_name] = SoundDraw(snd_path)
 
     return sounds
 
