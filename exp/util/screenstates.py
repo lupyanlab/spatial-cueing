@@ -12,6 +12,7 @@ from psychopy.iohub.util import Trigger, TimeTrigger, DeviceEventTrigger
 from psychopy.iohub.util import win32MessagePump
 
 from util.dynamicmask import DynamicMask
+from util.psychopyhelper import load_sounds
 
 getTime = core.getTime
 
@@ -311,7 +312,7 @@ class SpatialCueing(ScreenState):
         self.stim.update({'target': target})
 
         # create a jitter function for target positions
-        edge_buffer = target_size/4
+        edge_buffer = target_size/6
         outer_edge = mask_size/2
         inner_edge = outer_edge - target_size/2 - edge_buffer
         self.jitter = lambda p: (p[0] + random.uniform(-inner_edge/2, inner_edge/2),
@@ -321,9 +322,16 @@ class SpatialCueing(ScreenState):
         # ----
         self.cues = {}
         self.cues['dot'] = visual.TextStim(self.window, text = 'x', **text_kwargs)
-        self.cues['word'] = visual.TextStim(self.window, **text_kwargs)
+        self.cues['text'] = visual.TextStim(self.window, **text_kwargs)
         # self.cues['arrow'] = visual.ImageStim(self.window, Path(stim, 'arrow.png'))
         self.cues['nocue'] = visual.Rect(opacity = 0.0, **target_kwargs)
+
+        self.sounds = {}
+        self.sounds['left'] = load_sounds(stim, '*left*.wav')
+        self.sounds['right'] = load_sounds(stim, '*right*.wav')
+
+        print self.sounds
+        print self.sounds['left']
 
         # texts
         # -----
@@ -426,8 +434,11 @@ class SpatialCueing(ScreenState):
         if cue_type == 'dot':
             dot_pos = (settings['cue_pos_x'], settings['cue_pos_y'])
             self.cues['dot'].setPos(dot_pos)
-        elif cue_type == 'word':
-            self.cues['word'].setText(target_loc)
+        elif cue_type == 'text':
+            self.cues['text'].setText(target_loc)
+        elif cue_type == 'sound':
+            sound_version = random.choice(self.sounds[target_loc])
+            self.cues['sound'] = sound_version
         # elif cue_type == 'arrow':
         #     cue_loc = settings['cue_loc']
         #     angle_from_name = {'left': -90, 'right': 90}
@@ -521,7 +532,7 @@ if __name__ == '__main__':
             default = 'left', help = 'Where should the target be shown')
     trial_parser.add_argument('-o', '--opacity', type = float,
             default = 1.0, help = 'Opacity of the target')
-    trial_parser.add_argument('-cue', choices = ['dot', 'word'],
+    trial_parser.add_argument('-cue', choices = ['dot', 'text', 'sound'],
             help = 'Which cue should be used.')
     trial_parser.add_argument('-loc', '--location',
             choices = ['left', 'right'],

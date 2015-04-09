@@ -139,8 +139,9 @@ def load_images(image_dir, ext, **kwargs):
 
     return images
 
-def load_sounds(sound_dir, ext):
-    sound_names = [name for name in os.listdir(sound_dir) if name[-3:] == ext]
+def load_sounds(sound_dir, pattern):
+    sound_dir = Path(sound_dir)
+    sound_name = sound_dir.listdir(pattern = pattern)
     sounds = {}
     for snd_name in sound_names:
         snd_path = os.path.join(sound_dir, snd_name)
