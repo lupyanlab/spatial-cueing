@@ -99,59 +99,10 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
                 fullscr = True, allowGUI = False,
                 screen = display.getIndex())
 
-        # runs trials and shows instructions
+
+        # the same screenstate runs the trials and shows instructions
         self.screen = SpatialCueing(self.window, self.hub)
         self.intertrial = ClearScreen(self, timeout = 0.5)
-
-        # Show instructions
-        # -----------------
-        for screen in ['welcome', 'target', 'practice']:
-            details = self.text_info[screen]
-            self.screen.show_text(details)
-
-        # Run practice trials
-        # -------------------
-        self.run_practice_trials()
-
-        # Calibrate target opacity
-        # ------------------------
-        ready_text_details = self.text_info['ready']
-        self.screen.show_text(ready_text_details)
-        critical_opacity = self.calibrate_target_opacity()
-
-        # Introduce cue
-        # -------------
-        cue_type = self.subj_info['cue_type']
-        introduce_cue = self.text_info['cue']
-        self.screen.show_text(introduce_cue)
-        
-        # Test cueing effect: easy_block
-        # ------------------------------
-        #easy_block = self.text_info['easy']
-        #self.screen.show_text(easy_block)
-        self.test_cueing_effect(cue_type, 0.8)
-
-        # Test cueing effect: hard block
-        # ------------------------------
-        #hard_block = self.text_info['hard']
-        #self.screen.show_text(hard_block)
-        self.test_cueing_effect(cue_type, critical_opacity)
-
-        # Test cueing effect: easy block
-        # ------------------------------
-        #self.screen.show_text(easy_block)
-        self.test_cueing_effect(cue_type, 0.8)
-
-        # Test cueing effect: hard block
-        # ------------------------------
-        #self.screen.show_text(hard_block)
-        self.text_cueing_effect(cue_type, critical_opacity)
-
-        # End of experiment
-        # -----------------
-        end_details = self.text_info['end_of_experiment']
-        self.screen.show_text(end_details)
-        self.data_file.close()
 
     def run_trial(self, target_present, target_opacity, cue_type = None):
         """ Prepare the trial, run it, and save the data to disk
@@ -211,6 +162,11 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
         else:
             self.intertrial.switchTo()
 
+    def show_instructions(self):
+        for screen in ['welcome', 'target', 'practice']:
+            details = self.text_info[screen]
+            self.screen.show_text(details)
+
     def run_practice_trials(self):
         """ Run a few practice trials with highly visible targets """
         self.trial_data['part'] = 'practice'
@@ -220,10 +176,12 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
             self.trial_data['trial_ix'] = trial_ix
             self.run_trial(target_present, 1.0, cue_type = None)
 
+        ready_text_details = self.text_info['ready']
+        self.screen.show_text(ready_text_details)
+
     def calibrate_target_opacity(self):
         """ Adjust the target opacity until performance is around 50% """
         self.trial_data['part'] = 'calibration'
-
         staircase = QuestHandler(startVal = 0.8,
             startValSd = 0.4,
             pThreshold = 0.63,   # bring them close to threshold
@@ -254,6 +212,10 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
 
     def test_cueing_effect(self, cue_type, critical_opacity):
         """ Determine the effect of cueing on near-threshold detection """
+        cue_type = self.subj_info['cue_type']
+        introduce_cue = self.text_info['cue']
+        self.screen.show_text(introduce_cue)
+
         self.trial_data['part'] = 'cueing_effect'
         for trial_ix in range(80):
             target_present = choice([True, False], p = [0.8, 0.2])
@@ -267,8 +229,23 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
                 break_details = self.text_info['break']
                 self.screen.show_text(break_details)
 
+    def end_experiment(self):
+        end_details = self.text_info['end_of_experiment']
+        self.screen.show_text(end_details)
+        self.data_file.close()
+
 if __name__ == '__main__':
     from psychopy.iohub import module_directory
     module = module_directory(SpatialCueingExperiment.run)
     runtime = SpatialCueingExperiment(module, 'experiment_config.yaml')
     runtime.start()
+
+    runtime.show_instructions()
+    runtime.run_practice_trials()
+
+    critical_opacity = runtime.calibrate_target_opacity()
+
+    cue_type = runtime.subj_info['cue_type']
+    runtime.test_cueing_effect(cue_type, critical_opacity)
+
+    runtime.end_experiment()

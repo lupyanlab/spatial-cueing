@@ -381,7 +381,7 @@ class SpatialCueing(ScreenState):
             'stim': ['left', 'right', 'cue'],
             'trig': ['refresh', ]}
         self.trial_parts['interval'] = {
-            'duration': 0.5,
+            'duration': 0.2,
             'stim': ['left', 'right'],
             'trig': ['refresh', ]}
         self.trial_parts['target'] = {
@@ -551,7 +551,7 @@ if __name__ == '__main__':
         target_loc = args.target
         target_pos_x, target_pos_y = screen.location_map[target_loc]
         cue_type = args.cue or ''
-        cue_loc = args.location if args.location else '' 
+        cue_loc = args.location if args.location else ''
         cue_pos_x = ''
         cue_pos_y = ''
         if args.cue == 'dot':
