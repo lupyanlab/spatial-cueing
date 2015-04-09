@@ -104,6 +104,16 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
         self.screen = SpatialCueing(self.window, self.hub)
         self.intertrial = ClearScreen(self, timeout = 0.5)
 
+        self.show_instructions()
+        self.run_practice_trials()
+
+        critical_opacity = self.calibrate_target_opacity()
+
+        cue_type = self.subj_info['cue_type']
+        self.test_cueing_effect(cue_type, critical_opacity)
+
+        self.end_experiment()
+
     def run_trial(self, target_present, target_opacity, cue_type = None):
         """ Prepare the trial, run it, and save the data to disk
 
@@ -240,12 +250,3 @@ if __name__ == '__main__':
     runtime = SpatialCueingExperiment(module, 'experiment_config.yaml')
     runtime.start()
 
-    runtime.show_instructions()
-    runtime.run_practice_trials()
-
-    critical_opacity = runtime.calibrate_target_opacity()
-
-    cue_type = runtime.subj_info['cue_type']
-    runtime.test_cueing_effect(cue_type, critical_opacity)
-
-    runtime.end_experiment()
