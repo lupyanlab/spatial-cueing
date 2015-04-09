@@ -1,0 +1,113 @@
+subj_id	date	computer	experimenter	part	trial_ix	cue_present	cue_type	cue_loc	cue_pos_x	cue_pos_y	target_present	target_loc	target_pos_x	target_pos_y	target_opacity	rt	key	response	is_correct
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	practice	0	0					1	right	207.601690435	-16.5343917014	1.0	2245.88593733		timeout	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	practice	1	0					1	left	-203.895310361	15.6340393059	1.0	931.026217382	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	practice	2	0					0					871.297263395	u	absent	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	practice	3	0					1	right	180.906398644	8.2697539642	1.0	1196.6086358	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	practice	4	0					0					793.615802628	u	absent	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	practice	5	0					0					898.223777418	u	absent	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	practice	6	0					1	right	186.916464827	9.25047943983	1.0	714.947319793	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	practice	7	0					1	right	196.438685109	-6.87406682566	1.0	785.752034775	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	practice	8	0					1	left	-193.490675531	-17.0507270073	1.0	616.053548176	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	practice	9	0					1	right	198.493845388	13.7069530491	1.0	646.497531648	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	0	0					1	left	-192.21816011	16.0332770093	0.8	711.722170614	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	1	0					1	right	215.843069712	9.78901766626	0.75516093705	930.012883269	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	2	0					1	right	199.059127528	11.4463854764	0.630372096044	963.034804066	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	3	0					1	left	-203.083036195	-8.82738213497	0.532180665823	665.815697052	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	4	0					1	right	210.664983213	0.929508341471	0.448708990399	590.35856562	u	absent	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	5	0					1	left	-207.12190685	7.3720832729	0.607833208797	574.024248781	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	6	0					1	left	-219.503579543	-18.3104075232	0.53968194924	840.536252043	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	7	0					1	right	190.038711044	13.1078954772	0.489355070449	621.280337044	u	absent	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	8	0					1	right	211.805267298	18.8668791349	0.575703679198	603.143004293	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	9	0					1	right	198.739870421	-8.22270623139	0.527189302075	694.138032297	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	10	0					1	right	203.541835181	13.3651824353	0.49118879201	617.683931545	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	11	0					1	right	206.167716536	6.20194423188	0.463092191982	599.492691195	u	absent	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	12	0					1	left	-184.001792252	7.83353245237	0.509005544551	621.912788454	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	13	0					0					572.510665195	u	absent	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	14	0					0					744.294861623	y	present	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	15	0					1	left	-185.225452251	-0.720412673719	0.480952946267	1068.20527877	u	absent	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	16	0					1	right	186.517624596	-19.041073207	0.526689470318	1057.16064296	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	17	0					1	left	-204.137558135	-12.2418009079	0.498221377446	771.103613253	u	absent	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	18	0					1	left	-211.268664471	11.6653917035	0.544802526035	712.438050396	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	19	0					1	right	183.190361117	-17.2769524595	0.5164078705	789.969019184	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	20	0					1	left	-192.793175843	11.9060821844	0.493510949637	1105.29722166	u	absent	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	21	0					1	right	203.598016034	19.8631258086	0.529282910276	590.323910728	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	22	0					0					949.175101763	u	absent	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	23	0					1	left	-184.635645536	12.2981189664	0.506288305057	615.368793602	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	24	0					0					886.907999346	u	absent	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	25	0					1	right	192.264594402	-6.51469314514	0.487502839361	647.916456073	u	absent	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	26	0					0					958.153922169	u	absent	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	27	0					1	left	-216.20364905	-7.05679625121	0.518278008083	616.081464628	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	28	0					1	right	187.917882876	-12.7755207775	0.499089658489	824.785933975	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	29	0					1	right	217.646797238	15.1104616348	0.48338383834	942.047108168	u	absent	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	30	0					1	right	215.899910666	-12.1920533524	0.508344761334	692.59011469	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	31	0					1	right	200.35944257	-0.13405064445	0.492217825373	833.871286042	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	32	0					1	left	-200.431949334	-1.99194658135	0.478779914635	880.28185963	u	absent	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	33	0					1	left	-208.793042523	-7.71399217228	0.50117943607	996.599972073	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	34	0					1	right	185.064045734	8.55066007714	0.487350181726	556.673389074	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	35	0					0					708.502797264	u	absent	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	36	0					0					1116.1685831	u	absent	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	37	0					1	right	208.187053574	-10.7255987347	0.475308684994	897.056100774	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	38	0					1	right	207.602373786	12.5848594805	0.46470091278	791.599402524	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	39	0					1	right	219.434094965	-18.1445284953	0.455630457931	536.551102297	u	absent	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	40	0					1	right	211.748328312	-18.1339274224	0.471408702441	678.879620857	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	41	0					1	right	201.887229252	-9.94975024927	0.462005848194	1066.5084736	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	42	0					1	right	188.844095667	17.5808637974	0.453608476176	724.424143526	u	absent	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	43	0					1	left	-181.610624223	-14.5844886956	0.467232587274	896.079667698	u	absent	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	44	0					1	right	203.196693765	9.48387887916	0.483495286061	674.887572241	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	45	0					1	right	181.368873485	-12.0374906318	0.473722740232	1005.01051679	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	46	0					1	left	-184.656097712	-4.4882829811	0.465039849822	636.524308968	u	absent	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	47	0					0					836.96038273	u	absent	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	48	0					1	left	-181.503749422	5.25529914787	0.480079500905	665.312559664	u	absent	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	49	0					1	right	181.768228098	8.89787095155	0.496990066411	682.991357142	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	50	0					1	right	185.688644328	17.2157434268	0.486328348988	647.300048586	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	51	0					0					512.148938957	u	absent	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	52	0					1	left	-192.025274976	16.9892168501	0.476947175281	870.19504598	u	absent	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	53	0					0					648.833847546	u	absent	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	54	0					0					808.723722061	u	absent	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	55	0					1	right	197.892101869	18.3285547965	0.492444198575	661.567266565	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	56	0					1	right	207.464435851	-14.1706434689	0.483069776888	632.099395298	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	57	0					1	right	186.214484295	-15.5680438856	0.474765031547	839.646456123	u	absent	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	58	0					1	left	-209.313953114	4.30261918787	0.488064071629	964.379926474	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	59	0					0					676.460839168	u	absent	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	60	0					1	right	215.288059563	15.9480106047	0.479366351203	599.898923276	u	absent	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	61	0					1	right	185.447242791	4.42545265956	0.493593118734	645.259903511	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	62	0					1	left	-182.066886452	-9.31896524724	0.484930311105	727.094493894	u	absent	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	63	0					1	right	197.088046808	-14.7951631929	0.498748370738	646.545021649	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	64	0					1	left	-198.322758935	-14.2952511857	0.489673373094	1075.05635428	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	65	0					1	right	182.236235957	-6.50453925686	0.481731930684	725.060766359	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	66	0					1	right	199.336837513	-11.5892325734	0.474643143405	850.934317772	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	67	0					1	right	197.982769777	8.19673470753	0.46817049988	693.69425741	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	68	0					1	left	-214.530031138	-11.0466595292	0.462121200275	615.15444683	u	absent	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	69	0					1	left	-195.95687148	-16.9981584631	0.47189206616	933.587148174	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	70	0					0					770.949912461	u	absent	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	71	0					0					526.317647193	u	absent	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	72	0					0					630.973753752	u	absent	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	73	0					1	right	187.606632932	-1.48193519717	0.465876109027	807.853820617	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	74	0					1	right	212.623985521	9.1276560631	0.460034930176	1356.18244507	u	absent	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	75	0					1	left	-218.933923917	-17.0705159468	0.469365858971	745.644155453	u	absent	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	76	0					0					586.72108766	u	absent	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	77	0					1	left	-216.274054986	-14.786870078	0.479645419897	975.960108393	u	absent	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	78	0					1	left	-188.888349198	-15.2006692505	0.491132547176	960.97829417	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	79	0					0					836.561530858	u	absent	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	80	0					1	left	-210.189512594	0.373973806969	0.484135431978	803.773851309	u	absent	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	81	0					1	left	-218.966051485	14.4786631986	0.49542843307	884.3252488	u	absent	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	82	0					1	right	208.138414646	-8.12159710275	0.509111836085	726.692112337	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	83	0					0					552.452554111	u	absent	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	84	0					1	right	212.108988552	10.31179862	0.50071395107	599.754848867	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	85	0					1	left	-192.492108218	1.36730158657	0.493372906058	693.889351474	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	86	0					1	left	-211.081982176	-18.2829569549	0.486749900833	537.127399963	u	absent	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	87	0					1	left	-204.416771763	-5.15663264074	0.498070933569	1135.75628639	u	absent	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	88	0					0					802.962991496	u	absent	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	89	0					1	right	191.573236854	-13.7961909389	0.510820477433	508.971279778	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	90	0					1	right	216.468683348	11.9990300438	0.50300221975	552.198418387	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	91	0					0					568.380638841	y	present	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	92	0					1	left	-195.555744178	-4.90480248729	0.496024387085	664.7121961	u	absent	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	93	0					1	right	219.402072334	12.0908072687	0.508000997254	458.156007895	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	94	0					1	left	-181.693191241	6.78496568085	0.500595912798	791.637266171	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	95	0					1	left	-215.24252335	0.810752884105	0.494140806751	989.48288837	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	96	0					0					551.453338674	u	absent	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	97	0					1	right	207.320043899	8.8927361759	0.488211732836	896.775653033	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	98	0					1	right	210.227765872	12.0067780192	0.482703583823	777.838851645	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	calibration	99	0					1	right	203.741983469	-15.104841024	0.477662339885	758.321420726	y	present	1
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	cueing_effect	0	0					0					2241.72606927		timeout	0
+SPC-pilot-1	2015_Mar_27_1103	LL-Elaine	PME	cueing_effect	1	0					0					416.806008114	y	present	0
