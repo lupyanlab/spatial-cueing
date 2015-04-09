@@ -358,7 +358,7 @@ class SpatialCueing(ScreenState):
 
         # refresh
         # -------
-        REFRESH_RATE = 0.02
+        REFRESH_RATE = 0.0166
         refresh_trig = RefreshTrigger(self.getStateStartTime,
                 delay = REFRESH_RATE, trigger_function = self.refresh,
                 repeat_count = -1)
@@ -373,7 +373,7 @@ class SpatialCueing(ScreenState):
 
         self.trial_parts = OrderedDict()
         self.trial_parts['fixation'] = {
-            'duration': 0.8,
+            'duration': 0.750,
             'stim': ['left', 'right', 'fix'],
             'trig': ['response', 'refresh', ]}  # triggers have to be present at state start
         self.trial_parts['cue'] = {
@@ -381,16 +381,16 @@ class SpatialCueing(ScreenState):
             'stim': ['left', 'right', 'cue'],
             'trig': ['refresh', ]}
         self.trial_parts['interval'] = {
-            'duration': 0.2,
+            'duration': 0.750,
             'stim': ['left', 'right'],
             'trig': ['refresh', ]}
         self.trial_parts['target'] = {
-            'duration': 0.2,
+            'duration': 0.066,
             'stim': ['left', 'right', 'target'],
             'trig': ['response', 'refresh', ]}
         self.trial_parts['prompt'] = {
             'duration': 2.0,
-            'stim': ['prompt', ],
+            'stim': ['left', 'right', 'prompt'],
             'trig': ['response']}
 
     def show_text(self, details):
@@ -471,8 +471,6 @@ class SpatialCueing(ScreenState):
         self.stimNames = stimNames
         self.event_triggers = [self.triggers[name] \
                 for name in trigNames]
-        print 'Triggers:', trigNames
-
 
     def response(self, *args, **kwargs):
         if self.state != 'fixation':
@@ -492,7 +490,7 @@ class SpatialCueing(ScreenState):
 
     def delay_reached(self, *args, **kwargs):
         """ Update the stimuli on the screen """
-        print 'Finished state:', self.state, 'trigger args:', args
+        print 'Finished state:', self.state, '; trigger args:', args
         ordered_parts = self.trial_parts.keys()
         next_part_ix = ordered_parts.index(self.state) + 1
         try:
