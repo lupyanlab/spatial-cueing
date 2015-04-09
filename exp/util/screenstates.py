@@ -358,7 +358,8 @@ class SpatialCueing(ScreenState):
 
         advance_trig = DeviceEventTrigger(hubServer.devices.keyboard,
                 event_type = EventConstants.KEYBOARD_PRESS,
-                event_attribute_conditions = {'key': ' '})
+                event_attribute_conditions = {'key': ' '},
+                trigger_functon = self.response)
         self.triggers['advance'] = advance_trig
 
         # refresh
@@ -432,9 +433,9 @@ class SpatialCueing(ScreenState):
             dot_pos = (settings['cue_pos_x'], settings['cue_pos_y'])
             self.cues['dot'].setPos(dot_pos)
         elif cue_type == 'text':
-            self.cues['text'].setText(target_loc)
+            self.cues['text'].setText(cue_loc)
         elif cue_type == 'sound':
-            sound_options = self.sounds[target_loc].values()
+            sound_options = self.sounds[cue_loc].values()
             sound_version = random.choice(sound_options)
             sound_version.reset()
             self.cues['sound'] = sound_version
