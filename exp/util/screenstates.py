@@ -358,8 +358,7 @@ class SpatialCueing(ScreenState):
 
         advance_trig = DeviceEventTrigger(hubServer.devices.keyboard,
                 event_type = EventConstants.KEYBOARD_PRESS,
-                event_attribute_conditions = {'key': ' '},
-                trigger_function = self.response)
+                event_attribute_conditions = {'key': ' '})
         self.triggers['advance'] = advance_trig
 
         # refresh
@@ -457,7 +456,10 @@ class SpatialCueing(ScreenState):
         self.target_onset = None
         stateStartTime, stateDuration, triggeringEvent = self.switchTo()
 
-        rt = stateDuration - self.target_onset
+        try:
+            rt = stateDuration - self.target_onset
+        except TypeError:
+            rt = 0.0
         rt = rt * 1000
         try:
             key = triggeringEvent.key
