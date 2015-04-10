@@ -42,7 +42,7 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
         # Get the session info
         # --------------------
         self.subj_info, self.data_file = enter_subj_info(
-            exp_name = 'spatial-cueing', options = subj_info_fields,
+            exp_name = 'spatial-cueing-no-calibration', options = subj_info_fields,
             exp_dir = './spatial-cueing/', data_dir = './spatial-cueing/data/')
 
         # Set the structure of data file
@@ -116,8 +116,8 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
         # Instead, run participants in both cueing conditions
         # in random order
         critical_opacity = 0.6
-        possible_orders = [('dot', 'sound', 'dot', 'sound'),
-                           ('sound', 'dot', 'sound', 'dot')]
+        possible_orders = [('dot', 'sound', 'dot', 'sound', 'dot', 'sound'),
+                           ('sound', 'dot', 'sound', 'dot', 'dot', 'sound')]
         selected_order = random.choice(possible_orders)
 
         for current_block in selected_order:
