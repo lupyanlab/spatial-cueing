@@ -521,6 +521,24 @@ class SpatialCueing(ScreenState):
             self.target_onset = flip_time - self._start_time
         return False
 
+
+class SpatialCueingExperiment2(SpatialCueingExperiment):
+    def __init__(self, *args, **kwargs):
+        super(SpatialCueingExperiment2, self).__init__(*args, **kwargs)
+        
+        # refresh (adjusted)
+        # ------------------
+        REFRESH_RATE = 0.0166 * 2
+        refresh_trig = RefreshTrigger(self.getStateStartTime,
+                delay = REFRESH_RATE, trigger_function = self.refresh,
+                repeat_count = -1)
+        self.triggers['refresh'] = refresh_trig
+
+        self.trial_parts['target'] = {
+            'duration': 0.066 * 2,
+            'stim': ['left', 'right', 'target'],
+            'trig': ['response', 'refresh']}
+
 if __name__ == '__main__':
     import argparse
     from psychopy.iohub import launchHubServer
