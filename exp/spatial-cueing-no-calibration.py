@@ -34,7 +34,7 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
     def run(self, *args, **kwargs):
         # Load the experiment info
         # ------------------------
-        exp_info = yaml.load(open('spatial-cueing-2.yaml', 'r'))
+        exp_info = yaml.load(open('spatial-cueing-no-calibration.yaml', 'r'))
         subj_info_fields = exp_info['subj_info']
         self.text_info = exp_info['texts']
 
