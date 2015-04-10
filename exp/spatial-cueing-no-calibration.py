@@ -106,7 +106,10 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
         self.intertrial = ClearScreen(self, timeout = 0.5)
 
         self.show_instructions()
-        self.run_practice_trials()
+        self.run_practice_trials(num_trials = 10, target_opacity = 1.0,
+                text_when_done = 'harder')
+        self.run_practice_trials(num_trials = 10, target_opacity = 0.6,
+                text_when_done = 'ready')
 
         # Don't try to calibrate the critical opacity because
         # performance is just too noisy and it's not worth it.
@@ -192,7 +195,7 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
         """ Run a few practice trials with highly visible targets """
         self.trial_data['part'] = 'practice'
         for trial_ix in range(num_trials):
-            target_present = choice([True, False], p = [0.8, 0.2])
+            target_present = choice([True, False], p = [0.6, 0.4])
 
             self.trial_data['trial_ix'] = trial_ix
             self.run_trial(target_present, target_opacity, cue_type = None)
@@ -208,7 +211,7 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
 
         self.trial_data['part'] = 'cueing_effect'
         for trial_ix in range(60):
-            target_present = choice([True, False], p = [0.8, 0.2])
+            target_present = choice([True, False], p = [0.5, 0.5])
             cue_present = choice([True, False])
             cue_this_trial = cue_type if cue_present else None
 
