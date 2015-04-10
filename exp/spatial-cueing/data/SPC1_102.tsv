@@ -1,0 +1,27 @@
+subj_id	date	computer	experimenter	part	trial_ix	cue_present	cue_type	cue_loc	cue_pos_x	cue_pos_y	target_present	target_loc	target_pos_x	target_pos_y	target_opacity	rt	key	response	is_correct
+SPC1_102	2015_Apr_09_1552	LL-George	PME	practice	0	0					1	right	193.430136042	-21.8098434531	1.0	2063.41361441		timeout	0
+SPC1_102	2015_Apr_09_1552	LL-George	PME	practice	1	0					1	right	179.037450585	-13.477151167	1.0	2063.25189117		timeout	0
+SPC1_102	2015_Apr_09_1552	LL-George	PME	practice	2	0					1	right	211.022328018	8.75183655393	1.0	918.911207933	u	absent	0
+SPC1_102	2015_Apr_09_1552	LL-George	PME	practice	3	0					1	right	176.603825667	-15.1338371426	1.0	785.838001408	u	absent	0
+SPC1_102	2015_Apr_09_1552	LL-George	PME	practice	4	0					1	right	188.097552673	-12.1181540744	1.0	702.586660627	u	absent	0
+SPC1_102	2015_Apr_09_1552	LL-George	PME	practice	5	0					0					585.272151977	u	absent	1
+SPC1_102	2015_Apr_09_1552	LL-George	PME	practice	6	0					0					703.342470806	u	absent	1
+SPC1_102	2015_Apr_09_1552	LL-George	PME	practice	7	0					1	left	-219.749246851	3.96959735326	1.0	360.748109408	y	present	1
+SPC1_102	2015_Apr_09_1552	LL-George	PME	practice	8	0					0					669.114279561	u	absent	1
+SPC1_102	2015_Apr_09_1552	LL-George	PME	practice	9	0					1	left	-207.935501274	-12.1254029747	1.0	552.601787727	y	present	1
+SPC1_102	2015_Apr_09_1552	LL-George	PME	practice	10	0					0					661.016365048	u	absent	1
+SPC1_102	2015_Apr_09_1552	LL-George	PME	practice	11	0					1	left	-201.519622109	-8.56209239072	1.0	635.156360455	u	absent	0
+SPC1_102	2015_Apr_09_1552	LL-George	PME	practice	12	0					1	left	-192.613002079	-12.6964120385	1.0	756.11386681	u	absent	0
+SPC1_102	2015_Apr_09_1552	LL-George	PME	practice	13	0					1	left	-191.020898908	-18.2525141385	1.0	631.469355896	y	present	1
+SPC1_102	2015_Apr_09_1552	LL-George	PME	practice	14	0					1	right	187.005742994	14.6274803402	1.0	1064.71840478	u	absent	0
+SPC1_102	2015_Apr_09_1552	LL-George	PME	practice	15	0					1	left	-197.002867165	-7.44471126419	1.0	785.805363208	y	present	1
+SPC1_102	2015_Apr_09_1552	LL-George	PME	practice	16	0					1	right	205.983925651	4.00905915657	1.0	660.992894787	y	present	1
+SPC1_102	2015_Apr_09_1552	LL-George	PME	practice	17	0					1	left	-213.347536135	-21.6148794144	1.0	689.3124911	y	present	1
+SPC1_102	2015_Apr_09_1552	LL-George	PME	practice	18	0					0					437.928397674	u	absent	1
+SPC1_102	2015_Apr_09_1552	LL-George	PME	practice	19	0					0					452.774696518	u	absent	1
+SPC1_102	2015_Apr_09_1552	LL-George	PME	calibration	0	0					1	left	-179.563464078	-4.6957371911	0.8	785.97992193	u	absent	0
+SPC1_102	2015_Apr_09_1552	LL-George	PME	calibration	1	0					0					943.709190935	u	absent	1
+SPC1_102	2015_Apr_09_1552	LL-George	PME	calibration	2	0					1	right	201.593786863	-23.0103882193	1.0	1645.54884238	u	absent	0
+SPC1_102	2015_Apr_09_1552	LL-George	PME	calibration	3	0					0					725.357414689	u	absent	1
+SPC1_102	2015_Apr_09_1552	LL-George	PME	calibration	4	0					1	right	178.409940729	-13.3757045247	1.0	435.817556456	y	present	1
+SPC1_102	2015_Apr_09_1552	LL-George	PME	calibration	5	0					0					544.06674346	y	present	0
