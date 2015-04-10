@@ -1,0 +1,30 @@
+subj_id	date	computer	experimenter	part	trial_ix	cue_present	cue_type	cue_loc	cue_pos_x	cue_pos_y	target_present	target_loc	target_pos_x	target_pos_y	target_opacity	rt	key	response	is_correct
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	practice	0	0					1	left	-198.458676707	-2.04173449581	1.0	902.742387727	u	absent	0
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	practice	1	0					1	left	-209.56774876	-13.5056250705	1.0	720.23571725	y	present	1
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	practice	2	0					0					678.613291821	u	absent	1
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	practice	3	0					1	left	-217.554379734	22.3883993532	1.0	731.645191787	y	present	1
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	practice	4	0					1	right	217.871449388	-0.0272688177699	1.0	884.109618608	u	absent	0
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	practice	5	0					1	left	-220.882772267	-21.7837660329	1.0	745.354081271	u	absent	0
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	practice	6	0					1	left	-202.704278427	2.72714044962	1.0	894.963652594	u	absent	0
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	practice	7	0					0					590.141651919	u	absent	1
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	practice	8	0					1	right	179.407910649	0.473577715135	1.0	687.054320006	y	present	1
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	practice	9	0					1	right	212.832319102	-9.32278580207	1.0	828.847292345	u	absent	0
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	practice	10	0					1	left	-199.47398703	1.55570266483	1.0	619.995860616	y	present	1
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	practice	11	0					0					469.82378955	u	absent	1
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	practice	12	0					1	right	186.693423711	-4.32539265686	1.0	595.035368809	y	present	1
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	practice	13	0					1	left	-221.783080185	12.240949715	1.0	577.644399134	u	absent	0
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	practice	14	0					1	left	-198.571640911	7.97939912066	1.0	698.51096347	y	present	1
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	practice	15	0					0					594.948089682	u	absent	1
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	practice	16	0					1	left	-189.507632069	8.19929059929	1.0	703.122307779	u	absent	0
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	practice	17	0					1	right	210.838589204	-10.4129878988	1.0	577.964956872	u	absent	0
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	practice	18	0					1	right	183.538420888	16.9907910528	1.0	821.491154144	y	present	1
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	practice	19	0					0					487.421083963	u	absent	1
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	calibration	0	0					1	right	219.531363199	11.8404622551	0.8	545.103475219	u	absent	0
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	calibration	1	0					1	left	-205.860903503	1.31174711072	1.0	512.120701605	y	present	1
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	calibration	2	0					1	right	202.880006861	-9.63579041169	1.0	461.924083298	u	absent	0
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	calibration	3	0					1	right	209.970765829	18.1802146023	1.0	362.051953329	u	absent	0
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	calibration	4	0					0					462.673976086	u	absent	1
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	calibration	5	0					1	right	200.172509072	15.4146789286	1.0	320.243097376	u	absent	0
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	calibration	6	0					0					271.85366652	u	absent	1
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	calibration	7	0					1	left	-195.3093726	3.43943964036	1.0	122.413198231	u	absent	0
+SPC1_103	2015_Apr_09_1555	LL-Elaine	PME	calibration	8	0					1	right	184.563771745	-1.98543465892	1.0	19.5761516225	u	absent	0
