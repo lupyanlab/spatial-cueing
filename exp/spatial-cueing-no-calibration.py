@@ -1,6 +1,7 @@
 import yaml
 from collections import OrderedDict
 from numpy.random import choice
+import random
 from unipath import Path
 
 from psychopy import visual, core
@@ -9,7 +10,7 @@ from psychopy.iohub import ioHubExperimentRuntime, EventConstants
 from psychopy.iohub.util import DeviceEventTrigger, ClearScreen
 
 from util.psychopy_helper import enter_subj_info
-from util.screenstates import SpatialCueing
+from util.screenstates import SpatialCueing2
 
 class SpatialCueingExperiment(ioHubExperimentRuntime):
     """ Measure spatial cueing effects when targets are hard to see
@@ -101,7 +102,7 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
 
 
         # the same screenstate runs the trials and shows instructions
-        self.screen = SpatialCueing(self.window, self.hub)
+        self.screen = SpatialCueing2(self.window, self.hub)
         self.intertrial = ClearScreen(self, timeout = 0.5)
 
         self.show_instructions()
@@ -111,15 +112,15 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
         # performance is just too noisy and it's not worth it.
         # Instead, run participants in both cueing conditions
         # in random order
-        critical_opacity = 0.8
+        critical_opacity = 0.6
         possible_orders = [('dot', 'sound', 'dot', 'sound'),
                            ('sound', 'dot', 'sound', 'dot')]
-        selected_order = choice(possible_orders)
+        selected_order = random.choice(possible_orders)
 
         for current_block in selected_order:
             self.test_cueing_effect(
                     cue_type = current_block,
-                    critical opacity = 0.8)
+                    critical_opacity = critical_opacity)
 
         self.end_experiment()
 
@@ -186,17 +187,19 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
             details = self.text_info[screen]
             self.screen.show_text(details)
 
-    def run_practice_trials(self):
+    def run_practice_trials(self, num_trials = 20, target_opacity = 1.0,
+            text_when_done = 'ready'):
         """ Run a few practice trials with highly visible targets """
         self.trial_data['part'] = 'practice'
-        for trial_ix in range(20):
+        for trial_ix in range(num_trials):
             target_present = choice([True, False], p = [0.8, 0.2])
 
             self.trial_data['trial_ix'] = trial_ix
-            self.run_trial(target_present, 1.0, cue_type = None)
+            self.run_trial(target_present, target_opacity, cue_type = None)
 
-        ready_text_details = self.text_info['ready']
-        self.screen.show_text(ready_text_details)
+        if text_when_done:
+            text_details = self.text_info[text_when_done]
+            self.screen.show_text(text_details)
 
     def test_cueing_effect(self, cue_type, critical_opacity):
         """ Determine the effect of cueing on near-threshold detection """
