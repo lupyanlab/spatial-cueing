@@ -428,6 +428,7 @@ class SpatialCueing(ScreenState):
         self.stim['target'].setOpacity(target_opacity)
 
         cue_type = settings['cue_type']
+        cue_loc = settings['cue_loc']
         if cue_type == 'dot':
             dot_pos = (settings['cue_pos_x'], settings['cue_pos_y'])
             self.cues['dot'].setPos(dot_pos)
@@ -522,9 +523,9 @@ class SpatialCueing(ScreenState):
         return False
 
 
-class SpatialCueingExperiment2(SpatialCueingExperiment):
+class SpatialCueing2(SpatialCueing):
     def __init__(self, *args, **kwargs):
-        super(SpatialCueingExperiment2, self).__init__(*args, **kwargs)
+        super(SpatialCueing2, self).__init__(*args, **kwargs)
         
         # refresh (adjusted)
         # ------------------

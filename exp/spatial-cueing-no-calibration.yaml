@@ -47,6 +47,14 @@ texts:
             If you see a target appear, press the "y" key on the
             keyboard. If you do not see a target, press the "u" key.
         footer: Place two fingers of your dominant hand over the y and u keys. Then press the SPACEBAR to start the practice trials.
+    harder:
+        visuals: [title, body, footer]
+        triggers: [advance, ]
+        title: Let's do a few more practice trials
+        body: >
+            Now the target is going to get harder to see. Please do your
+            best but know that you are expected to get some wrong.
+        footer: Press the SPACEBAR to continue.    
     cue:
         visuals: [title, body, footer]
         triggers: [advance, ]
