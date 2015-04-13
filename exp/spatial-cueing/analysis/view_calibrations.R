@@ -1,6 +1,7 @@
 library(zoo)
 library(dplyr)
 library(ggplot2)
+library(scales)
 
 source("./analysis/compile.R")
 spatial_cueing <- compile("data", pattern = "SPC1")
@@ -22,7 +23,8 @@ rolling_accuracy <- calibrations %>% group_by(subj_id) %>%
 ggplot(rolling_accuracy, aes(x = trial_ix, y = rolling, group = subj_id)) +
   geom_line(aes(color = subj_id)) +
   geom_hline(yintercept = 0.5, lty = 2) +
-  stat_summary(aes(group = 1), fun.y = mean, geom = "line")
+  stat_summary(aes(group = 1), fun.y = mean, geom = "line") +
+  scale_y_continuous("Accuracy", breaks = seq(0.0, 1.0, by = 0.1), labels = percent)
 
 # doesn't need to converge, just needs to stabilize
 ggplot(rolling_accuracy, aes(x = trial_ix, y = target_opacity, group = subj_id)) +
