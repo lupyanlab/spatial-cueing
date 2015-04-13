@@ -1,0 +1,381 @@
+subj_id	date	computer	experimenter	part	trial_ix	cue_present	cue_type	cue_loc	cue_pos_x	cue_pos_y	target_present	target_loc	target_pos_x	target_pos_y	target_opacity	rt	key	response	is_correct
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	practice	0	0					1	right	218.365694847	-8.52679357602	1.0	1729.42670574	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	practice	1	0					1	left	-195.628903132	14.8092595989	1.0	2130.53658698	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	practice	2	0					0					1674.28475153	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	practice	3	0					1	right	211.259487106	14.6954855807	1.0	1452.06989441	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	practice	4	0					1	right	176.881032901	17.0343129532	1.0	2138.55343452		timeout	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	practice	5	0					0					1238.97459218	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	practice	6	0					0					910.963078495	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	practice	7	0					1	right	185.179699007	16.3549545919	1.0	510.805782862	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	practice	8	0					0					1127.16724956	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	practice	9	0					1	right	197.645449447	14.2007698012	1.0	1014.17843485	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	practice	0	0					0					1943.39972828	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	practice	1	0					1	right	200.343586024	-21.8152290223	0.6	654.243411962	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	practice	2	0					0					994.651015382	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	practice	3	0					1	left	-207.440733343	10.3431686953	0.6	1077.68738922	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	practice	4	0					1	left	-199.450262847	11.3204030154	0.6	1177.78139981	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	practice	5	0					1	right	184.095017312	-16.9233002022	0.6	1797.57966055	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	practice	6	0					1	right	214.77174164	-5.31047670737	0.6	1240.21923123	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	practice	7	0					0					1108.78191888	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	practice	8	0					1	right	176.439631826	-10.6600136076	0.6	1878.56347114	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	practice	9	0					1	left	-212.544114483	7.59169027553	0.6	1461.975927	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	0	0					0					833.809106145	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	1	0					1	left	-218.833581325	10.2277989182	0.6	893.355257344	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	2	0					0					476.681149565	y	present	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	3	1	dot	right	213.778194001	14.0617724117	1	right	213.778194001	14.0617724117	0.6	1066.39556494	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	4	0					0					1367.16266349	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	5	1	dot	right	221.053314955	-22.5173667958	1	right	221.053314955	-22.5173667958	0.6	1387.86375569	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	6	1	dot	left	-200	0	0					716.859828681	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	7	1	dot	right	200	0	0					1031.22515418	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	8	1	dot	right	200	0	0					1149.64561723	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	9	0					0					1693.50218121	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	10	1	dot	left	-200	0	0					1718.12552353	y	present	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	11	0					1	right	200.374347506	-19.3601492522	0.6	486.4448593	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	12	0					1	right	179.026395963	4.84378511224	0.6	1019.49193608	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	13	0					0					977.349285502	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	14	0					1	right	179.8173413	10.0081085294	0.6	1052.54622642	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	15	1	dot	left	-200	0	0					847.510273568	y	present	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	16	0					1	right	209.448690335	8.72415736965	0.6	1944.28836601	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	17	0					0					1447.08743924	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	18	0					0					1010.89566015	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	19	0					0					763.639071956	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	20	1	dot	right	221.005258334	-18.313843921	1	right	221.005258334	-18.313843921	0.6	1233.06957539	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	21	0					1	right	216.298208475	13.4911812071	0.6	1185.77680131	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	22	1	dot	right	200	0	0					911.103840917	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	23	1	dot	left	-201.250180582	10.8743096854	1	left	-201.250180582	10.8743096854	0.6	1095.72061757	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	24	0					0					1904.46108719	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	25	0					1	right	187.849128046	-10.0239516529	0.6	2130.4168799		timeout	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	26	1	dot	right	200	0	0					1544.70659932	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	27	1	dot	left	-200	0	0					734.422808513	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	28	0					0					1310.57681888	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	29	1	dot	left	-200	0	0					0.0	y	present	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	30	1	dot	right	182.778756116	-13.2114964218	1	right	182.778756116	-13.2114964218	0.6	1279.96150637	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	31	1	dot	left	-210.852928891	13.3676943529	1	left	-210.852928891	13.3676943529	0.6	1311.51380809	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	32	0					0					1809.34797227	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	33	0					0					657.394781709	y	present	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	34	0					1	right	176.450865475	-18.7058305462	0.6	1289.38832181	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	35	1	dot	right	200	0	0					688.574705273	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	36	1	dot	right	200	0	0					2125.04138099		timeout	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	37	0					1	right	206.566140306	-20.5019608862	0.6	1393.85104645	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	38	1	dot	right	200	0	0					656.865264289	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	39	1	dot	right	209.128968186	14.9077250823	1	right	209.128968186	14.9077250823	0.6	989.999996033	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	40	1	dot	left	-200	0	0					436.353207566	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	41	0					0					1684.74135734	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	42	0					1	left	-191.396680565	15.6020410281	0.6	542.025088333	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	43	1	dot	right	200	0	0					1627.10037688	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	44	1	dot	left	-223.035559836	14.5431745107	1	left	-223.035559836	14.5431745107	0.6	695.509902202	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	45	0					0					1305.80375344	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	46	0					0					1118.13932704	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	47	1	dot	right	200	0	0					1305.58383605	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	48	0					0					1608.27482212	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	49	0					1	left	-212.648426054	-23.1449340663	0.6	932.851880323	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	50	0					0					1280.90278478	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	51	0					1	left	-218.828801072	-2.49558486253	0.6	585.092250258	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	52	1	dot	right	177.948465513	-17.5858102465	1	right	177.948465513	-17.5858102465	0.6	1369.07563312	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	53	0					0					1680.68770226	y	present	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	54	0					1	left	-212.453934168	14.9263989905	0.6	1479.90348563	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	55	0					1	left	-190.412406831	-18.6946041689	0.6	1165.12951953	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	56	0					1	right	203.105174923	-18.1025328133	0.6	1323.01541092	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	57	1	dot	left	-220.420603879	-15.7131131538	1	left	-220.420603879	-15.7131131538	0.6	792.96919331	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	58	1	dot	right	200	0	0					2002.55634496	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	59	0					1	right	204.910312709	20.430185993	0.6	1988.19815507	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	0	0					0					2016.42946899	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	1	1	sound	right			1	right	198.758925677	-4.14921527796	0.6	1936.97884167	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	2	1	sound	right			1	right	179.918091981	18.2578312255	0.6	2010.82937326	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	3	1	sound	right			1	right	205.699573466	6.00206625222	0.6	898.539694026	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	4	0					0					1815.36528748	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	5	1	sound	right			1	right	176.124668941	-21.1103879691	0.6	1839.60845368	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	6	0					0					1429.26554987	y	present	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	7	0					0					1864.23062626	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	8	1	sound	left			0					1426.9458889	y	present	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	9	0					1	left	-197.855333147	21.4072631679	0.6	1427.76200129	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	10	1	sound	right			1	right	187.830828563	8.35330567099	0.6	889.419749379	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	11	0					1	right	183.117371957	-1.22614171204	0.6	1310.68287836	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	12	0					1	left	-218.64707033	20.3946607385	0.6	1418.88069035	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	13	1	sound	left			0					1426.35944253	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	14	1	sound	left			0					2132.14580528		timeout	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	15	0					1	left	-218.293668802	6.47007974463	0.6	1227.08462412	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	16	0					0					544.191898778	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	17	1	sound	right			0					1240.26407255	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	18	0					1	left	-211.41664783	11.0076494315	0.6	915.054166224	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	19	0					0					804.477035534	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	20	1	sound	left			1	left	-191.028259367	14.8502914597	0.6	1058.01335815	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	21	0					1	right	180.641489897	-21.0149470854	0.6	1417.48671001	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	22	1	sound	right			1	right	201.46366912	20.3483802834	0.6	1152.83753909	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	23	0					1	right	207.392678026	-14.8871660749	0.6	1177.04366287	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	24	1	sound	left			1	left	-215.180095139	9.64469133473	0.6	2134.03966883		timeout	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	25	1	sound	left			0					1725.28609727	y	present	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	26	0					0					2143.86459626		timeout	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	27	1	sound	right			0					979.657248594	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	28	0					0					931.788946502	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	29	0					1	left	-213.170292565	-10.602833558	0.6	711.316661909	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	30	0					1	left	-213.602930351	21.7017425113	0.6	1042.25650895	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	31	1	sound	left			1	left	-207.754642982	5.52328886832	0.6	911.120217759	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	32	1	sound	left			1	left	-218.655158538	2.66136359165	0.6	757.311376743	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	33	1	sound	left			1	left	-184.399415248	4.88252773085	0.6	654.949175194	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	34	1	sound	right			0					825.491236988	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	35	0					1	left	-222.937166231	19.3161034626	0.6	1099.43542816	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	36	0					0					546.272146516	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	37	1	sound	left			1	left	-177.823973711	-1.75659672488	0.6	1512.98857993	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	38	0					0					1931.03249278	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	39	1	sound	left			1	left	-210.343342504	3.75033255104	0.6	2135.51826216		timeout	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	40	1	sound	right			1	right	195.905619854	-21.6705896946	0.6	1639.03596625	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	41	0					0					877.701737918	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	42	0					0					1801.84075562	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	43	0					1	right	187.091169077	21.6345261467	0.6	1060.52252185	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	44	1	sound	right			1	right	192.351029566	-10.1818602995	0.6	1626.58060761	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	45	0					1	left	-191.763643382	10.9861500181	0.6	752.758618444	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	46	0					0					790.981357917	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	47	0					0					1116.97384296	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	48	0					1	left	-181.567161227	17.9305550195	0.6	1817.44436501	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	49	1	sound	right			0					805.756377522	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	50	0					0					879.056335893	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	51	1	sound	left			1	left	-200.067439676	-20.3202214107	0.6	2131.58665318		timeout	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	52	0					1	right	219.225765403	-14.077427246	0.6	1140.50851623	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	53	0					1	left	-184.596371278	-1.42395229216	0.6	1214.98994576	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	54	0					1	left	-195.254198128	7.93266026449	0.6	728.799317032	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	55	1	sound	left			1	left	-208.01599391	14.1331854259	0.6	726.654342376	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	56	0					1	right	204.558362905	-2.302486324	0.6	928.66954999	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	57	0					1	left	-189.487441514	-6.43470495132	0.6	1069.43619624	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	58	0					0					993.405986577	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	59	0					1	right	183.178100484	4.277871257	0.6	581.754886545	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	0	0					1	right	199.463717144	-3.53080074866	0.6	1777.51414524	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	1	1	dot	right	200	0	0					950.383276213	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	2	0					1	right	208.667826999	-16.6653605398	0.6	703.59654678	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	3	1	dot	right	200	0	0					1079.25020624	y	present	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	4	0					1	left	-219.640324232	14.5386018275	0.6	1082.76849519	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	5	0					1	left	-197.300593289	13.0018604782	0.6	852.714595851	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	6	1	dot	left	-200	0	0					577.948053833	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	7	0					1	left	-179.15554226	3.93562798546	0.6	1331.20070631	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	8	1	dot	right	216.855011472	8.81938013901	1	right	216.855011472	8.81938013901	0.6	1227.47064941	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	9	1	dot	left	-184.603061773	-0.0161574855683	1	left	-184.603061773	-0.0161574855683	0.6	904.48682243	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	10	0					1	left	-200.102296627	-5.44233348788	0.6	1535.41352833	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	11	0					1	left	-209.004099453	-15.6801445432	0.6	1370.24072744	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	12	0					0					885.94123302	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	13	0					0					1414.88474421	y	present	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	14	0					1	right	185.030113335	-5.05457354029	0.6	1901.71952778	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	15	0					1	left	-184.726631783	-7.80477374829	0.6	1458.89435383	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	16	1	dot	left	-177.790182316	-13.1949919615	1	left	-177.790182316	-13.1949919615	0.6	1603.61249465	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	17	0					0					1001.74764171	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	18	0					0					833.612194285	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	19	1	dot	right	184.059992772	-19.4669339362	1	right	184.059992772	-19.4669339362	0.6	667.085575406	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	20	0					0					1294.26315753	y	present	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	21	1	dot	left	-177.805100713	19.6089607484	1	left	-177.805100713	19.6089607484	0.6	976.627925411	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	22	1	dot	left	-200	0	0					606.458163355	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	23	1	dot	right	222.366097222	-22.7534481378	1	right	222.366097222	-22.7534481378	0.6	86.3702278584	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	24	0					0					1623.53373738	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	25	0					1	right	190.40460925	-23.7971704772	0.6	644.620074891	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	26	1	dot	right	200	0	0					1359.73460181	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	27	0					1	left	-178.779023514	22.4024462034	0.6	1085.48782859	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	28	1	dot	left	-205.912921863	-14.8695026693	1	left	-205.912921863	-14.8695026693	0.6	659.582648426	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	29	1	dot	left	-207.475820652	-10.2601594436	1	left	-207.475820652	-10.2601594436	0.6	1440.5827187	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	30	1	dot	left	-192.253100128	-0.784177425457	1	left	-192.253100128	-0.784177425457	0.6	539.477321785	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	31	0					0					677.762878593	y	present	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	32	1	dot	right	200	0	0					1087.86558826	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	33	1	dot	left	-208.106542929	-8.54081920501	1	left	-208.106542929	-8.54081920501	0.6	919.044263661	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	34	0					0					994.489976671	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	35	0					1	left	-183.063055136	6.31841406744	0.6	689.630620647	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	36	0					1	right	192.921357074	15.7931134435	0.6	1071.94847986	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	37	0					1	left	-213.136726134	18.4782128016	0.6	833.957277704	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	38	0					1	left	-211.973891944	16.3110456594	0.6	1120.9335262	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	39	1	dot	right	200	0	0					1607.12883342	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	40	0					1	right	207.021258439	0.365687121859	0.6	1144.03928258	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	41	0					0					893.322504126	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	42	0					0					734.344043769	y	present	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	43	0					0					1195.36192622	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	44	1	dot	left	-200	0	0					1195.18684968	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	45	0					1	right	195.725727319	1.84864336017	0.6	872.175727971	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	46	0					1	right	180.526765184	-23.3523762231	0.6	1309.45539661	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	47	0					1	right	191.759357121	-15.4910921577	0.6	1219.44834245	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	48	1	dot	left	-213.478374849	0.39364955875	1	left	-213.478374849	0.39364955875	0.6	1064.20145975	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	49	1	dot	right	200	0	0					1161.1441006	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	50	1	dot	left	-200	0	0					859.596763272	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	51	0					0					518.211619463	y	present	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	52	1	dot	right	200	0	0					573.089204263	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	53	1	dot	left	-218.48063088	2.90837074808	1	left	-218.48063088	2.90837074808	0.6	730.629622471	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	54	1	dot	right	200	0	0					898.506159894	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	55	1	dot	right	214.57244654	15.2971694151	1	right	214.57244654	15.2971694151	0.6	827.910328284	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	56	1	dot	left	-200	0	0					777.787872124	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	57	0					1	left	-196.778556802	-19.72671251	0.6	1044.83936867	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	58	1	dot	left	-216.700734038	9.54034428785	1	left	-216.700734038	9.54034428785	0.6	1063.1736191	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	59	1	dot	left	-200	0	0					702.323833015	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	0	0					0					1152.13528508	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	1	0					1	left	-192.675202045	9.93555533719	0.6	995.146999601	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	2	0					1	right	194.102517989	-10.8836437738	0.6	682.559729554	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	3	0					1	left	-182.561546291	4.01932390514	0.6	922.865133733	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	4	1	sound	left			0					1492.39354767	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	5	0					1	right	186.538577854	-20.2344194639	0.6	1143.83145235	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	6	0					1	left	-188.521004275	4.85622558558	0.6	669.611896388	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	7	0					0					1252.72488967	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	8	1	sound	left			1	left	-210.15592077	-14.0335775812	0.6	1010.99938015	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	9	0					1	right	207.688548038	21.7117889174	0.6	1294.86910021	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	10	0					0					1261.16441609	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	11	1	sound	left			0					68.6212545261	y	present	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	12	1	sound	left			1	left	-205.240091902	-22.496941859	0.6	1261.19833952	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	13	1	sound	right			1	right	193.792053922	18.4126582977	0.6	1285.73706839	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	14	0					1	right	204.335043094	18.432756892	0.6	1033.03869301	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	15	0					0					926.815848798	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	16	1	sound	left			1	left	-216.933598384	-12.8109086179	0.6	944.548835978	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	17	1	sound	right			1	right	193.840943968	14.873050423	0.6	335.886429064	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	18	0					0					705.039267428	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	19	0					1	right	176.710618234	6.33643141375	0.6	907.248657197	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	20	1	sound	left			1	left	-223.465495929	-21.5422329986	0.6	1394.37042596	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	21	1	sound	right			0					476.824251935	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	22	1	sound	left			0					800.709974952	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	23	1	sound	left			0					891.266042367	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	24	1	sound	left			1	left	-217.326821563	-13.0335719719	0.6	622.408805415	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	25	0					0					739.388497081	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	26	1	sound	left			1	left	-220.410909732	10.5148793705	0.6	993.255475536	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	27	1	sound	left			1	left	-203.157599718	-23.8383874406	0.6	652.904021088	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	28	0					1	right	216.661884405	-7.49226084861	0.6	698.395733722	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	29	0					0					1168.1303787	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	30	0					0					1745.04318228	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	31	0					1	right	200.941755306	15.7154290045	0.6	833.89527956	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	32	1	sound	left			1	left	-203.321036061	-3.11465983265	0.6	1283.98747696	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	33	0					0					1010.98768273	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	34	0					1	right	204.218123252	-3.28781674042	0.6	995.104887523	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	35	1	sound	left			1	left	-221.590455285	1.9711879181	0.6	1099.03770499	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	36	0					1	left	-187.354016004	20.5920794998	0.6	1097.07950475	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	37	1	sound	left			0					1100.16809637	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	38	1	sound	left			1	left	-209.087988055	-10.2204350011	0.6	1323.23805802	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	39	0					0					2143.80844729		timeout	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	40	0					0					1082.90145965	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	41	0					1	left	-210.982818802	-7.48697571535	0.6	581.061210949	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	42	0					1	left	-221.032567123	-14.4847519208	0.6	866.080818232	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	43	1	sound	right			0					549.534254707	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	44	1	sound	left			1	left	-190.566986102	-10.1672655735	0.6	1076.99995209	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	45	1	sound	right			1	right	177.968107239	1.12931862419	0.6	1019.54847528	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	46	0					0					717.015018687	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	47	1	sound	right			1	right	197.851987405	-5.06904172886	0.6	1052.03269608	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	48	1	sound	left			1	left	-188.005472543	-22.3084503022	0.6	883.685519919	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	49	1	sound	left			1	left	-196.621699447	20.4363127373	0.6	1160.34436552	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	50	0					0					1171.84557905	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	51	0					1	left	-201.119620381	-14.1451475127	0.6	863.576723263	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	52	0					0					932.249057107	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	53	1	sound	right			0					644.414584618	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	54	0					0					1230.45513127	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	55	1	sound	left			1	left	-178.909193062	-22.7688182786	0.6	993.694141041	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	56	1	sound	left			0					410.141702741	y	present	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	57	1	sound	right			0					1346.70722391	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	58	0					0					1380.53395459	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	59	1	sound	right			1	right	179.689390878	-13.1169807204	0.6	610.560169443	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	0	1	dot	right	204.895634649	-11.032879845	1	right	204.895634649	-11.032879845	0.6	1362.15135362	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	1	0					0					819.391647354	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	2	0					0					639.62631207	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	3	0					0					985.129059292	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	4	1	dot	left	-200	0	0					1089.03185278	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	5	0					0					1200.45122085	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	6	0					1	right	218.611556531	1.03389061452	0.6	826.623577159	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	7	1	dot	left	-201.915118908	-17.9658021893	1	left	-201.915118908	-17.9658021893	0.6	1164.90414273	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	8	1	dot	left	-200	0	0					689.08940535	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	9	1	dot	right	200	0	0					587.154561188	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	10	0					0					952.833951917	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	11	0					1	left	-211.616819507	22.6706465857	0.6	892.818721011	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	12	1	dot	left	-208.162750272	-7.78053520757	1	left	-208.162750272	-7.78053520757	0.6	1097.61331137	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	13	1	dot	right	218.288278242	13.5811100071	1	right	218.288278242	13.5811100071	0.6	984.920839779	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	14	0					0					1494.17706206	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	15	1	dot	right	181.371209757	8.53951211758	1	right	181.371209757	8.53951211758	0.6	810.662407894	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	16	0					1	right	210.990974036	-23.5771658814	0.6	513.236182276	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	17	1	dot	left	-218.322115083	-10.5946497308	1	left	-218.322115083	-10.5946497308	0.6	836.295654997	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	18	0					0					541.291250847	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	19	1	dot	right	200	0	0					644.488670398	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	20	0					1	right	209.007438696	20.1554708481	0.6	569.445749279	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	21	0					0					1118.66884446	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	22	1	dot	right	200	0	0					867.131274659	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	23	0					1	right	219.139599041	-6.00080092424	0.6	849.980445113	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	24	1	dot	right	188.438821764	9.36050225824	1	right	188.438821764	9.36050225824	0.6	1443.64479557	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	25	1	dot	right	192.545904385	-8.94544141282	1	right	192.545904385	-8.94544141282	0.6	569.342029747	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	26	0					0					509.765854571	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	27	1	dot	left	-179.60105856	-1.67314493917	1	left	-179.60105856	-1.67314493917	0.6	830.739230849	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	28	1	dot	left	-200	0	0					186.603831593	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	29	0					1	right	209.373970766	-6.31905162851	0.6	236.337532755	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	30	1	dot	right	200	0	0					1152.12748665	y	present	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	31	1	dot	left	-200	0	0					1067.73105683	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	32	1	dot	right	181.099084865	-6.84588138158	1	right	181.099084865	-6.84588138158	0.6	1194.86711174	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	33	0					1	left	-190.356430179	-20.6197861677	0.6	887.287642341	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	34	1	dot	right	189.761781818	-5.56101021624	1	right	189.761781818	-5.56101021624	0.6	658.252225723	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	35	1	dot	left	-182.089864239	4.20836486782	1	left	-182.089864239	4.20836486782	0.6	692.431058735	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	36	1	dot	right	200	0	0					536.290469114	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	37	0					0					1609.54636568	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	38	0					1	right	215.496858027	-3.5545549218	0.6	829.963280819	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	39	1	dot	left	-206.961794127	-20.7539678824	1	left	-206.961794127	-20.7539678824	0.6	737.123815808	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	40	1	dot	right	200	0	0					284.351276699	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	41	1	dot	left	-211.311207882	-6.24911178756	1	left	-211.311207882	-6.24911178756	0.6	732.415476814	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	42	0					1	left	-182.935993576	18.1434229743	0.6	2143.86771573		timeout	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	43	0					1	left	-178.412503414	-6.04492103763	0.6	928.003169131	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	44	1	dot	right	211.475710376	-0.0316483508596	1	right	211.475710376	-0.0316483508596	0.6	1102.83557	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	45	1	dot	left	-193.766485244	-16.323873946	1	left	-193.766485244	-16.323873946	0.6	175.19425042	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	46	1	dot	left	-194.495997209	14.7472702756	1	left	-194.495997209	14.7472702756	0.6	95.7701383159	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	47	1	dot	right	190.830423246	-2.97685750393	1	right	190.830423246	-2.97685750393	0.6	594.657878391	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	48	0					1	left	-189.470296524	17.446098088	0.6	577.481313609	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	49	1	dot	left	-191.852128506	-4.74185023592	1	left	-191.852128506	-4.74185023592	0.6	372.688284144	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	50	0					1	left	-215.573254881	-10.6264782923	0.6	585.730556864	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	51	1	dot	left	-200	0	0					511.06664259	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	52	1	dot	right	204.903125367	-12.2976216408	1	right	204.903125367	-12.2976216408	0.6	136.817490682	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	53	1	dot	left	-200	0	0					50.5502028391	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	54	1	dot	left	-201.448754601	-16.7531958506	1	left	-201.448754601	-16.7531958506	0.6	178.710979875	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	55	1	dot	left	-205.271748615	11.2116293902	1	left	-205.271748615	11.2116293902	0.6	100.241012406	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	56	1	dot	right	207.995638961	2.73806285383	1	right	207.995638961	2.73806285383	0.6	358.361677267	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	57	1	dot	right	199.919094617	9.60222662996	1	right	199.919094617	9.60222662996	0.6	196.403024718	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	58	1	dot	right	188.103029071	-0.550685499549	1	right	188.103029071	-0.550685499549	0.6	303.166304249	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	59	1	dot	right	188.680795112	20.689902711	1	right	188.680795112	20.689902711	0.6	92.8683197126	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	0	0					0					1123.13348008	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	1	1	sound	right			1	right	211.864479679	-16.0774717547	0.6	1030.33105796	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	2	0					0					1052.70804511	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	3	0					0					911.234076135	y	present	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	4	0					1	left	-189.836138345	22.190400024	0.6	748.318547849	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	5	1	sound	right			0					526.439805981	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	6	1	sound	right			0					644.314374309	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	7	1	sound	right			0					578.104023356	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	8	1	sound	left			1	left	-185.546959657	-1.26566602551	0.6	970.965051558	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	9	1	sound	right			0					510.629146826	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	10	1	sound	left			1	left	-203.962223013	-10.2564326454	0.6	347.627446055	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	11	0					0					740.920900367	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	12	1	sound	left			0					444.598550908	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	13	1	sound	right			0					310.510142241	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	14	1	sound	left			0					272.688634694	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	15	0					0					645.509493072	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	16	0					0					682.95940198	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	17	0					0					1211.22522466	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	18	0					0					710.42529447	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	19	0					1	right	197.68154641	1.31156713788	0.6	565.240023658	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	20	1	sound	right			1	right	212.716277487	-15.5164764257	0.6	857.772696763	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	21	0					1	left	-208.817099325	-3.98975568263	0.6	847.954397555	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	22	0					1	left	-212.575057108	7.47453078856	0.6	506.132147741	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	23	1	sound	left			1	left	-222.736000407	7.76024230762	0.6	316.319237463	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	24	1	sound	left			1	left	-211.611725118	17.510172897	0.6	441.185541917	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	25	1	sound	left			1	left	-218.633365642	0.44597666753	0.6	180.885198992	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	26	0					0					715.648333076	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	27	0					1	left	-203.717491945	-0.932701281769	0.6	814.273888711	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	28	0					0					1019.57421005	y	present	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	29	1	sound	right			0					355.728127528	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	30	0					0					1597.62988286	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	31	1	sound	right			1	right	214.037645649	5.70566910735	0.6	786.977223121	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	32	1	sound	right			0					227.697195485	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	33	1	sound	right			0					457.304630894	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	34	1	sound	right			0					288.694255985	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	35	1	sound	left			0					339.690922759	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	36	0					1	left	-188.974474177	19.6807250375	0.6	1600.76409625	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	37	0					0					894.536338747	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	38	1	sound	left			0					777.135138866	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	39	1	sound	left			1	left	-211.529125047	8.71943219431	0.6	504.805234727	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	40	1	sound	right			0					743.895634543	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	41	0					0					810.677614994	y	present	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	42	1	sound	right			0					516.786054708	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	43	0					0					485.62757764	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	44	1	sound	left			1	left	-222.175121953	12.4487374346	0.6	549.898833968	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	45	0					0					989.373387303	y	present	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	46	0					1	right	188.85571798	-5.21763137898	0.6	859.82058011	y	present	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	47	1	sound	right			0					744.119061157	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	48	0					0					1507.61698	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	49	0					0					518.280245829	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	50	1	sound	right			1	right	221.217608533	-4.49458666997	0.6	511.24483766	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	51	0					0					538.085291162	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	52	1	sound	right			0					2129.81132697		timeout	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	53	0					0					468.89513731	y	present	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	54	1	sound	left			0					224.119248334	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	55	0					0					419.248779304	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	56	0					0					384.976754431	y	present	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	57	0					1	left	-218.587432777	14.2617279137	0.6	615.105129313	u	absent	0
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	58	1	sound	right			0					436.231551226	u	absent	1
+SPC2_205	2015_Apr_10_1424	LL-Kramer	PME	cueing_effect	59	0					0					461.597700138	u	absent	1

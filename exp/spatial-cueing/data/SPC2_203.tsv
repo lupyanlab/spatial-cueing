@@ -1,0 +1,21 @@
+subj_id	date	computer	experimenter	part	trial_ix	cue_present	cue_type	cue_loc	cue_pos_x	cue_pos_y	target_present	target_loc	target_pos_x	target_pos_y	target_opacity	rt	key	response	is_correct
+SPC2_203	2015_Apr_10_1357	LL-Elaine	PME	practice	0	0					0					2146.10654139		timeout	0
+SPC2_203	2015_Apr_10_1357	LL-Elaine	PME	practice	1	0					1	left	-223.825928796	15.8880243024	1.0	0.0	u	absent	0
+SPC2_203	2015_Apr_10_1357	LL-Elaine	PME	practice	2	0					1	right	187.933324737	1.96679718256	1.0	7.00477627106	u	absent	0
+SPC2_203	2015_Apr_10_1357	LL-Elaine	PME	practice	3	0					1	right	218.596280145	-22.3448734771	1.0	0.0	u	absent	0
+SPC2_203	2015_Apr_10_1357	LL-Elaine	PME	practice	4	0					1	right	207.836859826	13.7854586997	1.0	0.0	u	absent	0
+SPC2_203	2015_Apr_10_1357	LL-Elaine	PME	practice	5	0					1	right	184.749150572	14.7569136327	1.0	0.0	u	absent	0
+SPC2_203	2015_Apr_10_1357	LL-Elaine	PME	practice	6	0					1	left	-219.603567667	13.0658482024	1.0	0.0	u	absent	0
+SPC2_203	2015_Apr_10_1357	LL-Elaine	PME	practice	7	0					1	left	-184.498702994	2.73544129117	1.0	0.0	u	absent	0
+SPC2_203	2015_Apr_10_1357	LL-Elaine	PME	practice	8	0					1	right	187.418269679	-17.6683021397	1.0	0.0	u	absent	0
+SPC2_203	2015_Apr_10_1357	LL-Elaine	PME	practice	9	0					0					0.0	u	absent	1
+SPC2_203	2015_Apr_10_1357	LL-Elaine	PME	practice	0	0					0					749.333294807	u	absent	1
+SPC2_203	2015_Apr_10_1357	LL-Elaine	PME	practice	1	0					0					636.811815901	u	absent	1
+SPC2_203	2015_Apr_10_1357	LL-Elaine	PME	practice	2	0					1	right	179.960931455	-21.2355865577	0.6	427.895887755	u	absent	0
+SPC2_203	2015_Apr_10_1357	LL-Elaine	PME	practice	3	0					0					577.645041049	y	present	0
+SPC2_203	2015_Apr_10_1357	LL-Elaine	PME	practice	4	0					1	right	188.950482866	8.29696680263	0.6	511.218391592	u	absent	0
+SPC2_203	2015_Apr_10_1357	LL-Elaine	PME	practice	5	0					0					1361.28280777	u	absent	1
+SPC2_203	2015_Apr_10_1357	LL-Elaine	PME	practice	6	0					0					491.485330043	u	absent	1
+SPC2_203	2015_Apr_10_1357	LL-Elaine	PME	practice	7	0					0					940.074347658	u	absent	1
+SPC2_203	2015_Apr_10_1357	LL-Elaine	PME	practice	8	0					1	left	-195.371447907	12.848055821	0.6	734.297893941	y	present	1
+SPC2_203	2015_Apr_10_1357	LL-Elaine	PME	practice	9	0					1	left	-191.770157585	-5.0913461408	0.6	897.087867605	u	absent	0

@@ -1,0 +1,381 @@
+subj_id	date	computer	experimenter	part	trial_ix	cue_present	cue_type	cue_loc	cue_pos_x	cue_pos_y	target_present	target_loc	target_pos_x	target_pos_y	target_opacity	rt	key	response	is_correct
+SPC2_206	2015_Apr_10_1428	LL-George	PME	practice	0	0					0					0.0	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	practice	1	0					1	left	-191.006334793	14.2898890291	1.0	0.0	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	practice	2	0					1	left	-190.672827841	8.78245027323	1.0	1014.39266559	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	practice	3	0					0					368.974009063	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	practice	4	0					0					789.050836582	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	practice	5	0					1	right	210.854228688	-1.11748012628	1.0	82.6645884663	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	practice	6	0					0					2130.14384592		timeout	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	practice	7	0					0					188.17987619	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	practice	8	0					0					0.0	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	practice	9	0					1	left	-190.131840767	11.9266001145	1.0	0.0	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	practice	0	0					0					99.9708459713	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	practice	1	0					1	right	222.578092155	7.83404329938	0.6	1639.27352754	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	practice	2	0					1	left	-182.772212483	-1.93619827996	0.6	1131.50657807	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	practice	3	0					0					1130.10203978	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	practice	4	0					0					1844.50772405	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	practice	5	0					1	right	220.472113807	13.2111411823	0.6	1888.22369929	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	practice	6	0					0					2131.5509514		timeout	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	practice	7	0					1	right	219.30765947	5.15367643791	0.6	1737.07449017	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	practice	8	0					1	right	207.169126065	-21.8222209587	0.6	422.01274354	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	practice	9	0					0					1264.27907404	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	0	0					1	right	210.747032053	2.35190931536	0.6	847.509695217	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	1	1	dot	right	200	0	0					369.195874315	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	2	0					1	left	-207.277092835	14.8804648902	0.6	1584.02713714	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	3	1	dot	left	-191.774033732	11.6604671676	1	left	-191.774033732	11.6604671676	0.6	229.99917483	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	4	0					1	right	176.276444797	-0.914205277017	0.6	1691.90483633	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	5	1	dot	right	200	0	0					0.0	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	6	1	dot	right	204.731236696	4.35596718261	1	right	204.731236696	4.35596718261	0.6	0.0	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	7	1	dot	left	-200	0	0					0.0	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	8	0					1	right	181.988999487	7.69329781533	0.6	1785.27325206	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	9	0					0					1191.6241115	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	10	0					1	left	-191.206917385	18.7469802151	0.6	985.371166375	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	11	0					1	left	-186.486003475	-2.98431669265	0.6	1042.14421241	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	12	1	dot	left	-213.970974999	10.0715269311	1	left	-213.970974999	10.0715269311	0.6	1032.24020172	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	13	1	dot	right	210.48903672	20.0768465629	1	right	210.48903672	20.0768465629	0.6	1224.49323861	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	14	1	dot	left	-200	0	0					464.680999517	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	15	1	dot	right	200	0	0					553.123630118	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	16	1	dot	right	196.687610803	-11.6215421378	1	right	196.687610803	-11.6215421378	0.6	671.253357548	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	17	0					1	left	-181.182655407	1.00616407474	0.6	845.710199326	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	18	1	dot	left	-200	0	0					787.199266721	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	19	1	dot	left	-221.684628412	5.84600099957	1	left	-221.684628412	5.84600099957	0.6	888.925234787	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	20	1	dot	right	203.546129756	0.395373612777	1	right	203.546129756	0.395373612777	0.6	437.699931208	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	21	1	dot	left	-216.336606091	-15.2926905952	1	left	-216.336606091	-15.2926905952	0.6	402.589410543	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	22	1	dot	right	200	0	0					756.217281334	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	23	1	dot	right	200	0	0					834.471326787	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	24	1	dot	right	215.040989148	20.6553623084	1	right	215.040989148	20.6553623084	0.6	217.875406612	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	25	0					1	left	-217.984910428	-17.308339985	0.6	482.266697101	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	26	0					1	right	204.423623621	21.9750352823	0.6	1072.05904182	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	27	0					0					1143.95232638	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	28	1	dot	left	-177.19129865	10.9745101635	1	left	-177.19129865	10.9745101635	0.6	669.54407515	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	29	0					0					1129.31102421	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	30	1	dot	right	200	0	0					187.019207049	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	31	1	dot	left	-223.047972499	18.9928925602	1	left	-223.047972499	18.9928925602	0.6	70.5558559857	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	32	0					0					0.0	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	33	0					1	right	200.784280702	0.743672318089	0.6	547.474673484	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	34	0					0					424.419161398	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	35	1	dot	left	-200	0	0					345.2490489	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	36	1	dot	right	185.712058224	-12.2334521509	1	right	185.712058224	-12.2334521509	0.6	0.0	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	37	1	dot	right	200	0	0					105.908411555	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	38	0					1	right	198.457861337	-15.1327955258	0.6	419.714141637	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	39	1	dot	right	200	0	0					161.094292998	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	40	0					1	left	-202.3119665	9.21719574561	0.6	309.56021091	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	41	1	dot	right	200	0	0					0.0	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	42	1	dot	right	186.790308681	9.08996230835	1	right	186.790308681	9.08996230835	0.6	568.730139639	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	43	1	dot	left	-200	0	0					486.028879415	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	44	0					1	right	189.353390248	-13.9406961321	0.6	1079.16644495	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	45	1	dot	left	-200	0	0					316.210680641	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	46	0					0					802.402384114	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	47	0					1	right	214.230040503	-5.72459571208	0.6	1493.97827173	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	48	1	dot	right	200	0	0					453.450928442	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	49	0					1	left	-187.288033352	22.9688966855	0.6	814.795324113	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	50	0					1	right	191.607728724	20.1476944738	0.6	1394.81457742	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	51	0					1	left	-186.741876679	15.1371328328	0.6	1769.22154473	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	52	1	dot	right	201.301998982	13.49221543	1	right	201.301998982	13.49221543	0.6	579.323218204	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	53	0					1	left	-180.338057574	-7.27024608707	0.6	1768.87902804	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	54	1	dot	left	-189.463265381	3.27994059984	1	left	-189.463265381	3.27994059984	0.6	720.108182635	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	55	1	dot	left	-210.911124715	12.192619347	1	left	-210.911124715	12.192619347	0.6	1466.43868927	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	56	0					1	left	-210.278510578	2.9944540762	0.6	1235.9822141	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	57	0					1	left	-212.919972024	13.5843861051	0.6	2011.47944108	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	58	1	dot	left	-200	0	0					229.011231102	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	59	0					1	left	-192.598987493	-18.2103542491	0.6	1040.36451969	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	0	0					1	right	184.653084908	-9.64233076533	0.6	1140.81686921	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	1	0					0					1054.30905335	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	2	0					1	right	211.348252354	-22.4988152123	0.6	1123.85569559	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	3	1	sound	left			1	left	-204.920201426	-7.24076699016	0.6	702.622598968	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	4	0					1	right	212.256041394	17.6959272313	0.6	2051.278478	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	5	1	sound	left			0					742.800458334	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	6	0					0					1604.94632134	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	7	1	sound	left			0					1061.21769454	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	8	1	sound	left			1	left	-181.805034445	-4.8652121835	0.6	960.423194803	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	9	0					1	right	185.980158628	-7.42657229869	0.6	2021.53417375	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	10	1	sound	right			1	right	184.548593507	-14.8828780496	0.6	1521.62200352	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	11	1	sound	right			0					241.090259049	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	12	0					0					1708.64341035	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	13	0					1	left	-197.355862916	8.56133666375	0.6	1389.54407535	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	14	0					1	left	-179.61852938	20.0399514436	0.6	1038.54778828	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	15	0					1	right	202.531058132	15.0070437968	0.6	2144.35938559		timeout	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	16	1	sound	left			0					1209.10566114	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	17	1	sound	right			0					710.124593228	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	18	1	sound	left			0					1315.28214552	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	19	0					0					892.737657297	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	20	0					1	right	220.840559614	-5.69383248527	0.6	731.489342172	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	21	0					0					1683.98331432	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	22	1	sound	left			1	left	-182.069768247	18.2556980958	0.6	1399.72385997	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	23	0					1	right	182.812320113	-7.80772822222	0.6	1169.83286757	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	24	1	sound	right			1	right	209.431189966	1.51821726772	0.6	1230.25184497	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	25	1	sound	left			1	left	-200.973814542	-1.94914288172	0.6	759.540499654	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	26	1	sound	left			0					709.217694122	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	27	0					0					1394.31547094	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	28	1	sound	right			1	right	196.170325629	3.64847504037	0.6	502.763786353	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	29	0					1	right	207.995311738	-20.4960774964	0.6	1252.53339438	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	30	1	sound	right			0					587.473206222	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	31	0					1	right	189.756732303	4.66393599379	0.6	724.820903037	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	32	1	sound	right			1	right	187.640783429	20.1411598951	0.6	830.189135857	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	33	0					0					918.08278719	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	34	1	sound	left			0					659.993582405	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	35	0					0					869.331744034	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	36	0					1	right	200.220662905	2.95178077107	0.6	910.830896348	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	37	0					1	left	-193.221351871	21.3732912935	0.6	774.793857709	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	38	0					0					494.715379551	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	39	1	sound	left			1	left	-183.576145745	2.61687957804	0.6	1112.59335326	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	40	1	sound	right			1	right	203.244621433	-17.7462834301	0.6	1394.02099466	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	41	0					1	left	-213.048593614	16.422171276	0.6	374.968782999	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	42	0					0					1278.02044433	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	43	1	sound	right			0					1361.04368558	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	44	0					0					1022.1315613	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	45	1	sound	right			0					1509.43039218	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	46	0					0					1877.24593189	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	47	0					0					1385.34182915	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	48	1	sound	right			0					1816.05280796	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	49	0					1	left	-198.941214761	-17.7934985473	0.6	1405.8477194	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	50	0					0					1233.93554892	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	51	0					0					269.29837279	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	52	0					1	left	-197.812424059	18.2223745719	0.6	1002.49223039	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	53	1	sound	left			1	left	-196.174045597	-23.1319842446	0.6	1907.71230822	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	54	1	sound	left			0					1699.20623442	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	55	0					0					1481.91684624	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	56	1	sound	left			0					1225.63190432	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	57	0					0					1954.89085466	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	58	0					1	right	189.002424764	15.9731865057	0.6	761.359431781	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	59	1	sound	right			1	right	217.047073091	-7.70451823541	0.6	597.111345734	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	0	1	dot	right	208.058613588	-10.3762305265	1	right	208.058613588	-10.3762305265	0.6	910.921109375	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	1	0					1	left	-190.543510451	-10.5770508946	0.6	730.01109343	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	2	0					1	right	207.412060832	-1.56941859997	0.6	1542.01604426	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	3	1	dot	left	-204.999024509	22.8695448689	1	left	-204.999024509	22.8695448689	0.6	918.937244918	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	4	1	dot	right	179.101632777	18.6029198715	1	right	179.101632777	18.6029198715	0.6	511.069630738	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	5	0					0					1230.82062788	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	6	1	dot	right	207.967105883	-3.75287773607	1	right	207.967105883	-3.75287773607	0.6	693.468164187	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	7	1	dot	right	200	0	0					669.180655852	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	8	1	dot	right	214.902820128	-13.8858222374	1	right	214.902820128	-13.8858222374	0.6	1165.694064	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	9	0					0					1739.29534713	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	10	1	dot	left	-200	0	0					835.316250566	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	11	1	dot	left	-200	0	0					577.649140265	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	12	0					0					1193.93848255	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	13	0					0					1405.4956683	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	14	1	dot	right	203.658852277	-0.483706386712	1	right	203.658852277	-0.483706386712	0.6	1092.97199175	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	15	0					0					904.525143094	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	16	1	dot	left	-200	0	0					1432.2732063	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	17	0					1	right	210.860345845	-14.6244214114	0.6	1968.88672933	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	18	1	dot	left	-195.639861156	-7.81033750267	1	left	-195.639861156	-7.81033750267	0.6	1212.3907404	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	19	1	dot	left	-187.784757815	-20.4238089739	1	left	-187.784757815	-20.4238089739	0.6	2135.76676603		timeout	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	20	1	dot	right	200	0	0					677.870456129	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	21	0					1	right	182.477108544	-13.303775692	0.6	1295.02929188	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	22	1	dot	left	-207.38981729	21.8972779032	1	left	-207.38981729	21.8972779032	0.6	1263.66298413	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	23	1	dot	right	200	0	0					768.759477418	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	24	1	dot	right	201.593041297	4.24897066025	1	right	201.593041297	4.24897066025	0.6	1185.50611986	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	25	1	dot	right	200	0	0					1252.62140762	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	26	1	dot	right	186.411149755	9.97668734318	1	right	186.411149755	9.97668734318	0.6	952.361952979	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	27	0					0					997.350080404	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	28	0					1	left	-187.019733902	0.106629202823	0.6	1662.26137988	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	29	1	dot	right	200	0	0					555.350355338	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	30	0					1	left	-200.189509828	4.825257292	0.6	1067.76621565	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	31	1	dot	right	178.367861254	22.4806518391	1	right	178.367861254	22.4806518391	0.6	1642.06316741	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	32	1	dot	left	-200	0	0					1631.20421721	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	33	1	dot	right	214.047285196	17.208697923	1	right	214.047285196	17.208697923	0.6	1200.70153568	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	34	1	dot	right	210.152671725	8.37353279562	1	right	210.152671725	8.37353279562	0.6	1513.4804491	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	35	0					0					1091.21796954	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	36	1	dot	left	-177.841194089	-19.8108324257	1	left	-177.841194089	-19.8108324257	0.6	880.406326149	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	37	1	dot	right	176.775000157	-13.8496360346	1	right	176.775000157	-13.8496360346	0.6	985.898510087	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	38	1	dot	left	-178.751796977	-3.68851605838	1	left	-178.751796977	-3.68851605838	0.6	1109.30240666	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	39	0					1	right	182.927736995	19.6563404106	0.6	1440.4195277	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	40	1	dot	left	-191.459329581	-17.035123564	1	left	-191.459329581	-17.035123564	0.6	1020.3434336	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	41	1	dot	right	214.821061999	9.61586548948	1	right	214.821061999	9.61586548948	0.6	896.749942563	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	42	1	dot	right	200.771255297	16.322744527	1	right	200.771255297	16.322744527	0.6	337.893376127	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	43	0					1	right	197.53397559	0.194213609616	0.6	1193.22631229	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	44	0					0					1207.02819154	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	45	0					0					1299.63126266	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	46	1	dot	left	-200	0	0					1129.02791658	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	47	0					0					1123.68076993	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	48	0					0					1482.06060054	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	49	1	dot	left	-200	0	0					486.513316631	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	50	0					1	left	-207.770323119	-12.4923002007	0.6	925.003529526	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	51	1	dot	right	198.142794538	5.82194170326	1	right	198.142794538	5.82194170326	0.6	593.151867855	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	52	0					1	right	212.547272325	-13.0061062608	0.6	1427.51794634	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	53	1	dot	left	-200	0	0					1470.35782738	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	54	0					1	left	-179.757958799	-21.2313439514	0.6	1711.72936028	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	55	1	dot	left	-200	0	0					1087.6934221	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	56	0					1	right	203.155834734	9.79903628647	0.6	1501.3339445	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	57	0					1	left	-186.811360612	1.15919607614	0.6	1701.35007985	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	58	1	dot	left	-200	0	0					961.7837267	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	59	0					0					1087.51409594	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	0	1	sound	right			1	right	189.765548729	6.27761776929	0.6	800.786981359	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	1	0					1	left	-183.129704138	21.6534813379	0.6	1527.15067612	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	2	1	sound	right			0					635.648132302	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	3	0					0					1326.702544	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	4	0					1	right	193.378072905	-6.67240481714	0.6	818.211689126	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	5	1	sound	left			0					1720.13825364	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	6	1	sound	right			0					1122.78817361	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	7	1	sound	right			1	right	212.196127793	-0.679356911901	0.6	1210.83804732	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	8	0					0					1126.94384577	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	9	0					0					797.257300001	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	10	1	sound	left			1	left	-204.262445544	-23.1487998424	0.6	1381.98780641	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	11	0					1	left	-179.442603885	-17.2187959864	0.6	1440.12175081	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	12	1	sound	right			1	right	210.237994419	4.92128529009	0.6	536.282374524	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	13	1	sound	left			1	left	-205.454196285	-21.7817541397	0.6	856.06087558	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	14	0					0					2062.59912904	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	15	1	sound	right			0					1262.86243415	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	16	1	sound	left			1	left	-220.360847184	2.46448277543	0.6	82.3055696674	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	17	0					1	right	182.785268808	-11.3294321436	0.6	747.629429214	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	18	0					1	left	-200.371734527	-12.116756852	0.6	1385.76319069	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	19	0					1	left	-206.564867821	-10.8296508009	0.6	1228.41274366	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	20	1	sound	right			1	right	208.193230636	-21.7775813107	0.6	647.016456351	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	21	0					1	right	211.492403208	2.74296663034	0.6	952.592253219	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	22	0					0					1227.08118241	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	23	1	sound	right			0					520.072610583	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	24	0					0					1077.07320666	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	25	1	sound	right			1	right	180.151737321	-15.6550051937	0.6	592.492871918	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	26	0					1	right	215.891743661	-6.49264195126	0.6	915.008938871	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	27	0					0					1244.32033021	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	28	1	sound	left			0					1351.87531495	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	29	1	sound	right			1	right	179.69550312	-5.91643232775	0.6	630.210772622	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	30	0					1	right	199.022001709	2.84266485888	0.6	596.936787013	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	31	1	sound	left			0					736.630758736	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	32	1	sound	right			0					327.88631646	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	33	0					0					410.633050371	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	34	1	sound	right			0					443.968645763	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	35	0					1	right	213.185820695	-3.24831043101	0.6	853.502268903	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	36	0					1	right	182.235850405	-1.89503854779	0.6	1032.81668574	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	37	0					1	right	183.152051763	-0.772162772977	0.6	886.22507453	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	38	1	sound	left			0					910.994453356	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	39	1	sound	right			1	right	189.63983112	-17.3117759843	0.6	759.267659858	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	40	0					0					1518.4605089	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	41	0					0					1093.81251456	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	42	0					0					1262.31565466	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	43	0					0					1026.51349967	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	44	0					0					1129.42140736	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	45	0					1	left	-219.65258658	-22.6955927356	0.6	1039.98496477	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	46	1	sound	left			1	left	-214.836630922	-21.9624355069	0.6	1156.05445812	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	47	0					0					2065.1287646	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	48	1	sound	right			0					1226.88608756	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	49	1	sound	left			1	left	-193.999194508	-4.05884868844	0.6	1950.95814811	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	50	0					1	right	197.42244429	-8.30509152492	0.6	583.377309144	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	51	1	sound	right			0					1226.41888587	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	52	0					1	left	-216.695245064	-2.39546084333	0.6	2135.71652537		timeout	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	53	1	sound	right			0					2129.68691252		timeout	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	54	0					0					0.0	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	55	1	sound	right			1	right	210.778601025	-13.133460169	0.6	660.728122573	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	56	0					0					88.1345863454	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	57	1	sound	left			1	left	-180.175171643	19.180555497	0.6	147.932706866	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	58	0					1	right	206.985649485	11.4338302942	0.6	0.0	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	59	0					0					1166.05895059	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	0	0					1	left	-199.407810558	10.8807486286	0.6	1328.71107059	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	1	1	dot	right	200	0	0					736.290075816	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	2	1	dot	right	200	0	0					949.376117438	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	3	1	dot	left	-200	0	0					901.733302511	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	4	1	dot	right	219.088876408	-5.88552336612	1	right	219.088876408	-5.88552336612	0.6	831.200183369	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	5	1	dot	right	196.710888942	22.2856000172	1	right	196.710888942	22.2856000172	0.6	1230.68970907	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	6	1	dot	right	189.119195985	9.38886229002	1	right	189.119195985	9.38886229002	0.6	1382.24707777	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	7	1	dot	left	-203.327756264	1.49432119043	1	left	-203.327756264	1.49432119043	0.6	686.556956265	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	8	1	dot	left	-201.379443393	11.9786470882	1	left	-201.379443393	11.9786470882	0.6	992.781113833	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	9	0					1	right	182.630050545	16.083053866	0.6	1393.6711438	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	10	1	dot	right	186.559854555	14.3036123233	1	right	186.559854555	14.3036123233	0.6	934.168966487	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	11	1	dot	right	200	0	0					1322.9304608	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	12	0					0					1726.72124673	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	13	0					1	left	-208.897925497	9.83356760501	0.6	1462.80375915	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	14	1	dot	right	198.314731505	17.8012942633	1	right	198.314731505	17.8012942633	0.6	1367.88998405	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	15	0					0					1325.09300951	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	16	0					0					990.749483928	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	17	0					1	left	-185.726813091	4.56620746769	0.6	1653.34237926	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	18	1	dot	left	-212.555811126	-8.88964825049	1	left	-212.555811126	-8.88964825049	0.6	888.670364395	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	19	0					0					1510.6688058	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	20	1	dot	left	-210.734867181	18.3362167126	1	left	-210.734867181	18.3362167126	0.6	894.968782552	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	21	1	dot	right	200	0	0					869.053403381	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	22	1	dot	right	184.865888659	3.1781483065	1	right	184.865888659	3.1781483065	0.6	1267.8076555	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	23	0					1	right	180.56740371	4.94765525548	0.6	1571.51024556	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	24	1	dot	right	180.206658223	1.96296821632	1	right	180.206658223	1.96296821632	0.6	910.901673138	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	25	0					0					1357.88732534	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	26	1	dot	left	-200	0	0					1504.02493728	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	27	1	dot	right	200	0	0					532.379005104	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	28	1	dot	right	193.448582639	7.50538965321	1	right	193.448582639	7.50538965321	0.6	515.998716466	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	29	1	dot	left	-208.388176745	13.3866001316	1	left	-208.388176745	13.3866001316	0.6	786.593445111	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	30	0					0					1130.18565206	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	31	0					0					411.101718899	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	32	0					1	right	217.251977182	12.1344679119	0.6	968.180792872	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	33	1	dot	right	211.691930178	21.8561053692	1	right	211.691930178	21.8561053692	0.6	536.298877094	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	34	0					1	right	209.244728485	-14.1561772113	0.6	955.248040147	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	35	0					1	right	204.422781671	1.7796630113	0.6	331.762915477	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	36	1	dot	right	200	0	0					477.166353259	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	37	1	dot	left	-200	0	0					777.879074216	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	38	1	dot	right	200	0	0					502.796791028	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	39	1	dot	right	200	0	0					468.878111802	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	40	1	dot	right	200	0	0					477.545175236	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	41	0					1	left	-222.451459303	0.465705230776	0.6	769.301489927	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	42	0					1	left	-195.909560154	-16.9491714587	0.6	838.409534656	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	43	0					0					1060.06142544	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	44	0					1	right	205.232857891	-4.6558329645	0.6	1110.29218417	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	45	0					0					1077.1641531	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	46	1	dot	right	200	0	0					936.560348142	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	47	0					0					1098.89415512	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	48	1	dot	right	199.235169631	6.90987622115	1	right	199.235169631	6.90987622115	0.6	1278.17776753	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	49	1	dot	right	200	0	0					822.073985822	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	50	0					1	right	216.457784617	-19.1501966792	0.6	1122.51569983	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	51	0					1	left	-193.890456922	-4.08180347575	0.6	1166.02484509	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	52	0					0					1206.7608526	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	53	1	dot	left	-202.420453983	3.22595065545	1	left	-202.420453983	3.22595065545	0.6	846.194636542	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	54	1	dot	left	-200	0	0					659.546183888	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	55	1	dot	right	200	0	0					1568.64616089	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	56	0					0					875.499243382	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	57	0					0					1741.71753367	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	58	1	dot	left	-221.10822567	-15.6830247835	1	left	-221.10822567	-15.6830247835	0.6	1216.54201206	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	59	1	dot	right	200	0	0					1119.11180383	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	0	1	sound	left			0					1452.67091459	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	1	0					1	left	-198.248615636	-14.7628069342	0.6	2057.06752231	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	2	1	sound	left			1	left	-181.307339712	5.42021951303	0.6	1934.09892265	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	3	0					1	right	202.410182936	17.0051943357	0.6	463.976529893	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	4	1	sound	right			1	right	215.083060036	-4.78379810104	0.6	857.446710579	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	5	0					0					901.236397214	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	6	0					0					999.360073358	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	7	1	sound	right			0					999.200916849	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	8	1	sound	left			0					1063.5856064	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	9	1	sound	left			1	left	-203.78404177	10.7561019515	0.6	1593.88164105	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	10	0					0					1468.50625705	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	11	0					1	right	200.980048484	17.8158557663	0.6	1528.7462757	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	12	0					0					1316.83447165	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	13	0					0					1217.45184483	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	14	0					0					1505.68984635	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	15	1	sound	left			0					1086.03658061	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	16	0					0					1319.09163436	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	17	1	sound	right			0					777.410038747	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	18	1	sound	left			0					322.537336498	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	19	0					0					786.273298319	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	20	0					0					924.120467622	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	21	1	sound	left			1	left	-215.363933849	-20.080775272	0.6	1152.45253267	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	22	1	sound	left			0					810.574375093	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	23	0					0					1611.31881736	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	24	0					0					510.592894629	y	present	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	25	1	sound	left			1	left	-196.532708647	9.82648516312	0.6	1119.25445776	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	26	1	sound	left			0					1206.12899354	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	27	0					0					1134.95961484	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	28	1	sound	left			1	left	-188.212498147	-20.4202466462	0.6	689.216777217	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	29	1	sound	right			1	right	218.828574344	1.86231637497	0.6	535.988265183	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	30	0					0					910.694109742	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	31	1	sound	left			1	left	-195.420954061	7.32836374105	0.6	1061.72670191	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	32	0					0					1101.56461177	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	33	0					0					818.893788848	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	34	0					0					1067.42809992	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	35	1	sound	right			1	right	207.700054021	-15.8895624266	0.6	936.862159055	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	36	1	sound	right			0					614.827962592	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	37	1	sound	right			1	right	179.427553427	13.297163722	0.6	843.728810549	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	38	0					0					511.576071382	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	39	1	sound	left			0					635.940774344	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	40	1	sound	left			1	left	-191.790996272	-2.62181707227	0.6	1358.28705039	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	41	1	sound	left			1	left	-210.887365609	17.2957148804	0.6	861.917029601	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	42	1	sound	left			1	left	-219.902131688	-12.5373994406	0.6	1081.00077929	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	43	1	sound	left			1	left	-177.228239768	5.63466602728	0.6	728.180426173	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	44	1	sound	left			1	left	-184.066005238	-17.1790023356	0.6	1294.12129289	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	45	1	sound	right			1	right	209.12411298	19.8494518926	0.6	916.916250251	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	46	0					0					1342.11065806	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	47	0					0					830.047948752	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	48	1	sound	left			0					1393.62567058	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	49	1	sound	right			1	right	209.066284447	5.45370656688	0.6	1354.57400884	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	50	1	sound	left			1	left	-209.932507366	-3.05874688769	0.6	1048.07591112	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	51	0					1	right	198.693288742	3.62593605017	0.6	27.4845748208	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	52	0					1	right	207.350167066	12.7013850531	0.6	877.798212226	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	53	1	sound	right			1	right	181.780104821	-22.1098620663	0.6	448.484437075	y	present	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	54	1	sound	right			1	right	210.682770971	21.297707861	0.6	598.234242294	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	55	0					0					1102.76745353	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	56	0					1	left	-209.112525142	-9.35698752021	0.6	705.639972817	u	absent	0
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	57	1	sound	left			0					813.602383714	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	58	0					0					1038.8110932	u	absent	1
+SPC2_206	2015_Apr_10_1428	LL-George	PME	cueing_effect	59	1	sound	left			1	left	-178.402148611	3.33676492598	0.6	1457.09319273	u	absent	0

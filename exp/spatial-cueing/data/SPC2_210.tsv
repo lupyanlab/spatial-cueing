@@ -1,0 +1,21 @@
+subj_id	date	computer	experimenter	part	trial_ix	cue_present	cue_type	cue_loc	cue_pos_x	cue_pos_y	target_present	target_loc	target_pos_x	target_pos_y	target_opacity	rt	key	response	is_correct
+SPC2_210	2015_Apr_10_1529	LL-Kramer	PME	practice	0	0					0					1168.13232796	u	absent	1
+SPC2_210	2015_Apr_10_1529	LL-Kramer	PME	practice	1	0					1	right	187.107671182	4.02123664541	1.0	443.399143871	u	absent	0
+SPC2_210	2015_Apr_10_1529	LL-Kramer	PME	practice	2	0					0					0.0	y	present	0
+SPC2_210	2015_Apr_10_1529	LL-Kramer	PME	practice	3	0					1	right	203.116252607	-0.145638817551	1.0	327.683197334	u	absent	0
+SPC2_210	2015_Apr_10_1529	LL-Kramer	PME	practice	4	0					1	left	-209.198371218	-9.87134465695	1.0	261.613608804	u	absent	0
+SPC2_210	2015_Apr_10_1529	LL-Kramer	PME	practice	5	0					1	right	184.467861187	-4.90705671954	1.0	336.013544351	u	absent	0
+SPC2_210	2015_Apr_10_1529	LL-Kramer	PME	practice	6	0					1	left	-181.679093739	15.9349493261	1.0	0.0	u	absent	0
+SPC2_210	2015_Apr_10_1529	LL-Kramer	PME	practice	7	0					1	right	212.552771936	-12.1872732219	1.0	0.0	u	absent	0
+SPC2_210	2015_Apr_10_1529	LL-Kramer	PME	practice	8	0					1	left	-221.213128615	-2.03692504052	1.0	0.0	y	present	1
+SPC2_210	2015_Apr_10_1529	LL-Kramer	PME	practice	9	0					1	left	-177.796776015	-9.13390481193	1.0	51.0278604925	u	absent	0
+SPC2_210	2015_Apr_10_1529	LL-Kramer	PME	practice	0	0					0					0.0	y	present	0
+SPC2_210	2015_Apr_10_1529	LL-Kramer	PME	practice	1	0					0					0.0	y	present	0
+SPC2_210	2015_Apr_10_1529	LL-Kramer	PME	practice	2	0					1	left	-222.855469619	-6.53922255161	0.6	0.0	u	absent	0
+SPC2_210	2015_Apr_10_1529	LL-Kramer	PME	practice	3	0					1	left	-221.886805817	5.15797599902	0.6	0.0	u	absent	0
+SPC2_210	2015_Apr_10_1529	LL-Kramer	PME	practice	4	0					1	left	-184.213064906	6.41036206499	0.6	0.0	u	absent	0
+SPC2_210	2015_Apr_10_1529	LL-Kramer	PME	practice	5	0					0					0.0	u	absent	1
+SPC2_210	2015_Apr_10_1529	LL-Kramer	PME	practice	6	0					0					0.0	u	absent	1
+SPC2_210	2015_Apr_10_1529	LL-Kramer	PME	practice	7	0					0					0.0	u	absent	1
+SPC2_210	2015_Apr_10_1529	LL-Kramer	PME	practice	8	0					1	left	-207.023004415	-9.51753197114	0.6	0.0	u	absent	0
+SPC2_210	2015_Apr_10_1529	LL-Kramer	PME	practice	9	0					1	right	198.788580445	-7.01731561492	0.6	322.117414791	u	absent	0
