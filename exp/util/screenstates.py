@@ -315,15 +315,17 @@ class SpatialCueing(ScreenState):
         edge_buffer = target_size/6
         outer_edge = mask_size/2
         inner_edge = outer_edge - target_size/2 - edge_buffer
-        self.jitter = lambda p: (p[0] + random.uniform(-inner_edge/2, inner_edge/2),
-                                 p[1] + random.uniform(-inner_edge/2, inner_edge/2))
+        self.jitter = lambda p: (
+            p[0] + random.uniform(-inner_edge/2, inner_edge/2),
+            p[1] + random.uniform(-inner_edge/2, inner_edge/2)
+        )
 
         # cues
         # ----
         self.cues = {}
-        self.cues['dot'] = visual.TextStim(self.window, text = 'x', **text_kwargs)
-        self.cues['text'] = visual.TextStim(self.window, **text_kwargs)
-        # self.cues['arrow'] = visual.ImageStim(self.window, Path(stim, 'arrow.png'))
+        self.cues['frame'] = visual.Rect(self.window,
+                size = [mask_size * 2, mask_size * 2],
+                lineColor = 'black', lineWidth = 2.0)
         self.cues['nocue'] = visual.Rect(opacity = 0.0, **target_kwargs)
 
         self.sounds = {}
@@ -336,7 +338,7 @@ class SpatialCueing(ScreenState):
         top = -(t - b)/2 - 60
         mid = -(t - b)/2 - 140
         bot =  (t - b)/2 + 150
-        text_kwargs = {'win': window, 'wrapWidth': (r - l) * 0.5,
+        text_kwargs = {'win': window, 'wrapWidth': (r - l) * 0.8,
                 'color': 'black', 'alignVert': 'top'}
         texts = {}
         texts['title'] = visual.TextStim(pos=(0,top), height=40, **text_kwargs)
@@ -429,21 +431,14 @@ class SpatialCueing(ScreenState):
 
         cue_type = settings['cue_type']
         cue_loc = settings['cue_loc']
-        if cue_type == 'dot':
-            dot_pos = (settings['cue_pos_x'], settings['cue_pos_y'])
-            self.cues['dot'].setPos(dot_pos)
-        elif cue_type == 'text':
-            self.cues['text'].setText(cue_loc)
+        if cue_type == 'frame':
+            frame_pos = (settings['cue_pos_x'], settings['cue_pos_y'])
+            self.cues['frame'].setPos(frame_pos)
         elif cue_type == 'sound':
             sound_options = self.sounds[cue_loc].values()
             sound_version = random.choice(sound_options)
             sound_version.reset()
             self.cues['sound'] = sound_version
-        # elif cue_type == 'arrow':
-        #     cue_loc = settings['cue_loc']
-        #     angle_from_name = {'left': -90, 'right': 90}
-        #     arrow_ori = angle_from_name[cue_loc]
-        #     self.cues['arrow'].setOri(arrow_ori)
         else:
             assert cue_type == '', cue_type + ' not implemented'
             cue_type = 'nocue'
@@ -578,7 +573,7 @@ if __name__ == '__main__':
             default = 'left', help = 'Where should the target be shown')
     trial_parser.add_argument('-o', '--opacity', type = float,
             default = 1.0, help = 'Opacity of the target')
-    trial_parser.add_argument('-cue', choices = ['dot', 'text', 'sound'],
+    trial_parser.add_argument('-cue', choices = ['dot', 'text', 'sound', 'frame'],
             help = 'Which cue should be used.')
     trial_parser.add_argument('-loc', '--location',
             choices = ['left', 'right'],
@@ -622,7 +617,7 @@ if __name__ == '__main__':
             cue_loc = ''
         cue_pos_x = ''
         cue_pos_y = ''
-        if args.cue == 'dot':
+        if args.cue == 'frame':
             cue_pos_x, cue_pos_y = screen.location_map[cue_loc]
 
         settings = {
