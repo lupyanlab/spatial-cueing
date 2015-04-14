@@ -113,14 +113,7 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
         # Instead, run participants in both cueing conditions
         # in random order
         critical_opacity = 1.0
-        possible_orders = [('dot', 'sound', 'dot', 'sound', 'dot', 'sound'),
-                           ('sound', 'dot', 'sound', 'dot', 'dot', 'sound')]
-        selected_order = random.choice(possible_orders)
-
-        for current_block in selected_order:
-            self.test_cueing_effect(
-                    cue_type = current_block,
-                    critical_opacity = critical_opacity)
+        self.test_cueing_effect(critical_opacity = critical_opacity)
 
         self.end_experiment()
 
@@ -201,17 +194,16 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
             text_details = self.text_info[text_when_done]
             self.screen.show_text(text_details)
 
-    def test_cueing_effect(self, cue_type, critical_opacity,
-            introduce_cue = True):
+    def test_cueing_effect(self, critical_opacity):
         """ Determine the effect of cueing on near-threshold detection """
-        if introduce_cue:
-            introduce_cue = self.text_info['cue']
-            self.screen.show_text(introduce_cue)
+        introduce_cue = self.text_info['cue']
+        self.screen.show_text(introduce_cue)
 
         self.trial_data['part'] = 'cueing_effect'
-        for trial_ix in range(60):
+        for trial_ix in range(360):
             target_present = choice([True, False], p = [0.5, 0.5])
             cue_present = choice([True, False])
+            cue_type = choice(['dot', 'sound'])
             cue_this_trial = cue_type if cue_present else None
 
             self.trial_data['trial_ix'] = trial_ix
