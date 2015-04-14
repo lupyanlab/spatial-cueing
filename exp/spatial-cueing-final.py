@@ -1,5 +1,6 @@
 import yaml
 from collections import OrderedDict
+import numpy as np
 from numpy.random import choice
 import random
 from unipath import Path
@@ -105,8 +106,18 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
         self.intertrial = ClearScreen(self, timeout = 0.5)
 
         self.show_instructions()
-        self.run_practice_trials(num_trials = 20, target_opacity = 1.0,
-                text_when_done = 'ready')
+        accuracy_in_practice_trials = 0.0
+        while accuracy_in_practice_trials < 0.8:
+            accuracy_in_practice_trials = self.run_practice_trials(
+                    num_trials = 20,
+                    target_opacity = 1.0)
+
+            if accuracy_in_practice_trials < 0.8:
+                details = self.text_info['low_accuracy']
+                self.screen.show_text(details)
+
+        ready = self.text_info['ready']
+        self.screen.show_text(ready)
 
         # Don't try to calibrate the critical opacity because
         # performance is just too noisy and it's not worth it.
@@ -180,19 +191,22 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
             details = self.text_info[screen]
             self.screen.show_text(details)
 
-    def run_practice_trials(self, num_trials = 20, target_opacity = 1.0,
-            text_when_done = 'ready'):
+    def run_practice_trials(self, num_trials = 20, target_opacity = 1.0):
         """ Run a few practice trials with highly visible targets """
+        current_performance = []
         self.trial_data['part'] = 'practice'
         for trial_ix in range(num_trials):
-            target_present = choice([True, False], p = [0.6, 0.4])
+            target_present = choice([True, False], p = [0.8, 0.2])
 
             self.trial_data['trial_ix'] = trial_ix
             self.run_trial(target_present, target_opacity, cue_type = None)
 
-        if text_when_done:
-            text_details = self.text_info[text_when_done]
-            self.screen.show_text(text_details)
+            current_performance.append(self.trial_data['is_correct'])
+
+        print current_performance
+        current_accuracy = np.array(current_performance).mean()
+        print current_accuracy
+        return current_accuracy
 
     def test_cueing_effect(self, critical_opacity):
         """ Determine the effect of cueing on near-threshold detection """

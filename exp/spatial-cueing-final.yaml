@@ -51,18 +51,37 @@ texts:
             Place two fingers of your dominant hand over the y and u
             keys. Then press the SPACEBAR to start the practice
             trials.
-    harder:
+    low_accuracy:
+        visuals: [title, body, footer, left, right, fix, target]
+        triggers: [advance, ]
+        title: It doesn't seem like you were seeing the target
+        body: >
+            Your accuracy wasn't very high on those practice trials.
+            Let's do the practice trials again. Remember that you are
+            looking for the white square as is present in the example
+            below. During each trial, try to stare in the middle of
+            the two masks, that is, don't try to search both masks for
+            the target.
+        footer: >
+            Press the SPACEBAR to try the practice trials again. Remember
+            to press the "y" key if you see the target, and the "u" key
+            if you didn't see the target.    
+    ready:
         visuals: [title, body, footer]
         triggers: [advance, ]
-        title: Let's do a few more practice trials
+        title: Done with the practice trials. 
         body: >
-            Now the target is going to get harder to see. Please do your
-            best but know that you are expected to get some wrong.
-        footer: Press the SPACEBAR to continue.    
+            If you have any questions, now is the time to ask
+            the experimenter. For the next part, the targets
+            are going to get harder and harder to see, so you
+            might be less and less certain that you are seeing
+            a target. Please do your best, but know that you
+            are expected to get some of them wrong.
+        footer: If you are ready to begin, press the SPACEBAR.
     cue:
         visuals: [title, body, footer]
         triggers: [advance, ]
-        title: Now we are going to add a cue before the target
+        title: We are going to add a cue before the target
         body: >
             Please put the headphones on. Most of the trials will be
             exactly the same.  But on some of the trials you will see
@@ -76,18 +95,6 @@ texts:
         footer: >
             Press the SPACEBAR to continue. Please try to stare at the
             center of the screen during the trials.
-    ready:
-        visuals: [title, body, footer]
-        triggers: [advance, ]
-        title: Done with the practice trials. 
-        body: >
-            If you have any questions, now is the time to ask
-            the experimenter. For the next part, the targets
-            are going to get harder and harder to see, so you
-            might be less and less certain that you are seeing
-            a target. Please do your best, but know that you
-            are expected to get some of them wrong.
-        footer: If you are ready to begin, press the SPACEBAR.
     break:
         visuals: [title, body, footer]
         triggers: [advance, ]
