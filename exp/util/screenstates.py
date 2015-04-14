@@ -487,7 +487,7 @@ class SpatialCueing(ScreenState):
                 for name in trigNames]
 
     def response(self, *args, **kwargs):
-        if self.state != 'fixation':
+        if self.state in ['target', 'prompt']:
             return True
         else:
             return False
@@ -520,13 +520,13 @@ class SpatialCueing(ScreenState):
         print 'Starting state:', self.state, 'at time:', flip_time
         if self.state == 'target' and not self.target_onset:
             self.target_onset = flip_time - self._start_time
-        return False
 
+        return False
 
 class SpatialCueing2(SpatialCueing):
     def __init__(self, *args, **kwargs):
         super(SpatialCueing2, self).__init__(*args, **kwargs)
-        
+
         # refresh (adjusted)
         # ------------------
         REFRESH_RATE = 0.0166 * 2
@@ -539,6 +539,31 @@ class SpatialCueing2(SpatialCueing):
             'duration': 0.066 * 2,
             'stim': ['left', 'right', 'target'],
             'trig': ['response', 'refresh']}
+
+class SpatialCueing3(SpatialCueing):
+    def __init__(self, *args, **kwargs):
+        super(SpatialCueing3, self).__init__(*args, **kwargs)
+
+        # refresh (adjusted)
+        # ------------------
+        REFRESH_RATE = 0.0166 * 2
+        refresh_trig = RefreshTrigger(self.getStateStartTime,
+                delay = REFRESH_RATE, trigger_function = self.refresh,
+                repeat_count = -1)
+        self.triggers['refresh'] = refresh_trig
+
+        self.trial_parts['cue'] = {
+            'duration': 0.4,
+            'stim': ['left', 'right', 'cue'],
+            'trig': ['refresh', ]}
+        self.trial_parts['target'] = {
+            'duration': 0.332,
+            'stim': ['left', 'right', 'target'],
+            'trig': ['response', 'refresh']}
+        self.trial_parts['prompt'] = {
+            'duration': 2.0,
+            'stim': ['prompt', ],
+            'trig': ['response', ]}
 
 if __name__ == '__main__':
     import argparse
@@ -558,6 +583,8 @@ if __name__ == '__main__':
     trial_parser.add_argument('-loc', '--location',
             choices = ['left', 'right'],
             help = 'Which version of the cue should be shown')
+    trial_parser.add_argument('-exp', '--experiment', choices = [1,2,3],
+            default = 3, help = 'Which version of the screenstate to use')
 
     instruct_parser = subparsers.add_parser('instruct',
             help = 'Show the instructions')
@@ -575,7 +602,12 @@ if __name__ == '__main__':
             fullscr = True, allowGUI = False,
             screen = display.getIndex())
 
-    screen = SpatialCueing(window = window, hubServer = io)
+    if args.experiment == 1:
+        screen = SpatialCueing(window = window, hubServer = io)
+    elif args.experiment == 2:
+        screen = SpatialCueing2(window = window, hubServer = io)
+    elif args.experiment == 3:
+        screen = SpatialCueing3(window = window, hubServer = io)
 
     if args.view == 'trial':
         target_loc = args.target
@@ -604,7 +636,7 @@ if __name__ == '__main__':
             'cue_pos_x': cue_pos_x,
             'cue_pos_y': cue_pos_y,
         }
-        print screen.run_trial(settings)
+        screen.run_trial(settings)
     else:  # view == 'instruct'
         texts = yaml.load(open('spatial-cueing.yaml', 'r'))['texts']
         screen.show_text(texts[args.screen_name])
