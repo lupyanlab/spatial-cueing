@@ -1,3 +1,4 @@
+source("./analysis/recoding.R")
 
 calculate_dprime <- function(frame, expected_num_trials) {
   all_cueing <- filter(spatial_cueing, part == "cueing_effect")
@@ -8,10 +9,8 @@ calculate_dprime <- function(frame, expected_num_trials) {
     filter(n() == num_cueing_trials,
            response != "timeout")
   
-  cueing <- cueing %>% mutate(
-    cue_type = ifelse(cue_type == "", "nocue", cue_type),
-    response = recode(response, "'present'=1; 'absent'=0")
-  )
+  cueing <- recode_missing_cue_type_as_nocue(frame)
+  cueing <- recode_responses_as_int(frame)
   
   # tally trials in each cell
   # ----
