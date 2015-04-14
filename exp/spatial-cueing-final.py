@@ -163,7 +163,7 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
         else:
             cue_present = True
             cue_loc = target_loc or choice(['left', 'right'])
-            if cue_type == 'dot':
+            if cue_type == 'frame':
                 if target_present:
                     cue_pos_x, cue_pos_y = target_pos_x, target_pos_y
                 else:
@@ -217,7 +217,7 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
         for trial_ix in range(360):
             target_present = choice([True, False], p = [0.5, 0.5])
             cue_present = choice([True, False])
-            cue_type = choice(['dot', 'sound'])
+            cue_type = choice(['frame', 'sound'])
             cue_this_trial = cue_type if cue_present else None
 
             self.trial_data['trial_ix'] = trial_ix
