@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 from unipath import Path
 from psychopy.visual import ImageStim
+from random import shuffle
 
 class DynamicMask(object):
     def __init__(self, **kwargs):
@@ -23,6 +24,9 @@ class DynamicMask(object):
         """ Draws a single mask """
         self.masks[self._ix].draw()
         self._ix = (self._ix + 1) % len(self.masks)
+
+        if self._ix == 0:
+            shuffle(self.masks)
 
     def setPos(self, pos):
         """ Change the position for all masks"""
