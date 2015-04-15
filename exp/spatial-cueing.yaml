@@ -42,7 +42,7 @@ texts:
             directly where the "+" appears.
         footer: Press the SPACEBAR to see the last page of instructions.
     practice:
-        visuals: [title, body, footer, prompt]
+        visuals: [title, body, footer]
         triggers: [advance, ]
         title: Ready for some practice?
         body: >

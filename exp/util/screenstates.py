@@ -406,7 +406,7 @@ class SpatialCueing(ScreenState):
             'trig': ['response', 'refresh']}
         self.trial_parts['prompt'] = {
             'duration': 1.0,
-            'stim': ['prompt', 'left', 'right'],
+            'stim': ['left', 'right'],
             'trig': ['response', ]}
 
     def show_text(self, details):
