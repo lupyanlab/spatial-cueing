@@ -11,7 +11,7 @@ from psychopy.iohub import ioHubExperimentRuntime, EventConstants
 from psychopy.iohub.util import DeviceEventTrigger, ClearScreen
 
 from util.psychopy_helper import enter_subj_info
-from util.screenstates import SpatialCueing3
+from util.screenstates import SpatialCueing
 
 class SpatialCueingExperiment(ioHubExperimentRuntime):
     """ Measure spatial cueing effects when targets are hard to see
@@ -102,9 +102,11 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
                 screen = display.getIndex())
 
         # the same screenstate runs the trials and shows instructions
-        self.screen = SpatialCueing3(self.window, self.hub)
+        self.screen = SpatialCueing(self.window, self.hub)
         self.intertrial = ClearScreen(self, timeout = 0.5)
 
+        # Begin the experiment
+        # --------------------
         self.show_instructions()
         accuracy_in_practice_trials = 0.0
         while accuracy_in_practice_trials < 0.8:
@@ -237,4 +239,3 @@ if __name__ == '__main__':
     module = module_directory(SpatialCueingExperiment.run)
     runtime = SpatialCueingExperiment(module, 'experiment_config.yaml')
     runtime.start()
-
