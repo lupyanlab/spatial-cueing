@@ -329,6 +329,7 @@ class SpatialCueing(ScreenState):
         self.sounds = {}
         self.sounds['left'] = load_sounds(stim, '*left*.wav')
         self.sounds['right'] = load_sounds(stim, '*right*.wav')
+        self.sounds['feedback'] = load_sounds(stim, 'feedback*.wav')
 
         self.cues = {}
         self.cues['frame'] = frame_cue
@@ -469,6 +470,10 @@ class SpatialCueing(ScreenState):
 
         grader = {'go': 1, 'nogo': 0}
         is_correct = int(grader[response] == settings['target_present'])
+
+        if not is_correct:
+            print self.sounds['feedback']
+            self.sounds['feedback']['feedback-incorrect'].play()
 
         response_vars = {
             'rt': rt,
