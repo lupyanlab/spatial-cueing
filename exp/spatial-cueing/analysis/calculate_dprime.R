@@ -1,7 +1,6 @@
-source("./analysis/recoding.R")
 
 calculate_dprime <- function(frame, expected_num_trials) {
-  all_cueing <- filter(spatial_cueing, part == "cueing_effect")
+  all_cueing <- filter(frame, part == "cueing_effect")
   
   num_cueing_trials <- expected_num_trials
   cueing <- all_cueing %>%
@@ -9,17 +8,17 @@ calculate_dprime <- function(frame, expected_num_trials) {
     filter(n() == num_cueing_trials,
            response != "timeout")
   
-  cueing <- recode_missing_cue_type_as_nocue(frame)
-  cueing <- recode_responses_as_int(frame)
+  cueing <- recode_missing_cue_type_as_nocue(cueing)
+  cueing <- recode_responses_as_int(cueing)
   
   # tally trials in each cell
   # ----
   tallies <- cueing %>%
-    group_by(subj_id, cue_type, cue_present, target_present, response) %>%
+    group_by(subj_id, cue_type, cue_present, target_present, response_b) %>%
     summarize(num_trials = n())
   
-  counts <- tallies %>% group_by(subj_id, cue_type, cue_present) %>%
-    filter(response == 1) %>%
+  counts <- tallies %>% group_by(subj_id, cue_type, target_present) %>%
+    filter(response_b == 1) %>%
     dcast(subj_id + cue_type ~ target_present, value.var = "num_trials",
           fill = 0.0) %>%
     rename(hits = `1`, alarms = `0`)
@@ -31,8 +30,11 @@ calculate_dprime <- function(frame, expected_num_trials) {
     d_prime = qnorm(hit_rate) - qnorm(false_alarm)
   )
   
-  perfect_performance <- (abs(dprimes$d_prime) == Inf)
+  perfect_performance <- (dprimes$d_prime == Inf)
   dprimes[perfect_performance, "d_prime"] = qnorm(.99) - qnorm(0.01)
+  
+  awful_performance <- (dprimes$d_prime == -Inf)
+  dprimes <- filter(dprimes, !awful_performance)
   
   dprimes
 }

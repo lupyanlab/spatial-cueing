@@ -3,7 +3,8 @@ library(dplyr)
 library(ggplot2)
 library(reshape2)
 
-source("./analysis/compile.R")
+source("./analysis/loaders.R")
+source("./analysis/recoders.R")
 source("./analysis/calculate_dprime.R")
 
 spatial_cueing <- compile("data", pattern = "SPC2")
@@ -24,3 +25,5 @@ ggplot(dprimes_plot, aes(x = cue_type_c, y = d_prime)) +
                alpha = 0.4) +
   scale_x_continuous(breaks = c(-1, 0, 1), labels = c("nocue", "dot", "sound")) +
   coord_cartesian(xlim = c(-2, 2), ylim = c(-2, 5))
+
+ggsave("./plots/view_dprime_exp2.png")
