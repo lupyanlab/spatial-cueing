@@ -183,10 +183,7 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
         row = '\t'.join(map(str, self.trial_data.values()))
         self.data_file.write(row + '\n')
 
-        if self.trial_data['response'] == 'timeout':
-            self.screen.show_text(self.text_info['timeout'])
-        else:
-            self.intertrial.switchTo()
+        self.intertrial.switchTo()
 
     def show_instructions(self):
         for screen in ['welcome', 'target', 'practice']:
