@@ -5,6 +5,9 @@
 doc/
 slides/
 
+# Snapshots
+archive/
+
 # Python files, psychopy files, iohub files
 *.pyc
 *.pickle
