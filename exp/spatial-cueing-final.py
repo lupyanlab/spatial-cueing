@@ -109,12 +109,12 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
         # --------------------
         self.show_instructions()
         accuracy_in_practice_trials = 0.0
-        while accuracy_in_practice_trials < 0.8:
+        while accuracy_in_practice_trials < 0.7:
             accuracy_in_practice_trials = self.run_practice_trials(
-                    num_trials = 20,
+                    num_trials = 10,
                     target_opacity = 1.0)
 
-            if accuracy_in_practice_trials < 0.8:
+            if accuracy_in_practice_trials < 0.7:
                 details = self.text_info['low_accuracy']
                 self.screen.show_text(details)
 
@@ -217,10 +217,13 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
 
         self.trial_data['part'] = 'cueing_effect'
         for trial_ix in range(360):
-            target_present = choice([True, False], p = [0.5, 0.5])
-            cue_present = choice([True, False])
-            cue_type = choice(['frame', 'sound'])
-            cue_this_trial = cue_type if cue_present else None
+            target_present = choice([True, False], p = [0.85, 0.15])
+
+            cue_present = choice([True, False], p = [0.667, 0.333])
+            if cue_present:
+                cue_type = choice(['frame', 'sound'])
+            else:
+                cue_type = None
 
             self.trial_data['trial_ix'] = trial_ix
             self.run_trial(target_present, critical_opacity, cue_this_trial)
