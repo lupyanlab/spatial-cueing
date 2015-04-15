@@ -18,8 +18,8 @@ texts:
         body: >
             Today we want to measure your peripheral vision:
             how quickly can you detect a faint shape that flashes
-            to either side of where you are looking? You will
-            press the SPACEBAR as soon as you see the target.
+            to either side of where you are looking? 
+            Press the SPACEBAR as soon as you see the target.
             You will see an example of the targets on the next
             page. If you don't see the target shape, don't press
             anything. In case you're curious, this type of experiment
@@ -47,12 +47,13 @@ texts:
         title: Ready for some practice?
         body: >
             You will start with 10 practice trials, just to get you
-            comfortable with the task. You need to get more than 7
-            of the practice trials correct to move on. Remember to
-            observe both flashing squares because the target could
-            appear in either one. Press the SPACEBAR as soon as you
-            see the target. If you do not see the target, don't press
-            anything. If you get one wrong, you will hear a buzzer.
+            comfortable with the task. You need to get 7 or more of
+            the practice trials correct to move on. Remember that the
+            target could appear in either location, so the best
+            strategy is to simply look in the center of the screen.
+            Press the SPACEBAR as soon as you see the target. If you
+            do not see the target, don't press anything. If you get
+            one wrong, you will hear a buzzer.
         footer: >
             Once your headphones are on, press the SPACEBAR to
             start the practice trials.
@@ -66,25 +67,28 @@ texts:
             Ask the experimenter if you have any questions.
             Remember that you are looking for the white square as it
             is presented in the example below. Try to watch both
-            flashing squares by fixating in the middle of the screen.
+            flashing squares while fixating the middle of the screen.
         footer: >
-            Press the SPACEBAR to try the practice trials again. Remember
-            to press the SPACEBAR as soon as you see the target. If you don't
-            see the target, don't press anything.
+            Press the SPACEBAR to try the practice trials again.
+            Remember to press the SPACEBAR as soon as you see the
+            target. If you don't see the target, don't press anything.
     ready:
         visuals: [title, body, footer]
         triggers: [advance, ]
         title: You are done with the practice trials
         body: >
-            Do you have any questions? For the next part of the experiment
-            you will watch for the same target, but the target might get
-            harder to see. While you are looking for the target, you might
-            see one of the flashing squares highlighted in some way, or you
-            might hear a word like "right" through the headphones. Sometimes
-            these cues will help you, but sometimes they might mislead you.
-            No matter what you see or hear, your goal is exactly the same:
-            carefully observe both flashing squares, and press the
-            SPACEBAR as soon as you see the target.
+            Do you have any questions? For the next part of the
+            experiment you will watch for the same target, but the
+            target might get harder to see. While you are looking for
+            the target, you might see one of the flashing squares
+            highlighted in some way, or you might hear a word like
+            "right" through the headphones. Sometimes these cues will
+            help you, but sometimes they might mislead you.  No matter
+            what you see or hear, your goal is exactly the same:
+            carefully watch for the target to appear in either
+            flashing square by fixating the center of the screen
+            and pressing the SPACEBAR as soon as you see the
+            target.
         footer: When you are ready to begin, press the SPACEBAR.
     break:
         visuals: [title, body, footer]
