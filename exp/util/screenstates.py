@@ -321,7 +321,7 @@ class SpatialCueing(ScreenState):
 
         # cues
         # ----
-        frame_buffer = 10
+        frame_buffer = 30
         frame_size = [mask_size*2 + frame_buffer, mask_size*2 + frame_buffer]
         frame_cue = visual.Rect(self.window, size = frame_size,
                 lineColor = 'black', lineWidth = 3.5)
@@ -384,10 +384,14 @@ class SpatialCueing(ScreenState):
         self.triggers['delay'] = delay_trig
 
         self.trial_parts = OrderedDict()
-        self.trial_parts['fixation'] = {
-            'duration': 1.5,
-            'stim': ['left', 'right', 'fix'],
+        self.trial_parts['fixation1'] = {
+            'duration': 0.5, 
+            'stim': ['fix', ],
             'trig': ['response', 'refresh']}  # triggers have to be present at state start
+        self.trial_parts['fixation2'] = {
+            'duration': 1.5,
+            'stim': ['fix', 'left', 'right'],
+            'trig': ['refresh', ]}
         self.trial_parts['cue'] = {
             'duration': 0.4,
             'stim': ['left', 'right', 'cue'],
@@ -395,14 +399,14 @@ class SpatialCueing(ScreenState):
         self.trial_parts['interval'] = {
             'duration': 0.750,
             'stim': ['left', 'right'],
-            'trig': ['refresh', ]}
+            'trig': ['response', 'refresh', ]}
         self.trial_parts['target'] = {
             'duration': 0.332,
             'stim': ['left', 'right', 'target'],
             'trig': ['response', 'refresh']}
         self.trial_parts['prompt'] = {
             'duration': 1.0,
-            'stim': ['prompt', ],
+            'stim': ['prompt', 'left', 'right'],
             'trig': ['response', ]}
 
     def show_text(self, details):
@@ -450,7 +454,7 @@ class SpatialCueing(ScreenState):
 
         # Prepare the first stage of the trial
         # ------------------------------------
-        self.state = 'fixation'
+        self.state = 'fixation1'
         start_part = self.trial_parts[self.state]
         self.current_state_delay = start_part['duration']
         self.prepare(start_part['stim'], start_part['trig'] + ['delay', ])
@@ -458,8 +462,11 @@ class SpatialCueing(ScreenState):
         self.target_onset = None
         stateStartTime, stateDuration, triggeringEvent = self.switchTo()
 
-        rt = stateDuration - self.target_onset
-        rt = rt * 1000.0
+        if self.target_onset:
+            rt = stateDuration - self.target_onset
+            rt = rt * 1000.0
+        else:  # false alarm trial
+            rt = 0.0
 
         try:
             key = triggeringEvent.key
@@ -468,8 +475,11 @@ class SpatialCueing(ScreenState):
             key = ''
             response = 'nogo'
 
-        grader = {'go': 1, 'nogo': 0}
-        is_correct = int(grader[response] == settings['target_present'])
+        if rt > 0.0:
+            grader = {'go': 1, 'nogo': 0}
+            is_correct = int(grader[response] == settings['target_present'])
+        else:
+            is_correct = 0  # false alarm trial
 
         if not is_correct:
             self.sounds['feedback']['feedback-incorrect'].play()
@@ -488,7 +498,7 @@ class SpatialCueing(ScreenState):
         self.event_triggers = [self.triggers[name] for name in trigNames]
 
     def response(self, *args, **kwargs):
-        if self.state in ['target', 'prompt']:
+        if self.state in ['interval', 'target', 'prompt']:
             return True
         else:
             return False
