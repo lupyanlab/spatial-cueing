@@ -168,10 +168,10 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
             cue_loc = target_loc or choice(['left', 'right'])
             if cue_type == 'frame':
                 if target_present:
-                    cue_pos_x, cue_pos_y = target_pos_x, target_pos_y
+                    cue_pos = self.screen.location_map[target_loc]
                 else:
                     cue_pos = self.screen.location_map[cue_loc]
-                    cue_pos_x, cue_pos_y = self.screen.jitter(cue_pos)
+                cue_pos_x, cue_pos_y = cue_pos
 
         self.trial_data['cue_present'] = int(cue_present)
         self.trial_data['cue_type'] = cue_type
@@ -219,7 +219,7 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
                 cue_type = None
 
             self.trial_data['trial_ix'] = trial_ix
-            self.run_trial(target_present, critical_opacity, cue_this_trial)
+            self.run_trial(target_present, critical_opacity, cue_type)
 
             if trial_ix > 0 and trial_ix % 30 == 0:
                 break_details = self.text_info['break']

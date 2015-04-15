@@ -321,10 +321,10 @@ class SpatialCueing(ScreenState):
 
         # cues
         # ----
-        frame_buffer = 8
+        frame_buffer = 10
         frame_size = [mask_size*2 + frame_buffer, mask_size*2 + frame_buffer]
         frame_cue = visual.Rect(self.window, size = frame_size,
-                lineColor = 'black', lineWidth = 3.0)
+                lineColor = 'black', lineWidth = 3.5)
 
         self.sounds = {}
         self.sounds['left'] = load_sounds(stim, '*left*.wav')
@@ -401,7 +401,7 @@ class SpatialCueing(ScreenState):
             'stim': ['left', 'right', 'target'],
             'trig': ['response', 'refresh']}
         self.trial_parts['prompt'] = {
-            'duration': 2.0,
+            'duration': 1.0,
             'stim': ['prompt', ],
             'trig': ['response', ]}
 
@@ -472,7 +472,6 @@ class SpatialCueing(ScreenState):
         is_correct = int(grader[response] == settings['target_present'])
 
         if not is_correct:
-            print self.sounds['feedback']
             self.sounds['feedback']['feedback-incorrect'].play()
 
         response_vars = {
@@ -579,7 +578,7 @@ if __name__ == '__main__':
             cue_pos_x, cue_pos_y = screen.location_map[cue_loc]
 
         settings = {
-            'target_present': 'present',
+            'target_present': 1,
             'target_loc': target_loc,
             'target_pos_x': target_pos_x,
             'target_pos_y': target_pos_y,

@@ -154,8 +154,9 @@ def load_sounds(sound_dir, pattern):
     sound_names = sound_dir.listdir(pattern = pattern)
     sounds = {}
     for snd_name in sound_names:
+        snd_stem = str(snd_name.stem)
         snd_path = os.path.join(sound_dir, snd_name)
-        sounds[snd_name] = SoundDraw(snd_path)
+        sounds[snd_stem] = SoundDraw(snd_path)
 
     return sounds
 
