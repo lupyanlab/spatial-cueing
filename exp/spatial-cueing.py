@@ -34,7 +34,7 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
     def run(self, *args, **kwargs):
         # Load the experiment info
         # ------------------------
-        exp_info = yaml.load(open('spatial-cueing-final.yaml', 'r'))
+        exp_info = yaml.load(open('spatial-cueing.yaml', 'r'))
         subj_info_fields = exp_info['subj_info']
         self.text_info = exp_info['texts']
 
@@ -108,6 +108,7 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
         # Begin the experiment
         # --------------------
         self.show_instructions()
+
         accuracy_in_practice_trials = 0.0
         while accuracy_in_practice_trials < 0.7:
             accuracy_in_practice_trials = self.run_practice_trials(
@@ -202,16 +203,11 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
 
             current_performance.append(self.trial_data['is_correct'])
 
-        print current_performance
         current_accuracy = np.array(current_performance).mean()
-        print current_accuracy
         return current_accuracy
 
     def test_cueing_effect(self, critical_opacity):
         """ Determine the effect of cueing on near-threshold detection """
-        introduce_cue = self.text_info['cue']
-        self.screen.show_text(introduce_cue)
-
         self.trial_data['part'] = 'cueing_effect'
         for trial_ix in range(360):
             target_present = choice([True, False], p = [0.85, 0.15])

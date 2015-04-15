@@ -1,0 +1,104 @@
+---
+subj_info:
+    1:
+        name: subj_id
+        prompt: EXPv_XXX
+        options: any
+        default: SPC_301
+    2:
+        name: experimenter
+        prompt: Experiment initials
+        options: any
+        default: XXX
+texts:
+    welcome:
+        visuals: [title, body, footer]
+        triggers: [advance, ]
+        title: Welcome to the SPC experiment
+        body: >
+            Today we want to measure your peripheral vision:
+            how quickly can you detect a faint shape that flashes
+            to either side of where you are looking? You will
+            press the SPACEBAR as soon as you see the target.
+            You will see an example of the targets on the next
+            page. If you don't see the target shape, don't press
+            anything. In case you're curious, this type of experiment
+            is called a "go/no-go task".
+        footer: Press the SPACEBAR to see an example of the target.
+    target:
+        visuals: [title, body, footer, left, right, fix, target]
+        triggers: [refresh, advance]
+        title: Do you see the target?
+        body: >
+            Below you see an example of the target. Do you see the white
+            square in the left flashing square? On each trial, one
+            target will appear in either the left or the right flashing
+            square. As soon as you see the target, press the SPACEBAR.
+            It's harder than it sounds because in the experiment the
+            target will appear very briefly, and you don't know which
+            side it will be on. Because of how briefly the target
+            will be visible, you will do the best if you try to observer
+            both locations by staring in the middle of the screen,
+            directly where the "+" appears.
+        footer: Press the SPACEBAR to see the last page of instructions.
+    practice:
+        visuals: [title, body, footer, prompt]
+        triggers: [advance, ]
+        title: Ready for some practice?
+        body: >
+            You will start with 10 practice trials, just to get you
+            comfortable with the task. You need to get more than 7
+            of the practice trials correct to move on. Remember to
+            observe both flashing squares because the target could
+            appear in either one. Press the SPACEBAR as soon as you
+            see the target. If you do not see the target, don't press
+            anything. If you get one wrong, you will hear a buzzer.
+        footer: >
+            Once your headphones are on, press the SPACEBAR to
+            start the practice trials.
+    low_accuracy:
+        visuals: [title, body, footer, left, right, fix, target]
+        triggers: [refresh, advance]
+        title: You got more than 3 wrong
+        body: >
+            You got more than 3 wrong on the practice trials.
+            Let's do them again to make sure you understand the task.
+            Ask the experimenter if you have any questions.
+            Remember that you are looking for the white square as it
+            is presented in the example below. Try to watch both
+            flashing squares by fixating in the middle of the screen.
+        footer: >
+            Press the SPACEBAR to try the practice trials again. Remember
+            to press the SPACEBAR as soon as you see the target. If you don't
+            see the target, don't press anything.
+    ready:
+        visuals: [title, body, footer]
+        triggers: [advance, ]
+        title: You are done with the practice trials
+        body: >
+            Do you have any questions? For the next part of the experiment
+            you will watch for the same target, but the target might get
+            harder to see. While you are looking for the target, you might
+            see one of the flashing squares highlighted in some way, or you
+            might hear a word like "right" through the headphones. Sometimes
+            these cues will help you, but sometimes they might mislead you.
+            No matter what you see or hear, your goal is exactly the same:
+            carefully observe both flashing squares, and press the
+            SPACEBAR as soon as you see the target.
+        footer: When you are ready to begin, press the SPACEBAR.
+    break:
+        visuals: [title, body, footer]
+        triggers: [advance, ]
+        title: Take a break!
+        body: >
+            This task is hard on your eyes. Take a break to refresh
+            them. Look away from the screen, give them a rub,
+            blink a few times.
+        footer: When you are ready to continue, press the SPACEBAR
+    end_of_experiment:
+        visuals: [title, body]
+        triggers: [advance, ]
+        title: You've finished the experiment.
+        body: >
+            Press the SPACEBAR to exit this screen, and you can leave the
+            experiment.
