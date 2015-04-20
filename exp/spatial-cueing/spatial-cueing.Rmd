@@ -1,0 +1,277 @@
+---
+title: "Spatial Cueing Experiment"
+author: "Pierce Edmiston"
+date: "April 17, 2015"
+output: html_document
+---
+
+```{r, "get-spatial-cueing-data", message=FALSE}
+source("R/loaders.R")
+cueing <- get_spatial_cueing()
+cueing %>% group_by(subj_id) %>%
+  summarize(num_trials = n(),
+            mean_acc = mean(is_correct))
+```
+
+# Cueing effect in accuracies
+Fit a `glmer` model to estimate the effects of
+cueing with a word and cueing with a visual frame on go/no-go accuracy.
+Calculate the cueing effects by comparing performance in each cueing condition
+to performance on the nocue trials.
+
+I expect to find that cueing with a word leads to a bigger jump in
+go/no-go performance than cueing with a visual frame, because this
+demanding task requires the type of attentive state that words
+are better at activating than "motivated" cues like the visual frame.
+
+## Plot by-subject accuracies
+
+1. Compute by-subject accuracies
+```{r, summarize-data-for-plot}
+cueing_by_subj <- cueing %>% group_by(subj_id, cue_type) %>%
+  summarize(accuracy = mean(is_correct))
+```
+
+2. Arrange cue types on the x-axis
+```{r, place-cueing-variables-on-x-axis}
+source("R/recoders.R")
+cueing_by_subj$cue_type_int <- recode_cue_type_as_int(cueing_by_subj)
+cueing_by_subj$cue_type_jit <- jitter_cue_type_int_by_subj(cueing_by_subj)
+```
+
+3. Plot of subject accuracies by cue type
+```{r, "plot-of-subj-accuracies-by-cue", message = FALSE, echo = -4}
+library(ggplot2)
+library(scales)
+
+scale_cue_type_int <- scale_x_continuous("Cue Type",
+    breaks = c(-1, 0, 1),
+    labels = c("frame", "no cue", "sound"))
+by_subj_point_shape <- 1
+by_subj_line_size <- 0.3
+
+plot_bysubj <- ggplot(cueing_by_subj,
+    aes(x = cue_type_int, y = accuracy)) +
+  geom_point(aes(x = cue_type_jit, color = subj_id), shape = by_subj_point_shape) + 
+  geom_line(aes(x = cue_type_jit, color = subj_id), size = by_subj_line_size) +
+  scale_cue_type_int +
+  scale_y_continuous("Accuracy", labels = percent) +
+  theme(legend.position = "none")
+plot_bysubj
+```
+
+## Fit glmer model to raw accuracies
+
+1. Set the contrast codes
+```{r, "set-contrasts"}
+source("R/recoders.R")
+cueing <- set_treatment_contrasts(cueing)
+contrasts(cueing$cue_type)
+```
+
+2. Predict likelihood of error from cue type
+- leaving the outlier subjects in for now
+- errors are false alarms and misses
+```{r, "fit-accuracy-mod", message = FALSE}
+library(lme4)
+accuracy_mod <- glmer(data = cueing, family = "binomial",
+  formula = is_correct ~ frame_v_nocue + sound_v_nocue + 
+              (frame_v_nocue + sound_v_nocue || subj_id))
+  ## the double pipe fits random intercepts and slopes without
+  ## random effect correlations
+summary(accuracy_mod)
+```
+
+## Add model predictions to by-subject plot
+
+1. Get the model predictions
+```{r, "get-model-predictions"}
+library(AICcmodavg)
+x_preds <- data.frame(cue_type = c("nocue", "frame", "sound")) %>%
+  set_treatment_contrasts()
+x_preds$cue_type_int <- recode_cue_type_as_int(x_preds)
+
+y_preds <- predictSE(accuracy_mod, x_preds, 
+  type = "response", se = TRUE, print.matrix = TRUE)
+predictions <- cbind(x_preds, y_preds) %>%
+  rename(accuracy = fit, se = se.fit)
+```
+  
+2. By subject averages with model predictions overlayed
+```{r, "plot-with-model-predictions", echo = -2}
+plot_accuracy_mod <- plot_bysubj +
+  geom_errorbar(aes(ymin = accuracy - se, ymax = accuracy + se),
+    data = predictions, width = 0.05) +
+  geom_line(aes(group = 1), data = predictions)
+plot_accuracy_mod
+```
+
+## Conclusions
+There are reliable boosts in target detection performance both
+when presented a visual frame and when presented a verbal cue.
+However, the cueing effect when presented a verbal cue is over
+twice the cueing effect from the visual frame.
+
+```{r, "comparing-cueing-effects"}
+library(broom)
+coefficients <- tidy(accuracy_mod, effects = "fixed")
+coefficients[2:3, c("term", "estimate", "std.error")]
+```
+
+It's also worth noting that the verbal cueing effect might
+be underestimated here as performance on verbal cue trials
+is near ceiling.
+
+## Comparing cueing effects
+I can't simply compare the cueing effects by looking at the
+interaction between `frame_v_nocue` and `sound_v_nocue`
+because those variables are treatment contrast coded
+(the interaction term forces double dipping the data in
+the nocue condition).
+
+As a temporary workaround, I can estimate the by-subject
+cueing effects by hand, and fit a simple lmer model on
+the summarized data.
+
+1. Summarize the frame and sound cueing effects for each subject.
+Starting with average accuracies in each cueing condition by subject,
+first cast the frame so that mean accuracy is split into three columns,
+one for each cueing condition. Calculate the cueing effects by taking
+the relevant differences in accuracy. Then melt the two difference
+columns back into tidy format.
+```{r, "summarize-cueing-effects-by-subject"}
+library(reshape2)
+cueing_effects <- cueing_by_subj %>%
+  select(subj_id, cue_type, accuracy) %>%
+  dcast(subj_id ~ cue_type, value.var = "accuracy") %>%
+  mutate(
+    frame_v_nocue = frame - nocue,
+    sound_v_nocue = sound - nocue
+  ) %>% select(subj_id, frame_v_nocue, sound_v_nocue) %>%
+  melt(id.vars = "subj_id", variable.name = "cueing_effect", 
+       value.name = "accuracy") %>%
+  arrange(subj_id)
+head(cueing_effects)
+```
+
+2. Fit a simple lmer mod on the summarize data
+```{r, "comparison-mod"}
+comparison_mod <- lmer(data = cueing_effects,
+  formula = accuracy ~ cueing_effect + (1|subj_id))
+## It's ok to use lmer on accuracies here because
+## we are comparing the means in two groups
+summary(comparison_mod)
+```
+
+## Conclusions
+As expected, the verbal cueing effect is reliably larger than
+the visual cueing effect.
+
+```{r, "estimate-p-value"}
+t_val <- summary(comparison_mod)$coefficients[2, "t value"]
+df_est <- length(cueing$subj_id %>% unique) - 1
+p_est <- 1.0 - pt(t_val, df = df_est, lower.tail = TRUE)
+p_est
+```
+
+# Cueing effect by trial type
+Within each cueing condition, there are four types of trials:
+1. Hit: Successful detection the target.
+2. Miss: Failure to respond when the target was present.
+3. False Alarm: "Detection" of a target that was not present.
+4. Pass: No target and no response.
+
+Count up the number of trials in each of the trial types above
+for each of the three cue types and plot the results.
+```{r, "count-trials-in-each-type", message = FALSE}
+source("R/recoders.R")
+cueing$trial_type <- determine_trial_type(cueing)
+
+trial_types_by_subj <- cueing %>% 
+  group_by(subj_id, cue_type, trial_type) %>%
+  summarize(count = n()) %>%
+  group_by(subj_id, cue_type) %>%
+  mutate(rate = count/sum(count)) %>%
+  ungroup()
+trial_types_by_subj
+```
+
+```{r, "prepare-for-plot"}
+# position cue type on horizontal axis
+trial_types_by_subj$cue_type_int <- recode_cue_type_as_int(trial_types_by_subj)
+trial_types_by_subj$cue_type_jit <- jitter_cue_type_int_by_subj(trial_types_by_subj)
+
+# label text will be used in facet headers
+trial_types_by_subj$trial_type_lab <- label_trial_type(trial_types_by_subj)
+```
+
+```{r, "plot-trial-types", fig.width = 6.0}
+# expected hit rates are 85% and 15%
+reference_lines <- data.frame(
+  trial_type_lab = c("hit", "pass"),
+  expected = c(0.85, 0.15)
+)
+reference_lines$trial_type_lab <- label_trial_type(reference_lines)
+
+ggplot(trial_types_by_subj, aes(y = rate)) +
+  geom_point(aes(x = cue_type_jit, color = subj_id), shape = by_subj_point_shape) +
+  geom_line(aes(x = cue_type_jit, color = subj_id), size = by_subj_line_size) +
+  facet_wrap("trial_type_lab", ncol = 2, scales = "free_y") +
+  geom_hline(aes(yintercept = expected), data = reference_lines, lty = 2) +
+  scale_cue_type_int +
+  scale_y_continuous("Percentage of Trials", labels = percent) +
+  theme(legend.position = "none")
+```
+
+## Conclusions
+It seems that the verbal cue is improving accuracy by making people more
+likely to detect the target (not a decrease in false alarms, for example).
+
+# Cueing effect in RTs on hit trials
+```{r, "hit-trial-rts"}
+hit_trials <- filter(cueing, trial_type == 'hit')
+```
+
+## Plot by-subject RTs
+```{r}
+rts_by_subj <- hit_trials %>% group_by(subj_id, cue_type) %>%
+  summarize(rt = mean(rt))
+
+rts_by_subj$cue_type_int <- recode_cue_type_as_int(rts_by_subj)
+rts_by_subj$cue_type_jit <- jitter_cue_type_int_by_subj(rts_by_subj)
+
+plot_rts_by_subj <- ggplot(rts_by_subj,
+    aes(x = cue_type_int, y = rt)) +
+  geom_point(aes(x = cue_type_jit, color = subj_id), shape = by_subj_point_shape) +
+  geom_line(aes(x = cue_type_jit, color = subj_id), shape = by_subj_line_size) +
+  scale_cue_type_int +
+  scale_y_continuous("Response Time (ms)") +
+  theme(legend.position = "none")
+plot_rts_by_subj
+```
+
+## Fit lmer model to raw RTs
+```{r}
+rt_mod <- lmer(rt ~ frame_v_nocue + sound_v_nocue +
+                     (frame_v_nocue + sound_v_nocue || subj_id),
+                   data = hit_trials)
+summary(rt_mod)
+```
+
+## Add model predictions to RT plot
+```{r, rt-model-predictions}
+y_preds <- predictSE(rt_mod, x_preds, type = "response", se = TRUE, print.matrix = TRUE)
+predictions <- cbind(x_preds, y_preds) %>%
+  rename(rt = fit, se = se.fit)
+
+plot_rt_mod <- plot_rts_by_subj +
+  geom_errorbar(aes(ymin = rt - se, ymax = rt + se),
+    data = predictions, width = 0.05) +
+  geom_line(aes(group = 1), data = predictions)
+plot_rt_mod
+```
+
+## Conclusions
+Both types of cues facilitate faster responses when compared to no cue trials,
+but visual cues and verbal cues did not differ in cueing effects as measured
+in RTs.

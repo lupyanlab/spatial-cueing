@@ -17,6 +17,10 @@ archive/
 .Rhistory
 .Rproj.user/
 
+# Rmd generated files
+*_cache/
+*_files/
+
 # Vim files
 *.swp
 *~
