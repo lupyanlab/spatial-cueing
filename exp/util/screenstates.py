@@ -452,6 +452,14 @@ class SpatialCueing(ScreenState):
             cue_type = 'nocue'  # give it something to draw
         self.stim['cue'] = self.cues[cue_type]
 
+        # Set the interval for the trial
+        # ------------------------------
+        # The default interval, 0.750, was the interval length used
+        # in the spatial-cueing.py experiment. Follow up experiments
+        # use different intervals.
+        interval = settings.get('interval', 0.750)
+        self.trial_parts['interval']['duration'] = settings['interval']
+
         # Prepare the first stage of the trial
         # ------------------------------------
         self.state = 'fixation1'
