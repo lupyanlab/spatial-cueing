@@ -601,6 +601,7 @@ if __name__ == '__main__':
             'target_pos_x': target_pos_x,
             'target_pos_y': target_pos_y,
             'target_opacity': args.opacity,
+            'interval': 0.100,
             'cue_type': cue_type,
             'cue_loc': args.location,
             'cue_pos_x': cue_pos_x,
