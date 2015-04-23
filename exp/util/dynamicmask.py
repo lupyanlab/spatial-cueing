@@ -18,12 +18,14 @@ class DynamicMask(object):
         pngs = map(str, pngs)
 
         self.masks = [ImageStim(image = img, **kwargs) for img in pngs]
-        self._ix = 0
+        self._ix = 1
+        self.is_flicker = True
 
     def draw(self):
         """ Draws a single mask """
         self.masks[self._ix].draw()
-        self._ix = (self._ix + 1) % len(self.masks)
+        if self.is_flicker:
+            self._ix = (self._ix + 1) % len(self.masks)
 
         if self._ix == 0:
             shuffle(self.masks)

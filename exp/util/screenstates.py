@@ -460,6 +460,15 @@ class SpatialCueing(ScreenState):
         interval = settings.get('interval', 0.750)
         self.trial_parts['interval']['duration'] = settings['interval']
 
+        # Set the mask flicker for the trial
+        # ----------------------------------
+        # The default setting is to flicker the mask.
+        # The mask can be turned off by setting the 
+        # mask_flicker variable to False.
+        mask_flicker = settings.get('mask_flicker', True)
+        for mask in ['left', 'right']:
+            self.stim[mask].is_flicker = mask_flicker
+
         # Prepare the first stage of the trial
         # ------------------------------------
         self.state = 'fixation1'
@@ -513,6 +522,7 @@ class SpatialCueing(ScreenState):
 
     def refresh(self, *args, **kwargs):
         """ Redraw the screen to update the masks """
+        # Only redraw the screen if is_mask_flicker is True
         self.dirty = True
         self.flip()
         return False
@@ -561,6 +571,9 @@ if __name__ == '__main__':
     trial_parser.add_argument('-loc', '--location',
             choices = ['left', 'right'],
             help = 'Which version of the cue should be shown')
+    trial_parser.add_argument('--no-flicker',
+            action = 'store_false',
+            help = 'Should the mask flicker')
 
     instruct_parser = subparsers.add_parser('instruct',
             help = 'Show the instructions')
@@ -595,6 +608,9 @@ if __name__ == '__main__':
         if args.cue == 'frame':
             cue_pos_x, cue_pos_y = screen.location_map[cue_loc]
 
+        is_mask_flicker = args.no_flicker
+        print is_mask_flicker
+        
         settings = {
             'target_present': 1,
             'target_loc': target_loc,
@@ -606,6 +622,7 @@ if __name__ == '__main__':
             'cue_loc': args.location,
             'cue_pos_x': cue_pos_x,
             'cue_pos_y': cue_pos_y,
+            'mask_flicker': is_mask_flicker,
         }
         screen.run_trial(settings)
     else:  # view == 'instruct'
