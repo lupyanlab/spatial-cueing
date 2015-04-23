@@ -28,8 +28,8 @@ class DynamicMask(object):
         if self.is_flicker:
             self._ix = (self._ix + 1) % len(self.masks)
 
-        if self._ix == 0:
-            shuffle(self.masks)
+            if self._ix == 0:
+                shuffle(self.masks)
 
     def setPos(self, pos):
         """ Change the position for all masks"""

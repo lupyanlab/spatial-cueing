@@ -465,6 +465,10 @@ class SpatialCueing(ScreenState):
         for mask in ['left', 'right']:
             self.stim[mask].pick_new_mask()
 
+        # Set the duration of the target
+        target_duration = settings.get('target_duration', 0.332)
+        self.trial_parts['target']['duration'] = target_duration
+
         # Prepare the first stage of the trial
         # ------------------------------------
         self.state = 'fixation1'

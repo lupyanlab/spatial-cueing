@@ -70,12 +70,13 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
             'cue_loc',
             'cue_pos_x',
             'cue_pos_y',
-            'mask_flicker',  # add param to turn off mask flicker
+            'mask_flicker',     # add param to turn off mask flicker
             'target_present',
             'target_loc',
             'target_pos_x',
             'target_pos_y',
             'target_opacity',
+            'target_duration',  # add param to adjust target duration
         ]
         for trial_var in trial_vars:
             self.trial_data[trial_var] = ''
@@ -115,7 +116,7 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
         while accuracy_in_practice_trials < 0.7:
             accuracy_in_practice_trials = self.run_practice_trials(
                     num_trials = 10,
-                    target_opacity = 1.0)
+                    target_opacity = 0.6)
 
             if accuracy_in_practice_trials < 0.7:
                 details = self.text_info['low_accuracy']
@@ -128,7 +129,7 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
         # performance is just too noisy and it's not worth it.
         # Instead, run participants in both cueing conditions
         # in random order
-        critical_opacity = 1.0
+        critical_opacity = 0.6
         self.test_cueing_effect(critical_opacity = critical_opacity)
 
         self.end_experiment()
@@ -189,6 +190,10 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
         # Note that the mask is actually turned off as an extra arg
         # to the SpatialCueing screenstate
         self.trial_data['mask_flicker'] = False
+
+        # Adjust target duration
+        # Display the targets for a shorter amount of time
+        self.trial_data['target_duration'] = 0.332 / 4
 
         self.trial_data = self.screen.run_trial(self.trial_data)
 
