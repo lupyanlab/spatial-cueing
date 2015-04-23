@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from unipath import Path
 from psychopy.visual import ImageStim
-from random import shuffle
+from random import shuffle, choice
 
 class DynamicMask(object):
     def __init__(self, **kwargs):
@@ -11,6 +11,8 @@ class DynamicMask(object):
         ----------
         kwargs: Arguments to pass to each psychopy.visual.ImageStim object
         """
+        self.is_flicker = kwargs.pop('flicker', True)
+
         util = Path(__file__).absolute().parent
         pngs = Path(util, 'dynamicmask').listdir(pattern = '*.png')
 
@@ -19,7 +21,6 @@ class DynamicMask(object):
 
         self.masks = [ImageStim(image = img, **kwargs) for img in pngs]
         self._ix = 1
-        self.is_flicker = True
 
     def draw(self):
         """ Draws a single mask """
@@ -34,6 +35,11 @@ class DynamicMask(object):
         """ Change the position for all masks"""
         for mask in self.masks:
             mask.setPos(pos)
+
+    def pick_new_mask(self):
+        frames = range(len(self.masks))
+        self._ix = choice(frames)
+
 
 if __name__ == '__main__':
     """ Demo of the dynamic mask in action """

@@ -264,7 +264,7 @@ class RefreshTrigger(TimeTrigger):
         # don't reset self._last_triggered_event
 
 class SpatialCueing(ScreenState):
-    def __init__(self, window, hubServer):
+    def __init__(self, window, hubServer, is_mask_flicker_on = True):
         """ Create all visual stims and event triggers """
         super(SpatialCueing, self).__init__(window, hubServer,
                 eventTriggers = list(), timeout = 60.0)
@@ -286,6 +286,7 @@ class SpatialCueing(ScreenState):
             'win': self.window,
             'size': [mask_size, mask_size],
             'opacity': 0.8,
+            'flicker': is_mask_flicker_on,
         }
         masks = {}
         masks['left']  = DynamicMask(pos = left,  **mask_kwargs)
@@ -458,16 +459,11 @@ class SpatialCueing(ScreenState):
         # in the spatial-cueing.py experiment. Follow up experiments
         # use different intervals.
         interval = settings.get('interval', 0.750)
-        self.trial_parts['interval']['duration'] = settings['interval']
+        self.trial_parts['interval']['duration'] = interval
 
-        # Set the mask flicker for the trial
-        # ----------------------------------
-        # The default setting is to flicker the mask.
-        # The mask can be turned off by setting the 
-        # mask_flicker variable to False.
-        mask_flicker = settings.get('mask_flicker', True)
+        # Start the trial with a random mask
         for mask in ['left', 'right']:
-            self.stim[mask].is_flicker = mask_flicker
+            self.stim[mask].pick_new_mask()
 
         # Prepare the first stage of the trial
         # ------------------------------------

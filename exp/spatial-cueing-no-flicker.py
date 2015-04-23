@@ -103,7 +103,8 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
                 screen = display.getIndex())
 
         # the same screenstate runs the trials and shows instructions
-        self.screen = SpatialCueing(self.window, self.hub)
+        self.screen = SpatialCueing(self.window, self.hub,
+                is_mask_flicker_on = False)
         self.intertrial = ClearScreen(self, timeout = 0.5)
 
         # Begin the experiment
@@ -184,6 +185,9 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
         # Turn off mask flicker
         # This is the only difference between spatial-cueing.py
         # and spatial-cueing-no-flicker.py
+        #
+        # Note that the mask is actually turned off as an extra arg
+        # to the SpatialCueing screenstate
         self.trial_data['mask_flicker'] = False
 
         self.trial_data = self.screen.run_trial(self.trial_data)
