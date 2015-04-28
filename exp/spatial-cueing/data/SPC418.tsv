@@ -1,0 +1,371 @@
+subj_id	date	computer	experimenter	part	trial_ix	cue_present	cue_type	cue_loc	cue_pos_x	cue_pos_y	mask_flicker	target_present	target_loc	target_pos_x	target_pos_y	target_opacity	target_duration	rt	key	response	is_correct
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	practice	0	0					False	1	left	-185.402281358	-15.3135593256	0.6	0.083	746.128540486	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	practice	1	0					False	1	left	-185.862180018	1.11335599921	0.6	0.083	591.948509216	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	practice	2	0					False	1	right	178.795385149	8.45667143316	0.6	0.083	395.070843399	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	practice	3	0					False	0					0.083	1081.37114719		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	practice	4	0					False	1	right	199.276648737	7.93306680049	0.6	0.083	337.116265669	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	practice	5	0					False	0					0.083	1087.26055548		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	practice	6	0					False	1	right	210.78164248	-17.0669484443	0.6	0.083	321.253648028	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	practice	7	0					False	0					0.083	1080.05183004		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	practice	8	0					False	0					0.083	1078.99903692		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	practice	9	0					False	1	left	-185.387889949	-12.1142043948	0.6	0.083	389.574192464	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	0	0					False	0					0.083	1088.00195903		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	1	0					False	1	left	-218.083841684	11.5262302784	0.6	0.083	370.879411697	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	2	1	sound	right			False	1	right	197.248847038	5.22245164306	0.6	0.083	438.11446242	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	3	1	sound	left			False	1	left	-186.551427589	8.65957801116	0.6	0.083	433.402556926	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	4	1	frame	left	-200	0	False	1	left	-187.618052165	16.6124455159	0.6	0.083	630.090115592	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	5	1	sound	left			False	1	left	-191.810417185	-20.6772366299	0.6	0.083	413.352338597	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	6	1	frame	right	200	0	False	1	right	193.634785092	9.56734884195	0.6	0.083	587.849115953	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	7	0					False	1	right	211.853371588	-22.4558188107	0.6	0.083	373.730583116	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	8	0					False	1	left	-210.762936694	-1.74099615263	0.6	0.083	320.0499136	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	9	0					False	1	left	-215.017931119	14.2571479582	0.6	0.083	496.177777648	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	10	1	frame	left	-200	0	False	1	left	-208.51947186	-13.5670998467	0.6	0.083	512.076895684	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	11	1	sound	left			False	0					0.083	1080.22748679		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	12	1	sound	left			False	1	left	-211.476762374	2.63719004524	0.6	0.083	448.55494611	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	13	0					False	1	right	186.356113725	13.8195733777	0.6	0.083	460.948936641	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	14	1	sound	left			False	1	left	-222.755562768	0.731386720481	0.6	0.083	399.611657485	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	15	0					False	1	right	176.627779483	-4.39254505391	0.6	0.083	384.04445909	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	16	1	sound	left			False	0					0.083	1082.73152821		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	17	1	frame	left	-200	0	False	1	left	-223.751478334	-22.1474360696	0.6	0.083	460.352770984	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	18	1	sound	left			False	1	left	-185.344677398	1.07005779321	0.6	0.083	345.078943297	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	19	1	frame	left	-200	0	False	1	left	-191.880563343	21.8966532918	0.6	0.083	542.369890958	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	20	0					False	1	left	-190.387261023	-4.92416881286	0.6	0.083	341.075362638	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	21	0					False	0					0.083	1080.39934002		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	22	1	sound	left			False	1	left	-204.006698301	-21.6403830175	0.6	0.083	306.703506038	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	23	1	frame	left	-200	0	False	1	left	-194.719425483	4.52125341737	0.6	0.083	696.309253573	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	24	1	frame	left	-200	0	False	1	left	-212.815246359	17.744542258	0.6	0.083	473.641006276	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	25	1	sound	left			False	1	left	-201.539862948	6.34440005644	0.6	0.083	324.598331004	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	26	1	frame	right	200	0	False	0					0.083	1079.94613238		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	27	0					False	1	left	-186.490247172	21.1435477241	0.6	0.083	306.34078756	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	28	0					False	1	left	-216.662232841	21.3163397025	0.6	0.083	380.078520626	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	29	1	frame	left	-200	0	False	1	left	-207.681479408	5.25278628125	0.6	0.083	387.542365119	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	30	1	frame	right	200	0	False	1	right	205.669937284	18.4092104883	0.6	0.083	357.367234305	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	31	0					False	0					0.083	1079.59177904		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	32	1	frame	left	-200	0	False	1	left	-195.554564044	-13.3871612975	0.6	0.083	515.453893691	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	33	0					False	1	right	213.012079976	-1.9012090869	0.6	0.083	427.120015025	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	34	1	sound	right			False	0					0.083	1087.51187101		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	35	0					False	1	left	-212.903481815	6.51415966849	0.6	0.083	342.55322814	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	36	1	sound	right			False	1	right	213.617090068	19.1899052882	0.6	0.083	366.23708345	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	37	1	frame	left	-200	0	False	0					0.083	1081.62664622		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	38	1	sound	right			False	1	right	200.607874049	2.32443131905	0.6	0.083	454.438269138	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	39	1	sound	left			False	1	left	-214.599614768	-19.918774941	0.6	0.083	356.80680722	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	40	1	frame	left	-200	0	False	1	left	-190.845352884	-16.160343765	0.6	0.083	279.842259362	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	41	1	sound	right			False	1	right	184.337283253	8.61361073289	0.6	0.083	324.454231188	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	42	1	frame	right	200	0	False	0					0.083	1082.00685494		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	43	1	frame	left	-200	0	False	1	left	-203.577870833	-11.7069991737	0.6	0.083	394.348450005	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	44	0					False	1	right	200.241927335	-12.2049777371	0.6	0.083	337.187744677	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	45	0					False	1	left	-178.175125074	-5.91029852465	0.6	0.083	320.629348978	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	46	1	frame	right	200	0	False	1	right	197.037226008	-2.98900612126	0.6	0.083	284.48686935	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	47	0					False	1	right	222.83046445	6.81467375925	0.6	0.083	343.694608659	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	48	0					False	1	left	-203.865202258	-4.43820477448	0.6	0.083	394.61155422	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	49	1	sound	right			False	1	right	183.29627702	-4.12409859386	0.6	0.083	325.256848708	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	50	0					False	0					0.083	1087.40731515		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	51	0					False	1	right	222.716750506	16.0574049753	0.6	0.083	363.584378734	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	52	0					False	0					0.083	1082.06426539		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	53	1	sound	right			False	1	right	216.821205847	7.61042395261	0.6	0.083	337.444385514	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	54	1	sound	right			False	1	right	218.88061186	13.6138627172	0.6	0.083	328.487087041	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	55	1	sound	right			False	1	right	206.728179108	16.8767488114	0.6	0.083	345.996001735	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	56	1	frame	right	200	0	False	1	right	203.771198063	-16.7247373456	0.6	0.083	311.290703714	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	57	1	sound	left			False	1	left	-212.755047764	11.1619978181	0.6	0.083	325.888372958	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	58	1	sound	right			False	1	right	205.905283011	15.9217506621	0.6	0.083	310.259962454	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	59	0					False	1	left	-180.961521974	0.959226011059	0.6	0.083	337.623463944	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	60	1	sound	right			False	1	right	183.582743161	0.454042765598	0.6	0.083	342.847887427	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	61	1	frame	right	200	0	False	1	right	198.292567886	17.9069693366	0.6	0.083	284.36139971	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	62	1	sound	right			False	1	right	203.226435613	-10.8193999674	0.6	0.083	312.825219706	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	63	1	frame	left	-200	0	False	1	left	-218.814717079	-11.8448459625	0.6	0.083	646.824169904	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	64	1	sound	right			False	1	right	206.319066001	8.20582542879	0.6	0.083	370.887015015	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	65	0					False	1	right	219.595690425	-21.1369240555	0.6	0.083	404.445229098	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	66	1	frame	left	-200	0	False	1	left	-177.24764531	-17.7942174466	0.6	0.083	337.791133672	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	67	0					False	1	left	-195.923645004	-22.9700213529	0.6	0.083	294.150590897	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	68	1	frame	right	200	0	False	1	right	177.907970236	-0.619706297253	0.6	0.083	321.222851053	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	69	1	frame	left	-200	0	False	1	left	-212.864162905	-16.2755228228	0.6	0.083	291.179653257	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	70	1	sound	left			False	0					0.083	1087.81261556		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	71	0					False	1	left	-193.084828102	-1.0049711463	0.6	0.083	369.390141219	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	72	1	frame	left	-200	0	False	1	left	-217.360192797	21.0590699112	0.6	0.083	379.882331938	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	73	1	frame	right	200	0	False	1	right	179.339898421	16.476579225	0.6	0.083	595.663130283	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	74	1	frame	left	-200	0	False	1	left	-221.631945504	-12.9743306377	0.6	0.083	304.01658453	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	75	0					False	1	left	-204.401421772	-12.9712870159	0.6	0.083	321.035029367	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	76	0					False	1	right	201.858543501	-4.33088755195	0.6	0.083	335.108011961	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	77	1	sound	left			False	1	left	-184.22047039	5.9324839764	0.6	0.083	404.588187113	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	78	0					False	1	left	-221.525594745	-0.21750863904	0.6	0.083	329.963430762	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	79	1	sound	left			False	1	left	-177.145224624	20.6583416549	0.6	0.083	422.072006389	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	80	0					False	1	left	-193.63958229	-10.4316036989	0.6	0.083	294.252485037	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	81	1	frame	left	-200	0	False	1	left	-223.788128228	8.95520280567	0.6	0.083	452.573735267	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	82	1	frame	left	-200	0	False	1	left	-221.152626504	-10.5646656241	0.6	0.083	337.268350646	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	83	1	sound	left			False	0					0.083	1086.89099364		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	84	1	sound	left			False	1	left	-184.663259888	-9.34820194813	0.6	0.083	307.185228914	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	85	1	sound	left			False	1	left	-199.68802909	10.1379770424	0.6	0.083	328.895810992	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	86	1	frame	right	200	0	False	1	right	185.903029274	-8.05393954793	0.6	0.083	296.196104959	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	87	1	frame	left	-200	0	False	1	left	-212.864662952	-16.2661313054	0.6	0.083	308.783238754	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	88	1	frame	left	-200	0	False	1	left	-206.111532113	17.3385190915	0.6	0.083	354.563966393	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	89	1	frame	right	200	0	False	1	right	184.681693235	12.7711828095	0.6	0.083	311.962530017	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	90	0					False	1	right	194.821953813	-15.3608545828	0.6	0.083	370.355864987	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	91	1	sound	left			False	1	left	-220.644528522	-8.56470538931	0.6	0.083	304.248889908	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	92	1	sound	right			False	0					0.083	1086.8887119		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	93	1	frame	right	200	0	False	1	right	203.549425967	21.7811489006	0.6	0.083	328.060496598	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	94	0					False	0					0.083	1086.76590584		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	95	1	frame	left	-200	0	False	1	left	-218.996983141	0.696449724504	0.6	0.083	326.904665679	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	96	1	frame	left	-200	0	False	1	left	-222.416719357	-0.12098638139	0.6	0.083	371.053166687	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	97	0					False	1	left	-206.015860514	-15.3513068132	0.6	0.083	393.061829731	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	98	0					False	0					0.083	1080.85482568		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	99	1	frame	left	-200	0	False	1	left	-217.130706476	-4.25398128831	0.6	0.083	386.447750032	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	100	1	frame	right	200	0	False	1	right	199.621559381	-16.9502714337	0.6	0.083	292.151082307	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	101	1	sound	right			False	1	right	212.469446984	-4.32999140444	0.6	0.083	352.852275595	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	102	1	frame	left	-200	0	False	1	left	-214.21069275	21.7954790979	0.6	0.083	332.288017496	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	103	1	frame	right	200	0	False	1	right	178.203294137	8.6401750365	0.6	0.083	309.230742976	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	104	1	frame	left	-200	0	False	1	left	-203.12164845	-4.89272965363	0.6	0.083	342.242218554	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	105	1	frame	left	-200	0	False	0					0.083	1086.97121777		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	106	1	sound	right			False	1	right	206.321222232	-19.5338702774	0.6	0.083	354.174636304	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	107	1	frame	left	-200	0	False	1	left	-186.161261472	0.651187357629	0.6	0.083	462.410831824	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	108	1	frame	left	-200	0	False	1	left	-197.8594508	6.95474281635	0.6	0.083	396.735770628	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	109	1	frame	left	-200	0	False	1	left	-206.620409087	-5.36591747999	0.6	0.083	348.562778905	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	110	1	sound	right			False	1	right	210.724076942	5.02567096429	0.6	0.083	415.294056758	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	111	1	sound	left			False	0					0.083	1087.1065706		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	112	1	frame	right	200	0	False	1	right	191.580201328	18.423582884	0.6	0.083	712.901489809	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	113	1	frame	left	-200	0	False	1	left	-211.404136768	-13.1171001158	0.6	0.083	437.848316506	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	114	1	sound	right			False	1	right	185.997837182	7.51860750754	0.6	0.083	307.114509866	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	115	1	frame	left	-200	0	False	0					0.083	1088.30916509		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	116	1	frame	right	200	0	False	1	right	196.178608313	4.72974540237	0.6	0.083	309.682808816	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	117	1	sound	right			False	1	right	194.940283629	-3.26878139228	0.6	0.083	395.200114697	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	118	1	frame	right	200	0	False	0					0.083	1079.97084595		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	119	1	sound	left			False	0					0.083	1087.40617335		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	120	1	frame	right	200	0	False	1	right	191.533761163	-2.64863950934	0.6	0.083	345.577774569	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	121	1	frame	right	200	0	False	1	right	179.110822554	11.4740534924	0.6	0.083	325.038991868	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	122	1	frame	left	-200	0	False	1	left	-198.069311152	-1.32605986514	0.6	0.083	306.183002889	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	123	1	frame	left	-200	0	False	1	left	-202.36135895	6.32361610301	0.6	0.083	403.596606106	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	124	1	sound	right			False	1	right	205.475650316	-18.0544060899	0.6	0.083	312.405090779	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	125	0					False	1	right	192.003637701	-18.1145533666	0.6	0.083	303.769828752	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	126	0					False	0					0.083	1086.91684902		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	127	0					False	1	left	-216.269822249	-18.5115492857	0.6	0.083	321.88251242	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	128	1	frame	left	-200	0	False	1	left	-195.330223201	19.4106920435	0.6	0.083	350.466856733	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	129	1	frame	left	-200	0	False	1	left	-195.599037174	-13.9269935322	0.6	0.083	421.248478815	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	130	1	frame	left	-200	0	False	1	left	-179.024623403	-16.0367979351	0.6	0.083	324.667528272	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	131	1	sound	right			False	0					0.083	1087.74683997		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	132	1	frame	left	-200	0	False	0					0.083	1088.42056803		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	133	1	frame	right	200	0	False	1	right	218.048866007	3.52699422002	0.6	0.083	555.622385815	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	134	1	frame	right	200	0	False	0					0.083	1087.11303584		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	135	0					False	1	right	194.160018827	-8.48984881389	0.6	0.083	359.052309766	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	136	0					False	1	right	213.055669101	-2.53430930113	0.6	0.083	352.536704391	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	137	1	frame	right	200	0	False	1	right	202.132454443	0.148244255044	0.6	0.083	325.040891767	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	138	1	sound	right			False	1	right	212.490052551	15.1033996053	0.6	0.083	409.463580698	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	139	1	frame	left	-200	0	False	1	left	-180.983316816	-13.7723704977	0.6	0.083	371.226539835	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	140	0					False	1	right	182.057473254	0.40874771168	0.6	0.083	354.054108262	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	141	0					False	1	right	177.747403442	13.3187441508	0.6	0.083	370.241804048	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	142	0					False	1	left	-193.298761671	-19.3505247461	0.6	0.083	387.525256723	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	143	1	sound	left			False	0					0.083	1082.22205192		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	144	1	sound	left			False	1	left	-191.146887057	5.03082885273	0.6	0.083	390.410266817	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	145	1	frame	right	200	0	False	1	right	200.22401262	20.4986151628	0.6	0.083	428.936643526	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	146	1	frame	right	200	0	False	1	right	201.898995399	4.84988519812	0.6	0.083	427.431404591	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	147	1	sound	right			False	0					0.083	1082.43838884		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	148	1	frame	right	200	0	False	1	right	217.391477618	21.6375912422	0.6	0.083	409.189831465	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	149	1	sound	right			False	1	right	207.980515676	-8.91152493835	0.6	0.083	310.28467603	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	150	1	frame	right	200	0	False	1	right	209.077982051	-8.58349341073	0.6	0.083	322.041818872	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	151	0					False	1	left	-209.832892458	12.2793281897	0.6	0.083	355.480266735	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	152	1	frame	left	-200	0	False	1	left	-198.250682131	-19.4439930103	0.6	0.083	298.128318042	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	153	0					False	0					0.083	1087.1096123		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	154	1	frame	right	200	0	False	0					0.083	1080.39477654		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	155	1	sound	left			False	1	left	-202.558491754	10.3926719917	0.6	0.083	341.017952189	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	156	1	sound	left			False	1	left	-208.040845435	-8.89573025053	0.6	0.083	342.559309676	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	157	0					False	1	right	177.93844805	-5.39929672479	0.6	0.083	328.488988802	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	158	0					False	1	left	-187.713771866	9.60212969658	0.6	0.083	397.28859067	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	159	0					False	1	left	-206.843305127	-19.2708425282	0.6	0.083	422.839645296	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	160	1	sound	left			False	1	left	-204.916475016	-5.05027653143	0.6	0.083	334.648722783	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	161	1	frame	left	-200	0	False	1	left	-214.982328877	1.2598069078	0.6	0.083	345.219999552	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	162	1	frame	left	-200	0	False	1	left	-193.185522887	2.14118840745	0.6	0.083	329.190470278	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	163	1	frame	right	200	0	False	1	right	188.308234672	16.8042906808	0.6	0.083	301.002301276	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	164	0					False	0					0.083	1080.92136309		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	165	1	sound	left			False	1	left	-194.950002414	-9.18213734466	0.6	0.083	287.035778165	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	166	0					False	1	left	-216.277787043	19.1879375821	0.6	0.083	337.461495772	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	167	1	frame	left	-200	0	False	1	left	-204.598650715	-0.782329707865	0.6	0.083	311.237094924	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	168	0					False	0					0.083	1086.59177087		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	169	1	sound	left			False	1	left	-178.637451031	-21.8174674998	0.6	0.083	346.035543829	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	170	0					False	1	left	-210.567004266	-15.0232179453	0.6	0.083	338.320763782	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	171	1	sound	right			False	1	right	205.638755744	12.9135989729	0.6	0.083	463.536243886	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	172	1	sound	left			False	1	left	-223.660718826	10.8362909485	0.6	0.083	345.096051693	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	173	0					False	1	right	199.379910198	8.02516624785	0.6	0.083	320.325184613	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	174	1	frame	left	-200	0	False	1	left	-211.097572606	-13.0503355174	0.6	0.083	348.806492984	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	175	0					False	1	right	190.345175868	-16.1668182784	0.6	0.083	470.524068922	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	176	1	frame	left	-200	0	False	1	left	-198.307167015	16.0318098263	0.6	0.083	363.293521106	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	177	1	frame	left	-200	0	False	0					0.083	1080.99778369		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	178	1	frame	right	200	0	False	1	right	178.620580603	19.8345418669	0.6	0.083	337.138317525	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	179	0					False	1	left	-206.529211888	15.9989434311	0.6	0.083	325.166359544	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	180	1	frame	right	200	0	False	1	right	210.250996622	1.34816131182	0.6	0.083	330.919653177	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	181	1	sound	left			False	1	left	-200.662103747	-22.912427579	0.6	0.083	302.480166778	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	182	0					False	0					0.083	1080.47994226		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	183	1	sound	right			False	0					0.083	1088.07952143		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	184	0					False	1	left	-210.687213926	17.7504392512	0.6	0.083	337.076723576	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	185	1	sound	right			False	1	right	220.767159734	-9.52713949995	0.6	0.083	300.69661513	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	186	1	sound	right			False	0					0.083	1087.27994561		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	187	1	sound	left			False	1	left	-223.491049932	11.750342386	0.6	0.083	452.527349815	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	188	1	sound	right			False	1	right	186.212261664	-7.88273039433	0.6	0.083	385.52118279	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	189	1	sound	left			False	0					0.083	1087.24572696		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	190	0					False	0					0.083	1087.63657883		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	191	0					False	1	right	200.989013694	-8.89048873063	0.6	0.083	348.771512508	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	192	1	frame	right	200	0	False	1	right	186.937125862	-13.5159395442	0.6	0.083	311.549244449	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	193	1	frame	right	200	0	False	1	right	193.081785627	3.863818153	0.6	0.083	356.217868626	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	194	1	frame	left	-200	0	False	1	left	-201.681014134	11.4830470703	0.6	0.083	327.152559534	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	195	0					False	1	right	177.51670177	-8.5225950044	0.6	0.083	354.353332892	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	196	1	sound	right			False	1	right	200.784813198	-14.9831995745	0.6	0.083	305.380005389	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	197	1	frame	right	200	0	False	1	right	214.603273005	20.5737969676	0.6	0.083	324.140181765	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	198	1	sound	right			False	0					0.083	1080.02445474		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	199	0					False	1	right	207.092182116	-19.227133093	0.6	0.083	345.470175147	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	200	1	frame	left	-200	0	False	1	left	-186.233763911	22.9751227534	0.6	0.083	343.717800453	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	201	1	sound	left			False	0					0.083	1080.15790768		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	202	1	frame	right	200	0	False	1	right	200.214085026	-10.7796678883	0.6	0.083	337.936753407	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	203	1	sound	left			False	1	left	-188.192090891	22.8599566384	0.6	0.083	304.083880037	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	204	1	frame	left	-200	0	False	1	left	-185.44810611	-20.4046798623	0.6	0.083	372.797556221	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	205	0					False	1	right	179.364834452	-3.46654670341	0.6	0.083	370.91971375	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	206	0					False	1	left	-180.029210772	-16.3068375732	0.6	0.083	405.634135008	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	207	1	sound	right			False	1	right	211.296515871	-22.9033690491	0.6	0.083	358.934827149	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	208	1	sound	left			False	1	left	-202.164966431	-8.5912615733	0.6	0.083	352.852653712	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	209	1	frame	left	-200	0	False	1	left	-208.46557828	12.9380195315	0.6	0.083	344.870589674	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	210	1	frame	right	200	0	False	1	right	213.417246698	-18.2900905906	0.6	0.083	356.989307329	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	211	1	frame	left	-200	0	False	1	left	-220.421043426	3.65287421917	0.6	0.083	335.28556861	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	212	1	frame	right	200	0	False	1	right	192.880735981	-2.33730689347	0.6	0.083	320.548744872	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	213	0					False	1	left	-219.165758073	-11.9401764392	0.6	0.083	395.349156111	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	214	1	frame	left	-200	0	False	0					0.083	1081.40384592		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	215	1	sound	left			False	1	left	-217.13757721	-0.414716251921	0.6	0.083	499.408397824	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	216	0					False	1	right	205.121560144	-22.1849275775	0.6	0.083	289.937136695	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	217	1	sound	right			False	0					0.083	1087.29705587		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	218	0					False	1	left	-202.974969767	21.2737908078	0.6	0.083	297.402122989	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	219	1	frame	left	-200	0	False	1	left	-181.650836213	-15.9975973611	0.6	0.083	320.958606899	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	220	1	frame	left	-200	0	False	1	left	-192.167844556	19.2586399801	0.6	0.083	307.309556752	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	221	0					False	1	left	-195.387391496	9.85372076832	0.6	0.083	353.140091524	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	222	1	frame	left	-200	0	False	1	left	-191.627369889	-7.41089805472	0.6	0.083	324.691481888	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	223	1	sound	left			False	1	left	-218.180804488	-1.5300980652	0.6	0.083	341.139998287	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	224	1	sound	left			False	1	left	-178.602601102	10.140937171	0.6	0.083	309.877093881	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	225	1	frame	right	200	0	False	1	right	187.529426271	-0.877552631157	0.6	0.083	387.989107519	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	226	1	sound	right			False	1	right	213.292477317	20.9701119498	0.6	0.083	334.457099438	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	227	1	sound	left			False	1	left	-177.138593915	-13.8728721161	0.6	0.083	342.282520607	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	228	0					False	1	left	-192.629652256	7.69584418044	0.6	0.083	292.173894122	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	229	0					False	1	left	-197.438482852	-0.67482404412	0.6	0.083	300.630079582	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	230	1	frame	right	200	0	False	1	right	181.014278369	-13.8986623272	0.6	0.083	301.646754146	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	231	1	frame	left	-200	0	False	1	left	-193.996156024	-9.15576993906	0.6	0.083	311.835160479	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	232	1	frame	right	200	0	False	1	right	221.419679637	-19.278712912	0.6	0.083	333.870820701	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	233	0					False	0					0.083	1083.49004202		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	234	0					False	0					0.083	1080.87573946		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	235	1	frame	right	200	0	False	1	right	221.230719236	-23.1173255989	0.6	0.083	340.590218082	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	236	1	sound	right			False	1	right	222.577750208	-14.1543656529	0.6	0.083	405.749337748	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	237	1	sound	right			False	1	right	199.808104574	18.6285581357	0.6	0.083	315.020155162	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	238	1	frame	right	200	0	False	1	right	217.462670855	-8.21844814257	0.6	0.083	311.692964286	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	239	0					False	1	right	212.965165113	-12.5132465949	0.6	0.083	325.844269246	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	240	0					False	1	right	205.856856441	14.1186326191	0.6	0.083	341.710306704	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	241	1	sound	right			False	1	right	184.062566434	13.3496755205	0.6	0.083	338.253844529	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	242	1	sound	left			False	1	left	-215.324944045	20.3353524533	0.6	0.083	341.530470178	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	243	1	sound	left			False	1	left	-186.984677893	-16.0099489157	0.6	0.083	344.693033025	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	244	1	sound	right			False	1	right	194.80603964	-4.95246152799	0.6	0.083	419.221974909	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	245	1	frame	right	200	0	False	1	right	214.483257585	16.3367713698	0.6	0.083	370.615547523	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	246	1	frame	left	-200	0	False	1	left	-194.479946106	-10.8160424959	0.6	0.083	354.647992179	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	247	1	sound	left			False	1	left	-189.497555585	-2.46830822523	0.6	0.083	282.738676295	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	248	1	frame	left	-200	0	False	1	left	-204.836868785	-14.9418938307	0.6	0.083	403.981374577	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	249	1	sound	left			False	1	left	-214.560718446	-19.8845769538	0.6	0.083	273.628536612	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	250	0					False	1	left	-185.03976767	-2.759357749	0.6	0.083	296.843597665	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	251	0					False	1	left	-188.308750084	-10.638408456	0.6	0.083	302.049390972	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	252	1	sound	left			False	1	left	-211.88246995	2.72221229763	0.6	0.083	278.082281351	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	253	1	sound	left			False	1	left	-183.970305478	-18.4639454677	0.6	0.083	303.500261158	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	254	0					False	1	right	183.32124319	-10.2252063845	0.6	0.083	313.708439469	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	255	1	frame	left	-200	0	False	1	left	-200.598962864	-14.2158764203	0.6	0.083	272.601217031	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	256	1	frame	left	-200	0	False	1	left	-200.84180737	-1.11988011772	0.6	0.083	313.817940652	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	257	0					False	1	right	198.836490306	14.2345047165	0.6	0.083	376.012206078	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	258	0					False	1	left	-196.49824099	-21.0274517377	0.6	0.083	315.542178228	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	259	1	sound	right			False	1	right	216.318321049	11.1093548169	0.6	0.083	321.070389822	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	260	0					False	0					0.083	1086.76438406		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	261	0					False	1	right	211.11548106	9.73791366212	0.6	0.083	349.559683353	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	262	1	frame	left	-200	0	False	1	left	-189.837476774	-22.6051659793	0.6	0.083	270.95416002	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	263	1	frame	left	-200	0	False	1	left	-179.423577101	-23.4823993144	0.6	0.083	297.32722044	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	264	1	sound	right			False	0					0.083	1086.9141873		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	265	1	frame	left	-200	0	False	1	left	-190.891023893	14.3607285915	0.6	0.083	442.809257656	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	266	1	frame	left	-200	0	False	0					0.083	1088.00994419		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	267	1	sound	right			False	1	right	214.926460077	11.5018716059	0.6	0.083	354.220259935	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	268	1	frame	right	200	0	False	1	right	176.435893576	-23.1820738307	0.6	0.083	1087.12406084		nogo	0
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	269	1	frame	right	200	0	False	1	right	176.296893681	-0.588581287339	0.6	0.083	337.894171476	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	270	0					False	1	left	-200.797973678	-6.90949064096	0.6	0.083	391.799161211	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	271	1	frame	right	200	0	False	1	right	194.538423176	-22.495016781	0.6	0.083	291.9666823	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	272	0					False	1	left	-180.004671436	7.27130338415	0.6	0.083	340.579191223	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	273	1	frame	left	-200	0	False	1	left	-192.523647245	-12.2004368418	0.6	0.083	319.772362709	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	274	1	sound	left			False	1	left	-182.734850018	14.0737069679	0.6	0.083	337.082047015	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	275	0					False	1	right	213.726428077	11.5630935779	0.6	0.083	276.43446438	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	276	0					False	1	right	220.585399118	-5.1340844511	0.6	0.083	323.29612039	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	277	0					False	0					0.083	1087.15789951		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	278	0					False	1	left	-205.600642533	-6.02832216204	0.6	0.083	286.575345322	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	279	1	sound	right			False	0					0.083	1086.85791679		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	280	1	sound	right			False	1	right	219.588658639	11.4752805888	0.6	0.083	354.568528011	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	281	1	frame	right	200	0	False	1	right	182.790720887	16.6611619868	0.6	0.083	370.591213927	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	282	1	frame	left	-200	0	False	0					0.083	1087.39705011		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	283	1	sound	right			False	1	right	204.304868849	-16.170585384	0.6	0.083	305.048465729	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	284	1	sound	right			False	1	right	188.973822956	-6.63102955124	0.6	0.083	291.608147323	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	285	0					False	1	left	-215.049628233	7.2545033138	0.6	0.083	328.343750909	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	286	0					False	1	left	-221.64884381	-7.23348777464	0.6	0.083	381.367040798	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	287	0					False	1	left	-221.500811937	17.110238441	0.6	0.083	391.661146656	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	288	1	frame	right	200	0	False	1	right	191.718639294	2.86709751583	0.6	0.083	352.539366111	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	289	0					False	0					0.083	1083.59954134		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	290	1	sound	right			False	0					0.083	1087.36891299		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	291	1	sound	right			False	1	right	205.968834279	-5.0672512887	0.6	0.083	337.80900389	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	292	1	frame	right	200	0	False	1	right	218.390301887	7.38351469348	0.6	0.083	371.764913201	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	293	0					False	1	right	222.654482867	-16.6203646918	0.6	0.083	423.445696011	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	294	0					False	1	left	-207.130895551	2.65968344418	0.6	0.083	417.246799916	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	295	1	sound	left			False	1	left	-177.171312472	-2.29053866957	0.6	0.083	278.672743589	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	296	0					False	1	right	202.181643366	4.49305715346	0.6	0.083	281.7923408	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	297	1	sound	right			False	1	right	194.559640468	4.99447597813	0.6	0.083	309.801813215	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	298	1	sound	left			False	0					0.083	1086.99440956		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	299	1	frame	left	-200	0	False	1	left	-218.468696325	3.67282415078	0.6	0.083	370.947849005	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	300	1	frame	left	-200	0	False	1	left	-218.03361164	-11.9826041242	0.6	0.083	319.155666977	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	301	0					False	1	left	-215.416100128	-5.48920440981	0.6	0.083	422.399364412	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	302	1	sound	right			False	0					0.083	1080.58602177		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	303	1	sound	left			False	0					0.083	1087.5970386		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	304	1	sound	right			False	1	right	194.766453402	9.80763633866	0.6	0.083	344.169488177	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	305	1	frame	left	-200	0	False	1	left	-207.560539827	-20.5658147158	0.6	0.083	337.415488437	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	306	1	frame	left	-200	0	False	1	left	-199.002930434	-19.4099784437	0.6	0.083	337.291542441	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	307	1	frame	left	-200	0	False	1	left	-202.18307272	-9.85043712157	0.6	0.083	299.127120525	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	308	1	sound	right			False	1	right	196.045076768	-23.8722424132	0.6	0.083	319.080006331	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	309	1	frame	right	200	0	False	1	right	220.837467984	8.80241019512	0.6	0.083	332.759855315	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	310	1	sound	left			False	1	left	-197.859329799	-18.9885501658	0.6	0.083	418.014056981	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	311	1	sound	left			False	1	left	-179.244871349	17.4269392128	0.6	0.083	312.234759331	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	312	1	sound	left			False	1	left	-212.492463572	-3.14984228835	0.6	0.083	325.907383114	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	313	1	frame	left	-200	0	False	1	left	-213.706616835	21.8814197759	0.6	0.083	340.129027143	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	314	1	frame	left	-200	0	False	1	left	-208.04170746	21.4433766911	0.6	0.083	337.500276044	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	315	0					False	1	left	-208.985845736	18.9781227304	0.6	0.083	491.650274023	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	316	0					False	0					0.083	1080.90349287		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	317	0					False	1	left	-207.789190274	-18.11181065	0.6	0.083	303.60557884	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	318	1	sound	right			False	1	right	190.422958313	-11.3952762096	0.6	0.083	310.416227207	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	319	1	sound	right			False	1	right	203.514586141	15.4323978813	0.6	0.083	311.235575005	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	320	0					False	1	left	-187.21136366	14.8784656029	0.6	0.083	353.743860498	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	321	0					False	1	left	-195.802369551	11.330765884	0.6	0.083	457.040786743	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	322	1	frame	left	-200	0	False	1	left	-187.085283238	-6.29700158676	0.6	0.083	354.206193238	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	323	1	sound	left			False	1	left	-195.078978346	-23.5688348959	0.6	0.083	337.513202801	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	324	1	frame	left	-200	0	False	1	left	-212.27092982	6.49826234516	0.6	0.083	329.02013883	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	325	1	frame	right	200	0	False	1	right	219.749741137	-23.5126236181	0.6	0.083	370.915910229	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	326	1	sound	right			False	1	right	180.110906231	2.53320764239	0.6	0.083	295.543668792	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	327	1	frame	right	200	0	False	1	right	208.407394303	13.9725686648	0.6	0.083	1087.33887784		nogo	0
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	328	1	frame	left	-200	0	False	1	left	-216.831868768	17.8442224581	0.6	0.083	450.728209689	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	329	1	sound	right			False	1	right	195.942208421	-7.91046433748	0.6	0.083	308.437250555	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	330	1	frame	left	-200	0	False	1	left	-213.17513108	-2.7512521097	0.6	0.083	337.00068295	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	331	0					False	1	left	-184.03804318	-17.4922371386	0.6	0.083	305.956779048	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	332	0					False	1	left	-208.393878292	-15.6590697067	0.6	0.083	338.737089187	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	333	1	frame	left	-200	0	False	1	left	-217.394387255	19.9753244264	0.6	0.083	408.286459744	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	334	1	sound	right			False	1	right	187.50610079	15.3712535422	0.6	0.083	385.927245021	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	335	0					False	1	left	-195.095184615	-15.4544626138	0.6	0.083	312.127539888	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	336	1	sound	right			False	1	right	205.610187442	-13.9607475389	0.6	0.083	289.181284606	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	337	1	sound	right			False	1	right	190.676159811	15.9847622664	0.6	0.083	306.233571842	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	338	1	frame	right	200	0	False	1	right	200.871720387	-7.20837004732	0.6	0.083	370.402632281	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	339	0					False	1	left	-207.680162265	8.46692693585	0.6	0.083	344.456544146	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	340	1	sound	right			False	0					0.083	1087.09934726		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	341	1	frame	right	200	0	False	1	right	222.558722106	2.60451817324	0.6	0.083	284.590665251	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	342	1	sound	left			False	1	left	-180.484216509	19.8027179697	0.6	0.083	320.782573894	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	343	1	sound	left			False	1	left	-195.089374684	-14.7213424571	0.6	0.083	301.708726212	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	344	1	frame	left	-200	0	False	1	left	-218.270406718	-0.821663451746	0.6	0.083	364.277875051	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	345	0					False	1	left	-205.349889199	6.35510954469	0.6	0.083	326.908089221	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	346	1	sound	left			False	1	left	-205.665277152	-3.19730975065	0.6	0.083	304.498685524	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	347	0					False	1	left	-206.523545489	-6.77939770224	0.6	0.083	297.517323866	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	348	0					False	1	left	-189.056447128	17.9481055521	0.6	0.083	362.828526646	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	349	0					False	1	right	215.77588319	-17.2973359556	0.6	0.083	342.963090166	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	350	1	frame	right	200	0	False	1	right	215.73353911	12.9855419967	0.6	0.083	289.101442322	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	351	0					False	1	right	210.638885256	-14.7289347362	0.6	0.083	319.376947358	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	352	1	sound	left			False	1	left	-184.558813118	17.1937561301	0.6	0.083	298.891773447	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	353	1	sound	left			False	1	left	-192.081264224	-23.3183411124	0.6	0.083	310.367941856	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	354	1	frame	right	200	0	False	1	right	194.276359154	0.47195600931	0.6	0.083	355.200814083	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	355	0					False	0					0.083	1080.10353707		nogo	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	356	0					False	1	right	215.531990087	5.00152503779	0.6	0.083	448.329104111	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	357	1	sound	left			False	1	left	-222.554813951	-13.56751146	0.6	0.083	296.224620193	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	358	0					False	1	left	-194.352585506	-14.8127453892	0.6	0.083	333.308493719	 	go	1
+SPC418	2015_Apr_24_1155	LL-Jerry	wr	cueing_effect	359	0					False	1	left	-205.709141839	-1.51444788063	0.6	0.083	340.764733031	 	go	1

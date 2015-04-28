@@ -1,0 +1,11 @@
+subj_id	date	computer	experimenter	part	trial_ix	cue_present	cue_type	cue_loc	cue_pos_x	cue_pos_y	interval	target_present	target_loc	target_pos_x	target_pos_y	target_opacity	rt	key	response	is_correct
+SPC502	2015_Apr_24_1232	LL-Jerry	wr	practice	0	0					0.1	0					1329.9668543		nogo	1
+SPC502	2015_Apr_24_1232	LL-Jerry	wr	practice	1	0					0.1	0					1337.42385358		nogo	1
+SPC502	2015_Apr_24_1232	LL-Jerry	wr	practice	2	0					0.1	1	left	-200.584724402	-13.1682525366	1.0	608.084494248	 	go	1
+SPC502	2015_Apr_24_1232	LL-Jerry	wr	practice	3	0					0.1	1	left	-201.009492882	-2.70102172738	1.0	1329.45737615		nogo	0
+SPC502	2015_Apr_24_1232	LL-Jerry	wr	practice	4	0					0.1	1	left	-206.708362759	-7.7687507549	1.0	495.988816023	 	go	1
+SPC502	2015_Apr_24_1232	LL-Jerry	wr	practice	5	0					0.1	1	right	177.980218902	12.6439084728	1.0	1329.89081182		nogo	0
+SPC502	2015_Apr_24_1232	LL-Jerry	wr	practice	6	0					0.1	1	right	197.047621375	-10.6777953804	1.0	761.399937794	 	go	1
+SPC502	2015_Apr_24_1232	LL-Jerry	wr	practice	7	0					0.1	0					1336.73910052		nogo	1
+SPC502	2015_Apr_24_1232	LL-Jerry	wr	practice	8	0					0.1	1	left	-220.66431028	2.62546546131	1.0	638.601811603	 	go	1
+SPC502	2015_Apr_24_1232	LL-Jerry	wr	practice	9	0					0.1	1	left	-212.871315816	7.25968771858	1.0	717.443441972	 	go	1

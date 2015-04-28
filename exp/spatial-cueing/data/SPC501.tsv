@@ -1,0 +1,371 @@
+subj_id	date	computer	experimenter	part	trial_ix	cue_present	cue_type	cue_loc	cue_pos_x	cue_pos_y	interval	target_present	target_loc	target_pos_x	target_pos_y	target_opacity	rt	key	response	is_correct
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	practice	0	0					0.1	1	right	196.20814592	8.34223681113	1.0	544.218671508	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	practice	1	0					0.1	1	right	186.524650899	-1.44460811486	1.0	512.564757024	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	practice	2	0					0.1	1	left	-221.404021182	22.318059407	1.0	496.098932927	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	practice	3	0					0.1	1	right	189.952586098	16.7791060538	1.0	376.289405744	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	practice	4	0					0.1	1	right	177.056084677	8.96015787945	1.0	370.139148436	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	practice	5	0					0.1	1	left	-213.692763414	-16.9501007225	1.0	464.986017672	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	practice	6	0					0.1	1	right	222.447525347	-2.93830700977	1.0	348.980813054	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	practice	7	0					0.1	1	left	-206.757440972	17.6510147008	1.0	413.945973967	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	practice	8	0					0.1	1	right	183.472492989	8.51235482896	1.0	403.189521399	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	practice	9	0					0.1	1	right	197.448087681	0.161771057666	1.0	0.0	 	go	0
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	0	0					0.1	0					1323.1081469		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	1	1	frame	left	-200	0	0.1	0					822.008981369	 	go	0
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	2	0					0.1	1	left	-179.644523744	-16.4855110258	1.0	424.053612165	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	3	1	frame	right	200	0	0.1	1	right	208.794380267	10.1391789035	1.0	383.670869633	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	4	0					0.1	1	right	214.137454041	-21.2420156623	1.0	540.1351857	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	5	1	frame	left	-200	0	0.1	0					1331.48753946		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	6	1	frame	left	-200	0	0.1	1	left	-197.912477336	13.8795255469	1.0	511.956373579	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	7	0					0.1	1	left	-186.15444809	13.7972524006	1.0	304.497578181	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	8	1	sound	left			0.1	1	left	-189.360934927	-18.8020542857	1.0	748.374033952	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	9	1	sound	right			0.1	1	right	176.036863554	-12.172979543	1.0	415.300397319	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	10	0					0.1	1	left	-178.48188622	-22.3903175651	1.0	679.083766649	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	11	1	sound	left			0.1	1	left	-212.404595747	-1.62849915372	1.0	517.819766304	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	12	1	sound	left			0.1	1	left	-210.984978018	6.36424402955	1.0	402.80286409	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	13	1	frame	right	200	0	0.1	1	right	186.154454258	-5.50437635941	1.0	590.354425134	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	14	1	sound	left			0.1	1	left	-182.915919144	-2.5010427718	1.0	404.821824864	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	15	0					0.1	1	left	-183.151098352	-23.9612071561	1.0	599.825763609	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	16	1	sound	right			0.1	1	right	203.546292524	-7.78988501208	1.0	510.034959647	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	17	1	frame	right	200	0	0.1	1	right	217.015244457	-4.78181635492	1.0	246.519202134	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	18	1	frame	left	-200	0	0.1	0					1336.63345047		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	19	0					0.1	1	right	193.270655914	-17.8527724989	1.0	523.326664465	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	20	0					0.1	1	left	-217.323413407	0.241705725055	1.0	444.168133312	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	21	0					0.1	0					1338.2641495		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	22	1	sound	right			0.1	0					1303.40980378	 	go	0
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	23	1	frame	left	-200	0	0.1	1	left	-223.159719958	22.6791682683	1.0	599.089991651	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	24	1	frame	left	-200	0	0.1	1	left	-218.12376867	0.0328250701731	1.0	466.096895398	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	25	1	frame	right	200	0	0.1	0					1330.17322561		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	26	0					0.1	1	right	205.706259427	-14.4099510086	1.0	693.924988387	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	27	1	frame	left	-200	0	0.1	1	left	-220.301978463	20.3313649402	1.0	428.535306943	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	28	1	frame	left	-200	0	0.1	1	left	-200.594486644	18.8907138822	1.0	544.945458765	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	29	1	frame	right	200	0	0.1	1	right	185.421600028	17.6831317305	1.0	526.454898296	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	30	1	sound	right			0.1	1	right	183.963486121	-17.4635816866	1.0	382.499025436	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	31	0					0.1	0					1329.1631036		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	32	0					0.1	1	left	-209.44045585	-12.3893003069	1.0	453.849967336	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	33	1	sound	left			0.1	1	left	-207.987388812	-9.76836610483	1.0	427.627223777	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	34	1	sound	left			0.1	1	left	-191.993976154	-7.46698073381	1.0	436.154540977	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	35	0					0.1	1	left	-201.450107433	12.0970083634	1.0	578.727432294	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	36	1	sound	left			0.1	1	left	-193.868705659	20.777321321	1.0	394.142703852	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	37	0					0.1	1	left	-214.956262871	19.1187418067	1.0	1337.62367815		nogo	0
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	38	1	sound	left			0.1	1	left	-179.152974145	3.60316377091	1.0	435.289134621	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	39	1	frame	left	-200	0	0.1	1	left	-217.376356646	3.39388599088	1.0	378.971299157	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	40	0					0.1	1	right	177.784254994	-5.25719119749	1.0	599.087103736	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	41	1	frame	left	-200	0	0.1	1	left	-219.674297994	3.99049668258	1.0	628.186513204	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	42	0					0.1	1	left	-188.983635306	-21.1305147109	1.0	803.53189772	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	43	1	frame	left	-200	0	0.1	1	left	-206.009675313	4.92830027277	1.0	483.634450007	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	44	1	sound	left			0.1	1	left	-212.760622768	0.217744384731	1.0	530.122527038	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	45	1	frame	left	-200	0	0.1	1	left	-178.514178559	-0.469543285739	1.0	395.2686626	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	46	1	sound	left			0.1	1	left	-210.621988776	11.5572118912	1.0	447.095818818	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	47	1	sound	left			0.1	1	left	-223.577172397	11.6207628755	1.0	362.455097144	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	48	1	frame	right	200	0	0.1	0					1330.53004125		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	49	1	frame	right	200	0	0.1	1	right	211.013611592	-5.78937349737	1.0	410.54274817	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	50	1	frame	right	200	0	0.1	1	right	215.237454588	22.1801745438	1.0	1330.63946047		nogo	0
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	51	1	frame	right	200	0	0.1	1	right	183.337371879	-12.4154866801	1.0	428.919076337	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	52	1	sound	left			0.1	1	left	-179.464106377	-18.0647818145	1.0	409.410371678	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	53	1	frame	left	-200	0	0.1	1	left	-194.911727573	-5.89819511107	1.0	510.884643067	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	54	0					0.1	1	left	-184.640433909	11.3709115	1.0	515.665074694	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	55	0					0.1	1	left	-192.100351477	12.0655420869	1.0	392.132085981	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	56	1	sound	right			0.1	1	right	215.609518119	18.5281381875	1.0	423.687170143	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	57	1	sound	right			0.1	1	right	195.67699532	-22.8781977928	1.0	353.915265878	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	58	1	frame	left	-200	0	0.1	0					1339.04901554		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	59	1	frame	left	-200	0	0.1	0					1337.80657838		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	60	1	frame	right	200	0	0.1	1	right	220.630721739	-7.20669426276	1.0	65.9008392831	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	61	0					0.1	1	right	195.126504906	-2.662820721	1.0	446.461765096	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	62	1	frame	left	-200	0	0.1	1	left	-209.624402007	-18.7059311441	1.0	375.381643535	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	63	1	sound	left			0.1	1	left	-186.257108942	2.58528130984	1.0	535.04061501	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	64	0					0.1	0					1338.09793496		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	65	1	sound	right			0.1	1	right	202.473063926	12.1149833799	1.0	3.58580506872	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	66	0					0.1	1	right	203.649235748	-3.42176096228	1.0	561.380478786	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	67	1	sound	right			0.1	1	right	203.495415514	-11.6519367711	1.0	385.967389215	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	68	0					0.1	0					1336.28305234		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	69	1	frame	left	-200	0	0.1	0					1337.47896249		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	70	1	frame	right	200	0	0.1	1	right	221.69364286	-23.4722093669	1.0	407.273328281	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	71	1	sound	left			0.1	1	left	-218.372202791	-3.99966538428	1.0	382.443834329	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	72	1	sound	right			0.1	1	right	178.52895192	6.5350194881	1.0	383.716755081	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	73	1	sound	left			0.1	1	left	-185.120922185	-19.1226643796	1.0	395.25326062	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	74	0					0.1	1	left	-204.446097262	-16.6614780481	1.0	438.028465025	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	75	1	sound	left			0.1	1	left	-204.795610118	3.97996024344	1.0	403.46162545	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	76	1	sound	left			0.1	1	left	-222.990124788	-9.53781585022	1.0	340.406647883	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	77	1	frame	right	200	0	0.1	1	right	213.337180641	12.1456083993	1.0	187.975119101	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	78	1	frame	left	-200	0	0.1	1	left	-200.471976696	-19.0269198964	1.0	362.776937312	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	79	0					0.1	1	right	199.8251313	12.2694740299	1.0	406.999940635	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	80	0					0.1	1	left	-198.206889524	-19.9212618555	1.0	428.734250832	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	81	0					0.1	1	left	-182.736293865	-21.7207943483	1.0	374.190225732	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	82	1	frame	left	-200	0	0.1	0					1338.03953533		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	83	0					0.1	1	left	-186.644934465	11.7151432041	1.0	562.232087366	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	84	1	frame	left	-200	0	0.1	1	left	-209.454805362	16.0147772496	1.0	530.532929231	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	85	1	sound	right			0.1	1	right	208.708434648	-22.3318952266	1.0	380.914532696	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	86	1	frame	right	200	0	0.1	1	right	198.58731977	-21.3354152539	1.0	78.8986203261	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	87	1	sound	left			0.1	0					124.09388239	 	go	0
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	88	0					0.1	1	right	195.51379483	-17.0261052009	1.0	429.782236577	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	89	1	frame	right	200	0	0.1	1	right	195.071915567	12.7414652429	1.0	323.621229967	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	90	1	frame	right	200	0	0.1	1	right	178.547496375	-6.32344274445	1.0	520.592788933	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	91	1	sound	left			0.1	1	left	-196.718507449	3.82223072111	1.0	411.067703506	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	92	1	frame	left	-200	0	0.1	1	left	-189.874031451	13.2025324744	1.0	448.269909248	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	93	1	frame	left	-200	0	0.1	0					1331.37972478		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	94	1	frame	right	200	0	0.1	1	right	199.98397296	-4.71773410672	1.0	0.0	 	go	0
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	95	1	frame	right	200	0	0.1	1	right	198.715583454	-4.54474106592	1.0	387.51786889	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	96	1	sound	right			0.1	1	right	192.56954806	1.21144133893	1.0	413.099820144	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	97	1	sound	right			0.1	1	right	209.62061746	-19.6963161601	1.0	538.843012415	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	98	1	frame	right	200	0	0.1	1	right	205.226401371	-4.70183605278	1.0	488.029507804	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	99	1	sound	left			0.1	1	left	-195.094702263	-20.299579287	1.0	450.29881713	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	100	0					0.1	1	left	-211.592101533	-13.4455932997	1.0	457.487433683	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	101	1	sound	right			0.1	1	right	220.105611018	14.894485335	1.0	363.559878082	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	102	1	sound	right			0.1	1	right	196.209049328	-4.12767395842	1.0	373.634786927	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	103	1	frame	right	200	0	0.1	1	right	204.944919028	3.00540689262	1.0	93.9878803911	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	104	1	sound	right			0.1	1	right	197.970997497	22.0982184625	1.0	449.744340847	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	105	1	frame	left	-200	0	0.1	1	left	-188.344796165	7.18744679101	1.0	369.646601612	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	106	0					0.1	1	right	197.535035559	8.92942483426	1.0	473.252140568	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	107	1	sound	left			0.1	1	left	-194.370189083	-17.8928330529	1.0	359.56784233	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	108	0					0.1	1	left	-190.14673004	-22.2736972617	1.0	758.120364277	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	109	0					0.1	1	left	-212.856796159	-4.05239263552	1.0	502.476050518	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	110	1	frame	right	200	0	0.1	1	right	207.776908284	3.45117698542	1.0	570.12406725	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	111	1	frame	right	200	0	0.1	1	right	216.561914615	21.9714053589	1.0	509.073290043	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	112	1	frame	left	-200	0	0.1	1	left	-221.213752984	16.0533525527	1.0	450.736172963	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	113	1	sound	left			0.1	1	left	-178.777798097	-7.06402225785	1.0	503.360388684	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	114	0					0.1	1	right	217.114830174	7.88491961478	1.0	469.208764494	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	115	0					0.1	1	right	222.688228885	-13.2524578709	1.0	460.512665915	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	116	0					0.1	0					698.163137189	 	go	0
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	117	1	sound	right			0.1	1	right	206.79328461	6.44192050307	1.0	402.509582229	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	118	0					0.1	0					1345.10621848		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	119	1	sound	left			0.1	1	left	-203.669581511	6.96921229333	1.0	536.658799858	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	120	0					0.1	1	right	220.690749499	14.3342813952	1.0	539.436314604	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	121	1	sound	right			0.1	1	right	194.869643326	15.7866787979	1.0	297.617324861	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	122	1	sound	left			0.1	1	left	-188.660165417	13.0297874547	1.0	389.180013794	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	123	0					0.1	1	left	-219.27907677	-0.503237925082	1.0	391.831423854	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	124	0					0.1	1	left	-183.504486648	-14.8854870963	1.0	668.056814582	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	125	0					0.1	1	right	190.021159523	15.5336676856	1.0	198.948484729	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	126	0					0.1	1	left	-188.579095611	-18.4816980497	1.0	466.852561687	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	127	1	sound	left			0.1	1	left	-187.078216613	-21.4095523115	1.0	429.102939088	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	128	1	frame	right	200	0	0.1	1	right	203.204226478	-18.1507210588	1.0	294.230463798	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	129	1	sound	right			0.1	1	right	220.739900743	-6.52089301755	1.0	337.469977909	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	130	1	sound	right			0.1	1	right	196.838084562	15.6582542527	1.0	379.175056354	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	131	0					0.1	1	right	193.558583035	-16.2433522045	1.0	336.880526156	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	132	1	sound	right			0.1	1	right	205.130851651	-18.2590579165	1.0	220.844196272	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	133	1	frame	right	200	0	0.1	1	right	218.734569637	9.99826951374	1.0	561.002164264	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	134	1	sound	left			0.1	1	left	-215.903829871	7.74169116013	1.0	312.098201364	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	135	1	sound	left			0.1	1	left	-214.736093202	15.9688572778	1.0	395.896619651	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	136	0					0.1	1	right	180.909157943	7.65130180734	1.0	387.951695127	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	137	0					0.1	1	right	179.601440003	-19.3355853752	1.0	404.718502308	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	138	1	sound	left			0.1	1	left	-218.595932634	20.3994170536	1.0	431.984097348	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	139	1	frame	right	200	0	0.1	1	right	193.268548731	-18.5825148957	1.0	348.893534509	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	140	0					0.1	1	right	200.279401105	21.6519351554	1.0	437.084122794	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	141	0					0.1	1	left	-188.913436444	22.7494686516	1.0	481.459863833	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	142	1	frame	left	-200	0	0.1	0					1329.21957807		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	143	1	frame	right	200	0	0.1	1	right	190.386543801	12.5950327667	1.0	413.384438376	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	144	0					0.1	0					537.076582201	 	go	0
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	145	1	sound	left			0.1	1	left	-198.410370367	-23.6376829588	1.0	548.596081091	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	146	1	sound	right			0.1	1	right	195.67601696	5.91059848504	1.0	361.887465115	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	147	0					0.1	1	left	-180.877351616	17.4523519091	1.0	620.969017618	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	148	1	frame	right	200	0	0.1	1	right	197.549320158	1.92952298663	1.0	345.279171364	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	149	1	frame	right	200	0	0.1	1	right	209.949991897	14.8831679524	1.0	708.310564398	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	150	1	sound	left			0.1	1	left	-177.797729772	5.24476392408	1.0	453.611555393	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	151	0					0.1	0					1337.16642787		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	152	1	frame	left	-200	0	0.1	1	left	-195.425269811	-20.8541406668	1.0	428.894368815	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	153	0					0.1	1	left	-199.92003226	-23.7210448018	1.0	462.00955892	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	154	0					0.1	1	left	-216.32358609	1.60012605332	1.0	516.510265647	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	155	1	frame	left	-200	0	0.1	1	left	-197.631405561	-19.987819072	1.0	370.367292315	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	156	0					0.1	1	left	-209.447003184	-0.921186413869	1.0	337.258198881	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	157	0					0.1	1	right	185.838255742	0.972750966294	1.0	373.280217405	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	158	1	frame	left	-200	0	0.1	1	left	-205.326731917	14.0503260517	1.0	423.708027229	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	159	0					0.1	1	left	-187.031029691	6.24461803048	1.0	542.041518376	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	160	1	sound	left			0.1	1	left	-208.053319804	-10.0154277457	1.0	36.8129814742	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	161	1	frame	left	-200	0	0.1	1	left	-189.810313748	20.3627329123	1.0	534.95686606	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	162	1	frame	right	200	0	0.1	1	right	193.496560002	-7.73041917102	1.0	395.032175933	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	163	0					0.1	1	right	198.689473323	-10.4358655379	1.0	402.616113424	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	164	0					0.1	1	right	186.479622014	-20.9158310355	1.0	569.848112762	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	165	0					0.1	1	right	204.537748158	17.0188736232	1.0	464.481277508	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	166	1	frame	right	200	0	0.1	1	right	219.76162338	-20.1726158111	1.0	431.648138678	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	167	1	sound	right			0.1	1	right	176.863156597	18.7317311335	1.0	434.180503245	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	168	0					0.1	1	right	176.799294596	19.7910711035	1.0	521.505364217	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	169	0					0.1	1	right	218.199886012	16.6511141687	1.0	408.878036193	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	170	1	sound	right			0.1	0					422.336276271	 	go	0
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	171	0					0.1	1	left	-200.830036008	7.08387255427	1.0	1328.4032658		nogo	0
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	172	0					0.1	1	right	182.822372182	-20.7624150091	1.0	320.202602074	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	173	1	sound	right			0.1	1	right	189.396673234	8.22799578533	1.0	445.223820047	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	174	1	sound	right			0.1	0					1336.85966907		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	175	0					0.1	1	left	-213.018120022	19.0349632683	1.0	777.716989396	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	176	1	sound	left			0.1	1	left	-197.424946796	14.7216536998	1.0	1331.40475315		nogo	0
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	177	1	frame	left	-200	0	0.1	1	left	-179.615934845	16.0400361417	1.0	568.321057013	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	178	0					0.1	0					1337.69523387		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	179	1	sound	left			0.1	1	left	-215.976001093	16.8632017787	1.0	611.663572839	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	180	1	sound	right			0.1	1	right	217.90514881	16.5332051511	1.0	395.366851008	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	181	1	sound	right			0.1	0					1323.08087242		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	182	0					0.1	1	right	210.261548654	-12.4132764815	1.0	592.201716267	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	183	0					0.1	1	right	210.772737909	-3.19173956931	1.0	446.42903551	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	184	0					0.1	1	right	221.296105041	-22.3688019066	1.0	462.173527339	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	185	1	sound	left			0.1	1	left	-203.024186107	22.742467097	1.0	470.497087226	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	186	0					0.1	1	left	-197.902974689	0.730755082404	1.0	453.683431959	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	187	1	sound	left			0.1	1	left	-181.636631434	-18.7063758695	1.0	417.602051049	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	188	1	frame	left	-200	0	0.1	1	left	-205.710509756	-8.64845615274	1.0	461.356573389	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	189	0					0.1	1	left	-180.17522254	-1.65583798151	1.0	460.838356405	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	190	1	frame	left	-200	0	0.1	1	left	-189.028928527	-7.92015625306	1.0	481.050745118	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	191	1	sound	left			0.1	1	left	-209.181986574	-4.30852747114	1.0	549.963981495	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	192	1	sound	right			0.1	1	right	191.027078575	-8.48040708672	1.0	424.738043803	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	193	1	sound	left			0.1	1	left	-186.795395992	-16.4708967092	1.0	531.736861332	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	194	1	sound	right			0.1	1	right	198.780448097	12.7184941475	1.0	458.426962723	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	195	0					0.1	0					1330.87979769		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	196	1	frame	right	200	0	0.1	1	right	213.221139212	-2.20891236536	1.0	566.698700888	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	197	1	sound	right			0.1	1	right	207.60436585	21.9005020002	1.0	503.492910997	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	198	1	sound	right			0.1	1	right	183.833888065	14.8380046766	1.0	342.795901117	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	199	1	frame	left	-200	0	0.1	1	left	-214.382030594	-3.42647055191	1.0	336.694738013	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	200	1	frame	left	-200	0	0.1	1	left	-199.762153946	-0.743057373427	1.0	399.248184171	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	201	0					0.1	0					1099.91865756	 	go	0
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	202	1	sound	left			0.1	1	left	-222.889893625	-10.8472558619	1.0	786.91782814	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	203	1	frame	right	200	0	0.1	1	right	193.793209324	-4.1924042926	1.0	425.194331445	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	204	1	sound	right			0.1	1	right	183.388536899	7.27635658325	1.0	0.0	 	go	0
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	205	1	frame	left	-200	0	0.1	1	left	-197.186469627	10.5641540723	1.0	447.158389958	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	206	1	frame	left	-200	0	0.1	1	left	-221.194103403	22.6106467949	1.0	1189.59169963	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	207	1	frame	left	-200	0	0.1	1	left	-212.072280208	-2.8842027434	1.0	432.158654672	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	208	1	sound	right			0.1	1	right	186.53505299	-5.14789344658	1.0	377.689393819	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	209	0					0.1	1	right	192.242316335	-10.7032953535	1.0	354.892979376	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	210	1	frame	right	200	0	0.1	1	right	208.550260327	16.3172592403	1.0	375.231793849	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	211	1	sound	right			0.1	0					1329.18588596		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	212	1	sound	left			0.1	1	left	-193.59264483	-16.4887331233	1.0	403.849566239	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	213	1	frame	left	-200	0	0.1	0					259.221776039	 	go	0
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	214	0					0.1	1	right	203.651435145	19.3885300027	1.0	480.031959363	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	215	1	frame	left	-200	0	0.1	1	left	-219.236765587	-14.7312674091	1.0	345.766584156	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	216	0					0.1	1	left	-194.942871134	22.5547716055	1.0	0.0	 	go	0
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	217	0					0.1	1	right	176.095902006	-9.83003047298	1.0	559.16193244	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	218	1	frame	right	200	0	0.1	1	right	187.556508804	-3.10605399042	1.0	345.279813162	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	219	1	frame	right	200	0	0.1	1	right	182.42053544	-16.8124148026	1.0	428.485249984	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	220	1	frame	right	200	0	0.1	1	right	183.394326505	-9.91428778398	1.0	345.258956077	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	221	1	sound	right			0.1	1	right	179.787505299	-15.5157369692	1.0	469.373695436	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	222	1	frame	left	-200	0	0.1	1	left	-196.568990637	-23.1355795239	1.0	460.754928179	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	223	1	frame	left	-200	0	0.1	1	left	-201.131965696	0.760651374439	1.0	546.343521681	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	224	1	frame	right	200	0	0.1	1	right	188.578536498	9.19057828524	1.0	287.244000006	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	225	0					0.1	1	right	192.556199621	4.36953551315	1.0	485.076793935	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	226	0					0.1	1	left	-218.830691804	-7.9997828726	1.0	439.774038037	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	227	0					0.1	1	left	-177.408792864	-22.3068396182	1.0	359.117009561	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	228	1	frame	right	200	0	0.1	1	right	176.902195802	-22.9647247386	1.0	372.184421052	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	229	1	frame	left	-200	0	0.1	1	left	-201.349098054	-21.4564949566	1.0	496.260334272	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	230	0					0.1	1	left	-188.126885876	-1.59166453244	1.0	544.444248313	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	231	1	sound	right			0.1	0					1330.50148329		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	232	0					0.1	0					1336.6398681		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	233	1	sound	right			0.1	1	right	217.981910494	-11.2876445741	1.0	630.701871123	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	234	1	sound	left			0.1	1	left	-205.73953849	6.67524657457	1.0	470.545218792	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	235	1	sound	right			0.1	1	right	186.183178143	-20.8413422985	1.0	469.824207365	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	236	1	frame	right	200	0	0.1	0					1336.75249596		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	237	1	frame	right	200	0	0.1	1	right	194.516322457	-5.72939351672	1.0	368.238270632	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	238	0					0.1	1	right	191.047789816	17.0763798622	1.0	1331.09382296		nogo	0
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	239	0					0.1	0					1337.62496174		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	240	0					0.1	1	left	-199.928165488	-13.616887334	1.0	354.037199286	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	241	1	sound	right			0.1	1	right	201.531450128	-4.09119933268	1.0	344.502006308	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	242	1	sound	left			0.1	1	left	-177.229818522	-1.3175895137	1.0	495.430545299	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	243	1	frame	left	-200	0	0.1	1	left	-222.157444489	-20.1245302149	1.0	428.609750466	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	244	1	frame	left	-200	0	0.1	1	left	-205.197061711	1.81001975918	1.0	438.569464255	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	245	1	frame	right	200	0	0.1	1	right	215.611102007	-19.0356321935	1.0	347.350114258	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	246	1	frame	right	200	0	0.1	1	right	204.084999022	7.60063162389	1.0	569.95047268	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	247	1	frame	left	-200	0	0.1	1	left	-186.83161189	7.39359838496	1.0	376.124474686	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	248	1	sound	right			0.1	1	right	209.035097642	-11.5796535095	1.0	338.144141366	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	249	1	sound	right			0.1	1	right	179.371009714	14.9464216208	1.0	437.310662237	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	250	1	sound	right			0.1	1	right	201.863929529	-15.5191723637	1.0	412.317520939	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	251	1	frame	left	-200	0	0.1	1	left	-185.069477555	1.85431972264	1.0	324.982391903	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	252	1	frame	left	-200	0	0.1	1	left	-221.849855332	5.7987638189	1.0	594.714186504	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	253	1	frame	left	-200	0	0.1	1	left	-182.587636099	1.21429531088	1.0	465.181111242	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	254	1	frame	right	200	0	0.1	1	right	180.975945201	11.8008551111	1.0	1336.09533904		nogo	0
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	255	1	sound	left			0.1	1	left	-181.230495486	-12.2758323485	1.0	523.760490702	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	256	1	frame	left	-200	0	0.1	0					1338.17622904		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	257	1	sound	right			0.1	1	right	185.127701143	6.65625224155	1.0	538.764076424	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	258	0					0.1	1	right	181.500976193	-13.072381812	1.0	537.067276775	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	259	1	sound	right			0.1	1	right	179.426338772	11.5150275301	1.0	403.869139845	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	260	1	frame	left	-200	0	0.1	1	left	-192.401596582	-18.6311428469	1.0	353.777609533	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	261	1	frame	left	-200	0	0.1	1	left	-188.192688853	-19.7192861444	1.0	345.146969892	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	262	1	sound	right			0.1	1	right	203.397474652	-16.8823388695	1.0	275.225857506	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	263	1	sound	right			0.1	1	right	201.522843164	12.4963187563	1.0	380.33470721	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	264	1	sound	left			0.1	0					1325.52403293		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	265	0					0.1	1	left	-215.810333217	12.8942524885	1.0	485.51896296	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	266	1	sound	right			0.1	1	right	207.590249526	-20.8741579897	1.0	1155.69934435	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	267	0					0.1	1	right	178.916089058	-14.5761709193	1.0	453.516896581	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	268	0					0.1	1	right	189.114442536	6.45330052712	1.0	372.917305096	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	269	0					0.1	1	right	208.802681039	21.8852074724	1.0	413.673228119	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	270	0					0.1	1	left	-183.769690058	-1.0059362259	1.0	396.350661293	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	271	1	sound	left			0.1	1	left	-197.225676529	-1.7153808553	1.0	482.315964764	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	272	0					0.1	1	left	-192.482518859	-9.65907098495	1.0	588.437503553	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	273	1	sound	left			0.1	1	left	-190.535644694	13.9408077404	1.0	364.708619192	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	274	1	frame	left	-200	0	0.1	1	left	-201.233576422	13.6311607642	1.0	429.189896793	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	275	1	sound	right			0.1	1	right	184.142278271	-23.5719664809	1.0	404.349172371	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	276	1	frame	left	-200	0	0.1	0					1337.9727928		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	277	1	sound	left			0.1	0					1331.38935105		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	278	1	frame	right	200	0	0.1	1	right	198.705807271	-14.5631305395	1.0	378.262480954	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	279	1	sound	left			0.1	1	left	-179.470337616	7.03874541344	1.0	404.920654953	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	280	1	sound	left			0.1	1	left	-223.78862961	-5.07653914804	1.0	436.621096684	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	281	1	frame	right	200	0	0.1	1	right	203.621476864	-8.3585557085	1.0	421.784367179	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	282	0					0.1	1	left	-189.305351631	-18.5533729101	1.0	408.709896379	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	283	1	frame	right	200	0	0.1	1	right	221.401771836	-7.3001148088	1.0	203.408680623	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	284	1	sound	left			0.1	0					1329.20706377		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	285	0					0.1	1	right	202.727053096	-18.1439391829	1.0	437.151186285	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	286	0					0.1	1	right	204.376283227	14.8371454722	1.0	543.910950073	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	287	1	sound	left			0.1	1	left	-189.324880654	-16.9867211753	1.0	328.7681035	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	288	1	sound	right			0.1	1	right	183.65641137	-0.338801555692	1.0	376.528780209	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	289	1	sound	left			0.1	1	left	-209.759042841	7.49125285615	1.0	426.989961299	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	290	0					0.1	1	right	192.623349344	-22.5843655306	1.0	21.1076367414	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	291	1	sound	right			0.1	1	right	203.98396499	-11.8449969419	1.0	375.798463239	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	292	1	frame	left	-200	0	0.1	1	left	-216.185009174	-22.0691728074	1.0	475.141787785	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	293	1	frame	left	-200	0	0.1	1	left	-220.587855628	15.2607812651	1.0	437.511852477	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	294	1	sound	right			0.1	1	right	208.630459223	16.4467008365	1.0	395.653394633	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	295	1	sound	left			0.1	1	left	-206.546700834	-12.4895162589	1.0	695.560500608	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	296	0					0.1	1	right	192.100200711	16.5188826521	1.0	1333.0566301		nogo	0
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	297	0					0.1	0					895.493758144	 	go	0
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	298	1	sound	left			0.1	1	left	-177.77699996	-8.05304433247	1.0	635.537172901	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	299	1	frame	left	-200	0	0.1	1	left	-185.348577601	-8.57586180774	1.0	545.465280185	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	300	1	frame	right	200	0	0.1	1	right	179.261157228	-18.8820033291	1.0	420.057405019	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	301	1	sound	right			0.1	1	right	211.552212329	16.8997795306	1.0	353.836330003	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	302	1	sound	left			0.1	1	left	-207.572533291	7.4028177012	1.0	640.056731179	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	303	1	frame	right	200	0	0.1	1	right	202.719646849	16.943633024	1.0	1329.54526856		nogo	0
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	304	1	frame	left	-200	0	0.1	1	left	-209.559627236	-16.2803794341	1.0	336.804157239	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	305	1	sound	left			0.1	1	left	-188.660116918	-18.3964444236	1.0	853.538716328	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	306	0					0.1	1	left	-182.84978054	17.4035811876	1.0	603.627198143	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	307	0					0.1	1	right	176.741706101	-9.83262099171	1.0	439.247799222	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	308	1	frame	right	200	0	0.1	0					1337.95386099		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	309	1	frame	left	-200	0	0.1	1	left	-206.397669208	18.0386370931	1.0	313.376576873	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	310	0					0.1	0					1331.41277509		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	311	1	sound	right			0.1	0					403.906361549	 	go	0
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	312	1	sound	right			0.1	1	right	213.810325814	7.36078682381	1.0	395.271871472	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	313	1	sound	left			0.1	1	left	-185.687148664	6.3748880986	1.0	364.838574664	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	314	1	frame	left	-200	0	0.1	1	left	-178.475979404	9.10893096517	1.0	445.420517935	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	315	0					0.1	0					1328.7443585		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	316	0					0.1	1	right	202.688321725	8.15860889985	1.0	492.059086333	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	317	1	sound	left			0.1	1	left	-186.750839887	-22.9704260424	1.0	382.218899322	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	318	1	frame	right	200	0	0.1	1	right	186.507269437	-1.39796411729	1.0	397.230827948	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	319	1	frame	right	200	0	0.1	1	right	222.746579572	15.3237425679	1.0	355.430128169	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	320	1	sound	left			0.1	1	left	-199.577238538	4.11494318758	1.0	421.818701085	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	321	0					0.1	1	right	182.077544226	-6.67094807555	1.0	626.356870169	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	322	1	sound	left			0.1	1	left	-196.65258628	-7.8245695887	1.0	504.77995025	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	323	1	sound	right			0.1	1	right	198.105368563	-2.37303010156	1.0	628.82473832	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	324	1	frame	right	200	0	0.1	1	right	196.907529657	-21.9278220811	1.0	341.058029095	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	325	1	sound	left			0.1	1	left	-207.547628006	-5.3376274829	1.0	552.282320801	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	326	1	sound	left			0.1	1	left	-205.364970677	-1.32399672984	1.0	137.097439147	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	327	1	sound	right			0.1	1	right	201.834075702	-13.0655183985	1.0	396.46040136	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	328	1	sound	right			0.1	1	right	183.382488212	12.0916862281	1.0	374.030749663	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	329	1	sound	right			0.1	1	right	186.741099026	6.95187671439	1.0	386.908522691	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	330	1	frame	right	200	0	0.1	1	right	196.345804721	3.50685641417	1.0	337.53158641	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	331	1	sound	right			0.1	1	right	196.533657703	8.11110215786	1.0	362.723350758	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	332	1	sound	right			0.1	0					1324.67499119		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	333	0					0.1	1	left	-215.289884157	-15.62008261	1.0	452.459284686	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	334	1	frame	left	-200	0	0.1	1	left	-216.749494458	7.46349311913	1.0	460.377255571	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	335	1	sound	left			0.1	1	left	-189.381568082	-3.75035184805	1.0	590.369185433	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	336	1	sound	right			0.1	0					1336.38284518		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	337	1	frame	right	200	0	0.1	1	right	198.259764496	-20.4182690903	1.0	356.449234765	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	338	0					0.1	1	right	176.008960576	-20.5528197461	1.0	410.148389754	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	339	1	sound	right			0.1	1	right	176.183750635	-7.66844254069	1.0	0.0	 	go	0
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	340	0					0.1	1	left	-195.624416223	8.80432297088	1.0	545.319922734	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	341	1	frame	left	-200	0	0.1	0					1330.40939143		nogo	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	342	0					0.1	1	left	-205.871989836	15.6377785298	1.0	361.956774606	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	343	0					0.1	1	left	-212.51401708	-6.92126139863	1.0	475.076970411	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	344	0					0.1	1	right	180.615603297	-5.54414255206	1.0	485.198727343	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	345	0					0.1	1	left	-188.502360748	-6.33926551239	1.0	591.509262915	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	346	1	sound	left			0.1	1	left	-199.658172916	8.4388771964	1.0	1351.57735308		nogo	0
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	347	0					0.1	1	right	181.766067446	22.5159354936	1.0	470.047858893	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	348	1	frame	left	-200	0	0.1	1	left	-178.102926397	-18.8948092826	1.0	461.638945504	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	349	0					0.1	1	right	202.864149835	-4.33263042329	1.0	395.162452245	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	350	1	frame	right	200	0	0.1	1	right	192.308982168	-10.2922548956	1.0	105.798094301	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	351	0					0.1	1	right	176.340661431	-14.0116854275	1.0	431.988589582	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	352	1	frame	right	200	0	0.1	1	right	201.860518747	-20.1049186154	1.0	536.984169506	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	353	0					0.1	1	left	-187.61578912	-14.2012168938	1.0	577.108926605	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	354	0					0.1	1	right	215.738859526	-0.0903429426695	1.0	413.582419744	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	355	1	frame	right	200	0	0.1	1	right	193.049747874	-21.9572376129	1.0	154.212077498	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	356	1	frame	right	200	0	0.1	1	right	181.61420796	-11.1181163741	1.0	461.641512462	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	357	0					0.1	1	right	210.159475546	-16.286620472	1.0	501.557378564	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	358	1	sound	left			0.1	1	left	-177.484522183	5.46071131452	1.0	554.818535806	 	go	1
+SPC501	2015_Apr_24_1232	LL-Elaine	wr	cueing_effect	359	1	sound	right			0.1	0					0.0	 	go	0
