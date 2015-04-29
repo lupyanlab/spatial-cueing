@@ -5,7 +5,7 @@ date: "April 17, 2015"
 output: html_document
 ---
 
-```{r, "get-spatial-cueing-data", message=FALSE}
+```{r, get-spatial-cueing-data, message = FALSE}
 source("R/loaders.R")
 cueing <- get_spatial_cueing()
 cueing %>% group_by(subj_id) %>%
@@ -24,91 +24,43 @@ go/no-go performance than cueing with a visual frame, because this
 demanding task requires the type of attentive state that words
 are better at activating than "motivated" cues like the visual frame.
 
-## Plot by-subject accuracies
-
-1. Compute by-subject accuracies
-```{r, summarize-data-for-plot}
-cueing_by_subj <- cueing %>% group_by(subj_id, cue_type) %>%
-  summarize(accuracy = mean(is_correct))
-```
-
-2. Arrange cue types on the x-axis
-```{r, place-cueing-variables-on-x-axis}
-source("R/recoders.R")
-cueing_by_subj$cue_type_int <- recode_cue_type_as_int(cueing_by_subj)
-cueing_by_subj$cue_type_jit <- jitter_cue_type_int_by_subj(cueing_by_subj)
-```
-
-3. Plot of subject accuracies by cue type
-```{r, "plot-of-subj-accuracies-by-cue", message = FALSE, echo = -4}
-library(ggplot2)
-library(scales)
-
-scale_cue_type_int <- scale_x_continuous("Cue Type",
-    breaks = c(-1, 0, 1),
-    labels = c("frame", "no cue", "sound"))
-by_subj_point_shape <- 1
-by_subj_line_size <- 0.3
-
-plot_bysubj <- ggplot(cueing_by_subj,
-    aes(x = cue_type_int, y = accuracy)) +
-  geom_point(aes(x = cue_type_jit, color = subj_id), shape = by_subj_point_shape) + 
-  geom_line(aes(x = cue_type_jit, color = subj_id), size = by_subj_line_size) +
-  scale_cue_type_int +
-  scale_y_continuous("Accuracy", labels = percent) +
-  theme(legend.position = "none")
-plot_bysubj
-```
-
-Note the three outliers.
-```{r}
-cueing_by_subj %>% filter(accuracy[cue_type == "nocue"] < 0.7)
-```
-
-## Fit glmer model to raw accuracies
-
-1. Set the contrast codes
-```{r, "set-contrasts"}
-source("R/recoders.R")
-cueing <- set_treatment_contrasts(cueing)
-contrasts(cueing$cue_type)
-```
-
-2. Predict likelihood of error from cue type
-- leaving the outlier subjects in for now
-- errors are false alarms and misses
-```{r, "fit-accuracy-mod", message = FALSE}
+```{r, fit-glmer-mod, message = FALSE}
 library(lme4)
+library(broom)
+source("R/recoders.R")
+
+cueing <- set_treatment_contrasts(cueing)
 accuracy_mod <- glmer(data = cueing, family = "binomial",
   formula = is_correct ~ frame_v_nocue + sound_v_nocue + 
               (frame_v_nocue + sound_v_nocue || subj_id))
   ## the double pipe fits random intercepts and slopes without
   ## random effect correlations
-summary(accuracy_mod)
+tidy(accuracy_mod, effects = "fixed")
 ```
 
-## Add model predictions to by-subject plot
+```{r, plot-accuracies, message = FALSE}
+source("R/plots.R")
+source("R/models.R")
 
-1. Get the model predictions
-```{r, "get-model-predictions"}
-library(AICcmodavg)
+# summarize the raw data by subject
+cueing_by_subj <- cueing %>% group_by(subj_id, cue_type) %>%
+  summarize(accuracy = mean(is_correct))
+
+# get the model estimates
 x_preds <- data.frame(cue_type = c("nocue", "frame", "sound")) %>%
-  set_treatment_contrasts()
-x_preds$cue_type_int <- recode_cue_type_as_int(x_preds)
+  set_treatment_contrasts() %>%
+  mutate(cue_type_int = recode_cue_type_as_int(.))
+acc_mod_preds <- get_glmer_predictions(accuracy_mod, x_preds)
 
-y_preds <- predictSE(accuracy_mod, x_preds, 
-  type = "response", se = TRUE, print.matrix = TRUE)
-predictions <- cbind(x_preds, y_preds) %>%
-  rename(accuracy = fit, se = se.fit)
-```
-  
-2. By subject averages with model predictions overlayed
-```{r, "plot-with-model-predictions", echo = -2}
-plot_accuracy_mod <- plot_bysubj +
+# base plot subj accuracies
+acc_by_subj_plot <- plot_acc_by_subj(cueing_by_subj)
+
+# add on model predictions
+acc_mod_plot <- acc_by_subj_plot +
   geom_ribbon(aes(ymin = accuracy - se, ymax = accuracy + se),
-    data = predictions, fill = "gray", alpha = 0.8) +
-  geom_line(aes(group = 1), data = predictions)
-plot_accuracy_mod
+    data = acc_mod_preds, fill = "gray", alpha = 0.8) +
+  geom_line(aes(group = 1), data = acc_mod_preds)
+acc_mod_plot
 ```
 
 ## Conclusions
@@ -118,7 +70,6 @@ However, the cueing effect when presented a verbal cue is over
 twice the cueing effect from the visual frame.
 
 ```{r, "comparing-cueing-effects"}
-library(broom)
 coefficients <- tidy(accuracy_mod, effects = "fixed")
 coefficients[2:3, c("term", "estimate", "std.error")]
 ```

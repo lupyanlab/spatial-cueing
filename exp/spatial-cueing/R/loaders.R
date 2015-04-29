@@ -21,7 +21,7 @@ get_spatial_cueing <- function(interval = 0.750, flicker = "on") {
   }
 
   pattern_matcher <- data_frame(
-    interval = c(0.750, 0.750, 0.200), 
+    interval = c(0.750, 0.750, 0.100), 
     flicker = c("on", "off", "on"),
     regex_pattern = c("SPC3?_3", "SPC4", "SPC5")
   )
@@ -33,6 +33,9 @@ get_spatial_cueing <- function(interval = 0.750, flicker = "on") {
     split(.$regex_pattern) %>%
     map(~ compile_experiment(.$regex_pattern, .$interval, .$flicker)) %>%
     rbind_all(.)
+  
+  # handle exceptions
+  spatial_cueing[spatial_cueing$subj_id %in% c("SPC504a", "SPC508"), "interval"] = 0.10
 
   # recode variables
   source("R/recoders.R")

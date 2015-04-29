@@ -42,6 +42,12 @@ recode_flicker_as_centered_num <- function(frame) {
     as.numeric.result = TRUE)
 }
 
+recode_interval_as_centered_num <- function(frame) {
+  car::recode(frame$interval,
+    "0.75=-0.5; 0.10=0.5",
+    as.numeric.result = TRUE)
+}
+
 jitter_cue_type_int_by_subj <- function(frame, jitter_amount = 0.1) {
   frame %>% group_by(subj_id) %>% mutate(
     cue_type_jit = cue_type_int + runif(1, -jitter_amount, jitter_amount)) %>%
@@ -76,4 +82,8 @@ label_trial_type <- function(frame) {
 
 label_flicker <- function(frame) {
   factor(frame$flicker, levels = c("on", "off"), labels = c("Flicker On", "Flicker Off"))
+}
+
+label_interval <- function(frame) {
+  factor(frame$interval, levels = c(0.75, 0.10), labels = c("750 ms", "100 ms"))
 }

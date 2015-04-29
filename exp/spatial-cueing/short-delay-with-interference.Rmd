@@ -1,13 +1,13 @@
 ---
-title: "Spatial cueing with and without flicker"
+title: "Spatial cueing at short and long intervals"
 author: "Pierce Edmiston"
-date: "April 28, 2015"
+date: "April 29, 2015"
 output: html_document
 ---
 
 ```{r, get-spatial-cueing, message = FALSE}
 source("R/loaders.R")
-cueing <- get_spatial_cueing(interval = 0.750, flicker = c("on", "off"))
+cueing <- get_spatial_cueing(interval = c(0.750, 0.100), flicker = "on")
 cueing %>% group_by(interval, flicker, subj_id) %>%
   summarize(num_trials = n(),
             mean_acc = mean(is_correct))
@@ -20,11 +20,11 @@ library(broom)
 source("R/recoders.R")
 
 cueing <- set_treatment_contrasts(cueing)
-cueing$flicker_c <- recode_flicker_as_centered_num(cueing)
-cueing$flicker_lab <- label_flicker(cueing)
+cueing$interval_c <- recode_interval_as_centered_num(cueing)
+cueing$interval_lab <- label_interval(cueing)
 
 accuracy_mod <- glmer(data = cueing, family = "binomial",
-  formula = is_correct ~ (frame_v_nocue + sound_v_nocue) * flicker_c + 
+  formula = is_correct ~ (frame_v_nocue + sound_v_nocue) * interval_c + 
               (frame_v_nocue + sound_v_nocue || subj_id))
   ## the double pipe fits random intercepts and slopes without
   ## random effect correlations
@@ -36,22 +36,22 @@ source("R/plots.R")
 source("R/models.R")
 
 # summarize the raw data by subject
-cueing_by_subj <- cueing %>% group_by(flicker_lab, subj_id, cue_type) %>%
+cueing_by_subj <- cueing %>% group_by(interval_lab, subj_id, cue_type) %>%
   summarize(accuracy = mean(is_correct))
 
 # get the model estimates
-x_preds <- expand.grid(cue_type = c("nocue", "frame", "sound"), flicker = c("on", "off")) %>%
+x_preds <- expand.grid(cue_type = c("nocue", "frame", "sound"), interval = c(0.75, 0.10)) %>%
   set_treatment_contrasts() %>%
   mutate(
     cue_type_int = recode_cue_type_as_int(.),
-    flicker_c = recode_flicker_as_centered_num(.),
-    flicker_lab = label_flicker(.)
+    interval_c = recode_interval_as_centered_num(.),
+    interval_lab = label_interval(.)
   )
 acc_mod_preds <- get_glmer_predictions(accuracy_mod, x_preds)
 
 # base plot subj accuracies
 acc_by_subj_plot <- plot_acc_by_subj(cueing_by_subj) +
-  facet_wrap("flicker_lab", nrow = 1)
+  facet_wrap("interval_lab", nrow = 1)
 
 # add on model predictions
 acc_mod_plot <- acc_by_subj_plot +
@@ -61,53 +61,32 @@ acc_mod_plot <- acc_by_subj_plot +
 acc_mod_plot
 ```
 
-```{r}
-glmer(is_correct ~ frame_v_nocue + sound_v_nocue + 
-        (frame_v_nocue + sound_v_nocue||subj_id), 
-      data = filter(cueing, flicker == "off"), family = "binomial") %>%
-  tidy(effects = "fixed")
-```
-
 ```{r, summarize-rts-for-plot, fig.width = 10}
 source("R/recoders.R")
 cueing$trial_type <- determine_trial_type(cueing)
 hit_trials <- filter(cueing, trial_type == 'hit')
 
-rts_by_subj <- hit_trials %>% group_by(flicker, subj_id, cue_type) %>%
+rts_by_subj <- hit_trials %>% group_by(interval, subj_id, cue_type) %>%
   summarize(rt = mean(rt))
 
 rts_by_subj$cue_type_int <- recode_cue_type_as_int(rts_by_subj)
 rts_by_subj$cue_type_jit <- jitter_cue_type_int_by_subj(rts_by_subj)
-rts_by_subj$flicker_lab <- label_flicker(rts_by_subj)
+rts_by_subj$interval_lab <- label_interval(rts_by_subj)
 
 plot_rts_by_subj <- ggplot(rts_by_subj,
     aes(x = cue_type_int, y = rt)) +
   geom_point(aes(x = cue_type_jit, color = subj_id), shape = by_subj_point_shape) +
   geom_line(aes(x = cue_type_jit, color = subj_id), shape = by_subj_line_size) +
-  facet_wrap("flicker_lab", nrow = 1) +
+  facet_wrap("interval_lab", nrow = 1) +
   scale_cue_type_int +
   scale_y_continuous("Response Time (ms)") +
   theme(legend.position = "none")
 plot_rts_by_subj
 ```
 
-Note the outliers.
-```{r}
-rts_by_subj %>% filter(flicker == "off", rt[cue_type == "frame"] > 450)
-```
-
 ```{r, fit-lmer-model}
-rt_mod <- lmer(rt ~ (frame_v_nocue + sound_v_nocue) * flicker_c +
+rt_mod <- lmer(rt ~ (frame_v_nocue + sound_v_nocue) * interval_c +
                      (frame_v_nocue + sound_v_nocue || subj_id),
                    data = hit_trials)
 summary(rt_mod)
-```
-
-```{r}
-rt_mod_flicker_off <- lmer(rt ~ frame_v_nocue + sound_v_nocue + 
-                             (frame_v_nocue + sound_v_nocue || subj_id),
-                           data = filter(hit_trials, 
-                                         flicker == "off", 
-                                         !(subj_id %in% c("SPC408", "SPC413"))))
-summary(rt_mod_flicker_off)
 ```
