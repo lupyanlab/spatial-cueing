@@ -60,6 +60,11 @@ plot_bysubj <- ggplot(cueing_by_subj,
 plot_bysubj
 ```
 
+Note the three outliers.
+```{r}
+cueing_by_subj %>% filter(accuracy[cue_type == "nocue"] < 0.7)
+```
+
 ## Fit glmer model to raw accuracies
 
 1. Set the contrast codes
@@ -100,8 +105,8 @@ predictions <- cbind(x_preds, y_preds) %>%
 2. By subject averages with model predictions overlayed
 ```{r, "plot-with-model-predictions", echo = -2}
 plot_accuracy_mod <- plot_bysubj +
-  geom_errorbar(aes(ymin = accuracy - se, ymax = accuracy + se),
-    data = predictions, width = 0.05) +
+  geom_ribbon(aes(ymin = accuracy - se, ymax = accuracy + se),
+    data = predictions, fill = "gray", alpha = 0.8) +
   geom_line(aes(group = 1), data = predictions)
 plot_accuracy_mod
 ```
@@ -265,8 +270,8 @@ predictions <- cbind(x_preds, y_preds) %>%
   rename(rt = fit, se = se.fit)
 
 plot_rt_mod <- plot_rts_by_subj +
-  geom_errorbar(aes(ymin = rt - se, ymax = rt + se),
-    data = predictions, width = 0.05) +
+  geom_ribbon(aes(ymin = rt - se, ymax = rt + se),
+    data = predictions, fill = "gray", alpha = 0.8) +
   geom_line(aes(group = 1), data = predictions)
 plot_rt_mod
 ```

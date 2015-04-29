@@ -14,7 +14,7 @@ get_spatial_cueing <- function() {
   status <- 'Compiling raw data...'
   print(status)
   
-  spatial_cueing <- compile(data_directory = "data", pattern = "SPC")
+  spatial_cueing <- compile(data_directory = "data", pattern = "SPC3?_3")
   
   # recode variables
   source("R/recoders.R")
