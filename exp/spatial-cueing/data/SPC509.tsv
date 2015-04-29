@@ -1,0 +1,371 @@
+subj_id	date	computer	experimenter	part	trial_ix	cue_present	cue_type	cue_loc	cue_pos_x	cue_pos_y	interval	target_present	target_loc	target_pos_x	target_pos_y	target_opacity	rt	key	response	is_correct
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	practice	0	0					0.1	1	left	-193.403409951	-16.2838986977	1.0	477.442282252	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	practice	1	0					0.1	0					1336.58517338		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	practice	2	0					0.1	1	left	-208.37147741	11.2105676808	1.0	799.402168021	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	practice	3	0					0.1	1	left	-192.222026598	-22.8159561127	1.0	502.423575148	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	practice	4	0					0.1	1	left	-197.598693956	11.7465493716	1.0	993.848551065	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	practice	5	0					0.1	1	right	199.293839631	-9.13490208791	1.0	556.868345477	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	practice	6	0					0.1	1	left	-193.489267296	-20.0461450378	1.0	638.595351018	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	practice	7	0					0.1	1	left	-191.605609276	-22.1974714045	1.0	578.006542288	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	practice	8	0					0.1	1	left	-191.644958377	-0.925103512544	1.0	539.413373917	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	practice	9	0					0.1	1	right	214.59684264	-8.43034536144	1.0	813.649618998	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	0	1	frame	left	-200	0	0.1	1	left	-198.57999707	13.1618103341	1.0	643.262357451	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	1	1	frame	right	200	0	0.1	1	right	181.120319898	-20.3295812629	1.0	1328.98086589		nogo	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	2	1	frame	left	-200	0	0.1	1	left	-196.927955917	7.83728622153	1.0	451.15903113	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	3	0					0.1	0					1338.13707344		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	4	1	frame	right	200	0	0.1	1	right	200.72866305	-1.0981066202	1.0	860.026460141	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	5	1	sound	right			0.1	1	right	182.898006979	5.8812615366	1.0	535.501262173	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	6	0					0.1	1	right	222.418229437	18.4416196885	1.0	619.206355885	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	7	1	frame	right	200	0	0.1	1	right	178.733290645	21.5534287049	1.0	522.467255592	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	8	1	frame	left	-200	0	0.1	1	left	-200.998299543	-3.91494915072	1.0	428.484531119	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	9	0					0.1	1	left	-187.782374201	9.87436369882	1.0	697.103913873	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	10	1	frame	left	-200	0	0.1	1	left	-213.894994601	-19.7712579883	1.0	418.912274763	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	11	1	sound	right			0.1	1	right	219.874496716	-21.8961241896	1.0	752.659577876	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	12	1	sound	left			0.1	1	left	-179.779691924	-10.5190554314	1.0	477.806861512	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	13	1	sound	left			0.1	1	left	-182.009695528	-4.67216744065	1.0	461.421454325	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	14	0					0.1	0					1328.93914357		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	15	1	frame	right	200	0	0.1	0					1336.66003961		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	16	1	frame	right	200	0	0.1	1	right	190.553478708	-11.158298287	1.0	478.146876208	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	17	1	sound	right			0.1	1	right	194.519899756	-8.77914687796	1.0	675.365623087	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	18	1	frame	left	-200	0	0.1	1	left	-191.479120869	3.64560709794	1.0	546.146590263	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	19	1	frame	right	200	0	0.1	0					420.33354938	 	go	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	20	1	sound	left			0.1	1	left	-220.592340859	-22.606156425	1.0	467.447347939	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	21	0					0.1	1	right	197.455502343	-17.0853103946	1.0	467.948010191	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	22	1	sound	right			0.1	1	right	218.1734491	-14.8136632387	1.0	487.428639084	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	23	0					0.1	1	left	-193.416408956	-7.82840292263	1.0	534.750656225	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	24	1	sound	left			0.1	1	left	-200.689747158	-8.06386844167	1.0	402.260159142	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	25	1	sound	right			0.1	1	right	185.398165103	21.208885587	1.0	408.730954863	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	26	0					0.1	1	left	-214.078607996	-19.2331527468	1.0	649.156847037	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	27	0					0.1	1	left	-222.896450029	22.2634329045	1.0	522.519894876	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	28	0					0.1	1	left	-215.99665952	0.0850022717333	1.0	691.223462112	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	29	1	frame	right	200	0	0.1	0					1338.20180036		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	30	0					0.1	1	right	203.666212203	-3.28856418544	1.0	478.784792125	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	31	1	frame	left	-200	0	0.1	1	left	-209.151426073	-3.10404434319	1.0	412.736260332	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	32	1	frame	right	200	0	0.1	1	right	191.347383243	-9.21529307899	1.0	351.852668449	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	33	1	sound	right			0.1	1	right	205.863693434	-8.36254611713	1.0	602.904391475	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	34	1	sound	right			0.1	1	right	204.268171895	9.62059830888	1.0	465.540226549	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	35	1	frame	left	-200	0	0.1	1	left	-178.404826076	13.4717360114	1.0	469.01523415	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	36	0					0.1	1	right	202.399328376	-13.1106574092	1.0	512.754235417	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	37	0					0.1	1	left	-217.64729417	2.1636293795	1.0	439.378242008	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	38	1	frame	left	-200	0	0.1	1	left	-193.886668477	12.9304431476	1.0	452.834926546	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	39	1	sound	right			0.1	0					1328.50359846		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	40	0					0.1	1	right	221.12159239	-17.4034460764	1.0	538.966520689	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	41	1	sound	right			0.1	1	right	208.953127228	16.9045584093	1.0	471.852324903	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	42	1	sound	right			0.1	1	right	184.070579069	-1.62604302346	1.0	365.807676688	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	43	1	frame	left	-200	0	0.1	1	left	-197.255311272	9.0228334538	1.0	635.847553611	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	44	1	sound	left			0.1	1	left	-192.964915006	8.32188414046	1.0	477.511689067	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	45	1	frame	right	200	0	0.1	0					1335.26683971		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	46	0					0.1	1	right	207.591277713	3.10246153911	1.0	414.229670539	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	47	0					0.1	0					1325.34755021		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	48	1	sound	right			0.1	1	right	185.415389095	17.5501189093	1.0	392.73118414	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	49	0					0.1	1	right	185.381419358	3.65945146932	1.0	535.656061023	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	50	1	frame	right	200	0	0.1	1	right	177.113723531	-0.340686081533	1.0	539.694899693	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	51	1	frame	left	-200	0	0.1	1	left	-181.690577951	-0.993834427372	1.0	425.645491108	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	52	1	sound	right			0.1	1	right	201.573073167	10.3875448526	1.0	552.229803056	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	53	0					0.1	1	right	206.153634447	13.5416572232	1.0	524.020714685	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	54	0					0.1	1	right	183.683174522	11.4842783068	1.0	497.534702532	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	55	1	frame	right	200	0	0.1	1	right	182.287512703	-11.668892297	1.0	528.107512742	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	56	1	sound	right			0.1	1	right	214.347066352	-21.6710779122	1.0	410.646264441	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	57	0					0.1	1	left	-198.008523303	16.7807823138	1.0	557.810402475	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	58	1	sound	right			0.1	1	right	196.562645619	-21.2892628254	1.0	369.45424974	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	59	1	sound	left			0.1	1	left	-179.427671971	-3.66381518907	1.0	407.860254869	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	60	0					0.1	1	left	-201.773761342	12.0720564114	1.0	502.848983742	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	61	1	sound	left			0.1	1	left	-222.862495897	-4.04397486413	1.0	374.575908296	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	62	1	sound	left			0.1	1	left	-223.901255179	14.8032318798	1.0	383.156976663	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	63	1	frame	right	200	0	0.1	1	right	220.599580063	4.49663541377	1.0	347.860231064	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	64	0					0.1	0					1336.3894308		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	65	1	sound	left			0.1	1	left	-190.303192738	21.5089317854	1.0	556.50103651	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	66	0					0.1	1	right	220.566152359	-12.21080267	1.0	547.958180308	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	67	1	frame	right	200	0	0.1	1	right	201.415414656	-15.2596926901	1.0	411.456138827	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	68	1	sound	left			0.1	1	left	-209.905248354	-3.30315913093	1.0	419.784535654	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	69	1	frame	left	-200	0	0.1	1	left	-211.813979319	-16.1762181415	1.0	336.088799872	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	70	1	frame	right	200	0	0.1	1	right	213.984574863	-0.275812375972	1.0	380.81392087	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	71	0					0.1	0					1337.08310779		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	72	1	frame	left	-200	0	0.1	1	left	-195.916590743	12.875861811	1.0	446.935368702	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	73	1	frame	left	-200	0	0.1	1	left	-198.335396484	19.5496402869	1.0	537.722662091	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	74	0					0.1	0					1338.09652086		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	75	1	frame	left	-200	0	0.1	1	left	-214.096966164	17.3816474755	1.0	391.352799721	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	76	1	sound	left			0.1	1	left	-205.102710107	13.6797027946	1.0	353.570285253	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	77	1	sound	right			0.1	1	right	192.787727154	7.06785521264	1.0	374.985329807	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	78	0					0.1	1	right	218.116801931	-16.8796255431	1.0	502.642323263	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	79	0					0.1	1	right	204.73968357	-6.03132478354	1.0	1328.94382346		nogo	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	80	1	frame	left	-200	0	0.1	1	left	-220.006531426	-21.4416101524	1.0	320.080448873	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	81	1	sound	left			0.1	1	left	-219.66154544	-15.3884370738	1.0	543.316128664	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	82	1	sound	left			0.1	1	left	-198.12107824	-13.6957937102	1.0	378.047405742	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	83	0					0.1	1	right	191.277242209	-18.074430507	1.0	408.149578609	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	84	1	sound	right			0.1	1	right	195.081220243	-1.69177210098	1.0	477.225874551	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	85	1	frame	left	-200	0	0.1	0					1329.01244983		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	86	1	sound	left			0.1	0					1336.63547412		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	87	0					0.1	1	left	-193.879049019	-8.45985272611	1.0	1329.14541382		nogo	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	88	1	sound	right			0.1	1	right	188.508964967	-17.6359727276	1.0	384.746699594	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	89	1	sound	right			0.1	1	right	188.174653986	0.490274674683	1.0	434.880072251	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	90	1	frame	right	200	0	0.1	0					1336.69006359		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	91	1	frame	right	200	0	0.1	1	right	198.286785433	15.9694576013	1.0	420.097644441	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	92	1	frame	left	-200	0	0.1	1	left	-185.806094237	-0.777574035265	1.0	362.21920047	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	93	1	sound	left			0.1	1	left	-212.306876758	22.2793778882	1.0	436.348528601	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	94	1	sound	right			0.1	0					1330.74215427		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	95	0					0.1	1	left	-198.411642161	18.3374436445	1.0	1335.21185908		nogo	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	96	1	frame	left	-200	0	0.1	1	left	-178.142611173	-2.68681797533	1.0	404.774000868	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	97	1	frame	right	200	0	0.1	0					1328.73989269		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	98	1	frame	left	-200	0	0.1	1	left	-179.299898003	0.165011699383	1.0	422.412237152	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	99	1	frame	left	-200	0	0.1	1	left	-208.481822051	4.8660143941	1.0	364.017533138	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	100	1	sound	right			0.1	1	right	209.742490121	-19.1410471936	1.0	404.481948353	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	101	0					0.1	1	left	-204.588426403	-2.58258105576	1.0	1337.02851832		nogo	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	102	0					0.1	1	right	192.243519022	-9.69106930078	1.0	496.675699018	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	103	1	frame	right	200	0	0.1	1	right	196.07683442	-1.350948997	1.0	1336.7489418		nogo	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	104	1	frame	left	-200	0	0.1	1	left	-223.338870452	2.90479692823	1.0	1337.06517052		nogo	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	105	1	sound	left			0.1	1	left	-201.089562513	4.54144203187	1.0	402.97956951	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	106	0					0.1	1	left	-211.85490594	17.2479463367	1.0	1338.89781591		nogo	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	107	0					0.1	0					1303.38544119	 	go	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	108	1	sound	right			0.1	1	right	222.327183161	18.5445806122	1.0	651.900744997	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	109	1	sound	right			0.1	1	right	178.757058916	-5.21258592992	1.0	419.792334549	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	110	0					0.1	1	right	212.113212226	7.02393887501	1.0	502.529635094	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	111	1	frame	right	200	0	0.1	1	right	187.178630008	-4.50416767023	1.0	427.60096211	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	112	1	frame	left	-200	0	0.1	1	left	-222.436165643	-11.3586557375	1.0	336.072422564	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	113	1	sound	left			0.1	1	left	-217.303201774	-10.9631262894	1.0	469.30143889	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	114	1	sound	left			0.1	1	left	-217.424829421	18.8192092538	1.0	418.41902025	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	115	1	frame	right	200	0	0.1	1	right	203.383263107	-18.8545688292	1.0	373.082498088	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	116	1	frame	right	200	0	0.1	1	right	203.553529112	5.98210201054	1.0	455.902853049	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	117	1	frame	right	200	0	0.1	1	right	219.250823892	-14.9759532335	1.0	699.677025899	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	118	1	sound	left			0.1	1	left	-210.277165374	-15.5929166733	1.0	446.237794124	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	119	0					0.1	1	right	203.189508634	-4.87953791886	1.0	355.511719361	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	120	0					0.1	1	left	-223.905137098	-5.47480769917	1.0	707.549991086	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	121	0					0.1	1	left	-193.889399223	-1.68914668507	1.0	524.034751579	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	122	0					0.1	1	right	180.559137394	-18.9661688655	1.0	424.977550283	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	123	1	frame	left	-200	0	0.1	0					469.274143688	 	go	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	124	0					0.1	1	right	190.331469389	0.099696814801	1.0	423.814015463	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	125	0					0.1	0					1336.40502952		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	126	1	sound	left			0.1	1	left	-177.46981225	-17.4177324658	1.0	469.627415761	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	127	1	sound	left			0.1	1	left	-209.790818974	6.55371501197	1.0	481.158652343	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	128	1	frame	left	-200	0	0.1	1	left	-222.010710535	17.0838923683	1.0	411.306796595	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	129	1	frame	right	200	0	0.1	1	right	190.185718189	-13.7026898323	1.0	395.340168849	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	130	1	sound	right			0.1	0					1336.7902739		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	131	0					0.1	1	right	191.282686145	11.2808681488	1.0	530.682184733	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	132	1	frame	left	-200	0	0.1	1	left	-205.863386932	20.4117097812	1.0	0.0	 	go	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	133	1	sound	right			0.1	1	right	194.936213486	-2.15621839945	1.0	719.253964722	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	134	0					0.1	1	right	178.762179665	5.00267585629	1.0	460.552312434	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	135	0					0.1	1	right	192.723873916	-19.7587800134	1.0	457.509731874	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	136	1	frame	left	-200	0	0.1	1	left	-195.140721465	-14.7495128681	1.0	443.407721817	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	137	1	frame	left	-200	0	0.1	0					1222.27451578	 	go	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	138	1	frame	left	-200	0	0.1	1	left	-190.465265342	-16.6593677757	1.0	410.60961131	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	139	1	sound	left			0.1	1	left	-182.234504957	-3.67351645473	1.0	524.439883418	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	140	1	frame	left	-200	0	0.1	1	left	-185.537746539	-0.0162776868289	1.0	444.210575894	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	141	0					0.1	0					1330.28633241		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	142	1	frame	right	200	0	0.1	1	right	190.998014864	-2.52033274052	1.0	349.924491718	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	143	1	frame	left	-200	0	0.1	1	left	-194.335027058	-22.9598291162	1.0	327.904674225	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	144	0					0.1	0					1331.53292164		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	145	0					0.1	1	left	-201.346654188	11.8015771563	1.0	436.009294353	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	146	1	sound	left			0.1	0					1327.98538916		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	147	1	frame	left	-200	0	0.1	1	left	-203.336492423	-5.36872324821	1.0	344.629315659	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	148	1	frame	left	-200	0	0.1	1	left	-184.277695718	-5.96472357332	1.0	214.627706446	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	149	0					0.1	1	right	179.147086672	-22.8353229375	1.0	1337.95770817		nogo	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	150	1	frame	right	200	0	0.1	1	right	198.990463631	5.51072474859	1.0	345.745669678	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	151	0					0.1	1	right	220.121126322	8.76701238857	1.0	1324.16334841		nogo	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	152	1	frame	left	-200	0	0.1	1	left	-203.292047999	-20.2078038359	1.0	344.842994586	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	153	1	frame	right	200	0	0.1	1	right	222.585924375	7.95605171453	1.0	394.135691226	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	154	1	sound	right			0.1	1	right	191.973590444	-18.3478612649	1.0	649.070283398	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	155	1	sound	left			0.1	1	left	-222.091916464	0.312691225684	1.0	369.246030226	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	156	1	frame	right	200	0	0.1	1	right	208.290342537	-10.6055716608	1.0	308.992945589	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	157	1	frame	left	-200	0	0.1	0					1336.68148518		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	158	0					0.1	1	right	211.644338792	-20.8357580174	1.0	1337.94796001		nogo	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	159	1	frame	right	200	0	0.1	1	right	190.315142046	-1.14831813645	1.0	554.074535146	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	160	0					0.1	1	left	-189.397394023	2.10833315215	1.0	535.896255635	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	161	1	sound	right			0.1	1	right	220.755274734	-12.4892088112	1.0	309.484641068	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	162	1	frame	right	200	0	0.1	1	right	206.354546761	-16.4649093632	1.0	381.323162466	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	163	1	frame	right	200	0	0.1	1	right	199.459128563	-1.57861620216	1.0	424.030813389	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	164	0					0.1	1	left	-180.15989983	-17.361117485	1.0	595.117989928	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	165	1	frame	left	-200	0	0.1	0					191.382356919	 	go	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	166	1	frame	right	200	0	0.1	1	right	184.038411401	2.84323389151	1.0	344.769689254	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	167	1	sound	left			0.1	1	left	-188.270509332	19.6476644157	1.0	601.401233114	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	168	0					0.1	1	right	192.364423568	-14.0226463845	1.0	1336.66588739		nogo	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	169	0					0.1	1	left	-186.63197158	-20.9873705974	1.0	502.676636912	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	170	1	frame	right	200	0	0.1	1	right	221.747312586	22.8972985599	1.0	61.5378860384	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	171	1	sound	right			0.1	1	right	222.291858727	11.1839437183	1.0	377.448871732	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	172	0					0.1	1	right	189.526959369	-4.44908046237	1.0	284.512315877	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	173	0					0.1	1	right	188.016889804	-10.1971632501	1.0	437.876252457	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	174	1	frame	left	-200	0	0.1	1	left	-192.303626834	-7.11684465978	1.0	323.751977645	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	175	1	frame	left	-200	0	0.1	0					1328.98710482		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	176	1	sound	right			0.1	1	right	214.91579037	14.5593515536	1.0	652.297299355	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	177	0					0.1	1	right	222.589989909	-8.18159787444	1.0	785.908440128	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	178	1	sound	right			0.1	1	right	214.71597707	-19.3188228331	1.0	516.661669128	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	179	1	sound	left			0.1	1	left	-201.600697858	19.0162089865	1.0	489.494848996	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	180	1	sound	left			0.1	1	left	-222.475920076	15.5371299946	1.0	393.122277223	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	181	0					0.1	1	left	-204.212150731	-0.279552269327	1.0	483.241239563	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	182	1	frame	left	-200	0	0.1	1	left	-197.126896979	-13.7305564234	1.0	402.505030856	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	183	1	sound	right			0.1	0					1330.32688498		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	184	0					0.1	1	right	181.869056707	-1.60885095699	1.0	418.559392914	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	185	1	sound	left			0.1	1	left	-206.562833738	-22.9112498429	1.0	386.153937317	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	186	0					0.1	1	right	221.635073059	-1.02705571013	1.0	724.693022668	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	187	1	frame	left	-200	0	0.1	1	left	-209.803501016	-2.26946898974	1.0	403.108244762	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	188	1	frame	left	-200	0	0.1	1	left	-190.959808464	-8.47249318662	1.0	412.477740087	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	189	1	sound	right			0.1	1	right	195.883456055	3.15904521654	1.0	527.94842422	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	190	1	frame	right	200	0	0.1	1	right	208.471428117	-12.0561612563	1.0	383.182322606	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	191	0					0.1	1	right	196.640381056	-3.58125367521	1.0	552.915680222	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	192	1	frame	right	200	0	0.1	1	right	201.540155942	7.32704107769	1.0	221.955557354	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	193	1	frame	right	200	0	0.1	1	right	182.837664458	-23.5163962117	1.0	386.484202929	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	194	0					0.1	1	left	-177.125375563	20.7393051849	1.0	535.675948486	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	195	1	frame	left	-200	0	0.1	1	left	-216.903267747	12.248639459	1.0	426.562983543	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	196	1	frame	left	-200	0	0.1	1	left	-177.689995761	10.8700476485	1.0	456.936152652	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	197	1	sound	right			0.1	1	right	212.129893495	-19.3355905405	1.0	423.61203488	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	198	0					0.1	1	right	189.772404242	19.139327311	1.0	392.992042936	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	199	0					0.1	1	right	203.121240704	5.9500799262	1.0	469.054616056	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	200	1	frame	right	200	0	0.1	0					194.623019546	 	go	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	201	1	sound	right			0.1	1	right	208.459987271	-15.8932371829	1.0	476.22727789	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	202	1	sound	right			0.1	1	right	200.158889085	-21.243322045	1.0	326.302863657	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	203	0					0.1	1	right	222.37302616	22.805720944	1.0	481.511924416	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	204	1	frame	left	-200	0	0.1	1	left	-190.061708695	-11.5289978296	1.0	257.906206883	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	205	1	sound	left			0.1	0					1337.99981978		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	206	0					0.1	1	right	207.927206634	-19.065100584	1.0	519.159135409	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	207	1	frame	left	-200	0	0.1	1	left	-216.594157651	-2.01024561191	1.0	385.703184642	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	208	0					0.1	1	right	187.431213181	4.3189530737	1.0	493.827300146	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	209	1	frame	left	-200	0	0.1	1	left	-203.97818031	-12.5496168103	1.0	369.189491495	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	210	0					0.1	1	right	200.2180886	-2.37578907413	1.0	390.969893895	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	211	1	frame	right	200	0	0.1	1	right	207.876761997	-10.6307804122	1.0	312.055802904	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	212	1	sound	left			0.1	1	left	-211.93473313	17.3777122473	1.0	361.962241121	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	213	0					0.1	1	left	-223.946296671	-12.5630914902	1.0	668.995426036	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	214	1	frame	right	200	0	0.1	1	right	208.555654984	2.44873055298	1.0	371.442475356	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	215	1	frame	right	200	0	0.1	0					1336.64834127		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	216	1	frame	right	200	0	0.1	1	right	220.625496625	-11.7140944627	1.0	396.74428571	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	217	1	sound	left			0.1	1	left	-217.223138348	4.42828205789	1.0	1336.81639843		nogo	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	218	1	frame	left	-200	0	0.1	1	left	-208.259894493	-14.5687245714	1.0	369.113066234	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	219	0					0.1	1	right	215.127383647	-20.4444089275	1.0	635.033391416	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	220	1	sound	left			0.1	1	left	-179.494530516	-9.33319601047	1.0	1327.65317336		nogo	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	221	0					0.1	1	left	-207.332823286	13.5878814957	1.0	408.588633873	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	222	1	frame	left	-200	0	0.1	1	left	-215.484611302	-6.82235869933	1.0	402.946815826	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	223	1	frame	left	-200	0	0.1	1	left	-187.071689387	-18.1272854725	1.0	621.91321142	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	224	1	frame	right	200	0	0.1	0					0.0	 	go	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	225	1	frame	left	-200	0	0.1	1	left	-182.951186536	7.09925081673	1.0	447.462157346	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	226	1	frame	left	-200	0	0.1	1	left	-188.35030093	-2.29403393015	1.0	394.273334183	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	227	1	sound	left			0.1	1	left	-183.780500582	-19.8925029387	1.0	402.427826077	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	228	0					0.1	1	left	-193.694816013	7.31175808912	1.0	384.374321438	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	229	1	sound	left			0.1	1	left	-209.213997974	-16.8043866341	1.0	461.002675816	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	230	1	sound	left			0.1	1	left	-199.626367152	-1.1718731264	1.0	416.506829672	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	231	1	frame	left	-200	0	0.1	1	left	-193.352764685	-15.4334232825	1.0	369.217566215	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	232	1	frame	right	200	0	0.1	1	right	213.805419216	-1.97153400279	1.0	442.250035703	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	233	1	sound	left			0.1	1	left	-217.117187308	19.867497396	1.0	406.178509817	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	234	1	sound	right			0.1	0					1329.03896458		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	235	1	sound	left			0.1	1	left	-181.284611924	-21.7260036862	1.0	401.852687821	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	236	1	sound	left			0.1	1	left	-200.480208834	-13.1072733518	1.0	386.109095067	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	237	0					0.1	1	left	-197.022096937	4.0658299137	1.0	644.16152332	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	238	1	frame	right	200	0	0.1	1	right	221.368642019	-11.0917169252	1.0	386.509937234	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	239	1	frame	left	-200	0	0.1	1	left	-183.854100926	17.7710471882	1.0	377.666060813	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	240	1	frame	right	200	0	0.1	0					1336.69903222		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	241	1	sound	right			0.1	1	right	202.973443765	5.65852456051	1.0	458.058744669	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	242	1	sound	left			0.1	1	left	-222.059599885	6.46154376634	1.0	442.855198868	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	243	1	frame	left	-200	0	0.1	1	left	-180.368495481	15.2615614271	1.0	0.0	 	go	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	244	1	sound	left			0.1	1	left	-180.072108115	-20.1102090588	1.0	628.062711097	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	245	0					0.1	1	left	-182.65335394	20.6421898138	1.0	519.153676927	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	246	1	sound	right			0.1	1	right	195.771218386	-23.4732774326	1.0	395.840051584	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	247	1	frame	left	-200	0	0.1	1	left	-216.332493752	3.89900787809	1.0	1328.98671459		nogo	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	248	1	frame	right	200	0	0.1	1	right	196.072712881	16.4769967757	1.0	376.388277858	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	249	0					0.1	1	left	-192.521896286	-11.3184842434	1.0	1336.46468632		nogo	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	250	0					0.1	1	right	208.809681204	-19.4904883357	1.0	478.980533779	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	251	1	frame	right	200	0	0.1	1	right	182.103013786	-16.9678396981	1.0	437.525320798	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	252	0					0.1	1	left	-209.483265854	-16.439483927	1.0	514.196567237	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	253	0					0.1	1	right	184.411714255	15.0865047962	1.0	1336.59102209		nogo	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	254	0					0.1	0					1329.55795433		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	255	1	sound	left			0.1	1	left	-221.828637263	21.976080338	1.0	457.042992115	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	256	0					0.1	1	right	180.774707949	19.2070432742	1.0	469.721777365	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	257	1	frame	right	200	0	0.1	0					1338.12420629		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	258	1	sound	left			0.1	1	left	-179.354263544	-22.1738703882	1.0	470.427541062	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	259	1	frame	right	200	0	0.1	1	right	186.24153159	-21.9225325427	1.0	470.895449631	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	260	0					0.1	1	right	185.306490206	12.5196276079	1.0	635.496621951	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	261	1	sound	left			0.1	1	left	-191.994502831	-21.4268762171	1.0	391.244791448	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	262	1	frame	left	-200	0	0.1	1	left	-210.16428176	-14.4653317021	1.0	448.03495612	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	263	0					0.1	1	left	-221.691437008	-19.893171513	1.0	585.762530565	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	264	1	sound	right			0.1	1	right	179.020097638	13.7869397369	1.0	536.115002818	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	265	1	frame	right	200	0	0.1	0					1336.84681356		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	266	1	frame	right	200	0	0.1	0					1336.65847965		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	267	1	sound	right			0.1	1	right	199.316844499	-15.2784221741	1.0	425.048125908	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	268	1	sound	left			0.1	1	left	-179.452683164	4.04057243235	1.0	434.892159887	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	269	1	frame	right	200	0	0.1	1	right	215.839058961	15.5854835806	1.0	393.433827907	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	270	1	sound	left			0.1	1	left	-203.541614574	-3.47593293079	1.0	373.30319453	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	271	0					0.1	1	right	222.610230671	9.73777198226	1.0	557.497292757	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	272	1	sound	right			0.1	1	right	212.88056011	19.0191896119	1.0	469.354078174	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	273	0					0.1	0					1336.75752021		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	274	0					0.1	1	right	216.832652644	13.3723542866	1.0	369.513908401	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	275	1	sound	right			0.1	0					1336.45142987		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	276	1	sound	left			0.1	1	left	-192.12594721	19.8357551183	1.0	396.369178779	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	277	1	sound	right			0.1	1	right	221.486022406	-14.1803594558	1.0	352.802913636	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	278	1	sound	left			0.1	1	left	-200.691066818	-10.8232822112	1.0	469.467936084	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	279	1	sound	left			0.1	1	left	-179.708116547	-22.1843601331	1.0	343.340226449	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	280	0					0.1	1	right	196.255018639	16.1211361282	1.0	1336.82419732		nogo	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	281	1	sound	left			0.1	1	left	-196.189954748	16.0872253951	1.0	465.576489456	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	282	0					0.1	1	left	-183.794811082	-9.54013758805	1.0	510.533615947	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	283	1	frame	left	-200	0	0.1	1	left	-204.137217975	17.3403242918	1.0	369.808691554	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	284	1	frame	left	-200	0	0.1	1	left	-218.025832113	-9.22405906909	1.0	335.903585888	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	285	0					0.1	1	left	-197.261243273	21.3439595455	1.0	533.034599386	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	286	1	frame	left	-200	0	0.1	1	left	-207.898519885	-8.54984457926	1.0	369.26006712	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	287	1	frame	left	-200	0	0.1	1	left	-200.194860619	-17.7796649525	1.0	508.68420396	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	288	1	sound	left			0.1	1	left	-201.008550756	15.9561253275	1.0	536.378981546	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	289	1	sound	right			0.1	1	right	214.761623741	17.3280044073	1.0	424.21056889	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	290	0					0.1	1	right	204.347657242	-15.2415552045	1.0	544.088568538	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	291	0					0.1	0					1330.70784155		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	292	0					0.1	1	right	177.584812063	-18.0481666756	1.0	437.560803257	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	293	0					0.1	1	right	202.452705966	-9.23868256413	1.0	397.09404856	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	294	1	sound	left			0.1	1	left	-193.058949508	22.3418417426	1.0	201.624893583	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	295	1	frame	right	200	0	0.1	0					1336.68421488		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	296	1	frame	right	200	0	0.1	1	right	180.193477062	4.25973848963	1.0	333.255218342	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	297	0					0.1	1	left	-203.773424928	4.74165918913	1.0	594.991653226	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	298	1	sound	left			0.1	0					1336.46117803		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	299	1	sound	right			0.1	1	right	191.285877221	-6.58902642791	1.0	400.312095881	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	300	1	frame	left	-200	0	0.1	1	left	-209.014337397	22.6166004358	1.0	402.55143214	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	301	0					0.1	1	left	-179.917306485	-18.5930669747	1.0	444.041348994	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	302	0					0.1	1	left	-206.225941548	22.3137349349	1.0	381.095835939	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	303	1	sound	right			0.1	0					1148.97143748	 	go	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	304	0					0.1	1	right	214.620755501	-6.01016993113	1.0	569.438731298	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	305	0					0.1	1	left	-212.520154852	-3.33136868761	1.0	1331.51732478		nogo	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	306	1	frame	left	-200	0	0.1	1	left	-218.373000356	22.0459209644	1.0	490.694256499	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	307	0					0.1	1	right	219.832779351	9.04634120423	1.0	1336.63430437		nogo	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	308	1	frame	right	200	0	0.1	0					1336.16756462		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	309	1	sound	right			0.1	0					1328.8872838		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	310	0					0.1	1	right	209.284528847	17.033661037	1.0	0.0	 	go	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	311	1	sound	right			0.1	1	right	185.88956195	16.3311790805	1.0	160.032035783	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	312	1	sound	right			0.1	1	right	187.667138593	6.50012420058	1.0	386.176942848	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	313	1	frame	right	200	0	0.1	1	right	214.304686216	5.73973988405	1.0	102.772012353	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	314	1	sound	left			0.1	1	left	-197.909033107	6.5985757555	1.0	169.001859613	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	315	1	frame	right	200	0	0.1	1	right	206.109003388	-17.5481913347	1.0	39.5586211234	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	316	1	sound	left			0.1	1	left	-196.628748943	-12.0241330407	1.0	387.333848514	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	317	1	frame	right	200	0	0.1	0					1336.59687173		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	318	0					0.1	1	left	-180.432769615	11.9520606209	1.0	1335.112039		nogo	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	319	1	sound	right			0.1	1	right	203.706234854	-3.47015040909	1.0	436.155905947	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	320	1	frame	right	200	0	0.1	1	right	185.176508629	7.62331744128	1.0	305.684045888	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	321	1	sound	left			0.1	1	left	-197.37620114	15.772089696	1.0	420.062941499	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	322	0					0.1	0					1336.56021859		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	323	1	frame	left	-200	0	0.1	1	left	-202.216329985	5.50554322619	1.0	421.942767687	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	324	1	frame	right	200	0	0.1	1	right	187.045106945	10.7221408316	1.0	442.228980362	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	325	1	frame	left	-200	0	0.1	1	left	-202.016942571	-22.8114661516	1.0	219.660071656	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	326	1	frame	left	-200	0	0.1	1	left	-194.957067967	-7.45842510462	1.0	183.340553194	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	327	1	sound	right			0.1	1	right	219.927481815	20.0349570952	1.0	344.509999268	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	328	1	frame	left	-200	0	0.1	1	left	-200.612768922	21.0596995665	1.0	1336.41516697		nogo	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	329	0					0.1	1	right	201.990284278	-19.252035264	1.0	414.605948143	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	330	0					0.1	1	left	-177.024761192	-7.69520024602	1.0	602.328473702	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	331	0					0.1	1	right	218.768679559	-19.6139654797	1.0	504.305351526	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	332	1	frame	right	200	0	0.1	1	right	210.494023009	-5.80038522809	1.0	323.932513595	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	333	1	frame	left	-200	0	0.1	1	left	-198.6310754	-23.9952914771	1.0	238.480947912	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	334	1	frame	right	200	0	0.1	1	right	187.989498113	17.1124120295	1.0	323.724294081	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	335	1	sound	right			0.1	1	right	214.632480004	-21.916092046	1.0	506.876124069	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	336	1	frame	right	200	0	0.1	1	right	212.018881334	-9.86814649517	1.0	273.289117962	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	337	1	frame	right	200	0	0.1	1	right	206.018895648	22.4759066819	1.0	500.944982283	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	338	0					0.1	1	right	185.048308795	19.0190383716	1.0	577.62987446	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	339	0					0.1	0					1328.98008637		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	340	1	frame	right	200	0	0.1	1	right	208.648328293	9.83276881314	1.0	202.460502274	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	341	0					0.1	1	right	220.713531859	-12.8355175619	1.0	438.224845566	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	342	1	sound	left			0.1	0					1335.28672531		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	343	0					0.1	0					1336.42335515		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	344	1	sound	right			0.1	0					1336.6409326		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	345	0					0.1	1	right	179.973161613	-19.4802490586	1.0	497.848591767	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	346	0					0.1	1	right	206.942974674	2.42927212487	1.0	637.735958211	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	347	0					0.1	1	right	214.363159502	-15.9214639746	1.0	481.347375549	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	348	0					0.1	1	right	184.555668184	9.43140701797	1.0	502.43098475	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	349	0					0.1	1	left	-186.963812043	-23.8272850014	1.0	1335.20094212		nogo	0
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	350	1	sound	right			0.1	1	right	193.27840274	1.93768993609	1.0	532.774910331	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	351	0					0.1	1	right	218.166567431	20.9718939302	1.0	454.023026861	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	352	0					0.1	1	right	216.315638223	16.3567926405	1.0	579.383364879	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	353	0					0.1	1	left	-195.143167441	-18.3098030874	1.0	506.733410992	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	354	1	sound	right			0.1	1	right	205.326123624	-16.5968579888	1.0	488.571507856	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	355	1	frame	left	-200	0	0.1	0					1336.38709225		nogo	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	356	0					0.1	1	right	198.683102141	-0.740225141425	1.0	368.14644374	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	357	0					0.1	1	left	-216.383602425	14.4222083166	1.0	502.884466201	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	358	1	frame	right	200	0	0.1	1	right	176.033419386	15.8879012663	1.0	428.810117766	 	go	1
+SPC509	2015_Apr_24_1501	LL-Kramer	ns	cueing_effect	359	1	sound	right			0.1	0					1336.99498419		nogo	1

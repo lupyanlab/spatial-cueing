@@ -1,0 +1,6 @@
+subj_id	date	computer	experimenter	part	trial_ix	cue_present	cue_type	cue_loc	cue_pos_x	cue_pos_y	mask_flicker	target_present	target_loc	target_pos_x	target_pos_y	target_opacity	target_duration	rt	key	response	is_correct
+SPC504	2015_Apr_24_1308	LL-George	wr	practice	0	0					False	1	right	205.737716913	20.6550176723	0.6	0.083	1085.08263182		nogo	0
+SPC504	2015_Apr_24_1308	LL-George	wr	practice	1	0					False	1	left	-191.04392277	3.66048508857	0.6	0.083	1081.16273143		nogo	0
+SPC504	2015_Apr_24_1308	LL-George	wr	practice	2	0					False	1	left	-206.852267707	17.297169992	0.6	0.083	1087.01489445		nogo	0
+SPC504	2015_Apr_24_1308	LL-George	wr	practice	3	0					False	0					0.083	1085.13874043		nogo	1
+SPC504	2015_Apr_24_1308	LL-George	wr	practice	4	0					False	1	left	-181.858230952	-6.72700268974	0.6	0.083	2398.82391985		nogo	0

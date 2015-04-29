@@ -1,0 +1,371 @@
+subj_id	date	computer	experimenter	part	trial_ix	cue_present	cue_type	cue_loc	cue_pos_x	cue_pos_y	mask_flicker	target_present	target_loc	target_pos_x	target_pos_y	target_opacity	target_duration	rt	key	response	is_correct
+SPC402	2015_Apr_23_1309	LL-George	ao	practice	0	0					False	1	left	-187.293745885	19.4561103937	0.6	0.083	874.531742418	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	practice	1	0					False	1	left	-210.698230049	17.9631813418	0.6	0.083	0.0	 	go	0
+SPC402	2015_Apr_23_1309	LL-George	ao	practice	2	0					False	1	right	213.122909303	18.7471386446	0.6	0.083	669.138736208	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	practice	3	0					False	1	left	-180.159173933	11.9102405117	0.6	0.083	1087.31382003		nogo	0
+SPC402	2015_Apr_23_1309	LL-George	ao	practice	4	0					False	1	left	-219.455037859	-21.706652073	0.6	0.083	572.76322809	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	practice	5	0					False	1	left	-204.779745947	22.7554645268	0.6	0.083	476.821918157	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	practice	6	0					False	1	left	-184.051802522	-12.8722871615	0.6	0.083	469.677450135	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	practice	7	0					False	1	left	-206.733090951	15.3255164461	0.6	0.083	347.664809204	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	practice	8	0					False	1	right	206.976433219	2.68826983714	0.6	0.083	337.566032773	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	practice	9	0					False	1	right	198.145386593	5.40749240413	0.6	0.083	403.262721142	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	0	1	frame	left	-200	0	False	1	left	-181.560921424	-14.1624466603	0.6	0.083	0.0	 	go	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	1	0					False	1	left	-183.832016156	-0.277090877698	0.6	0.083	324.281913461	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	2	1	frame	left	-200	0	False	1	left	-200.071606669	7.5574675546	0.6	0.083	86.291033891	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	3	0					False	0					0.083	843.723836704	 	go	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	4	0					False	1	left	-207.436070293	11.7079354599	0.6	0.083	381.955102319	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	5	1	frame	left	-200	0	False	1	left	-206.336099106	-3.55220683828	0.6	0.083	41.749774944	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	6	0					False	1	left	-197.60253462	-3.03936796501	0.6	0.083	455.409783754	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	7	1	frame	left	-200	0	False	0					0.083	1086.08676994		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	8	1	frame	left	-200	0	False	1	left	-184.544250746	-17.8622479433	0.6	0.083	590.404365445	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	9	0					False	1	right	187.908234025	21.0734970458	0.6	0.083	477.942985832	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	10	0					False	1	left	-197.911043601	-14.8674900151	0.6	0.083	411.518721958	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	11	1	sound	left			False	0					0.083	408.074840438	 	go	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	12	1	sound	left			False	1	left	-185.823066058	21.3958289214	0.6	0.083	376.772960881	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	13	1	sound	right			False	1	right	216.022725149	4.40243864036	0.6	0.083	359.625430661	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	14	0					False	1	right	190.996116574	-9.78741750947	0.6	0.083	578.940284904	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	15	1	sound	left			False	1	left	-209.472996765	-0.0134722362529	0.6	0.083	341.604736634	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	16	1	frame	right	200	0	False	0					0.083	998.454268905	 	go	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	17	1	sound	left			False	1	left	-183.061569194	-22.2513542582	0.6	0.083	392.197633511	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	18	1	sound	left			False	1	left	-177.317980472	5.92651752829	0.6	0.083	294.020422734	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	19	1	frame	left	-200	0	False	1	left	-198.100103613	10.1189691359	0.6	0.083	1082.7074314		nogo	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	20	0					False	1	left	-200.510132555	2.31755575988	0.6	0.083	302.137436229	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	21	0					False	1	left	-200.568795041	0.0410802668519	0.6	0.083	344.389619539	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	22	1	sound	right			False	0					0.083	1079.20707471		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	23	1	sound	left			False	0					0.083	1085.66394006		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	24	0					False	1	left	-214.042156964	10.2724591213	0.6	0.083	392.235772568	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	25	0					False	1	right	194.771945214	-21.7275587748	0.6	0.083	303.776314599	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	26	1	frame	left	-200	0	False	1	left	-201.709210533	-3.76796873464	0.6	0.083	427.557286457	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	27	1	sound	left			False	1	left	-209.145412169	3.69371668064	0.6	0.083	369.464935036	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	28	0					False	1	left	-220.580352534	-13.8706183519	0.6	0.083	428.061528481	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	29	1	sound	right			False	1	right	210.13293589	16.9315988991	0.6	0.083	331.603508093	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	30	1	sound	left			False	1	left	-216.844770946	2.7476809981	0.6	0.083	274.296674062	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	31	1	frame	right	200	0	False	1	right	213.729333953	-1.00246393864	0.6	0.083	379.37888375	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	32	1	sound	right			False	1	right	220.83638721	20.1788556764	0.6	0.083	293.046777137	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	33	1	frame	left	-200	0	False	1	left	-203.205972796	4.94591449363	0.6	0.083	409.425475867	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	34	0					False	1	right	201.012185235	4.08263469715	0.6	0.083	343.452279456	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	35	1	frame	right	200	0	False	1	right	216.039565975	1.28941359151	0.6	0.083	369.580085506	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	36	0					False	1	left	-221.965757681	9.15097672992	0.6	0.083	337.720789248	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	37	1	sound	left			False	1	left	-188.609174673	-9.80109166721	0.6	0.083	359.405031078	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	38	1	sound	left			False	1	left	-206.536325149	2.05452302763	0.6	0.083	410.367949982	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	39	0					False	1	left	-202.9687971	18.1106826757	0.6	0.083	612.376116915	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	40	0					False	1	left	-189.33317176	2.030829717	0.6	0.083	371.243900969	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	41	1	frame	left	-200	0	False	1	left	-214.710762327	-2.4290218708	0.6	0.083	359.149426222	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	42	1	sound	right			False	1	right	179.796671791	-15.2141460413	0.6	0.083	273.250050843	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	43	0					False	1	right	192.228704059	8.69567783383	0.6	0.083	372.399807093	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	44	1	sound	right			False	1	right	221.948139637	0.411685196823	0.6	0.083	341.712185997	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	45	0					False	1	left	-178.717609922	-5.37876097219	0.6	0.083	418.472128222	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	46	1	frame	right	200	0	False	1	right	207.739744645	20.6608272824	0.6	0.083	357.193700504	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	47	1	frame	left	-200	0	False	1	left	-195.909695621	-18.4533198838	0.6	0.083	308.033584384	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	48	1	sound	right			False	1	right	189.66111891	-3.25026379239	0.6	0.083	342.935568886	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	49	0					False	1	left	-212.504762963	-8.27582899562	0.6	0.083	324.149893713	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	50	0					False	1	right	207.762351483	22.3122158779	0.6	0.083	339.484719676	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	51	0					False	0					0.083	1085.25834605		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	52	1	frame	left	-200	0	False	1	left	-202.840348574	9.62289411987	0.6	0.083	583.140712813	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	53	1	frame	left	-200	0	False	1	left	-196.478674695	-1.99309065047	0.6	0.083	373.40132345	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	54	1	frame	left	-200	0	False	1	left	-220.901742582	-22.1732066983	0.6	0.083	337.439147173	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	55	1	sound	left			False	1	left	-191.963491643	-14.8060695523	0.6	0.083	347.857338027	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	56	0					False	1	right	215.684639258	20.876569435	0.6	0.083	474.389821291	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	57	1	sound	right			False	1	right	193.955904912	22.8901931372	0.6	0.083	259.198383428	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	58	1	frame	right	200	0	False	1	right	200.949602892	1.02704568398	0.6	0.083	504.735658062	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	59	1	sound	right			False	1	right	222.01979763	-7.57401935549	0.6	0.083	535.780465929	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	60	0					False	1	right	210.155765876	9.0962272639	0.6	0.083	335.588670452	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	61	0					False	0					0.083	1052.19253618		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	62	1	sound	right			False	0					0.083	1169.78911671		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	63	1	sound	left			False	1	left	-217.984768709	22.423149621	0.6	0.083	361.119454028	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	64	1	sound	left			False	1	left	-220.929283082	20.4666615545	0.6	0.083	278.641956975	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	65	1	sound	right			False	1	right	213.62667023	-2.92915210812	0.6	0.083	279.546658974	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	66	1	sound	right			False	1	right	206.614482014	17.7215063028	0.6	0.083	241.819451912	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	67	1	sound	left			False	1	left	-216.603693823	-20.3207264464	0.6	0.083	272.505973	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	68	0					False	1	right	193.121720034	-3.7738618569	0.6	0.083	361.344254343	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	69	0					False	1	left	-193.855484027	-0.797196758381	0.6	0.083	421.820295393	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	70	1	frame	left	-200	0	False	1	left	-177.185971624	-21.3663293921	0.6	0.083	547.177803004	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	71	0					False	1	right	179.878867165	-20.5312470394	0.6	0.083	377.338445396	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	72	0					False	1	left	-179.793017338	18.2249883815	0.6	0.083	334.029003978	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	73	0					False	1	right	197.072956475	18.4027432257	0.6	0.083	278.907096712	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	74	1	frame	left	-200	0	False	1	left	-221.795611956	13.9288910121	0.6	0.083	250.903510023	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	75	1	sound	right			False	1	right	180.91030426	-4.59431176819	0.6	0.083	367.954409216	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	76	1	frame	left	-200	0	False	0					0.083	1085.44574084		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	77	1	sound	left			False	1	left	-188.865992802	5.39800227928	0.6	0.083	346.087540034	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	78	1	frame	left	-200	0	False	1	left	-187.087524775	-22.48122057	0.6	0.083	777.909064083	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	79	1	frame	right	200	0	False	1	right	197.158667166	-2.07221349294	0.6	0.083	0.0	 	go	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	80	1	frame	right	200	0	False	1	right	213.284274866	19.4856176033	0.6	0.083	1081.41547162		nogo	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	81	0					False	1	right	179.856968401	20.9985471879	0.6	0.083	413.701081648	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	82	1	frame	left	-200	0	False	1	left	-195.696663473	20.642121399	0.6	0.083	473.385004327	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	83	1	sound	right			False	1	right	183.592684699	-3.26371842978	0.6	0.083	369.303210871	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	84	1	frame	right	200	0	False	0					0.083	1081.35239559		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	85	1	sound	left			False	1	left	-213.124488682	-14.1864769433	0.6	0.083	361.262842081	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	86	1	frame	left	-200	0	False	1	left	-185.349538406	-18.4748278422	0.6	0.083	950.757004786	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	87	1	frame	right	200	0	False	1	right	221.668981623	-18.68671039	0.6	0.083	468.878730666	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	88	1	frame	right	200	0	False	1	right	195.742309305	-7.18627502406	0.6	0.083	440.1035622	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	89	1	frame	right	200	0	False	1	right	182.206559952	-4.71237820599	0.6	0.083	0.0	 	go	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	90	1	sound	left			False	1	left	-184.200917012	14.1410077536	0.6	0.083	355.309485458	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	91	0					False	1	left	-205.26958498	-12.9983777363	0.6	0.083	418.355510803	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	92	1	sound	left			False	1	left	-213.364279331	11.6809957572	0.6	0.083	291.186032351	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	93	1	frame	right	200	0	False	1	right	205.01715617	10.0813293812	0.6	0.083	0.0	 	go	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	94	0					False	1	left	-211.604215012	15.2297947193	0.6	0.083	0.0	 	go	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	95	0					False	1	right	222.001916366	-4.270378223	0.6	0.083	338.037269888	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	96	1	frame	right	200	0	False	1	right	189.681325135	-4.73396393385	0.6	0.083	477.368333261	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	97	1	sound	right			False	1	right	202.214542001	9.81869290282	0.6	0.083	286.157547147	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	98	1	frame	right	200	0	False	1	right	199.594436721	10.2756189756	0.6	0.083	305.428028223	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	99	1	sound	right			False	1	right	176.778250996	3.88985726972	0.6	0.083	263.329501147	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	100	1	sound	right			False	1	right	207.645399056	-1.6064547553	0.6	0.083	0.0	 	go	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	101	1	frame	right	200	0	False	0					0.083	602.432830376	 	go	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	102	1	sound	right			False	1	right	218.236380633	3.36073484558	0.6	0.083	354.466759367	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	103	1	sound	right			False	1	right	182.307803108	15.0195890036	0.6	0.083	262.730278191	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	104	0					False	1	left	-177.46031751	-20.9712015595	0.6	0.083	542.035267688	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	105	0					False	1	left	-184.749583744	-11.6601402716	0.6	0.083	435.364787001	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	106	1	sound	left			False	1	left	-215.564945219	-6.11080749718	0.6	0.083	332.661499502	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	107	0					False	0					0.083	1085.31848842		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	108	1	frame	left	-200	0	False	1	left	-205.614303314	-3.70761960024	0.6	0.083	431.415563333	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	109	0					False	1	right	215.248238263	-8.30769000966	0.6	0.083	394.359456841	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	110	1	sound	right			False	1	right	210.370826752	-16.8592303458	0.6	0.083	287.306118989	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	111	1	sound	right			False	1	right	221.708439117	-1.68214128489	0.6	0.083	279.747988912	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	112	0					False	1	left	-199.71515014	6.46172957238	0.6	0.083	478.356647654	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	113	1	sound	left			False	1	left	-200.521834946	11.575245071	0.6	0.083	273.90941605	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	114	1	frame	left	-200	0	False	1	left	-214.614043695	-20.4311173749	0.6	0.083	484.780141385	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	115	0					False	0					0.083	1085.57996084		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	116	0					False	1	right	196.21394479	-8.83026574935	0.6	0.083	169.515909278	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	117	1	frame	right	200	0	False	0					0.083	1078.76444189		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	118	1	sound	right			False	1	right	207.738329599	5.51916181418	0.6	0.083	245.916097774	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	119	0					False	1	right	222.408135431	-8.78749120046	0.6	0.083	387.592711719	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	120	1	sound	right			False	1	right	188.273312108	-14.2065972896	0.6	0.083	263.887651265	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	121	0					False	1	left	-180.424200771	17.620324131	0.6	0.083	385.810445296	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	122	1	frame	right	200	0	False	0					0.083	1083.27731665		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	123	0					False	1	left	-180.184709683	0.635424320663	0.6	0.083	329.970863997	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	124	1	sound	left			False	1	left	-208.308845718	-16.0100471487	0.6	0.083	413.965121028	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	125	1	frame	right	200	0	False	1	right	185.453977748	21.5096382696	0.6	0.083	544.022898073	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	126	1	frame	left	-200	0	False	1	left	-194.516870619	-22.5384024653	0.6	0.083	562.953794957	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	127	1	sound	left			False	1	left	-219.464399814	5.92641434397	0.6	0.083	529.030223377	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	128	1	sound	left			False	0					0.083	1081.13749675		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	129	1	frame	right	200	0	False	1	right	180.557028693	-3.36482860088	0.6	0.083	359.590225387	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	130	1	sound	left			False	1	left	-190.592752735	-15.35926836	0.6	0.083	417.798094102	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	131	0					False	0					0.083	1085.55942448		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	132	1	sound	right			False	0					0.083	1078.52863998		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	133	1	frame	right	200	0	False	1	right	211.451775558	-6.18438731885	0.6	0.083	369.27093938	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	134	0					False	1	left	-184.351050193	14.6011558286	0.6	0.083	397.947826539	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	135	1	sound	left			False	1	left	-209.453196215	-14.6508992406	0.6	0.083	352.017426514	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	136	1	frame	left	-200	0	False	1	left	-218.66256044	-3.88017448445	0.6	0.083	363.850062247	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	137	1	frame	left	-200	0	False	1	left	-178.734755507	14.5906391056	0.6	0.083	478.709800518	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	138	1	frame	right	200	0	False	1	right	185.854187621	-22.8011170455	0.6	0.083	328.947344213	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	139	0					False	1	right	214.151073709	-13.5988305838	0.6	0.083	400.580886868	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	140	1	sound	left			False	1	left	-193.033999366	18.2051550164	0.6	0.083	335.038221558	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	141	1	sound	right			False	1	right	218.513226742	21.4397574111	0.6	0.083	259.057562449	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	142	0					False	1	left	-218.001602441	-6.95420439298	0.6	0.083	459.285663208	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	143	1	sound	right			False	1	right	184.467386393	16.3339110528	0.6	0.083	309.134848998	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	144	1	sound	left			False	1	left	-207.672941279	20.984616413	0.6	0.083	275.058354484	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	145	0					False	1	right	187.917788651	-23.5541347377	0.6	0.083	406.372152618	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	146	1	sound	right			False	0					0.083	1085.46921099		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	147	0					False	1	left	-190.776130053	17.2385308853	0.6	0.083	384.272048599	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	148	1	sound	right			False	1	right	199.029413631	13.7315097873	0.6	0.083	376.841171063	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	149	1	sound	left			False	1	left	-207.625386457	0.95989081401	0.6	0.083	278.820183594	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	150	0					False	1	left	-197.884638279	-18.9883310864	0.6	0.083	392.372926348	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	151	0					False	1	left	-188.053740113	9.23368832219	0.6	0.083	960.772168706	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	152	1	sound	left			False	1	left	-194.112904422	-10.903043526	0.6	0.083	1080.69303026		nogo	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	153	1	frame	left	-200	0	False	1	left	-202.700037879	-21.2423094855	0.6	0.083	1003.0918289	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	154	1	sound	left			False	1	left	-178.58307463	-5.57512141145	0.6	0.083	375.108045293	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	155	1	sound	right			False	1	right	204.615437953	-11.9515555896	0.6	0.083	366.153806681	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	156	0					False	1	left	-196.336436648	-19.6775459553	0.6	0.083	280.861722189	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	157	1	sound	left			False	1	left	-208.460085681	5.22820670005	0.6	0.083	245.984307956	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	158	0					False	0					0.083	1081.36816451		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	159	0					False	1	right	183.535695233	21.1582195954	0.6	0.083	399.17084272	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	160	0					False	1	left	-179.984441679	16.5308940204	0.6	0.083	352.440989926	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	161	1	frame	right	200	0	False	1	right	222.643554445	-16.7479250249	0.6	0.083	801.713322755	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	162	0					False	1	right	188.80140491	-8.4776859632	0.6	0.083	0.0	 	go	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	163	1	sound	right			False	1	right	184.827455857	-20.2044287906	0.6	0.083	234.336133231	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	164	0					False	0					0.083	1086.02296049		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	165	0					False	1	right	219.573546439	13.387641586	0.6	0.083	349.09722337	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	166	1	frame	right	200	0	False	1	right	221.510446005	8.1652583366	0.6	0.083	384.84670117	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	167	0					False	0					0.083	1081.45654446		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	168	0					False	1	left	-200.632756192	3.18001631123	0.6	0.083	304.266254418	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	169	0					False	0					0.083	1083.76468939		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	170	1	frame	left	-200	0	False	1	left	-204.111216248	-6.77998712773	0.6	0.083	339.132666937	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	171	1	frame	right	200	0	False	1	right	220.527346144	4.49308437458	0.6	0.083	415.950184572	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	172	1	frame	right	200	0	False	1	right	200.501719004	3.21233936254	0.6	0.083	418.864153558	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	173	0					False	0					0.083	1093.61666243		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	174	1	frame	right	200	0	False	1	right	187.476094982	-21.6583910369	0.6	0.083	410.975240753	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	175	1	frame	right	200	0	False	0					0.083	1079.05158494		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	176	1	frame	left	-200	0	False	1	left	-202.759143113	6.29732042805	0.6	0.083	547.791328048	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	177	1	frame	right	200	0	False	1	right	213.217723366	9.92319635886	0.6	0.083	436.051656376	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	178	1	sound	right			False	1	right	189.030402201	16.8495325641	0.6	0.083	238.411875907	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	179	0					False	1	left	-219.769305265	19.7807194981	0.6	0.083	294.234221336	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	180	1	sound	left			False	1	left	-185.659912628	13.5185597403	0.6	0.083	268.646596	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	181	0					False	1	right	205.081910992	-0.64420162041	0.6	0.083	597.423047991	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	182	1	sound	left			False	1	left	-177.494646026	13.7263340542	0.6	0.083	274.329312262	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	183	1	sound	left			False	1	left	-207.008086623	-10.0809431737	0.6	0.083	255.669789272	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	184	1	frame	right	200	0	False	1	right	195.188136594	18.6210888131	0.6	0.083	489.04107837	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	185	0					False	1	left	-178.249466856	-6.94597027223	0.6	0.083	314.006744069	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	186	0					False	1	right	187.7447905	21.2110831353	0.6	0.083	0.0	 	go	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	187	1	sound	left			False	1	left	-183.62596262	-7.59023903703	0.6	0.083	253.170949058	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	188	0					False	1	right	188.459025824	12.2341242347	0.6	0.083	431.410796009	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	189	1	frame	right	200	0	False	1	right	187.398228816	-17.6345983289	0.6	0.083	261.029423913	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	190	0					False	1	right	176.880522886	-8.29788095931	0.6	0.083	202.262671664	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	191	1	sound	left			False	1	left	-211.702274972	13.420977671	0.6	0.083	216.079637175	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	192	1	frame	left	-200	0	False	0					0.083	1083.73241802		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	193	0					False	1	right	189.213264692	9.60206967563	0.6	0.083	335.858944338	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	194	1	frame	left	-200	0	False	1	left	-206.30022179	-3.86739122286	0.6	0.083	411.520555615	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	195	1	sound	left			False	1	left	-208.304221162	-21.6215353217	0.6	0.083	324.038410443	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	196	1	sound	left			False	0					0.083	447.804346797	 	go	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	197	0					False	1	right	195.78033733	-10.9751871847	0.6	0.083	0.0	 	go	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	198	0					False	1	left	-213.498352756	-3.05834599478	0.6	0.083	399.211548851	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	199	1	frame	left	-200	0	False	1	left	-199.990155864	-2.48674960062	0.6	0.083	343.957255012	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	200	1	frame	right	200	0	False	1	right	216.299466334	-21.6498438496	0.6	0.083	354.945697705	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	201	1	frame	left	-200	0	False	1	left	-223.490237539	-12.1199931641	0.6	0.083	275.382169639	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	202	0					False	1	left	-187.24450571	21.090420182	0.6	0.083	0.0	 	go	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	203	1	sound	left			False	1	left	-191.576289612	-0.70612841347	0.6	0.083	250.917078811	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	204	1	frame	left	-200	0	False	1	left	-191.791766608	-6.23500742626	0.6	0.083	504.066757974	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	205	1	frame	left	-200	0	False	1	left	-217.270406546	-0.109766301175	0.6	0.083	325.754300342	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	206	1	sound	right			False	0					0.083	1078.8044146		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	207	0					False	1	left	-219.729281051	0.158853686285	0.6	0.083	451.027095201	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	208	1	sound	right			False	1	right	217.774665133	-18.9486205359	0.6	0.083	281.206807122	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	209	1	sound	left			False	1	left	-217.992359344	-13.4761595476	0.6	0.083	253.279498662	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	210	1	frame	right	200	0	False	0					0.083	1079.39336938		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	211	1	sound	left			False	0					0.083	1080.91746387		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	212	1	sound	right			False	1	right	192.352327939	-1.20653089689	0.6	0.083	222.491029068	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	213	1	frame	left	-200	0	False	0					0.083	820.7872411	 	go	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	214	1	frame	left	-200	0	False	1	left	-186.309449305	11.9581037769	0.6	0.083	351.032412727	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	215	1	sound	left			False	1	left	-194.719839868	-5.24887900335	0.6	0.083	313.021363341	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	216	0					False	1	right	189.830706647	-19.5753099364	0.6	0.083	1079.2998554		nogo	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	217	1	sound	right			False	1	right	182.079116779	2.86422767488	0.6	0.083	187.845382839	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	218	1	sound	right			False	1	right	219.243891134	-4.38614354124	0.6	0.083	253.082569223	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	219	1	frame	left	-200	0	False	1	left	-177.220708195	-20.5063594923	0.6	0.083	384.379864787	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	220	1	frame	left	-200	0	False	0					0.083	0.0	 	go	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	221	0					False	1	left	-220.796892489	4.10293493769	0.6	0.083	768.675383646	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	222	1	sound	right			False	1	right	194.772303388	-13.1160624653	0.6	0.083	302.822105237	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	223	1	frame	left	-200	0	False	1	left	-190.645522874	4.88804879273	0.6	0.083	325.440753368	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	224	1	sound	left			False	1	left	-206.488666113	14.9124481652	0.6	0.083	387.100204825	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	225	1	sound	left			False	1	left	-192.873448656	8.6214041895	0.6	0.083	327.230721014	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	226	1	frame	left	-200	0	False	1	left	-187.336864473	-3.15053737744	0.6	0.083	371.211262769	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	227	0					False	1	right	191.301474447	16.9897009942	0.6	0.083	366.586171323	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	228	1	sound	right			False	1	right	178.174252965	10.7486132901	0.6	0.083	298.192613176	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	229	1	frame	left	-200	0	False	1	left	-202.352067934	-1.27282119989	0.6	0.083	382.498216815	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	230	0					False	1	right	221.062216135	-20.2131386523	0.6	0.083	1085.63716942		nogo	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	231	1	frame	left	-200	0	False	0					0.083	685.628001462	 	go	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	232	1	frame	left	-200	0	False	1	left	-222.285587277	-13.123220931	0.6	0.083	394.025006681	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	233	1	frame	right	200	0	False	1	right	195.165563135	-2.00390331567	0.6	0.083	0.0	 	go	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	234	1	frame	left	-200	0	False	1	left	-182.225199715	-12.7286803802	0.6	0.083	0.0	 	go	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	235	1	sound	left			False	1	left	-195.160948578	-10.1738612735	0.6	0.083	250.80779579	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	236	1	sound	right			False	1	right	199.26723383	-19.6671720043	0.6	0.083	251.1451795	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	237	0					False	1	left	-196.422729913	-7.05753307597	0.6	0.083	430.34400302	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	238	1	sound	left			False	1	left	-212.119792899	18.47840757	0.6	0.083	380.980723188	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	239	1	frame	right	200	0	False	1	right	176.456366521	-4.07246808785	0.6	0.083	423.54828713	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	240	0					False	1	right	189.870147046	-23.026865523	0.6	0.083	352.19198605	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	241	1	frame	left	-200	0	False	1	left	-203.981272053	22.4896263242	0.6	0.083	436.153971707	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	242	0					False	1	left	-222.722479976	-4.46566606023	0.6	0.083	417.798094102	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	243	1	frame	right	200	0	False	1	right	186.178521668	19.1440951311	0.6	0.083	412.284069811	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	244	1	sound	right			False	0					0.083	1085.15089669		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	245	1	frame	left	-200	0	False	1	left	-218.489184951	-11.5165606076	0.6	0.083	419.604564202	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	246	1	frame	right	200	0	False	1	right	200.212706403	18.9346228102	0.6	0.083	457.031792845	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	247	1	sound	right			False	1	right	203.280952791	-8.10056367188	0.6	0.083	302.488022018	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	248	1	frame	right	200	0	False	1	right	208.276525997	18.8554512999	0.6	0.083	375.558746047	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	249	0					False	0					0.083	1080.95560281		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	250	1	frame	left	-200	0	False	1	left	-196.323980541	-13.7580570936	0.6	0.083	335.508358432	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	251	1	sound	right			False	1	right	222.183303449	21.6492099203	0.6	0.083	308.678280795	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	252	1	sound	right			False	1	right	198.564829234	13.6670688546	0.6	0.083	345.070254756	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	253	0					False	1	right	190.681338584	1.42357988111	0.6	0.083	1081.45544422		nogo	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	254	0					False	1	left	-206.39525661	-18.8380202604	0.6	0.083	422.355342074	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	255	1	frame	left	-200	0	False	1	left	-179.808596131	-18.559114613	0.6	0.083	305.986911641	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	256	1	sound	left			False	1	left	-216.334671211	-9.95925568013	0.6	0.083	296.004019328	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	257	0					False	1	left	-190.3089745	-16.5797745182	0.6	0.083	554.658188019	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	258	1	sound	left			False	1	left	-203.270342008	0.222586396109	0.6	0.083	294.849580037	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	259	1	frame	left	-200	0	False	1	left	-195.821075599	-5.68501590136	0.6	0.083	0.0	 	go	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	260	1	frame	right	200	0	False	1	right	213.558915121	5.9742056762	0.6	0.083	368.41061071	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	261	1	sound	left			False	1	left	-197.795432415	4.89282480783	0.6	0.083	349.42910634	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	262	1	frame	right	200	0	False	1	right	221.862886718	-2.8571396564	0.6	0.083	355.047646328	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	263	1	sound	right			False	1	right	204.08984291	3.46270187291	0.6	0.083	341.443012469	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	264	1	sound	left			False	1	left	-194.174733515	-6.9107125454	0.6	0.083	250.741052441	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	265	1	frame	right	200	0	False	1	right	177.076676078	18.1365979999	0.6	0.083	264.297645888	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	266	0					False	1	left	-180.426266914	-11.7138947093	0.6	0.083	254.930478754	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	267	1	frame	right	200	0	False	0					0.083	1081.05388423		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	268	1	frame	right	200	0	False	1	right	193.619333686	14.076833807	0.6	0.083	399.474121397	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	269	1	frame	right	200	0	False	0					0.083	1081.51008573		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	270	1	sound	left			False	1	left	-207.299648328	3.35904765063	0.6	0.083	506.871077232	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	271	1	sound	right			False	1	right	214.960169577	-12.9235259063	0.6	0.083	254.74271737	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	272	0					False	1	right	213.671619002	21.3637928747	0.6	0.083	349.548290833	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	273	1	sound	left			False	0					0.083	1083.89377547		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	274	0					False	1	left	-191.173894821	-10.8128014824	0.6	0.083	438.935554237	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	275	1	frame	left	-200	0	False	0					0.083	1080.84375283		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	276	1	frame	left	-200	0	False	1	left	-201.106281353	15.2309215428	0.6	0.083	278.142115567	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	277	1	sound	left			False	0					0.083	1085.95475019		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	278	0					False	1	left	-182.012129109	15.3502502174	0.6	0.083	492.589842179	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	279	1	sound	right			False	1	right	205.554600909	3.91965022904	0.6	0.083	260.830294108	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	280	1	sound	right			False	1	right	221.470508213	4.72149842589	0.6	0.083	285.084520117	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	281	1	frame	left	-200	0	False	1	left	-217.119620038	20.9669591566	0.6	0.083	492.514297599	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	282	1	sound	right			False	0					0.083	1086.71019657		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	283	0					False	1	right	211.776576145	19.7760347334	0.6	0.083	466.727542458	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	284	1	sound	left			False	0					0.083	1083.61616731		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	285	1	frame	right	200	0	False	0					0.083	1079.46928067		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	286	1	frame	left	-200	0	False	1	left	-197.167101909	16.4605283164	0.6	0.083	592.708843411	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	287	0					False	1	left	-217.543068151	20.615684281	0.6	0.083	537.371303653	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	288	0					False	0					0.083	1082.58531324		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	289	1	sound	left			False	1	left	-210.108700264	-10.350779323	0.6	0.083	251.540505327	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	290	1	sound	left			False	0					0.083	1082.50206744		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	291	0					False	1	left	-183.408298185	11.6602667362	0.6	0.083	326.19803329	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	292	1	sound	left			False	1	left	-184.783876229	-9.89884993934	0.6	0.083	316.082020989	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	293	0					False	1	left	-189.321381375	13.9435822635	0.6	0.083	288.58267644	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	294	1	frame	right	200	0	False	1	right	183.310451334	5.7795321719	0.6	0.083	378.696781816	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	295	0					False	1	right	178.673293234	22.8567709122	0.6	0.083	337.68998459	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	296	1	frame	left	-200	0	False	1	left	-216.35594564	16.4579644713	0.6	0.083	294.489826192	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	297	1	frame	left	-200	0	False	1	left	-208.081538842	20.8531499406	0.6	0.083	249.839284341	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	298	0					False	1	left	-195.841411261	-7.95882692145	0.6	0.083	342.10567805	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	299	1	frame	right	200	0	False	1	right	190.519685575	17.6711178253	0.6	0.083	361.397428904	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	300	0					False	1	right	187.907289931	-9.17108236744	0.6	0.083	360.45348784	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	301	1	sound	right			False	1	right	216.416590417	7.47631987051	0.6	0.083	264.283710509	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	302	1	sound	left			False	1	left	-195.575203142	21.9987172209	0.6	0.083	229.636230622	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	303	1	frame	left	-200	0	False	1	left	-194.737324612	12.3738801577	0.6	0.083	403.939322336	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	304	1	sound	left			False	1	left	-202.749794864	4.04872508809	0.6	0.083	282.79471118	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	305	0					False	1	left	-213.073031305	-18.8634870684	0.6	0.083	425.894204527	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	306	1	frame	right	200	0	False	1	right	189.36436992	22.6648922019	0.6	0.083	267.999332515	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	307	0					False	1	left	-180.535666661	6.51186023589	0.6	0.083	302.165307105	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	308	0					False	1	left	-186.279511897	-6.33209590286	0.6	0.083	269.334198791	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	309	0					False	1	left	-193.516393053	-16.3483021761	0.6	0.083	309.698499972	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	310	1	sound	left			False	0					0.083	1085.8462007		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	311	1	sound	right			False	0					0.083	1080.71063296		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	312	0					False	1	left	-190.490119553	8.66502842621	0.6	0.083	31.4408671111	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	313	1	sound	right			False	0					0.083	0.0	 	go	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	314	1	frame	right	200	0	False	1	right	220.263955096	9.3788729021	0.6	0.083	435.774781625	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	315	1	sound	right			False	1	right	206.943617171	7.94556720166	0.6	0.083	237.767179613	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	316	1	frame	left	-200	0	False	1	left	-206.040766967	-9.34079498963	0.6	0.083	0.0	 	go	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	317	1	frame	right	200	0	False	1	right	180.859785706	20.2897797639	0.6	0.083	306.205477682	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	318	0					False	1	left	-189.314528997	9.89521662377	0.6	0.083	303.089445224	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	319	1	frame	right	200	0	False	1	right	220.600306817	-16.3996406355	0.6	0.083	457.512931549	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	320	0					False	1	right	210.948848685	7.42440593925	0.6	0.083	364.559301641	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	321	1	sound	right			False	1	right	215.425979351	-10.4788643306	0.6	0.083	268.971144571	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	322	0					False	1	right	219.850378275	13.8145703434	0.6	0.083	320.528519107	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	323	1	sound	left			False	1	left	-182.784336315	-11.2515333107	0.6	0.083	280.718334136	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	324	1	frame	right	200	0	False	1	right	182.733585254	-12.2396307436	0.6	0.083	380.699081114	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	325	0					False	1	left	-220.90257878	18.1111711871	0.6	0.083	478.394420003	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	326	1	sound	left			False	0					0.083	1086.0346955		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	327	0					False	1	left	-206.300690665	21.755934971	0.6	0.083	334.964877227	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	328	1	frame	left	-200	0	False	1	left	-186.020063229	19.8019625639	0.6	0.083	419.682675973	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	329	1	frame	left	-200	0	False	1	left	-186.822467099	13.6014547997	0.6	0.083	242.66767886	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	330	1	frame	left	-200	0	False	1	left	-182.087949525	22.5358059727	0.6	0.083	253.034895286	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	331	0					False	1	right	196.313051509	-22.463539062	0.6	0.083	280.832017772	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	332	0					False	0					0.083	987.338940497	 	go	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	333	1	frame	left	-200	0	False	0					0.083	1082.76610682		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	334	1	frame	left	-200	0	False	1	left	-202.510359543	-6.98595038296	0.6	0.083	349.895942723	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	335	1	frame	right	200	0	False	1	right	192.750892345	13.4270878875	0.6	0.083	311.89259456	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	336	1	sound	left			False	1	left	-203.45874467	11.0021692801	0.6	0.083	260.564054362	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	337	0					False	1	right	187.212302967	20.069888837	0.6	0.083	1087.88077161		nogo	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	338	0					False	1	right	206.301265211	-1.73197353654	0.6	0.083	294.483591919	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	339	0					False	0					0.083	1083.33599207		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	340	0					False	1	right	203.646540355	-12.6380246533	0.6	0.083	328.096550424	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	341	1	sound	left			False	1	left	-199.679767885	15.1959417882	0.6	0.083	312.196239945	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	342	0					False	1	right	222.286954467	12.6358650538	0.6	0.083	294.436284807	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	343	0					False	0					0.083	798.532380606	 	go	0
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	344	1	frame	left	-200	0	False	1	left	-202.380984435	22.1965952007	0.6	0.083	243.452462717	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	345	0					False	0					0.083	1078.82678462		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	346	1	sound	right			False	1	right	177.717662025	-16.1830631286	0.6	0.083	340.04910395	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	347	0					False	1	right	221.499687976	15.7157885566	0.6	0.083	670.86306063	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	348	1	sound	left			False	0					0.083	1079.33396043		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	349	0					False	1	right	184.946382799	20.1439065575	0.6	0.083	363.142656512	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	350	1	frame	right	200	0	False	0					0.083	1085.8355657		nogo	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	351	0					False	1	right	182.691791319	9.71527858294	0.6	0.083	495.089415926	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	352	1	sound	left			False	1	left	-209.096456992	-11.5259214069	0.6	0.083	412.461196305	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	353	0					False	1	right	194.891500425	15.0675155533	0.6	0.083	435.983079486	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	354	1	sound	left			False	1	left	-218.969040318	-11.5563716147	0.6	0.083	280.934332986	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	355	1	frame	left	-200	0	False	1	left	-204.635064622	-15.4044466459	0.6	0.083	557.136858697	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	356	0					False	1	right	212.72948471	9.53861907433	0.6	0.083	455.49926383	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	357	0					False	1	left	-222.750666622	-4.73097092523	0.6	0.083	403.931621113	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	358	1	sound	right			False	1	right	197.087167434	-19.4015792141	0.6	0.083	266.732676537	 	go	1
+SPC402	2015_Apr_23_1309	LL-George	ao	cueing_effect	359	0					False	1	left	-190.318339401	19.0149602113	0.6	0.083	448.903777753	 	go	1

@@ -37,9 +37,8 @@ texts:
             It's harder than it sounds because in the experiment the
             target will appear very briefly, and you don't know which
             side it will be on. Because of how briefly the target
-            will be visible, you will do the best if you try to observer
-            both locations by staring in the middle of the screen,
-            directly where the "+" appears.
+            will be visible, you will do the best if you stare in 
+            the middle of the screen, directly where the "+" appears.
         footer: Press the SPACEBAR to see the last page of instructions.
     practice:
         visuals: [title, body, footer]
