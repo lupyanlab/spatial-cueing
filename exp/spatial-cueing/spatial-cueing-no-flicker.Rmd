@@ -1,0 +1,100 @@
+---
+title: "Spatial cueing: Effect of flicker at 750 msec delay"
+author: "Pierce Edmiston"
+date: "April 28, 2015"
+output: html_document
+---
+
+```{r, get-spatial-cueing, message = FALSE}
+source("R/loaders.R")
+cueing <- get_spatial_cueing(interval = 0.750, flicker = c("on", "off"))
+cueing %>% group_by(interval, flicker, subj_id) %>%
+  summarize(num_trials = n(),
+            mean_acc = mean(is_correct))
+```
+
+# Cueing effect in accuracies
+```{r, summarize-accuracies-for-plot, fig.width = 10}
+cueing_by_subj <- cueing %>% group_by(flicker, subj_id, cue_type) %>%
+  summarize(accuracy = mean(is_correct))
+
+source("R/recoders.R")
+cueing_by_subj$cue_type_int <- recode_cue_type_as_int(cueing_by_subj)
+cueing_by_subj$cue_type_jit <- jitter_cue_type_int_by_subj(cueing_by_subj)
+cueing_by_subj$flicker_lab <- label_flicker(cueing_by_subj)
+
+library(ggplot2)
+library(scales)
+
+scale_cue_type_int <- scale_x_continuous("Cue Type",
+    breaks = c(-1, 0, 1),
+    labels = c("frame", "no cue", "sound"))
+by_subj_point_shape <- 1
+by_subj_line_size <- 0.3
+
+plot_acc_by_subj <- ggplot(cueing_by_subj,
+    aes(x = cue_type_int, y = accuracy)) +
+  geom_point(aes(x = cue_type_jit, color = subj_id), shape = by_subj_point_shape) + 
+  geom_line(aes(x = cue_type_jit, color = subj_id), size = by_subj_line_size) +
+  facet_wrap("flicker_lab", nrow = 1) +
+  scale_cue_type_int +
+  scale_y_continuous("Accuracy", labels = percent) +
+  theme(legend.position = "none")
+plot_acc_by_subj
+```
+
+```{r, fit-glmer-model}
+source("R/recoders.R")
+cueing <- set_treatment_contrasts(cueing)
+cueing$flicker_c <- recode_flicker_as_centered_num(cueing)
+
+library(lme4)
+accuracy_mod <- glmer(data = cueing, family = "binomial",
+  formula = is_correct ~ (frame_v_nocue + sound_v_nocue) * flicker_c +
+              (frame_v_nocue + sound_v_nocue || subj_id))
+summary(accuracy_mod)
+```
+
+```{r, summarize-rts-for-plot, fig.width = 10}
+source("R/recoders.R")
+cueing$trial_type <- determine_trial_type(cueing)
+hit_trials <- filter(cueing, trial_type == 'hit')
+
+rts_by_subj <- hit_trials %>% group_by(flicker, subj_id, cue_type) %>%
+  summarize(rt = mean(rt))
+
+rts_by_subj$cue_type_int <- recode_cue_type_as_int(rts_by_subj)
+rts_by_subj$cue_type_jit <- jitter_cue_type_int_by_subj(rts_by_subj)
+rts_by_subj$flicker_lab <- label_flicker(rts_by_subj)
+
+plot_rts_by_subj <- ggplot(rts_by_subj,
+    aes(x = cue_type_int, y = rt)) +
+  geom_point(aes(x = cue_type_jit, color = subj_id), shape = by_subj_point_shape) +
+  geom_line(aes(x = cue_type_jit, color = subj_id), shape = by_subj_line_size) +
+  facet_wrap("flicker_lab", nrow = 1) +
+  scale_cue_type_int +
+  scale_y_continuous("Response Time (ms)") +
+  theme(legend.position = "none")
+plot_rts_by_subj
+```
+
+Note the outliers.
+```{r}
+rts_by_subj %>% filter(flicker == "off", rt[cue_type == "frame"] > 450)
+```
+
+```{r, fit-lmer-model}
+rt_mod <- lmer(rt ~ (frame_v_nocue + sound_v_nocue) * flicker_c +
+                     (frame_v_nocue + sound_v_nocue || subj_id),
+                   data = hit_trials)
+summary(rt_mod)
+```
+
+```{r}
+rt_mod_flicker_off <- lmer(rt ~ frame_v_nocue + sound_v_nocue + 
+                             (frame_v_nocue + sound_v_nocue || subj_id),
+                           data = filter(hit_trials, 
+                                         flicker == "off", 
+                                         !(subj_id %in% c("SPC408", "SPC413"))))
+summary(rt_mod_flicker_off)
+```

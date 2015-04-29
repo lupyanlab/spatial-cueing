@@ -1,4 +1,5 @@
 library(dplyr)
+library(purrr)
 
 #' Compile the raw data files into a data.frame.
 #' Assumes all data files have their own headers.
@@ -10,12 +11,29 @@ compile <- function(data_directory, pattern) {
               row.names = NULL, stringsAsFactors = FALSE)
 }
 
-get_spatial_cueing <- function() {
-  status <- 'Compiling raw data...'
-  print(status)
-  
-  spatial_cueing <- compile(data_directory = "data", pattern = "SPC3?_3")
-  
+get_spatial_cueing <- function(interval = 0.750, flicker = "on") {  
+  # compile data files matching correct_pattern and add columns for between
+  # subjects variables interval and flicker
+  compile_experiment <- function(regex_pattern, interval, flicker) {
+    spatial_cueing <- compile(data_directory = "data", pattern = as.character(regex_pattern))
+    spatial_cueing <- mutate(spatial_cueing, interval = interval, flicker = flicker)
+    spatial_cueing
+  }
+
+  pattern_matcher <- data_frame(
+    interval = c(0.750, 0.750, 0.200), 
+    flicker = c("on", "off", "on"),
+    regex_pattern = c("SPC3?_3", "SPC4", "SPC5")
+  )
+  correct_patterns <- pattern_matcher[(pattern_matcher$interval %in% interval & 
+                                       pattern_matcher$flicker %in% flicker), ]
+
+  print('Compiling raw data...')
+  spatial_cueing <- correct_patterns %>%
+    split(.$regex_pattern) %>%
+    map(~ compile_experiment(.$regex_pattern, .$interval, .$flicker)) %>%
+    rbind_all(.)
+
   # recode variables
   source("R/recoders.R")
   print('Recoding variables...')
