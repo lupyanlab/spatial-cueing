@@ -43,8 +43,8 @@ class SpatialCueingExperiment(ioHubExperimentRuntime):
         self.subj_info, self.data_file = enter_subj_info(
             exp_name = 'spatial-cueing-final',
             options = subj_info_fields,
-            exp_dir = './spatial-cueing/',
-            data_dir = './spatial-cueing/data/')
+            exp_dir = './',
+            data_dir = './data/')
 
         # Set the structure of data file
         # ------------------------------

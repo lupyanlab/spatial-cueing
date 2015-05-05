@@ -15,7 +15,7 @@ get_spatial_cueing <- function(interval = 0.750, flicker = "on") {
   # compile data files matching correct_pattern and add columns for between
   # subjects variables interval and flicker
   compile_experiment <- function(regex_pattern, interval, flicker) {
-    spatial_cueing <- compile(data_directory = "data", pattern = as.character(regex_pattern))
+    spatial_cueing <- compile(data_directory = "../exp/data", pattern = as.character(regex_pattern))
     spatial_cueing <- mutate(spatial_cueing, interval = interval, flicker = flicker)
     spatial_cueing
   }
