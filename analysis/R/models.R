@@ -17,16 +17,6 @@ center_flicker <- function(flicker) {
 }
 
 center_interval <- function(interval) {
-  recode(interval, "0.75=-0.5; 0.10=0.5",
+  recode(interval, "0.10=-0.5; 0.75=0.5",
          as.factor.result = FALSE, as.numeric.result = TRUE)
-}
-
-get_glmer_predictions <- function(mod, x_preds) {
-  y_preds <- predictSE(accuracy_mod, x_preds, 
-                       type = "response", se = TRUE, print.matrix = TRUE)
-  
-  predictions <- cbind(x_preds, y_preds) %>%
-    rename(accuracy = fit, se = se.fit)
-  
-  predictions
 }

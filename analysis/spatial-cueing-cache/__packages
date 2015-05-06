@@ -1,0 +1,14 @@
+base
+knitr
+dplyr
+purrr
+car
+Matrix
+Rcpp
+lme4
+AICcmodavg
+reshape2
+broom
+ggplot2
+scales
+gridExtra

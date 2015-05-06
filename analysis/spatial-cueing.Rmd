@@ -4,17 +4,29 @@ author: "Pierce Edmiston"
 date: "April 17, 2015"
 output: html_document
 ---
+```{r, config, echo = FALSE}
+library(knitr)
+opts_chunk$set(cache = TRUE, cache.path = 'spatial-cueing-cache/', message = FALSE, warning = FALSE, echo = FALSE)
+```
 
-```{r, get-spatial-cueing-data, message = FALSE, warning = FALSE}
+```{r, get-spatial-cueing-data}
 source("R/loaders.R")
 cueing <- get_spatial_cueing(interval = c(0.750, 0.100), flicker = c("on", "off"))
 ```
+
+# Methods
+
+## Participants
 
 ```{r, num-subjs-in-each-experiment}
 cueing %>% group_by(subj_id, interval, flicker) %>%
   summarize(num_trials = n()) %>%
   count(interval, flicker)
 ```
+
+## Procedure
+
+## Analysis
 
 Fit a model to predict accuracy following each cue type in each experiment condition. 
 `flicker` and `interval` were varied between-subjects. `cue type` was
@@ -36,7 +48,11 @@ by irrelevant information and distractions. When there are distractions,
 such as a flickering visual mask, exogenous cues are not as effective for
 achieving heightened visual awareness.
 
-```{r, fit-accuracy-mod, message = FALSE}
+# Results
+
+## Cueing effects on accuracy
+
+```{r, fit-accuracy-mod}
 library(lme4)
 source("R/models.R")
 
@@ -50,6 +66,8 @@ accuracy_mod <- glmer(is_correct ~ (frame_v_nocue + sound_v_nocue) * (flicker_c 
                       family = "binomial", data = cueing)
 summary(accuracy_mod)
 ```
+
+(discussion of model results)
 
 ```{r, create-between-subj-conditions-table}
 between_subj_conditions <- expand.grid(
@@ -88,7 +106,7 @@ cueing_effects_in_accuracies <- between_subj_conditions %>%
 cueing_effects_in_accuracies
 ```
 
-```{r, cueing-effects-in-accuracies, message = FALSE}
+```{r, cueing-effects-in-accuracies}
 library(ggplot2)
 library(scales)
 source("R/plots.R")
@@ -111,6 +129,8 @@ cueing_effects_in_accuracies_plot <- ggplot(cueing_effects_in_accuracies,
 cueing_effects_in_accuracies_plot
 ```
 
+## Cueing effects on reaction times
+
 ```{r, fit-rt-mod}
 hits <- filter(cueing, target_present == 1, response == "go")
 
@@ -118,6 +138,8 @@ rt_mod <- lmer(rt ~ (frame_v_nocue + sound_v_nocue) * (flicker_c + interval_c) +
                  (frame_v_nocue + sound_v_nocue || subj_id), data = hits)
 summary(rt_mod)
 ```
+
+(dicussion of model results)
 
 ```{r, estimate-cueing-effect-in-rts-in-each-condition}
 cueing_effects_in_rts <- between_subj_conditions %>% 
@@ -143,7 +165,7 @@ cueing_effects_in_rts <- between_subj_conditions %>%
 cueing_effects_in_rts
 ```
 
-```{r, cueing-effect-in-rts, message = FALSE}
+```{r, cueing-effect-in-rts}
 cueing_effects_in_rts$line_group <- create_line_groups(cueing_effects_in_rts)
 cueing_effects_in_rts$flicker_label <- label_flicker(cueing_effects_in_rts$flicker)
 
@@ -160,6 +182,8 @@ cueing_effects_in_rts_plot <- ggplot(cueing_effects_in_rts, aes(x = interval, y 
   ggtitle("Cueing Effects in RTs")
 cueing_effects_in_rts_plot
 ```
+
+# Discussion
 
 ```{r, fig.height = 10, fig.width = 12}
 library(gridExtra)
