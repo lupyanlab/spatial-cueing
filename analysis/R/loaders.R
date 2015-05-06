@@ -1,5 +1,6 @@
 library(dplyr)
 library(purrr)
+library(car)
 
 #' Compile the raw data files into a data.frame.
 #' Assumes all data files have their own headers.
@@ -9,6 +10,14 @@ compile <- function(data_directory, pattern) {
   fnames <- list.files(data_directory, pattern, full.names = TRUE)
   plyr::ldply(fnames, read.table, sep = '\t', header = TRUE,
               row.names = NULL, stringsAsFactors = FALSE)
+}
+
+code_missing_cue_type_as_nocue <- function(cue_type) {
+  ifelse(cue_type == "", "nocue", cue_type)
+}
+
+code_responses_as_binary <- function(response) {
+  recode(response, "'go'=1; 'nogo'=0", as.numeric.result = TRUE)
 }
 
 get_spatial_cueing <- function(interval = 0.750, flicker = "on") {  
@@ -37,13 +46,10 @@ get_spatial_cueing <- function(interval = 0.750, flicker = "on") {
   # handle exceptions
   spatial_cueing[spatial_cueing$subj_id %in% c("SPC504a", "SPC508"), "interval"] = 0.10
 
-  # recode variables
-  source("R/recoders.R")
-  print('Recoding variables...')
-  spatial_cueing <- recode_missing_cue_type_as_nocue(spatial_cueing)
-  spatial_cueing <- recode_responses_as_int(spatial_cueing)
+  print('Coding variables...')
+  spatial_cueing$cue_type <- code_missing_cue_type_as_nocue(spatial_cueing$cue_type)
+  spatial_cueing$response_b <- code_responses_as_binary(spatial_cueing$response)
   
-  # drop practice trials
   print('Dropping practice trials...')
   cueing <- filter(spatial_cueing, part != "practice")
   

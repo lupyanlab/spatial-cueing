@@ -1,52 +1,18 @@
 library(car)
 
-recode_missing_cue_type_as_nocue <- function(frame) {
-  mutate(frame, cue_type = ifelse(cue_type == "", "nocue", cue_type))
-}
-
-recode_responses_as_int <- function(frame) {
-  mutate(frame, response_b = recode(response, "'go'=1; 'nogo'=0"))
-}
-
-set_treatment_contrasts <- function(frame) {
-  frame$cue_type <- factor(frame$cue_type, levels = c("nocue", "frame", "sound"))
-  
-  # treatment contrasts are chosen by default, but
-  # set them manually just to be sure
-  treatment_contrast <- contr.treatment(n = c("nocue", "frame", "sound"), base = 1)
-  contrasts(frame$cue_type) <- treatment_contrast
-  
-  levels(frame$cue_type) <- c("nocue", "frame", "sound")
-  
-  # create contrast variables to ease interpretation
-  # AICcmodavg may require hard coded factors
-  frame <- frame %>% mutate(
-    frame_v_nocue = car::recode(cue_type, "'frame'=1; else=0", as.factor.result = FALSE),
-    sound_v_nocue = car::recode(cue_type, "'sound'=1; else=0", as.factor.result = FALSE)
-  )
-
-  frame
-}
-
-recode_cue_type_as_int <- function(frame) {
-  car::recode(frame$cue_type,
+recode_cue_type_as_num <- function(cue_type) {
+  car::recode(cue_type,
     "'frame'=-1; 'nocue'=0; 'sound'=1",
     as.factor.result = FALSE,
     as.numeric.result = TRUE)
 }
 
-recode_flicker_as_centered_num <- function(frame) {
-  car::recode(frame$flicker,
-    "'on'=-0.5; 'off'=0.5",
-    as.factor.result = FALSE,
-    as.numeric.result = TRUE)
+recode_cue_type_contr_as_num <- function(cue_type_contr) {
+  car::recode(cue_type_contr,
+    "'frame_v_nocue'=")
 }
 
-recode_interval_as_centered_num <- function(frame) {
-  car::recode(frame$interval,
-    "0.75=-0.5; 0.10=0.5",
-    as.numeric.result = TRUE)
-}
+
 
 jitter_cue_type_int_by_subj <- function(frame, jitter_amount = 0.1) {
   frame %>% group_by(subj_id) %>% mutate(
