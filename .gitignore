@@ -18,8 +18,7 @@ archive/
 .Rproj.user/
 
 # Rmd generated files
-*_cache/
-*_files/
+*-cache/
 
 # Vim files
 *.swp
