@@ -1,0 +1,371 @@
+subj_id	date	computer	experimenter	part	trial_ix	cue_present	cue_type	cue_loc	cue_pos_x	cue_pos_y	mask_flicker	target_present	target_loc	target_pos_x	target_pos_y	target_opacity	target_duration	rt	key	response	is_correct
+SPC607	2015_May_07_0951	LL-Elaine	PME	practice	0	0					False	1	right	212.516165081	-0.0221601080763	0.6	0.083	793.705989607	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	practice	1	0					False	1	right	179.894481614	-9.80006749128	0.6	0.083	470.070962096	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	practice	2	0					False	1	right	208.448886567	-17.2325965672	0.6	0.083	334.490631241	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	practice	3	0					False	1	right	189.732183504	-21.9292225448	0.6	0.083	370.716406964	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	practice	4	0					False	1	left	-201.643009708	-7.82700121226	0.6	0.083	348.363765748	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	practice	5	0					False	1	left	-187.190580302	22.7968311408	0.6	0.083	367.256064899	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	practice	6	0					False	0					0.083	1086.10681049		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	practice	7	0					False	1	right	189.840434068	-1.87083422286	0.6	0.083	312.91611772	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	practice	8	0					False	1	left	-212.067776196	17.0548477515	0.6	0.083	380.517928163	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	practice	9	0					False	1	left	-207.047057191	22.8628239737	0.6	0.083	441.377462586	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	0	1	sound	right			False	0					0.083	1081.19963249		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	1	0					False	1	right	217.658621206	2.20217188531	0.6	0.083	384.580236161	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	2	1	frame	left	-200	0	False	0					0.083	1082.04610692		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	3	1	sound	right			False	1	right	215.268166603	0.855953130384	0.6	0.083	375.851729186	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	4	1	sound	left			False	1	left	-211.274621723	18.861720435	0.6	0.083	386.674282141	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	5	0					False	1	left	-211.342666468	-10.4650703974	0.6	0.083	402.931535849	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	6	0					False	1	left	-222.48035138	-4.76880465921	0.6	0.083	466.985083884	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	7	1	sound	right			False	1	right	181.754415358	4.77689033186	0.6	0.083	370.177653851	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	8	1	frame	left	-200	0	False	1	left	-186.284296533	13.165531626	0.6	0.083	914.968770696	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	9	1	sound	left			False	0					0.083	1087.58958499		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	10	1	sound	left			False	0					0.083	1076.73879457		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	11	0					False	1	right	198.796627121	-16.4288302376	0.6	0.083	374.921184499	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	12	1	sound	right			False	1	right	180.051339155	-21.1059817398	0.6	0.083	403.980484465	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	13	1	frame	right	200	0	False	1	right	221.299390125	16.6065015645	0.6	0.083	511.743310839	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	14	1	sound	right			False	1	right	211.304445936	16.1750553541	0.6	0.083	295.587133383	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	15	0					False	1	right	187.00380931	14.984654333	0.6	0.083	497.482556151	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	16	0					False	1	left	-203.352885412	3.27964643335	0.6	0.083	306.344548473	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	17	0					False	1	left	-193.755556591	-22.9994961052	0.6	0.083	361.815267475	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	18	0					False	1	left	-204.564554037	-3.45683947883	0.6	0.083	319.931781385	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	19	0					False	1	right	191.116426131	21.2290054321	0.6	0.083	272.80419576	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	20	0					False	0					0.083	1086.36158728		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	21	0					False	1	right	213.675356364	-2.46585218273	0.6	0.083	388.293429511	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	22	1	sound	right			False	1	right	221.576897308	10.3723411446	0.6	0.083	331.680707633	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	23	1	sound	left			False	1	left	-195.621338087	6.2010696078	0.6	0.083	318.533076905	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	24	1	sound	left			False	1	left	-219.72049915	-13.9245736162	0.6	0.083	415.134503739	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	25	1	sound	left			False	0					0.083	1088.54708308		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	26	1	frame	left	-200	0	False	1	left	-179.617218666	-16.7518935434	0.6	0.083	434.174727416	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	27	1	sound	right			False	1	right	203.474996335	18.8175160958	0.6	0.083	379.829966929	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	28	1	sound	right			False	1	right	213.050419354	4.81137975798	0.6	0.083	378.846798791	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	29	1	sound	left			False	1	left	-222.299662662	17.9674360031	0.6	0.083	363.147550728	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	30	1	sound	left			False	1	left	-191.746068347	-7.92810685862	0.6	0.083	403.156470973	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	31	1	sound	right			False	1	right	195.360982966	-6.8094424825	0.6	0.083	360.883760499	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	32	1	frame	right	200	0	False	1	right	219.428901891	-13.5977941936	0.6	0.083	303.639231017	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	33	1	sound	left			False	0					0.083	1080.39390901		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	34	1	sound	right			False	0					0.083	1088.16170925		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	35	0					False	1	right	204.135743122	-8.96171937084	0.6	0.083	495.425411267	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	36	1	frame	left	-200	0	False	1	left	-209.356301386	3.11526572706	0.6	0.083	395.869666012	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	37	0					False	1	right	195.203913697	5.80172493566	0.6	0.083	384.450281039	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	38	1	sound	right			False	1	right	205.839188279	-1.30078594361	0.6	0.083	423.510366818	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	39	1	sound	left			False	1	left	-208.908073433	21.6395428795	0.6	0.083	352.451102342	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	40	0					False	1	right	207.855774326	-13.1630352387	0.6	0.083	336.484563304	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	41	0					False	0					0.083	1088.00929273		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	42	1	sound	right			False	1	right	193.952172329	14.3153345928	0.6	0.083	370.149416616	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	43	1	sound	right			False	1	right	215.699080937	-12.7629700028	0.6	0.083	336.962028872	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	44	1	sound	right			False	1	right	193.638260764	15.5365563906	0.6	0.083	337.319807382	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	45	1	sound	right			False	1	right	206.311251657	-15.0578146637	0.6	0.083	303.516014246	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	46	1	frame	left	-200	0	False	1	left	-195.123665112	-7.11126113491	0.6	0.083	374.69496578	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	47	1	frame	left	-200	0	False	1	left	-179.051926211	21.4850990164	0.6	0.083	441.129424144	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	48	1	sound	left			False	0					0.083	1080.76355979		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	49	1	frame	right	200	0	False	1	right	194.648028038	2.21367386777	0.6	0.083	378.619296476	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	50	1	frame	right	200	0	False	1	right	182.915471979	-20.8870420493	0.6	0.083	369.906833395	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	51	1	sound	right			False	1	right	177.502847628	19.6498761461	0.6	0.083	362.224386306	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	52	0					False	1	right	198.861287442	-17.5581429602	0.6	0.083	420.201799832	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	53	1	sound	right			False	1	right	196.548819974	-1.37816159563	0.6	0.083	389.638547786	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	54	1	frame	right	200	0	False	1	right	180.095474703	0.734054457584	0.6	0.083	513.531239703	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	55	0					False	0					0.083	1081.34242264		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	56	1	sound	left			False	1	left	-188.253241083	10.2882458766	0.6	0.083	417.522473494	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	57	1	frame	left	-200	0	False	1	left	-208.057005192	16.6792722117	0.6	0.083	601.30468756	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	58	1	frame	right	200	0	False	0					0.083	1088.16106757		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	59	1	sound	right			False	0					0.083	1087.05468243		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	60	1	sound	left			False	1	left	-197.761366176	10.6752891024	0.6	0.083	433.208565461	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	61	1	frame	right	200	0	False	1	right	208.563088799	-20.4392900079	0.6	0.083	470.052992925	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	62	1	frame	right	200	0	False	1	right	198.363942507	14.3323546858	0.6	0.083	478.059526067	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	63	1	frame	right	200	0	False	1	right	200.995885417	21.8542453427	0.6	0.083	387.045537354	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	64	1	sound	left			False	1	left	-209.069430753	20.0413365747	0.6	0.083	370.764217805	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	65	1	sound	left			False	1	left	-210.346950494	21.8288965133	0.6	0.083	354.664514773	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	66	0					False	1	right	183.832073688	22.5053201736	0.6	0.083	350.463908399	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	67	1	frame	left	-200	0	False	1	left	-180.632060247	21.2721111474	0.6	0.083	420.521072811	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	68	0					False	1	left	-184.854380772	-5.71547971257	0.6	0.083	368.325870251	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	69	0					False	1	right	215.874502399	18.993517669	0.6	0.083	373.853625264	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	70	1	frame	right	200	0	False	0					0.083	163.805028424	 	go	0	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	71	1	sound	right			False	0					0.083	1083.27570907		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	72	1	frame	left	-200	0	False	1	left	-213.907058785	-21.617028852	0.6	0.083	503.450876102	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	73	0					False	1	right	210.835380039	-12.5488505048	0.6	0.083	384.716929868	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	74	1	sound	right			False	1	right	218.812968495	11.8972229612	0.6	0.083	375.200026901	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	75	0					False	1	right	206.367923899	13.5840533593	0.6	0.083	355.437508319	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	76	0					False	1	left	-221.794865297	-17.5984124086	0.6	0.083	309.588619275	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	77	1	frame	right	200	0	False	1	right	183.46171201	-22.9353141918	0.6	0.083	363.963862881	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	78	1	sound	left			False	1	left	-188.737454792	-10.1025227626	0.6	0.083	370.279692579	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	79	1	sound	right			False	1	right	213.872297024	1.9666003521	0.6	0.083	336.744474014	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	80	1	sound	right			False	1	right	188.651271456	6.47413666108	0.6	0.083	337.085887557	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	81	1	frame	right	200	0	False	1	right	178.177285821	6.10434176462	0.6	0.083	367.629566463	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	82	0					False	0					0.083	1081.57890942		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	83	1	sound	right			False	0					0.083	1078.67753599		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	84	1	frame	left	-200	0	False	1	left	-184.285428076	2.60884651859	0.6	0.083	322.744271951	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	85	1	sound	right			False	1	right	220.682524185	16.8154114285	0.6	0.083	336.781054037	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	86	1	sound	right			False	1	right	211.040722536	-1.20001793711	0.6	0.083	395.314227091	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	87	1	sound	right			False	1	right	207.695411295	21.9370643496	0.6	0.083	300.622020848	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	88	1	frame	left	-200	0	False	1	left	-181.440014701	12.6035274921	0.6	0.083	405.166126089	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	89	1	sound	left			False	1	left	-221.951105441	7.02282759307	0.6	0.083	333.545647329	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	90	1	frame	left	-200	0	False	1	left	-218.469546179	-0.64441098208	0.6	0.083	359.501420753	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	91	1	sound	left			False	0					0.083	1086.81177814		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	92	0					False	1	right	222.729847476	13.6484627454	0.6	0.083	415.512497537	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	93	1	frame	right	200	0	False	0					0.083	1079.84392531		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	94	1	sound	left			False	1	left	-181.961074966	-5.43662830213	0.6	0.083	397.212217096	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	95	1	frame	left	-200	0	False	1	left	-188.867489594	-13.4876462005	0.6	0.083	442.779696779	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	96	1	frame	left	-200	0	False	1	left	-221.131326003	3.98996414009	0.6	0.083	461.325127399	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	97	1	sound	left			False	1	left	-217.989403532	-5.0033324868	0.6	0.083	395.531461341	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	98	0					False	1	right	176.266941197	4.67788885585	0.6	0.083	448.76341871	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	99	1	frame	left	-200	0	False	0					0.083	1087.23694086		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	100	1	sound	right			False	1	right	183.505102417	5.51860814927	0.6	0.083	404.26413971	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	101	1	sound	right			False	0					0.083	1087.8629724		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	102	1	frame	left	-200	0	False	1	left	-222.960405553	-21.9383304636	0.6	0.083	440.199521603	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	103	1	frame	left	-200	0	False	1	left	-204.359912031	-13.4309581299	0.6	0.083	661.361386767	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	104	0					False	1	right	185.241490314	-23.1309341806	0.6	0.083	370.031333761	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	105	0					False	1	left	-209.348039595	9.51365857519	0.6	0.083	381.643887144	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	106	0					False	1	right	178.607059528	6.18614177488	0.6	0.083	361.829707166	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	107	0					False	1	left	-203.444807877	13.5489739687	0.6	0.083	307.835024083	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	108	0					False	0					0.083	1088.31829741		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	109	1	frame	right	200	0	False	1	right	179.501516078	-10.7222189754	0.6	0.083	317.000887357	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	110	1	sound	right			False	1	right	218.108860695	-17.1808348577	0.6	0.083	509.540808387	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	111	0					False	1	left	-208.870805171	-11.0394401406	0.6	0.083	596.034276066	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	112	0					False	0					0.083	1088.33594574		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	113	1	frame	left	-200	0	False	0					0.083	1086.66257025		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	114	0					False	1	right	180.340016932	14.4700580339	0.6	0.083	458.861430641	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	115	0					False	1	left	-188.346135005	-19.8721510076	0.6	0.083	386.569997063	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	116	1	sound	right			False	1	right	215.81410648	11.2481905563	0.6	0.083	370.039355475	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	117	0					False	1	right	200.680902424	5.78481593921	0.6	0.083	425.702280132	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	118	1	sound	left			False	0					0.083	1088.57275336		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	119	0					False	1	left	-211.855594255	-10.9480593161	0.6	0.083	482.570099644	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	120	0					False	1	right	222.575859991	-19.8244881081	0.6	0.083	361.306676874	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	121	0					False	1	left	-181.279904723	19.118175955	0.6	0.083	386.661447119	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	122	1	sound	left			False	0					0.083	1086.20114857		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	123	1	sound	right			False	1	right	176.596297683	-11.9940665527	0.6	0.083	351.161175175	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	124	1	frame	right	200	0	False	1	right	215.815924251	-0.219086382508	0.6	0.083	436.858867062	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	125	1	frame	right	200	0	False	0					0.083	1086.2155878		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	126	1	sound	right			False	0					0.083	1081.23139921		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	127	1	sound	left			False	1	left	-220.062881315	-22.885118121	0.6	0.083	346.164472168	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	128	0					False	1	left	-200.227474576	14.6416891834	0.6	0.083	422.06192622	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	129	1	frame	left	-200	0	False	1	left	-210.946961838	7.74650832443	0.6	0.083	411.700794706	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	130	0					False	1	right	214.231912129	-21.959993037	0.6	0.083	426.465647761	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	131	0					False	1	right	209.549098847	20.9155985906	0.6	0.083	416.842855047	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	132	1	sound	right			False	1	right	205.880494528	-2.37139315913	0.6	0.083	377.253321465	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	133	1	sound	left			False	1	left	-203.380631335	-10.7188330558	0.6	0.083	297.906435328	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	134	0					False	1	left	-223.609206105	-14.5388643356	0.6	0.083	422.09176789	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	135	1	sound	left			False	1	left	-185.904815857	-19.0416835184	0.6	0.083	325.281449594	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	136	1	sound	left			False	1	left	-215.20333182	-18.9937759304	0.6	0.083	354.985713027	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	137	1	sound	left			False	1	left	-201.665265336	0.356777596947	0.6	0.083	437.348525738	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	138	0					False	1	left	-192.339634069	3.93503697043	0.6	0.083	409.686968196	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	139	0					False	1	right	199.652655109	-21.8348187164	0.6	0.083	370.202361373	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	140	0					False	1	right	212.290965898	2.42529356842	0.6	0.083	376.676063053	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	141	1	sound	right			False	1	right	183.047037817	1.6745656416	0.6	0.083	203.383652261	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	142	1	frame	right	200	0	False	1	right	209.547500858	-15.7297262331	0.6	0.083	363.735398045	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	143	1	sound	left			False	1	left	-218.568818532	15.5461298166	0.6	0.083	303.447025595	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	144	1	frame	right	200	0	False	1	right	194.852740444	-13.7409872223	0.6	0.083	1079.69022496		nogo	0	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	145	1	sound	right			False	1	right	209.684995054	-2.18063531095	0.6	0.083	448.742561508	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	146	0					False	1	right	204.222768376	22.0549040807	0.6	0.083	431.411972735	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	147	1	sound	left			False	1	left	-206.236881534	-8.04747775586	0.6	0.083	358.760835603	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	148	1	frame	right	200	0	False	1	right	195.217517993	-20.3424472192	0.6	0.083	449.162590085	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	149	1	sound	right			False	1	right	185.879523516	21.4636402882	0.6	0.083	476.905971766	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	150	1	frame	right	200	0	False	1	right	194.585381056	22.1369567276	0.6	0.083	364.217997761	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	151	1	frame	left	-200	0	False	1	left	-181.983357737	18.2006886833	0.6	0.083	386.8652042	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	152	0					False	1	left	-210.586461954	-9.96906736289	0.6	0.083	471.987883793	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	153	1	sound	left			False	1	left	-207.672765648	10.3441304517	0.6	0.083	323.623155244	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	154	0					False	0					0.083	1094.7021537		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	155	1	sound	left			False	1	left	-178.914687572	15.027252605	0.6	0.083	362.591790967	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	156	1	sound	left			False	1	left	-209.649502497	22.3419563124	0.6	0.083	327.13515847	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	157	0					False	1	left	-183.479797539	-5.30105764728	0.6	0.083	320.853983285	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	158	1	frame	left	-200	0	False	1	left	-214.052173806	21.8555153094	0.6	0.083	403.586446773	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	159	1	frame	right	200	0	False	1	right	191.47384816	-18.8934022026	0.6	0.083	409.520432586	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	160	1	sound	right			False	1	right	210.540942804	17.4808006345	0.6	0.083	403.720252682	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	161	0					False	0					0.083	1086.41389012		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	162	0					False	1	right	211.623216963	-17.5383702231	0.6	0.083	446.861578152	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	163	1	sound	right			False	1	right	199.336473786	22.5029565158	0.6	0.083	406.812548405	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	164	1	frame	right	200	0	False	0					0.083	1079.51053372		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	165	0					False	1	right	213.422864804	-10.6602550462	0.6	0.083	376.49252126	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	166	0					False	1	right	180.47684542	-10.3302607641	0.6	0.083	362.183955731	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	167	1	sound	left			False	1	left	-186.284249735	10.4828500074	0.6	0.083	453.392075142	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	168	1	frame	right	200	0	False	0					0.083	1079.43801535		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	169	0					False	1	right	216.004958086	3.2880200361	0.6	0.083	377.286050934	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	170	1	sound	left			False	1	left	-216.26230712	-0.163144711523	0.6	0.083	361.727026524	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	171	1	frame	left	-200	0	False	1	left	-189.791602217	-9.26031038938	0.6	0.083	678.701280616	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	172	1	sound	right			False	1	right	221.077191799	-18.3820526394	0.6	0.083	292.176206596	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	173	0					False	1	left	-181.673901475	-17.3813592041	0.6	0.083	374.440510292	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	174	1	sound	left			False	1	left	-192.803476853	2.1124800035	0.6	0.083	315.80722332	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	175	0					False	1	left	-212.457826587	-8.02506134236	0.6	0.083	309.357908089	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	176	1	frame	left	-200	0	False	0					0.083	1080.28063946		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	177	1	frame	right	200	0	False	1	right	182.4700027	-2.68763218496	0.6	0.083	375.126546016	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	178	0					False	0					0.083	1081.85005095		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	179	1	sound	left			False	1	left	-185.248383634	-12.2807790132	0.6	0.083	358.566383831	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	180	1	sound	right			False	1	right	215.59024274	0.428039793261	0.6	0.083	348.106743069	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	181	0					False	1	right	189.665399132	-23.1839504614	0.6	0.083	362.27315967	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	182	0					False	1	left	-190.003273627	-6.42891179026	0.6	0.083	342.381969327	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	183	1	sound	left			False	1	left	-223.426890126	-19.1517515462	0.6	0.083	407.735070912	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	184	1	sound	right			False	1	right	220.697804984	17.5240244882	0.6	0.083	379.424699116	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	185	1	frame	left	-200	0	False	1	left	-215.599302602	-20.0839086003	0.6	0.083	421.17534182	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	186	1	frame	left	-200	0	False	1	left	-210.565458483	-14.8779188643	0.6	0.083	425.152938114	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	187	1	sound	right			False	1	right	193.229404967	13.8261343305	0.6	0.083	345.510203158	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	188	0					False	1	right	178.345963222	-22.8879062567	0.6	0.083	455.34461434	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	189	0					False	1	right	191.865191289	-23.4417379347	0.6	0.083	356.357463868	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	190	0					False	1	left	-188.376115586	6.135638256	0.6	0.083	354.515306652	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	191	1	sound	left			False	1	left	-204.605058944	-5.96204899809	0.6	0.083	359.854065115	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	192	1	frame	left	-200	0	False	1	left	-221.831186525	-6.47104907614	0.6	0.083	321.705270791	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	193	1	frame	left	-200	0	False	0					0.083	1074.16150719		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	194	1	frame	right	200	0	False	1	right	220.598771072	8.30245403676	0.6	0.083	372.698466759	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	195	1	sound	left			False	1	left	-195.708975194	20.3348252174	0.6	0.083	346.699695801	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	196	1	sound	right			False	0					0.083	1079.99762543		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	197	1	frame	right	200	0	False	1	right	221.741146904	-3.50173382093	0.6	0.083	449.521331117	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	198	0					False	0					0.083	1080.66858002		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	199	1	sound	left			False	1	left	-189.641914621	-8.78371357641	0.6	0.083	435.878586257	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	200	1	frame	left	-200	0	False	1	left	-178.375985961	-4.44239928335	0.6	0.083	389.782621525	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	201	0					False	1	right	178.190047286	20.7445309175	0.6	0.083	378.90102691	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	202	0					False	1	left	-190.305145465	-13.0659071462	0.6	0.083	485.955676995	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	203	1	sound	right			False	1	right	222.990690706	5.77302050498	0.6	0.083	342.256185366	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	204	0					False	1	left	-184.249942393	14.7532731162	0.6	0.083	695.772921434	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	205	1	sound	left			False	1	left	-204.416178423	6.38968663826	0.6	0.083	385.98407479	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	206	1	sound	left			False	1	left	-183.098264275	11.732701388	0.6	0.083	332.160419552	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	207	1	sound	right			False	0					0.083	1086.99724521		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	208	1	sound	right			False	1	right	206.977909041	20.4472226385	0.6	0.083	331.850772724	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	209	0					False	1	right	221.111135357	-4.66195649146	0.6	0.083	415.225953795	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	210	1	sound	right			False	1	right	207.244527281	9.88434311246	0.6	0.083	440.258883871	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	211	0					False	1	right	177.87259815	-18.5333191664	0.6	0.083	370.098397136	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	212	1	frame	left	-200	0	False	1	left	-206.989857419	-9.39190335757	0.6	0.083	313.828051556	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	213	1	frame	left	-200	0	False	1	left	-214.94848965	16.5562267585	0.6	0.083	338.786858832	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	214	1	sound	right			False	1	right	181.499825552	-5.82791535368	0.6	0.083	305.804191157	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	215	1	frame	right	200	0	False	1	right	177.384902705	-20.287070769	0.6	0.083	322.269694181	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	216	0					False	1	left	-200.873814807	-18.7597083455	0.6	0.083	394.797935616	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	217	1	sound	right			False	1	right	195.225961303	-11.4744135653	0.6	0.083	323.227513349	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	218	0					False	1	right	184.063474754	12.5475338062	0.6	0.083	443.693555659	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	219	1	frame	left	-200	0	False	1	left	-198.373058325	0.210072283495	0.6	0.083	384.063623613	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	220	1	frame	right	200	0	False	0					0.083	1082.89707382		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	221	0					False	0					0.083	1086.4838413		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	222	1	sound	right			False	1	right	202.462170551	4.34250197656	0.6	0.083	370.412856806	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	223	1	frame	right	200	0	False	1	right	180.925291388	-11.8082845953	0.6	0.083	431.014084956	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	224	0					False	0					0.083	1086.79637616		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	225	1	frame	left	-200	0	False	0					0.083	1083.35336135		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	226	0					False	0					0.083	1086.87595371		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	227	1	frame	right	200	0	False	1	right	198.323030291	-22.6199325646	0.6	0.083	468.117460376	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	228	1	sound	left			False	0					0.083	1086.93756186		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	229	0					False	1	right	193.964758574	-7.99060795322	0.6	0.083	469.74719665	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	230	1	sound	right			False	1	right	205.032774241	5.36690942095	0.6	0.083	361.894203583	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	231	1	frame	left	-200	0	False	1	left	-177.114064598	21.7620633298	0.6	0.083	404.760858044	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	232	0					False	1	left	-187.686472848	14.8956927491	0.6	0.083	453.427050961	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	233	1	frame	left	-200	0	False	1	left	-210.294149983	-21.8162269127	0.6	0.083	414.502696134	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	234	0					False	1	right	198.716914042	-1.77262979417	0.6	0.083	362.481088378	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	235	1	sound	right			False	1	right	189.797256544	-14.4400304066	0.6	0.083	372.689482057	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	236	1	sound	right			False	1	right	184.974153427	7.16073084133	0.6	0.083	382.438700413	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	237	1	frame	left	-200	0	False	1	left	-215.56433654	-18.6598554562	0.6	0.083	678.536349675	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	238	0					False	1	right	184.223968838	-5.78653915613	0.6	0.083	320.798471337	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	239	1	frame	right	200	0	False	1	right	202.716065818	-18.0650365829	0.6	0.083	352.974453242	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	240	1	sound	right			False	1	right	210.075652302	-13.6824695044	0.6	0.083	340.315518668	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	241	0					False	0					0.083	1086.77904867		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	242	1	frame	left	-200	0	False	1	left	-220.964930802	16.9822063592	0.6	0.083	490.21307868	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	243	1	sound	right			False	1	right	213.505937465	1.20995490167	0.6	0.083	443.873888813	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	244	1	frame	right	200	0	False	1	right	194.045822392	12.6315932201	0.6	0.083	342.356619891	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	245	1	frame	left	-200	0	False	1	left	-220.975483115	10.4216819609	0.6	0.083	370.509441011	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	246	0					False	1	right	192.407289284	2.24221876082	0.6	0.083	395.64761892	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	247	1	sound	left			False	0					0.083	1086.48480405		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	248	1	sound	right			False	1	right	190.367920226	-1.25109731854	0.6	0.083	369.851000607	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	249	1	sound	left			False	1	left	-206.623340596	21.0445511779	0.6	0.083	309.336088598	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	250	0					False	1	right	189.56148496	-0.301825141255	0.6	0.083	631.30961312	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	251	1	frame	left	-200	0	False	1	left	-187.283640491	-1.14450036123	0.6	0.083	343.236144865	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	252	1	frame	left	-200	0	False	0					0.083	1081.4374024		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	253	1	sound	right			False	1	right	209.985627489	19.8982021658	0.6	0.083	305.653699674	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	254	1	sound	right			False	1	right	194.8709755	-23.2586404264	0.6	0.083	377.49430025	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	255	0					False	0					0.083	1088.13122613		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	256	1	sound	right			False	1	right	177.693357601	4.29613551478	0.6	0.083	399.164756062	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	257	1	sound	right			False	1	right	191.328310124	17.5608941545	0.6	0.083	372.768417932	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	258	0					False	0					0.083	1087.01681881		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	259	1	frame	left	-200	0	False	1	left	-202.258554329	11.2105232069	0.6	0.083	486.167135416	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	260	1	frame	right	200	0	False	0					0.083	1086.70396334		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	261	1	sound	left			False	1	left	-198.026712978	17.5720034466	0.6	0.083	362.120101228	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	262	1	sound	right			False	0					0.083	1087.65504393		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	263	0					False	0					0.083	1081.37836098		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	264	1	sound	right			False	1	right	211.008357639	-9.49960475444	0.6	0.083	374.229372945	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	265	0					False	1	right	194.845348482	12.7350477046	0.6	0.083	394.944897387	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	266	1	frame	left	-200	0	False	1	left	-215.421980961	7.91776416694	0.6	0.083	428.347272798	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	267	1	frame	left	-200	0	False	1	left	-199.456291929	6.15530094533	0.6	0.083	415.079954546	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	268	0					False	1	right	208.255896822	-11.4759672652	0.6	0.083	338.953073369	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	269	1	sound	left			False	1	left	-214.828507062	-15.4205572053	0.6	0.083	304.588707397	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	270	0					False	0					0.083	1080.15068411		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	271	0					False	0					0.083	1088.74923596		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	272	1	frame	right	200	0	False	1	right	222.459612716	10.9906141158	0.6	0.083	411.954287905	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	273	0					False	1	left	-178.663581691	22.4043527404	0.6	0.083	375.355973374	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	274	1	frame	right	200	0	False	1	right	209.653165721	-10.3523016717	0.6	0.083	359.913748223	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	275	1	frame	right	200	0	False	1	right	218.37142095	-6.10950421206	0.6	0.083	341.38532402	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	276	0					False	0					0.083	1088.40910578		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	277	1	sound	right			False	0					0.083	1083.04307307		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	278	0					False	0					0.083	1086.57240355		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	279	1	frame	left	-200	0	False	1	left	-188.701261147	20.7969813497	0.6	0.083	436.759394826	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	280	1	frame	right	200	0	False	1	right	186.290460796	-23.3311252242	0.6	0.083	434.925901471	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	281	0					False	1	left	-204.988309449	8.341013003	0.6	0.083	514.227864798	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	282	1	sound	right			False	1	right	192.287163419	-6.42652205339	0.6	0.083	318.872886011	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	283	0					False	1	right	177.867846089	22.2399567719	0.6	0.083	1081.33407985		nogo	0	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	284	1	frame	right	200	0	False	0					0.083	1081.40114322		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	285	1	frame	right	200	0	False	0					0.083	1086.99018601		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	286	1	sound	left			False	1	left	-207.211524488	3.40775167618	0.6	0.083	571.527264081	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	287	0					False	1	right	219.228681328	-12.0085635153	0.6	0.083	409.836496925	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	288	0					False	0					0.083	1080.7388525		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	289	0					False	1	left	-213.471865613	-2.75946577525	0.6	0.083	470.121660735	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	290	1	frame	left	-200	0	False	1	left	-183.566599494	1.17595501737	0.6	0.083	412.025522674	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	291	0					False	0					0.083	1087.50808216		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	292	0					False	1	right	199.653645726	15.9141421869	0.6	0.083	461.913295556	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	293	1	frame	right	200	0	False	1	right	186.060025599	14.4287236659	0.6	0.083	370.608592173	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	294	0					False	1	right	191.101424775	2.97930917375	0.6	0.083	356.910656672	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	295	0					False	1	left	-214.584294842	21.6987961342	0.6	0.083	317.245395854	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	296	1	sound	left			False	1	left	-179.316871504	18.6749943793	0.6	0.083	378.594268113	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	297	0					False	1	right	187.452172089	-14.9663467602	0.6	0.083	325.318992371	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	298	0					False	1	left	-182.392986182	20.7598175151	0.6	0.083	309.400905855	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	299	0					False	1	right	215.727135075	-7.58417619888	0.6	0.083	369.95400209	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	300	0					False	1	left	-206.923586751	10.2735496727	0.6	0.083	337.291249307	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	301	1	sound	left			False	0					0.083	1086.97767183		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	302	0					False	1	right	182.758451514	-19.0606904996	0.6	0.083	485.368150752	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	303	0					False	1	right	222.801210014	-22.8321350582	0.6	0.083	343.205982354	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	304	1	frame	left	-200	0	False	1	left	-185.46017578	4.43430935903	0.6	0.083	63.5837835725	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	305	1	frame	right	200	0	False	1	right	216.911474979	-19.4844486514	0.6	0.083	319.995315047	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	306	0					False	1	right	205.393824833	-3.67630634376	0.6	0.083	361.971214181	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	307	1	frame	right	200	0	False	1	right	202.820755947	19.9133747675	0.6	0.083	303.786192788	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	308	1	sound	right			False	0					0.083	1087.36497071		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	309	1	sound	right			False	1	right	203.390041986	14.5583800044	0.6	0.083	320.143881487	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	310	0					False	1	right	204.523918299	-21.277981852	0.6	0.083	570.142036304	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	311	1	sound	left			False	1	left	-178.826571155	-20.4474116313	0.6	0.083	469.413484214	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	312	0					False	1	left	-189.419068484	-17.4376733421	0.6	0.083	392.958024517	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	313	1	sound	right			False	1	right	178.426783147	9.10497166651	0.6	0.083	280.649648281	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	314	1	frame	right	200	0	False	1	right	214.240214509	-9.19971365056	0.6	0.083	617.210901575	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	315	1	frame	right	200	0	False	0					0.083	73.3910806011	 	go	0	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	316	0					False	1	right	185.136371806	12.2492592484	0.6	0.083	379.730174085	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	317	1	frame	left	-200	0	False	1	left	-179.460477279	-3.95370806034	0.6	0.083	337.277772371	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	318	0					False	1	right	179.699603397	-16.8218297363	0.6	0.083	314.834964694	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	319	0					False	1	left	-198.100418393	-18.3051048649	0.6	0.083	376.717456384	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	320	0					False	1	right	202.600054998	-13.2755719666	0.6	0.083	345.0776604	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	321	1	sound	left			False	1	left	-200.259069848	-17.9097883743	0.6	0.083	303.835608065	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	322	1	sound	right			False	0					0.083	1075.05162107		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	323	1	sound	right			False	1	right	189.037272424	14.7708602932	0.6	0.083	403.014643351	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	324	1	frame	left	-200	0	False	0					0.083	1082.41832466		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	325	1	sound	right			False	0					0.083	1076.67365647		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	326	1	sound	left			False	1	left	-190.350650186	6.72102808441	0.6	0.083	340.316802263	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	327	1	frame	left	-200	0	False	1	left	-191.720088021	3.49929833973	0.6	0.083	445.168308215	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	328	1	frame	left	-200	0	False	1	left	-213.000999406	-5.08744564915	0.6	0.083	387.505996274	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	329	1	frame	left	-200	0	False	1	left	-218.164466576	-21.3281680901	0.6	0.083	375.784665579	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	330	0					False	0					0.083	1080.06340521		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	331	1	sound	right			False	0					0.083	1086.42191207		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	332	0					False	0					0.083	1080.79981897		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	333	0					False	0					0.083	1080.67949		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	334	1	frame	right	200	0	False	1	right	214.357653491	5.64669482986	0.6	0.083	395.745807327	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	335	1	frame	left	-200	0	False	1	left	-186.170679609	-7.72260903558	0.6	0.083	413.956883829	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	336	1	sound	right			False	1	right	186.03559782	15.1390627114	0.6	0.083	313.083936693	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	337	0					False	1	right	189.151827114	12.7948364247	0.6	0.083	370.58933964	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	338	0					False	1	right	221.059405099	13.426359769	0.6	0.083	336.892077699	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	339	0					False	1	right	198.363043183	2.28349808062	0.6	0.083	380.232347175	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	340	1	frame	right	200	0	False	0					0.083	1088.47199776		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	341	1	frame	left	-200	0	False	0					0.083	1076.87484659		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	342	0					False	1	left	-216.160340197	-12.4135811907	0.6	0.083	418.878180441	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	343	0					False	1	right	210.928685107	2.11606672262	0.6	0.083	319.975099992	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	344	1	sound	right			False	0					0.083	1076.51578495		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	345	0					False	1	right	184.171537	-2.95638901172	0.6	0.083	370.711273048	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	346	1	frame	right	200	0	False	1	right	204.08264494	-11.7780669236	0.6	0.083	341.458804905	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	347	1	frame	right	200	0	False	1	right	181.90949044	1.95871923489	0.6	0.083	340.520559344	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	348	1	sound	left			False	1	left	-202.471042481	15.5960860841	0.6	0.083	289.429816883	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	349	0					False	1	left	-217.887716682	-5.64753205545	0.6	0.083	372.974742204	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	350	1	sound	right			False	1	right	189.513228073	1.32510434707	0.6	0.083	294.498075498	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	351	0					False	1	left	-212.863404479	12.3348138029	0.6	0.083	328.475142596	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	352	1	sound	left			False	1	left	-200.753531954	-10.389102088	0.6	0.083	252.837278182	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	353	0					False	1	right	222.557909828	-23.6145223039	0.6	0.083	664.637865731	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	354	1	frame	right	200	0	False	1	right	194.918189317	0.474578080802	0.6	0.083	1080.7613139		nogo	0	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	355	0					False	1	right	197.77653826	-23.6958164243	0.6	0.083	429.187008878	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	356	1	frame	left	-200	0	False	1	left	-179.73104948	-12.393291668	0.6	0.083	334.270830033	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	357	1	frame	left	-200	0	False	1	left	-190.958858672	-13.4395400738	0.6	0.083	350.871101953	 	go	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	358	1	frame	right	200	0	False	0					0.083	1079.90521262		nogo	1	0.1
+SPC607	2015_May_07_0951	LL-Elaine	PME	cueing_effect	359	0					False	0					0.083	1081.4890638		nogo	1	0.1
