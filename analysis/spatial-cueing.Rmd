@@ -73,7 +73,7 @@ summary(accuracy_mod)
 between_subj_conditions <- expand.grid(
     flicker = c("on", "off"),
     interval = c(0.75, 0.10)
-  ) %>% filter(!(flicker == "off" & interval == 0.10))  # don't get preds for missing exp
+  )
 between_subj_conditions$exp <- row.names(between_subj_conditions)
 between_subj_conditions
 ```
@@ -185,7 +185,7 @@ cueing_effects_in_rts_plot
 
 # Discussion
 
-```{r, fig.height = 10, fig.width = 12}
+```{r, results-plot, fig.height = 10, fig.width = 12}
 library(gridExtra)
 grid.arrange(cueing_effects_in_accuracies_plot + theme(legend.position = "none"), 
              cueing_effects_in_rts_plot + theme(legend.position = c(0.92, 0.8)),

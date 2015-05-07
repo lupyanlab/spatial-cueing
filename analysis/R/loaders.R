@@ -45,6 +45,20 @@ get_spatial_cueing <- function(interval = 0.750, flicker = "on") {
   
   # handle exceptions
   spatial_cueing[spatial_cueing$subj_id %in% c("SPC504a", "SPC508"), "interval"] = 0.10
+  
+  # SPC6 is weird...
+  # The last column, interval, is unlabeled, which causes all colnames
+  # to be off by one (and the first column is named "row.names")
+  # The data all compiles though, so just compile it, and shift the 
+  # column names before merging with the rest of the data
+  spc6 <- compile_experiment("SPC6", interval = 0.1, flicker = "off")
+  spc6 <- select(spc6, -interval, -flicker)
+  
+  new_colnames <- c(colnames(spc6)[2:length(colnames(spc6))], "interval")
+  colnames(spc6) <- new_colnames
+  spc6$flicker <- "off"
+  
+  spatial_cueing <- rbind_list(spatial_cueing, spc6)
 
   print('Coding variables...')
   spatial_cueing$cue_type <- code_missing_cue_type_as_nocue(spatial_cueing$cue_type)
