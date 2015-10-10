@@ -6,7 +6,15 @@ output: html_document
 ---
 ```{r, config, echo = FALSE}
 library(knitr)
-opts_chunk$set(cache = TRUE, cache.path = 'spatial-cueing-cache/', message = FALSE, warning = FALSE, echo = FALSE)
+library(gridExtra)
+opts_chunk$set(
+  cache = TRUE,
+  cache.path = 'spatial-cueing-cache/',
+  message = FALSE,
+  warning = FALSE,
+  echo = FALSE,
+  fig.path = 'spatial-cueing/'
+)
 ```
 
 ```{r, get-spatial-cueing-data}
@@ -183,10 +191,56 @@ cueing_effects_in_rts_plot <- ggplot(cueing_effects_in_rts, aes(x = interval, y 
 cueing_effects_in_rts_plot
 ```
 
+```{r, cueing-effects-with-mask, fig.width=5, fig.height=4}
+cueing_with_flicker <- cueing %>% filter(flicker == "on")
+ggplot(cueing_with_flicker, aes(x = interval, y = is_correct, color = cue_type)) +
+  stat_summary(fun.y = mean, geom = "point") +
+  stat_summary(fun.y = mean, geom = "line") +
+  scale_y_continuous("Accuracy", labels = percent) +
+  theme_classic()
+
+ggplot(cueing_with_flicker, aes(x = interval, y = rt, color = cue_type)) +
+  stat_summary(fun.y = mean, geom = "point") +
+  stat_summary(fun.y = mean, geom = "line") +
+  scale_y_continuous("RT") +
+  theme_classic()
+```
+
+```{r, cueing-effects-without-mask, fig.width=5, fig.height=4}
+cueing_without_flicker <- cueing %>% filter(flicker == "off")
+ggplot(cueing_without_flicker, aes(x = interval, y = is_correct, color = cue_type)) +
+  stat_summary(fun.y = mean, geom = "point") +
+  stat_summary(fun.y = mean, geom = "line") +
+  scale_y_continuous("Accuracy", labels = percent) +
+  theme_classic()
+
+ggplot(cueing_without_flicker, aes(x = interval, y = rt, color = cue_type)) +
+  stat_summary(fun.y = mean, geom = "point") +
+  stat_summary(fun.y = mean, geom = "line") +
+  scale_y_continuous("RT") +
+  theme_classic()
+```
+
 # Discussion
 
+```{r, means-plot, fig.height = 10, fig.width = 12}
+cueing$flicker_label <- label_flicker(cueing$flicker)
+rt_plot <- ggplot(cueing, aes(x = interval, y = rt, color = cue_type)) +
+  stat_summary(fun.y = mean, geom = "point") +
+  stat_summary(fun.y = mean, geom = "line") +
+  facet_wrap("flicker_label", nrow = 2)
+
+acc_plot <- ggplot(cueing, aes(x = interval, y = is_correct, color = cue_type)) +
+  stat_summary(fun.y = mean, geom = "point") +
+  stat_summary(fun.y = mean, geom = "line") +
+  facet_wrap("flicker_label", nrow = 2)
+
+grid.arrange(acc_plot + theme(legend.position = "none"), 
+             rt_plot + theme(legend.position = c(0.92, 0.3)),
+             ncol = 2)
+```
+
 ```{r, results-plot, fig.height = 10, fig.width = 12}
-library(gridExtra)
 grid.arrange(cueing_effects_in_accuracies_plot + theme(legend.position = "none"), 
              cueing_effects_in_rts_plot + theme(legend.position = c(0.92, 0.8)),
              ncol = 2)

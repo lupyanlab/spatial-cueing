@@ -24,3 +24,4 @@ archive/
 # R files
 .Rhistory
 .Rproj.user/
+.Rproj.user
