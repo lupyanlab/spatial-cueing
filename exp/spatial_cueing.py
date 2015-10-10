@@ -1,34 +1,53 @@
 import yaml
-from collections import OrderedDict
-import numpy as np
-from numpy.random import choice
-import random
-
-import unipath
+import pandas as pd
 
 from psychopy import visual, core, misc
 
-from lupyanlab.participant import Participant
+from labtools.trials_functions import counterbalance, expand, extend
+from labtools.participant import Participant
 
-class TrialList(object):
-    def __init__(self, experiment, participant):
-        """
-        cue_type:
-            - visual_arrow
-            - visual_word
-            - auditory_word
-        cue_direction:
-            - left
-            - right
-            - up, down
-        target_direction:
-            - left
-            - right
-        """
-        pass
+def spatial_cueing_trial_list(self, cue_type, mask_type):
+    trials = counterbalance({
+        'target_loc': ['left', 'right'],
+        'cue_type': cue_type,
+        'mask_type': mask_type,
+        'cue_validity': ['valid', 'invalid'],
+    })
 
-    def blocks(self):
-        pass
+    reverser = {'left': 'right', 'right': 'left'}
+    trials['cue_dir'] = trials.apply(
+        lambda trial: trial['target_loc']
+            if trial['cue_validity'] == 'valid'
+            else reverser[trial['target_loc']],
+        axis = 1
+    )
+
+    trials = extend(trials, max_length=300)
+
+    block_size = 100
+    trials = add_block(trials, size=block_size, id_col='cue_validity',
+                       start_at=2)
+
+    baseline_trials = counterbalance({
+        'target_loc': ['left', 'right'],
+        'cue_type': cue_type,
+        'mask_type': mask_type,
+        'cue_validity': 'neutral',
+    })
+    baseline_trials['block'] = 1
+    baseline_trials = extend(baseline_trials, max_length=100)
+
+    neutral_dirs = ['up', 'down'] * 50
+    random.shuffle(neutral_dirs)
+    baseline_trials['cue_dir'] = neutral_dirs
+
+    trials = pd.concat([baseline_trials, trials])
+    trials = simple_shuffle(trials, block='block').reset_index(drop=True)
+
+
+
+
+
 
 class SpatialCueingExperiment(object):
     """ Measure spatial cueing effects when targets are hard to see.
@@ -62,6 +81,11 @@ class SpatialCueingExperiment(object):
         self._make_visual_cues()
         self._make_sounds()
         self._make_target()
+
+    def trial_list_kwargs(self):
+        return {
+            'cue_type': ['visual_arrow', 'visual_word']
+        }
 
     def _make_masks(self):
         is_flicker_on = True
@@ -210,8 +234,8 @@ if __name__ == '__main__':
     participant = Participant.from_yaml('participant.yaml')
     participant.get_subj_info()
 
-    experiment = Experiment('experiment.yaml')
-    trial_list = TrialList(experiment, participant)
+    experiment = SpatialCueingExperiment('experiment.yaml', participant)
+    trial_list = SpatialCueingTrialList(experiment.trial_list_kwargs())
 
     experiment.show_instructions()
 
