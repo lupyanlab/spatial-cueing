@@ -1,0 +1,6 @@
+refresh_rate: 0.03332
+fixation_duration: 0.2
+cue_duration: 0.2
+cue_onset_to_target_onset: 0.6
+target_duration: 0.2
+response_window: 0.4
