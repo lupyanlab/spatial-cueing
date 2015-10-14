@@ -17,12 +17,12 @@ texts:
       to either side of where you are looking? Press the
       SPACEBAR to continue the instructions.
     2: >
-      Do you see the small, slightly transparent white square inside
-      the colorful shapes on the left? On each trial, one target will
-      appear in either the left or the right square. It will quickly
-      disappear. Your job is to press the 'f' key if you saw the target
-      in the left square, and the 'j' key if you saw the target in the
-      right square. To continue, press the SPACEBAR.
+      In a moment, a small slightly transparent white square will
+      appear inside the colorful shapes on the left. Do you see it?
+      On each trial, one of these targets will appear in either the left
+      or the right locations. Your job is to press the 'f' key if the target
+      appeared in the left square, and the 'j' key if you saw the target in
+      the right square. To continue, press the SPACEBAR.
     3: >
       Let's start with some practice trials. Place both hands on the
       keyboard so you are ready to begin. Again, press the 'f' key
@@ -35,8 +35,8 @@ texts:
     experimenter. When you are ready to begin the test trials, press
     the SPACEBAR.
   break_screen: >
-    Take a moment to rest your eyes. When you are ready to continue
-    press the SPACEBAR.
+    Take a moment to rest your eyes. Look away from the screen, squeeze
+    your eyes a few times. When you are ready to continue press the SPACEBAR.
   end_of_experiment: >
     You're all done! You can exit the room when you are ready.
   timeout_screen: >

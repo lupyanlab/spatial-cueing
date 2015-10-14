@@ -79,7 +79,7 @@ class SpatialCueingExperiment(Experiment):
         # Create the target
         target_size = 80
         self.target = visual.Rect(self.window, size=[target_size, target_size],
-                                  opacity=0.6, fillColor='white')
+                                  opacity=0.8, fillColor='white')
 
         # Create the stimuli for feedback
         incorrect_wav = unipath.Path(STIM_DIR, 'feedback-incorrect.wav')
@@ -155,7 +155,7 @@ class SpatialCueingExperiment(Experiment):
 
         # Jitter the soa by a maximum of 50 ms in either direction
         max_soa_jitter = int(fps * 0.05)
-        soa_jitter = random.choice(range(-max_jitter, max_jitter + 1))
+        soa_jitter = random.choice(range(-max_soa_jitter, max_soa_jitter + 1))
         n_interval_frames += soa_jitter
 
         n_target_frames = int(fps * self.times_in_seconds['target_duration'])
@@ -250,26 +250,35 @@ class SpatialCueingExperiment(Experiment):
         for mask in self.masks:
             mask.draw()
 
-    def show_instructions(self):
+    def show_instructions(self, mask_type):
         texts = self.texts['instructions']
+
+        # Show the masks in the instructions that will be
+        # used in the experiment.
+        for mask in self.masks:
+            mask.is_flicker = (mask_type == 'mask')
+            mask.pick_new_mask()
 
         title = visual.TextStim(
             self.window, text='Welcome to the SPC Experiment', height=60,
             font='Consolas', color='black', pos=[0,200], wrapWidth=1000,
         )
 
-        instructions = visual.TextStim(
-            self.window, text=texts[1], wrapWidth=900,
-            height=20, color='black', font='Consolas'
-        )
+        text_kwargs = dict(wrapWidth=900, height=20, color='black',
+                           font='Consolas')
 
+        instructions = visual.TextStim(self.window, **text_kwargs)
+
+        # Instructions 1
         title.draw()
+        instructions.setText(texts[1])
         instructions.draw()
         self.window.flip()
         response = event.waitKeys()[0]
         if response == 'q':
             core.quit()
 
+        # Instructions 2
         instructions.setText(texts[2])
         instructions.setPos([0,200])
 
@@ -277,15 +286,31 @@ class SpatialCueingExperiment(Experiment):
         x, y = self.jitter(target_pos)
         self.target.setPos((x, y))
 
-        instructions.draw()
-        self.draw_masks()
-        self.target.draw()
-        self.window.flip()
+        footer = visual.TextStim(self.window, pos=[0,-200], **text_kwargs)
+        footer.setText('The target is present. Do you see it?')
+
+        for _ in range(5):
+            instructions.draw()
+            self.draw_masks()
+            self.window.flip()
+            core.wait(0.5)
+
+        for n in range(10):
+            if n == 9:
+                # Last frame
+                footer.setText('Press the SPACEBAR to continue.')
+            instructions.draw()
+            footer.draw()
+            self.draw_masks()
+            self.target.draw()
+            self.window.flip()
+            core.wait(0.5)
 
         response = event.waitKeys()[0]
         if response == 'q':
             core.quit()
 
+        # Instructions 3
         instructions.setText(texts[3])
         instructions.draw()
         self.window.flip()
@@ -310,10 +335,11 @@ if __name__ == '__main__':
     trial_list = SpatialCueingTrialList.from_kwargs(**trial_list_kwargs)
 
     experiment = SpatialCueingExperiment('experiment.yaml')
-    experiment.show_instructions()
+    experiment.show_instructions(mask_type = participant['mask_type'])
 
     with open(participant['data_filename'], 'w') as data_file:
         data_file.write(trial_list.header())
+        data_file.flush()
 
         block = 0
         for trial in trial_list:
@@ -326,8 +352,8 @@ if __name__ == '__main__':
                     experiment.show_break_screen()
                 block = trial.block
             trial_data = experiment.run_trial(trial)
-            trial_str = ','.join(map(str, trial_data.values()))
-            print trial_str
+            trial_str = ','.join(map(str, trial_data.values())) + '\n'
             data_file.write(trial_str)
+            data_file.flush()
 
     experiment.show_end_screen()
