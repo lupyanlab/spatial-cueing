@@ -217,6 +217,9 @@ class SpatialCueingExperiment(Experiment):
         trial_data['response_type'] = response_type
         trial_data['is_correct'] = is_correct
 
+        # ITI
+        core.wait(self.times_in_seconds['inter_trial_interval'])
+
         return trial_data
 
     def draw_masks(self):

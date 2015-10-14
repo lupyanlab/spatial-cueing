@@ -1,9 +1,10 @@
-times_in_seconds:
-  fixation_duration: 0.2
+times_in_seconds:  # times will be rounded to nearest number of frames
+  fixation_duration: 0.4
   cue_duration: 0.2
   cue_onset_to_target_onset: 0.6
-  target_duration: 0.2
-  response_window: 0.4
+  target_duration: 0.
+  response_window: 0.4  # from prompt onset
+  inter_trial_interval: 0.4
 response_map:
   f: left
   j: right
