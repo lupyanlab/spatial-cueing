@@ -46,9 +46,9 @@ class SpatialCueingExperiment(Experiment):
         self.prompt = visual.TextStim(self.window, text='?', **text_kwargs)
 
         # Create the masks
-        mask_size = 300
+        mask_size = 200
         mask_kwargs = {'win': self.window, 'size': [mask_size, mask_size]}
-        gutter = 600  # distance between left right centroids
+        gutter = 500  # distance between left right centroids
         self.location_map = {'left': (-gutter/2, 0), 'right': (gutter/2, 0)}
         self.masks = [DynamicMask(pos=self.location_map[d], **mask_kwargs)
                       for d in ['left', 'right']]
@@ -79,7 +79,7 @@ class SpatialCueingExperiment(Experiment):
         # Create the target
         target_size = 80
         self.target = visual.Rect(self.window, size=[target_size, target_size],
-                                  opacity=0.6, fillColor='white')
+                                  opacity=0.8, fillColor='white')
 
         # Create the stimuli for feedback
         incorrect_wav = unipath.Path(STIM_DIR, 'feedback-incorrect.wav')
