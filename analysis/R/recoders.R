@@ -11,12 +11,15 @@ recode_cue_type <- function(frame) {
 }
 
 recode_mask_type <- function(frame) {
+  mask_levels <- c("nomask", "mask")
   mask_type_map <- data_frame(
-    mask_type = c("mask", "nomask"),
+    mask_type = mask_levels,
     mask_c = c(-0.5, 0.5)
   )
   
-  frame %>% left_join(mask_type_map)
+  frame %>% 
+    left_join(mask_type_map) %>%
+    mutate(mask_type = factor(mask_type, levels = mask_levels))
 }
 
 recode_cue_validity <- function(frame) {
