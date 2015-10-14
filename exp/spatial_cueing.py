@@ -237,7 +237,7 @@ class SpatialCueingExperiment(Experiment):
             trial_data[key] = value
 
         # Add response variables to trial data
-        trial_data['rt'] = rt
+        trial_data['rt'] = rt * 1000
         trial_data['response_type'] = response_type
         trial_data['is_correct'] = is_correct
 
