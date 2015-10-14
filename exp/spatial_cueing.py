@@ -1,4 +1,4 @@
-import functools
+from collections import OrderedDict
 import random
 import yaml
 
@@ -12,6 +12,7 @@ from labtools.experiment import Experiment
 
 from participant import SpatialCueingParticipant
 from trial_list import SpatialCueingTrialList
+
 
 class SpatialCueingExperiment(Experiment):
     """ Measure spatial cueing effects when targets are hard to see.
@@ -91,6 +92,7 @@ class SpatialCueingExperiment(Experiment):
         # bounds of the mask
         no_edge_to_edge_buffer = target_size/6
         amount = mask_size - target_size - no_edge_to_edge_buffer
+
         def jitter(pos):
             """ For jittering the target. """
             return (p + random.uniform(-amount/2, amount/2) for p in pos)
@@ -120,7 +122,8 @@ class SpatialCueingExperiment(Experiment):
             sound_options = self.sounds[trial.cue_dir]
             auditory_cue = random.choice(sound_options)
         else:
-            raise NotImplementedError('cue type %s not implemented' % cue_type)
+            msg = 'cue type %s not implemented' % trial.cue_type
+            raise NotImplementedError(msg)
 
         # Set the position of the target
         target_pos = self.location_map[trial.target_loc]
@@ -129,13 +132,15 @@ class SpatialCueingExperiment(Experiment):
 
         # Shortcuts for config variables
         fps = 120  # frames per second of testing computers
-        n_fixation_frames = int(fps * self.times_in_seconds['fixation_duration'])
+        n_fixation_frames = int(fps *
+                                self.times_in_seconds['fixation_duration'])
         n_cue_frames = int(fps * self.times_in_seconds['cue_duration'])
 
         # - jitter soa here
-        n_interval_frames = int(fps * \
-            (self.times_in_seconds['cue_onset_to_target_onset'] -
-             self.times_in_seconds['cue_duration']))
+        interval = self.times_in_seconds['cue_onset_to_target_onset'] - \
+            self.times_in_seconds['cue_duration']
+        n_interval_frames = int(fps * interval)
+
         n_target_frames = int(fps * self.times_in_seconds['target_duration'])
 
         self.timer.reset()
@@ -203,7 +208,9 @@ class SpatialCueingExperiment(Experiment):
         # ----------------------------------------------------------------------
 
         # Create a writable copy of the trial
-        trial_data = dict(zip(trial._fields, trial))
+        trial_data = OrderedDict()
+        for key, value in zip(trial._fields, trial):
+            trial_data[key] = value
 
         # Add response variables to trial data
         trial_data['rt'] = rt
@@ -217,7 +224,50 @@ class SpatialCueingExperiment(Experiment):
             mask.draw()
 
     def show_instructions(self):
-        self.show_text(self.texts['instructions'])
+        texts = self.texts['instructions']
+
+        title = visual.TextStim(
+            self.window, text='Welcome to the SPC Experiment', height=60,
+            font='Consolas', color='black', pos=[0,200], wrapWidth=1000,
+        )
+
+        instructions = visual.TextStim(
+            self.window, text=texts[1], wrapWidth=900,
+            height=20, color='black', font='Consolas'
+        )
+
+        title.draw()
+        instructions.draw()
+        self.window.flip()
+        response = event.waitKeys()[0]
+        if response == 'q':
+            core.quit()
+
+        instructions.setText(texts[2])
+        instructions.setPos([0,200])
+
+        target_pos = self.location_map['left']
+        x, y = self.jitter(target_pos)
+        self.target.setPos((x, y))
+
+        instructions.draw()
+        self.draw_masks()
+        self.target.draw()
+        self.window.flip()
+
+        response = event.waitKeys()[0]
+        if response == 'q':
+            core.quit()
+
+        instructions.setText(texts[3])
+        instructions.draw()
+        self.window.flip()
+        response = event.waitKeys()[0]
+        if response == 'q':
+            core.quit()
+
+    def show_end_of_practice_screen(self):
+        self.show_text(self.texts['end_of_practice'])
 
     def show_break_screen(self):
         self.show_text(self.texts['break_screen'])
@@ -236,14 +286,21 @@ if __name__ == '__main__':
     experiment.show_instructions()
 
     with open(participant['data_filename'], 'w') as data_file:
-        block = 1
+        data_file.write(trial_list.header())
+
+        block = 0
         for trial in trial_list:
             # Before starting new block, show the break screen
             if trial.block > block:
-                experiment.show_break_screen()
+                if block == 0:
+                    # Just finished the practice trials
+                    experiment.show_end_of_practice_screen()
+                else:
+                    experiment.show_break_screen()
                 block = trial.block
             trial_data = experiment.run_trial(trial)
-            trial_str = trial_list.compose(trial_data)
+            trial_str = ','.join(map(str, trial_data.values()))
+            print trial_str
             data_file.write(trial_str)
 
     experiment.show_end_screen()
