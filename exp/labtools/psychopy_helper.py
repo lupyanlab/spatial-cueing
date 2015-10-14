@@ -139,24 +139,13 @@ def load_images(image_dir, ext, **kwargs):
 
     return images
 
-class SoundDraw(sound.Sound):
-    TRIGGERED = False
-    def draw(self):
-        if not self.TRIGGERED:
-            self.play()
-            self.TRIGGERED = True
-    
-    def reset(self):
-        self.TRIGGERED = False
-
 def load_sounds(sound_dir, pattern):
     sound_dir = Path(sound_dir)
     sound_names = sound_dir.listdir(pattern = pattern)
     sounds = {}
     for snd_name in sound_names:
         snd_stem = str(snd_name.stem)
-        snd_path = os.path.join(sound_dir, snd_name)
-        sounds[snd_stem] = SoundDraw(snd_path)
+        sounds[snd_stem] = sound.Sound(snd_name)
 
     return sounds
 

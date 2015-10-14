@@ -1,0 +1,19 @@
+subj_info_options:
+  1:
+    name: subj_id
+    prompt: Subject identifier
+    default: P101
+  2:
+    name: cue_contrast
+    prompt: word_arrow or visual_auditory
+    default: word_arrow
+  3:
+    name: mask_type
+    prompt: mask or nomask
+    default: mask
+  4:
+    name: experimenter
+    prompt: Experimenter initials
+    default: PME
+sona_experiment_code: SPC
+data_dir: data/

@@ -1,0 +1,44 @@
+times_in_seconds:  # times will be rounded to nearest number of frames
+  fixation_duration: 0.4
+  fixation_offset_to_cue_onset: 0.2
+  cue_duration: 0.2
+  cue_onset_to_target_onset: 0.75  # jittered by 50 ms in either direction
+  target_duration: 0.1
+  response_window: 2.0  # from prompt onset
+  inter_trial_interval: 0.4
+response_map:
+  f: left
+  j: right
+texts:
+  instructions:
+    1: >
+      Today we want to measure your peripheral vision:
+      how quickly can you find a faint shape that appears
+      to either side of where you are looking? Press the
+      SPACEBAR to continue the instructions.
+    2: >
+      In a moment, a small slightly transparent white square will
+      appear inside the colorful shapes on the left. Do you see it?
+      On each trial, one of these targets will appear in either the left
+      or the right locations. Your job is to press the 'f' key if the target
+      appeared in the left square, and the 'j' key if you saw the target in
+      the right square. To continue, press the SPACEBAR.
+    3: >
+      Let's start with some practice trials. Place both hands on the
+      keyboard so you are ready to begin. Again, press the 'f' key
+      if the target appears on the left side. Press the 'j' key if
+      the target appears on the right side. When you are ready to start
+      the practice trials, press the SPACEBAR.
+  end_of_practice: >
+    You've finished the practice trials. How did you do? Does the task
+    make sense? If you have any questions, now is the time to ask the
+    experimenter. When you are ready to begin the test trials, press
+    the SPACEBAR.
+  break_screen: >
+    Take a moment to rest your eyes. Look away from the screen, squeeze
+    your eyes a few times. When you are ready to continue press the SPACEBAR.
+  end_of_experiment: >
+    You're all done! You can exit the room when you are ready.
+  timeout_screen: >
+    You missed that one. Take a break if you need it. When you are
+    ready to continue, press the SPACEBAR.

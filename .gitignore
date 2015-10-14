@@ -13,9 +13,6 @@ archive/
 *.pickle
 .iohpid
 
-# R files
-.Rhistory
-.Rproj.user/
 
 # Rmd generated files
 *-cache/
@@ -23,3 +20,8 @@ archive/
 # Vim files
 *.swp
 *~
+
+# R files
+.Rhistory
+.Rproj.user/
+.Rproj.user
