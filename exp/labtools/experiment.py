@@ -1,3 +1,4 @@
+from psychopy import visual, event
 
 class Experiment(object):
     def show_text(self, text, **kwargs):

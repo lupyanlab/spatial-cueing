@@ -8,7 +8,7 @@ subj_info_options:
     prompt: word_arrow or visual_auditory
     default: word_arrow
   3:
-    name: mask_condition
+    name: mask_type
     prompt: mask or nomask
     default: mask
   4:
@@ -17,4 +17,3 @@ subj_info_options:
     default: PME
 sona_experiment_code: SPC
 data_dir: data/
-trials_dir: trials/

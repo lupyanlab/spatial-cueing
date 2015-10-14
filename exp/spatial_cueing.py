@@ -4,29 +4,25 @@ import yaml
 
 import unipath
 
-from psychopy import visual, core, event
+from psychopy import visual, core, event, sound
 
-from labtools.participant import Participant
-from labtools.trial_list import TrialList
-from labtools.experiment import Experiment
 from labtools.psychopy_helper import load_sounds
 from labtools.dynamicmask import DynamicMask
+from labtools.experiment import Experiment
 
-from trials import spatial_cueing_trial_list
-
-
-def jitter(amount, pos):
-    """ For jittering the target. """
-    return (p + random.uniform(-amount/2, amount/2) for p in pos)
+from participant import SpatialCueingParticipant
+from trial_list import SpatialCueingTrialList
 
 class SpatialCueingExperiment(Experiment):
     """ Measure spatial cueing effects when targets are hard to see.
 
     On each trial, participants wait for a target to appear within
     the bounds of two rectangular masks, presented to the left and right
-    of fixation.
+    of fixation. For some participants, the masks will be flashing
+    continuously over the course of the trial. For others, the masks
+    will be static.
 
-    Before the target, participants get one of the following cues:
+    Before the target appears, participants receive one of the following cues:
         - visual_arrow
         - visual_word
         - auditory_word
@@ -38,7 +34,10 @@ class SpatialCueingExperiment(Experiment):
 
         # Save any info in the yaml file to the experiment object
         with open(experiment_yaml, 'r') as f:
-            self.experiment_info = yaml.load(f)
+            self.config = yaml.load(f)
+        self.texts = self.config.pop('texts')
+        self.times_in_seconds = self.config.pop('times_in_seconds')
+        self.response_map = self.config.pop('response_map')
 
         # Create the fixation and prompt
         text_kwargs = {'height': 40, 'font': 'Consolas', 'color': 'black'}
@@ -47,164 +46,204 @@ class SpatialCueingExperiment(Experiment):
 
         # Create the masks
         mask_size = 200
-        mask_kwargs = {'win': self.window, 'size': [mask_size, mask_size],
-                       'opacity': 0.8}
+        mask_kwargs = {'win': self.window, 'size': [mask_size, mask_size]}
         gutter = 400  # distance between left right centroids
         self.location_map = {'left': (-gutter/2, 0), 'right': (gutter/2, 0)}
         self.masks = [DynamicMask(pos=self.location_map[d], **mask_kwargs)
                       for d in ['left', 'right']]
 
-        stim_dir = unipath.Path('stimuli')
+        # Stimuli directory
+        STIM_DIR = unipath.Path('stimuli')
+        assert STIM_DIR.isdir(), "stimuli directory not found"
 
         # Create the arrow cues
         self.arrows = {}
         for direction in ['left', 'right', 'neutral']:
-            img = unipath.Path(stim_dir, 'arrow-%s.png' % direction)
-            self.arrows[direction] = visual.ImageStim(self.window, img)
+            arrow_png = unipath.Path(STIM_DIR, 'arrow-%s.png' % direction)
+            assert arrow_png.exists(), "%s not found" % arrow_png
+            arrow_png = str(arrow_png)  # psychopy doesn't like unipath.Path's
+            self.arrows[direction] = visual.ImageStim(self.window, arrow_png)
 
-        # Create the visual word cue
+        # Create the visual word cue using same kwargs as fixation and prompt
         self.word = visual.TextStim(self.window, text='', **text_kwargs)
 
-        # Create the sound cues
+        # Load the sound cues
+        # There are multiple versions of each sound, so pick one like this:
+        # >>> random.choice(self.sounds['left']).play()
         self.sounds = {}
-        self.sounds['left'] = load_sounds(stim_dir, '*left*.wav')
-        self.sounds['right'] = load_sounds(stim_dir, '*right*.wav')
+        for direction in ['left', 'right', 'neutral']:
+            sounds_re = '%s-*.wav' % direction
+            self.sounds[direction] = load_sounds(STIM_DIR, sounds_re)
 
         # Create the target
         target_size = 80
         self.target = visual.Rect(self.window, size=[target_size, target_size],
-                                  opacity=1.0, fillColor='white')
+                                  opacity=0.6, fillColor='white')
 
         # Create the stimuli for feedback
-        incorrect_wav = unipath.Path(stim_dir, 'feedback-incorrect.wav')
-        correct_wav = unipath.Path(stim_dir, 'feedback-correct.wav')
+        incorrect_wav = unipath.Path(STIM_DIR, 'feedback-incorrect.wav')
+        correct_wav = unipath.Path(STIM_DIR, 'feedback-correct.wav')
         self.feedback = {}
         self.feedback[0] = sound.Sound(incorrect_wav)
         self.feedback[1] = sound.Sound(correct_wav)
 
-        # Create a function to jitter target positions
-        amount = mask_size - target_size
-        self.jitter = functools.partial(jitter, amount)
+        # Create a closure function to jitter target positions with the
+        # bounds of the mask
+        no_edge_to_edge_buffer = target_size/6
+        amount = mask_size - target_size - no_edge_to_edge_buffer
+        def jitter(pos):
+            """ For jittering the target. """
+            return (p + random.uniform(-amount/2, amount/2) for p in pos)
+        self.jitter = jitter
+
+        # Attach timer to experiment
+        self.timer = core.Clock()
 
     def run_trial(self, trial):
-        """ Prepare the trial, run it, and return the trial data. """
-        visual_cue, auditory_cue = self._set_cue_for_trial(trial.cue_type,
-                                                           trial.cue_dir)
+        """ Prepare the trial, run it, and return the trial data.
 
-        self._set_target_pos(trial.target_loc)
-
-        refresh_rate = self.experiment_info['refresh_rate']
-        fixation_duration = self.experiment_info['fixation_duration']
-        cue_duration = self.experiment_info['cue_duration']
-        cue_onset_to_target_onset = self.experiment_info[
-            'cue_onset_to_target_onset'
-        ]
-        target_duration = self.experiment_info['target_duration']
-
-        timer = core.Clock()
-        timer.reset()
-
-        trial_onset = timer.getTime()
-        while timer.getTime() - trial_onset < fixation_duration:
-            self._draw_masks()
-            self.fix.draw()
-            self.window.flip()
-            core.wait(refresh_rate)
-
-        cue_onset = timer.getTime()
-        while timer.getTime() - cue_onset < cue_duration:
-            self._draw_masks()
-
-            if visual_cue:
-                visual_cue.draw()
-
-            # Play auditory cue once
-            if auditory_cue:
-                auditory_cue.play()
-                auditory_cue = None
-
-            self.window.flip()
-            core.wait(refresh_rate)
-
-        while timer.getTime() - cue_onset < cue_onset_to_target_onset:
-            self._draw_masks()
-            self.window.flip()
-            core.wait(refresh_rate)
-
-        target_onset = timer.getTime()
-        while timer.getTime() - target_onset < target_duration:
-            self._draw_masks()
-            self.target.draw()
-            self.window.flip()
-            core.wait(refresh_rate)
-
-        self._draw_masks()
-        self.window.flip()
-        core.wait(refresh_rate)
-
-        self.prompt.draw()
-        self.window.flip()
-        response = event.waitKeys(['f', 'j'])
-        return response
-
-    def _draw_masks(self):
-        for mask in self.masks:
-            mask.draw()
-
-    def _set_cue_for_trial(self, cue_type, cue_dir):
+        trial is a namedtuple with attributes for each item in the trials list.
+        """
+        # Determine which cue will be shown on this trial
         visual_cue = None
         auditory_cue = None
 
-        if cue_type == 'visual_arrow':
-            visual_cue = self.cues['arrow']
-            visual_cue.setOri(self.arrow_orientation_map[cue_dir])
-        elif cue_type == 'visual_word':
-            visual_cue = self.cues['word']
-            visual_cue.setText(cue_dir)
+        if trial.cue_type == 'visual_arrow':
+            visual_cue = self.arrows[trial.cue_dir]
+        elif trial.cue_type == 'visual_word':
+            visual_cue = self.word
+            if trial.cue_dir == 'neutral':
+                visual_cue.setText('XXXXX')
+            else:
+                visual_cue.setText(trial.cue_dir)
         elif trial.cue_type == 'auditory_word':
-            sound_options = self.sounds[cue_dir]
+            sound_options = self.sounds[trial.cue_dir]
             auditory_cue = random.choice(sound_options)
         else:
             raise NotImplementedError('cue type %s not implemented' % cue_type)
 
-        return visual_cue, auditory_cue
-
-    def _set_target_pos(self, target_loc):
-        target_pos = self.location_map[target_loc]
+        # Set the position of the target
+        target_pos = self.location_map[trial.target_loc]
         x, y = self.jitter(target_pos)
         self.target.setPos((x, y))
 
+        # Shortcuts for config variables
+        fps = 120  # frames per second of testing computers
+        n_fixation_frames = int(fps * self.times_in_seconds['fixation_duration'])
+        n_cue_frames = int(fps * self.times_in_seconds['cue_duration'])
+
+        # - jitter soa here
+        n_interval_frames = int(fps * \
+            (self.times_in_seconds['cue_onset_to_target_onset'] -
+             self.times_in_seconds['cue_duration']))
+        n_target_frames = int(fps * self.times_in_seconds['target_duration'])
+
+        self.timer.reset()
+        # ----------------------------------------------------------------------
+        # Start of trial presentation
+
+        # Fixation
+        for _ in range(n_fixation_frames):
+            self.draw_masks()
+            self.fix.draw()
+            self.window.flip()
+
+        # Play the auditory cue before entering cue loop
+        if auditory_cue:
+            auditory_cue.play()
+
+        # Draw the masks and visual cue, if present
+        for _ in range(n_cue_frames):
+            self.draw_masks()
+            if visual_cue:
+                visual_cue.draw()
+            self.window.flip()
+
+        # Draw the masks between the cue and target
+        for _ in range(n_interval_frames):
+            self.draw_masks()
+            self.window.flip()
+
+        # Draw the target on top of the masks
+        target_onset = self.timer.getTime()
+        for _ in range(n_target_frames):
+            self.draw_masks()
+            self.target.draw()
+            self.window.flip()
+
+        # Clear the target from the masks before showing the prompt
+        self.draw_masks()
+        self.window.flip()
+
+        # Draw the prompt and wait for a response
+        self.prompt.draw()
+        self.window.flip()
+        responses = event.waitKeys(keyList=self.response_map.keys(),
+                                   maxWait=2.0)
+        rt = self.timer.getTime() - target_onset
+
+        # Figure out how they responded
+        try:
+            response = responses[0]
+        except TypeError:
+            response_type = 'timeout'
+        else:
+            response_type = self.response_map[response]
+
+        is_correct = int(response_type == trial.target_loc)
+
+        # Give auditory feedback
+        self.feedback[is_correct].play()
+
+        # Pause the experiment after a timeout trial
+        if response_type == 'timeout':
+            self.show_text(self.texts['timeout_screen'])
+
+        # End of trial presentation
+        # ----------------------------------------------------------------------
+
+        # Create a writable copy of the trial
+        trial_data = dict(zip(trial._fields, trial))
+
+        # Add response variables to trial data
+        trial_data['rt'] = rt
+        trial_data['response_type'] = response_type
+        trial_data['is_correct'] = is_correct
+
+        return trial_data
+
+    def draw_masks(self):
+        for mask in self.masks:
+            mask.draw()
+
     def show_instructions(self):
-        self.show_text(self.experiment_info['instructions'])
+        self.show_text(self.texts['instructions'])
 
     def show_break_screen(self):
-        self.show_text(self.experiment_info['break_text'])
+        self.show_text(self.texts['break_screen'])
 
     def show_end_screen(self):
-        self.show_text(self.experiment_info['end_of_experiment'])
+        self.show_text(self.texts['end_of_experiment'])
 
 if __name__ == '__main__':
-    participant = Participant.from_yaml('participant.yaml')
+    participant = SpatialCueingParticipant.from_yaml('participant.yaml')
     participant.get_subj_info()
 
-    experiment = SpatialCueingExperiment('experiment.yaml')
-    trial_list_kwargs = experiment.trial_list_kwargs(participant)
-    trial_frame = spatial_cueing_trial_list(**trial_list_kwargs)
-    trial_list = TrialList.from_dataframe(trial_frame)
+    trial_list_kwargs = participant.get_trial_list_kwargs()
+    trial_list = SpatialCueingTrialList.from_kwargs(**trial_list_kwargs)
 
+    experiment = SpatialCueingExperiment('experiment.yaml')
     experiment.show_instructions()
 
-    with open(participant.data_file, 'w') as data_file:
-        data_file.write(trial_list.header())
-
-        cur_block = 1
+    with open(participant['data_filename'], 'w') as data_file:
+        block = 1
         for trial in trial_list:
-            if trial.block > cur_block:
+            # Before starting new block, show the break screen
+            if trial.block > block:
                 experiment.show_break_screen()
-                cur_block = trial.block
+                block = trial.block
             trial_data = experiment.run_trial(trial)
-            print trial_data
-            core.quit()
-            # data_file.write(trial_data)
+            trial_str = trial_list.compose(trial_data)
+            data_file.write(trial_str)
 
     experiment.show_end_screen()
