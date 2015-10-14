@@ -46,11 +46,12 @@ def spatial_cueing_trial_list(cue_type, mask_type, **participant_kwargs):
     practice_trials = trials.copy()
     practice_trials['block'] = 0
 
-    # Duplicate unique trials evenly to reach 300 trials
-    trials = extend(trials, max_length=300)
+    # Duplicate unique trials evenly to reach max
+    # 320 trials ~ 20 trials in each within subject cell
+    trials = extend(trials, max_length=320)
 
     # Assign block randomly
-    block_size = 100
+    block_size = 80
     trials = add_block(trials, size=block_size, id_col='cue_validity',
                        start_at=1)
 
