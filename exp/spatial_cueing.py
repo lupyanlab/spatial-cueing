@@ -132,14 +132,26 @@ class SpatialCueingExperiment(Experiment):
 
         # Shortcuts for config variables
         fps = 120  # frames per second of testing computers
+
+        # Fixation frames
         n_fixation_frames = int(fps *
                                 self.times_in_seconds['fixation_duration'])
         n_cue_frames = int(fps * self.times_in_seconds['cue_duration'])
 
-        # - jitter soa here
+        # Fixation offset to cue onset frames
+        n_pre_cue_frames = int(
+            fps * self.times_in_seconds['fixation_offset_to_cue_onset']
+        )
+
+        # Cue offset to target onset frames
         interval = self.times_in_seconds['cue_onset_to_target_onset'] - \
             self.times_in_seconds['cue_duration']
         n_interval_frames = int(fps * interval)
+
+        # Jitter the soa by a maximum of 50 ms in either direction
+        max_soa_jitter = int(fps * 0.05)
+        soa_jitter = random.choice(range(-max_jitter, max_jitter + 1))
+        n_interval_frames += soa_jitter
 
         n_target_frames = int(fps * self.times_in_seconds['target_duration'])
 
@@ -153,7 +165,12 @@ class SpatialCueingExperiment(Experiment):
             self.fix.draw()
             self.window.flip()
 
-        # Play the auditory cue before entering cue loop
+        # Fixation offset to cue onset
+        for _ in range(n_pre_cue_frames):
+            self.draw_masks()
+            self.window.flip()
+
+        # Start the auditory cue before entering cue loop
         if auditory_cue:
             auditory_cue.play()
 
@@ -183,8 +200,10 @@ class SpatialCueingExperiment(Experiment):
         # Draw the prompt and wait for a response
         self.prompt.draw()
         self.window.flip()
-        responses = event.waitKeys(keyList=self.response_map.keys(),
-                                   maxWait=2.0)
+        responses = event.waitKeys(
+            keyList=self.response_map.keys(),
+            maxWait=self.times_in_seconds['response_window']
+        )
         rt = self.timer.getTime() - target_onset
 
         # Figure out how they responded

@@ -57,6 +57,9 @@ def spatial_cueing_trial_list(cue_type, mask_type, **participant_kwargs):
     # Join the practice trials
     trials = pandas.concat([practice_trials, trials])
 
+    # Add soa for each trial
+    trials['soa'] = 
+
     # Shuffle by block
     trials = simple_shuffle(trials, block='block')
     trials = trials.reset_index(drop=True)
