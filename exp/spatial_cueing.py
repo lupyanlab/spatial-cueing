@@ -106,6 +106,11 @@ class SpatialCueingExperiment(Experiment):
 
         trial is a namedtuple with attributes for each item in the trials list.
         """
+        # Set mask type
+        for mask in self.masks:
+            mask.is_flicker = (trial.mask_type == 'mask')
+            mask.pick_new_mask()
+
         # Determine which cue will be shown on this trial
         visual_cue = None
         auditory_cue = None
