@@ -6,9 +6,9 @@ library(car)
 #' Assumes all data files have their own headers.
 #' @param data_directory, str
 #' @param pattern, str regular expression
-compile <- function(data_directory, pattern) {
+compile <- function(data_directory, pattern, sep = '\t') {
   fnames <- list.files(data_directory, pattern, full.names = TRUE)
-  plyr::ldply(fnames, read.table, sep = '\t', header = TRUE,
+  plyr::ldply(fnames, read.table, sep = sep, header = TRUE,
               row.names = NULL, stringsAsFactors = FALSE)
 }
 
