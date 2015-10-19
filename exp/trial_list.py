@@ -19,7 +19,7 @@ def spatial_cueing_trial_list(cue_type, mask_type, **participant_kwargs):
     trials = expand(trials, 'cue_validity', values=['invalid', 'neutral'])
 
     # 50% valid
-    trials = expand(trials, 'tmp_cue_valid', values=[0,1])
+    trials = expand(trials, 'tmp_cue_valid', values=[1,0], ratio=0.75)
     trials.loc[trials.tmp_cue_valid == 1, 'cue_validity'] = 'valid'
     del trials['tmp_cue_valid']
 
@@ -45,6 +45,12 @@ def spatial_cueing_trial_list(cue_type, mask_type, **participant_kwargs):
     # Save a copy of the practice trials
     practice_trials = trials.copy()
     practice_trials['block'] = 0
+
+    # Select a subset of trials for practice
+    num_practice_trials = 15
+    sampled_trials = random.sample(practice_trials.index, num_practice_trials)
+    practice_trials = practice_trials.ix[sampled_trials]
+    practice_trials.reset_index(drop=True)
 
     # Duplicate unique trials evenly to reach max
     # 320 trials ~ 20 trials in each within subject cell
