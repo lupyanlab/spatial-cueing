@@ -292,11 +292,16 @@ class SpatialCueingExperiment(Experiment):
         x, y = self.jitter(target_pos)
         self.target.setPos((x, y))
 
-        footer = visual.TextStim(self.window, pos=[0,-200], **text_kwargs)
+        footer_kwargs = dict(text_kwargs)
+        footer_kwargs['wrapWidth'] = 240
+        footer = visual.TextStim(self.window, pos=[0,0], **footer_kwargs)
         footer.setText('The target is present. Do you see it?')
 
+        instructions.draw()
+        self.window.flip()
+        event.waitKeys()
+
         for _ in range(5):
-            instructions.draw()
             self.draw_masks()
             self.window.flip()
             core.wait(0.5)
@@ -305,7 +310,6 @@ class SpatialCueingExperiment(Experiment):
             if n == 9:
                 # Last frame
                 footer.setText('Press the SPACEBAR to continue.')
-            instructions.draw()
             footer.draw()
             self.draw_masks()
             self.target.draw()
@@ -318,6 +322,22 @@ class SpatialCueingExperiment(Experiment):
 
         # Instructions 3
         instructions.setText(texts[3])
+        instructions.draw()
+        self.window.flip()
+        response = event.waitKeys()[0]
+        if response == 'q':
+            core.quit()
+
+        # Instructions 4
+        instructions.setText(texts[4])
+        instructions.draw()
+        self.window.flip()
+        response = event.waitKeys()[0]
+        if response == 'q':
+            core.quit()
+
+        # Instructions 5
+        instructions.setText(texts[5])
         instructions.draw()
         self.window.flip()
         response = event.waitKeys()[0]

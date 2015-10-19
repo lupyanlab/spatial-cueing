@@ -20,16 +20,22 @@ texts:
       SPACEBAR to continue the instructions.
     2: >
       In a moment, a small slightly transparent white square will
-      appear inside the colorful shapes on the left. Do you see it?
-      On each trial, one of these targets will appear in either the left
-      or the right locations. Your job is to press the 'f' key if the target
-      appeared in the left square, and the 'j' key if you saw the target in
-      the right square.
+      appear inside the colorful shapes on the left. Press the SPACEBAR,
+      and watch carefully for the target.
     3: >
+      On each trial, one of these targets will appear in one of the
+      four locations. Your job is to press the arrow key (up, down, left,
+      or right) corresponding to where the target appeared.
+    4: >
+      Also on each trial, before the target appears you will be presented
+      a cue. The cue could be an arrow, a written word, or a spoken word.
+      Pay attention to these cues, as they may help you locate the target,
+      but sometimes the cues will mislead you, so don't guess based on the
+      cue alone.
+    5: >
       Let's start with some practice trials. First, please put on the
-      headphones. Then, place both hands on the keyboard so you are  ready to
-      begin. Again, press the 'f' key if the target appears  on the left side.
-      Press the 'j' key if the target appears on  the right side. When you are
+      headphones. Remember to press the arrow key corresponding to where
+      you saw the target. When you are
       ready to start the practice trials, press the SPACEBAR.
   end_of_practice: >
     You've finished the practice trials. How did you do? Does the task
