@@ -15,11 +15,11 @@ def spatial_cueing_trial_list(cue_type, mask_type, **participant_kwargs):
     })
 
     # Determine cue validity, starting with the smallest group
-    # 25% invalid, 25% neutral
-    trials = expand(trials, 'cue_validity', values=['invalid', 'neutral'])
+    # 66.6% valid, 25% invalid, 8.3% neutral
+    trials = expand(trials, 'cue_validity', values=['invalid', 'neutral'],
+                    ratio=0.75)
 
-    # 50% valid
-    trials = expand(trials, 'tmp_cue_valid', values=[1,0], ratio=0.75)
+    trials = expand(trials, 'tmp_cue_valid', values=[1,0], ratio=0.7)
     trials.loc[trials.tmp_cue_valid == 1, 'cue_validity'] = 'valid'
     del trials['tmp_cue_valid']
 
@@ -46,6 +46,15 @@ def spatial_cueing_trial_list(cue_type, mask_type, **participant_kwargs):
     practice_trials = trials.copy()
     practice_trials['block'] = 0
 
+    # Ensure that there are some up/down targets in the practice trials
+    practice_trial_invalid_ix = practice_trials.ix[
+        practice_trials.cue_validity == 'invalid',
+    ].index
+    practice_trial_target_loc = [random.choice(['up', 'down'])
+                                 for _ in practice_trial_invalid_ix]
+    practice_trials.ix[practice_trial_invalid_ix, 'target_loc'] = \
+        practice_trial_target_loc
+
     # Select a subset of trials for practice
     num_practice_trials = 15
     sampled_trials = random.sample(practice_trials.index, num_practice_trials)
@@ -55,6 +64,13 @@ def spatial_cueing_trial_list(cue_type, mask_type, **participant_kwargs):
     # Duplicate unique trials evenly to reach max
     # 320 trials ~ 20 trials in each within subject cell
     trials = extend(trials, max_length=320)
+
+    # Set target location for catch trials
+    invalid_trial_ix = trials.ix[trials.cue_validity == 'invalid',].index
+    catch_trial_ix = random.sample(invalid_trial_ix, len(invalid_trial_ix)/2)
+    catch_trial_target_loc = [random.choice(['up', 'down'])
+                              for _ in catch_trial_ix]
+    trials.ix[catch_trial_ix, 'target_loc'] = catch_trial_target_loc
 
     # Assign block randomly
     block_size = 80
