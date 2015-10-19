@@ -48,7 +48,7 @@ class SpatialCueingExperiment(Experiment):
         # Create the masks
         mask_size = 200
         mask_kwargs = {'win': self.window, 'size': [mask_size, mask_size]}
-        gutter = 500  # distance between left right centroids
+        gutter = 440  # distance between L/R and U/D centroids
         self.location_map = {
             'left': (-gutter/2, 0),
             'right': (gutter/2, 0),
@@ -296,7 +296,7 @@ class SpatialCueingExperiment(Experiment):
         self.target.setPos((x, y))
 
         footer_kwargs = dict(text_kwargs)
-        footer_kwargs['wrapWidth'] = 240
+        footer_kwargs['wrapWidth'] = 220
         footer = visual.TextStim(self.window, pos=[0,0], **footer_kwargs)
         footer.setText('The target is present. Do you see it?')
 
