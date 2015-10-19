@@ -48,7 +48,10 @@ texts:
     Take a moment to rest your eyes. Look away from the screen, squeeze
     your eyes a few times. When you are ready to continue press the SPACEBAR.
   end_of_experiment: >
-    You're all done! You can exit the room when you are ready.
+    You're all done! We'd like you to complete a short survey. Press the
+    SPACEBAR to exit the experiment, and a survey should open up in the
+    web browser. If you don't see the survey, please let the experimenter
+    know.
   timeout_screen: >
     You missed that one. Take a break if you need it. When you are
     ready to continue, press the SPACEBAR.
