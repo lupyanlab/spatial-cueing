@@ -25,8 +25,11 @@ recode_mask_type <- function(frame) {
 recode_cue_validity <- function(frame) {
   poly_contr <- contr.poly(n = 3) %>% 
     as.data.frame %>%
-    rename(cue_validity_lin = .L, cue_validity_quad = .Q) %>%
-    mutate(cue_validity = c("valid", "neutral", "invalid"))
+    rename(cue_effect_lin = .L, cue_effect_quad = .Q) %>%
+    mutate(
+      cue_validity = c("valid", "neutral", "invalid"),
+      cue_effect_dodge = c(-0.1, 0.0, 0.1)
+    )
   
   frame %>% left_join(poly_contr)
 }
