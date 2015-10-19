@@ -140,26 +140,31 @@ class SpatialCueingExperiment(Experiment):
         x, y = self.jitter(target_pos)
         self.target.setPos((x, y))
 
-        # Shortcuts for config variables
-        fps = 120  # frames per second of testing computers
+        fps = 120 # frames per second of testing computers
+        def to_n_frames(time_in_seconds):
+            return int(fps * time_in_seconds)
+
         # Fixation frames
-        n_fixation_frames = int(fps *
-                                self.times_in_seconds['fixation_duration'])
-        n_cue_frames = int(fps * self.times_in_seconds['cue_duration'])
+        n_fixation_frames = to_n_frames(
+            self.times_in_seconds['fixation_duration']
+        )
+        n_cue_frames = to_n_frames(
+            self.times_in_seconds['cue_duration']
+        )
         # Fixation offset to cue onset frames
-        n_pre_cue_frames = int(
-            fps * self.times_in_seconds['fixation_offset_to_cue_onset']
+        n_pre_cue_frames = to_n_frames(
+            self.times_in_seconds['fixation_offset_to_cue_onset']
         )
         # Cue offset to target onset frames
         interval = self.times_in_seconds['cue_onset_to_target_onset'] - \
             self.times_in_seconds['cue_duration']
-        n_interval_frames = int(fps * interval)
+        n_interval_frames = to_n_frames(interval)
         # Jitter the soa by a maximum of 50 ms in either direction
         max_soa_jitter = int(fps * 0.05)
         soa_jitter = random.choice(range(-max_soa_jitter, max_soa_jitter + 1))
         n_interval_frames += soa_jitter
 
-        n_target_frames = int(fps * self.times_in_seconds['target_duration'])
+        n_target_frames = to_n_frames(self.times_in_seconds['target_duration'])
 
         self.timer.reset()
         # ----------------------------------------------------------------------
