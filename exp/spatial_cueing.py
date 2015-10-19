@@ -195,6 +195,7 @@ class SpatialCueingExperiment(Experiment):
         # Draw the masks between the cue and target
         for _ in range(n_interval_frames):
             self.draw_masks()
+            self.fix.draw()
             self.window.flip()
 
         # Draw the target on top of the masks
@@ -202,10 +203,12 @@ class SpatialCueingExperiment(Experiment):
         for _ in range(n_target_frames):
             self.draw_masks()
             self.target.draw()
+            self.fix.draw()
             self.window.flip()
 
         # Clear the target from the masks before showing the prompt
         self.draw_masks()
+        self.fix.draw()
         self.window.flip()
 
         # Draw the prompt and wait for a response
@@ -383,3 +386,10 @@ if __name__ == '__main__':
             data_file.flush()
 
     experiment.show_end_screen()
+
+    import socket
+    import webbrowser
+    survey_url_prepop = 'https://docs.google.com/forms/d/1cKhnV2chvnpxg9Oy6beFVfaoMQy46Epoht2DA0epFRU/viewform?entry.1000000={}&entry.1000001={}'
+    room = socket.gethostname()
+    survey_url = survey_url_prepop.format(participant['subj_id'], room)
+    webbrowser.open(survey_url)
