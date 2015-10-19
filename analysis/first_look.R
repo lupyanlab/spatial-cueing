@@ -1,0 +1,91 @@
+library(dplyr)
+library(ggplot2)
+library(lme4)
+library(AICcmodavg)
+library(tidyr)
+
+source("R/loaders.R")
+source("R/recoders.R")
+
+spc <- compile("data/", pattern = "SPC", sep = ",") %>%
+  # drop practice trials
+  filter(block != 0) %>%  
+  mutate(
+    # drop rts for incorrect trials
+    rt = ifelse(is_correct, rt, NA),
+    # drop correctness for timeout trials
+    is_correct = ifelse(response_type == "timeout", NA, is_correct)
+  ) %>%
+  recode_cue_type %>%
+  recode_cue_validity %>%
+  recode_mask_type
+
+# used to get error from predictSE
+x_preds <- unique(spc[,c("cue_type", "cue_validity", "mask_c")]) %>%
+  recode_cue_type %>%
+  recode_cue_validity %>%
+  recode_mask_type
+
+# RTs
+rt_plot <- ggplot(spc, aes(x = cue_c + cue_effect_dodge, y = rt, color = cue_validity)) +
+  geom_point(position = position_jitter(width = 0.2, height = 0.0), alpha = 0.4, size = 1) +
+  scale_x_continuous("", breaks = c(-0.5, 0.5), labels = c("visual_word", "visual_arrow")) +
+  facet_wrap("mask_type")
+rt_plot
+
+rt_mod <- lmer(rt ~ mask_c * cue_c * (cue_effect_lin + cue_effect_quad) + 
+              (cue_effect_lin + cue_effect_quad|subj_id),
+            data = spc)
+summary(rt_mod)
+
+rt_preds <- predictSE(rt_mod, x_preds, se = TRUE) %>%
+  as.data.frame %>%
+  rename(rt = fit, se = se.fit) %>%
+  cbind(x_preds, .)
+
+rt_plot +
+  geom_pointrange(aes(x = cue_c + cue_effect_dodge, ymin = rt - se, ymax = rt + se), position = "dodge", data = rt_preds) +
+  coord_cartesian(ylim = c(200, 800))
+
+# Accuracy
+acc_plot <- ggplot(spc, aes(x = cue_c + cue_effect_dodge, y = is_correct, color = cue_validity)) +
+  stat_summary(aes(group = subj_id), fun.y = mean, geom = "point", alpha = 0.4, size = 2) +
+  scale_x_continuous("", breaks = c(-0.5, 0.5), labels = c("visual_word", "visual_arrow")) +
+  facet_wrap("mask_type")
+acc_plot
+
+acc_mod <- glmer(is_correct ~ mask_c * cue_c * (cue_effect_lin + cue_effect_quad) + 
+              (cue_effect_lin + cue_effect_quad|subj_id),
+            data = spc, family = binomial)
+summary(acc_mod)
+
+acc_preds <- predictSE(acc_mod, x_preds, se = TRUE) %>%
+  as.data.frame %>%
+  rename(is_correct = fit, se = se.fit) %>%
+  cbind(x_preds, .)
+
+acc_plot +
+  geom_pointrange(aes(x = cue_c + cue_effect_dodge, ymin = is_correct - se, ymax = is_correct + se),
+                  size = 1, data = acc_preds) +
+  coord_cartesian(ylim = c(0.8, 1.02))
+
+# Calculate cueing effects for each subject
+subj_means <- spc %>%
+  group_by(subj_id, mask_type, cue_type, cue_validity) %>%
+  summarize(rt = mean(rt, na.rm = TRUE), accuracy = mean(is_correct, na.rm = TRUE))
+
+subj_means %>%
+  select(-accuracy) %>%
+  spread(cue_validity, rt) %>%
+  mutate(cueing_effect = invalid - valid) %>%
+  select(subj_id, mask_type, cue_type, cueing_effect) %>%
+  spread(cue_type, cueing_effect) %>%
+  arrange(mask_type)
+
+subj_means %>%
+  select(-rt) %>%
+  spread(cue_validity, accuracy) %>%
+  mutate(cueing_effect = valid - invalid) %>%
+  select(subj_id, mask_type, cue_type, cueing_effect) %>%
+  spread(cue_type, cueing_effect) %>%
+  arrange(mask_type)

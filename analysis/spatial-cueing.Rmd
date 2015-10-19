@@ -36,7 +36,7 @@ cueing %>% group_by(subj_id, interval, flicker) %>%
 
 ## Analysis
 
-Fit a model to predict accuracy following each cue type in each experiment condition. 
+Fit a model to predict accuracy following each cue type in each experiment condition.
 `flicker` and `interval` were varied between-subjects. `cue type` was
 varied within-subjects. Trials were evenly distributed between frame cues,
 sound cues, and no cue baseline trials. To estimate the effect of each
@@ -45,7 +45,7 @@ were created. These contrast variables (`frame_v_nocue` and `sound_v_nocue`)
 are interpreted as the independent cueing effects of frames and sounds.
 
 We are testing the hypothesis that the cueing effects are differentially
-affected by the flicker and interval manipulations. In particular, we 
+affected by the flicker and interval manipulations. In particular, we
 expect the `frame_v_nocue` cueing effect to be more affected by the
 flicker manipulation than the `sound_v_nocue` cueing effect.
 
@@ -69,7 +69,7 @@ cueing[,contrast_cols] <- create_cue_type_treatment_contrasts(cueing$cue_type)
 cueing$flicker_c <- center_flicker(cueing$flicker)
 cueing$interval_c <- center_interval(cueing$interval)
 
-accuracy_mod <- glmer(is_correct ~ (frame_v_nocue + sound_v_nocue) * (flicker_c + interval_c) + 
+accuracy_mod <- glmer(is_correct ~ (frame_v_nocue + sound_v_nocue) * (flicker_c + interval_c) +
                         (frame_v_nocue + sound_v_nocue || subj_id),
                       family = "binomial", data = cueing)
 summary(accuracy_mod)
@@ -90,20 +90,20 @@ between_subj_conditions
 library(broom)
 library(purrr)
 
-cueing_effects_in_accuracies <- between_subj_conditions %>% 
+cueing_effects_in_accuracies <- between_subj_conditions %>%
   # for each experiment
   split(.$exp) %>%
-  
+
   # fit a model to predict the cueing effects
   map(~ glmer(is_correct ~ frame_v_nocue + sound_v_nocue + (frame_v_nocue + sound_v_nocue || subj_id),
               data = filter(cueing, flicker == .$flicker, interval == .$interval),
               family = "binomial")
   ) %>%
-  
+
   # extract the parameter estimates from the model
   map(tidy, effects = "fixed") %>%
   map(filter, term %in% c("frame_v_nocue", "sound_v_nocue")) %>%
-  
+
   # relabel the between subject conditions
   rbind_all(.) %>%
   mutate(
@@ -122,7 +122,7 @@ source("R/plots.R")
 cueing_effects_in_accuracies$line_group <- create_line_groups(cueing_effects_in_accuracies)
 cueing_effects_in_accuracies$flicker_label <- label_flicker(cueing_effects_in_accuracies$flicker)
 
-cueing_effects_in_accuracies_plot <- ggplot(cueing_effects_in_accuracies, 
+cueing_effects_in_accuracies_plot <- ggplot(cueing_effects_in_accuracies,
     aes(x = interval, y = estimate)) +
   geom_pointrange(aes(ymin = estimate - std.error, ymax = estimate + std.error, color = term)) +
   geom_line(aes(group = line_group, color = term, lty = flicker)) +
@@ -150,19 +150,19 @@ summary(rt_mod)
 (dicussion of model results)
 
 ```{r, estimate-cueing-effect-in-rts-in-each-condition}
-cueing_effects_in_rts <- between_subj_conditions %>% 
+cueing_effects_in_rts <- between_subj_conditions %>%
   # for each experiment
   split(.$exp) %>%
-  
+
   # fit a model to predict the cueing effects
   map(~ lmer(rt ~ frame_v_nocue + sound_v_nocue + (frame_v_nocue + sound_v_nocue || subj_id),
               data = filter(hits, flicker == .$flicker, interval == .$interval))
   ) %>%
-  
+
   # extract the parameter estimates from the model
   map(tidy, effects = "fixed") %>%
   map(filter, term %in% c("frame_v_nocue", "sound_v_nocue")) %>%
-  
+
   # relabel the between subject conditions
   rbind_all(.) %>%
   mutate(
@@ -235,13 +235,13 @@ acc_plot <- ggplot(cueing, aes(x = interval, y = is_correct, color = cue_type)) 
   stat_summary(fun.y = mean, geom = "line") +
   facet_wrap("flicker_label", nrow = 2)
 
-grid.arrange(acc_plot + theme(legend.position = "none"), 
+grid.arrange(acc_plot + theme(legend.position = "none"),
              rt_plot + theme(legend.position = c(0.92, 0.3)),
              ncol = 2)
 ```
 
 ```{r, results-plot, fig.height = 10, fig.width = 12}
-grid.arrange(cueing_effects_in_accuracies_plot + theme(legend.position = "none"), 
+grid.arrange(cueing_effects_in_accuracies_plot + theme(legend.position = "none"),
              cueing_effects_in_rts_plot + theme(legend.position = c(0.92, 0.8)),
              ncol = 2)
 ```
@@ -252,7 +252,7 @@ do, however, motivate that work.
 
 Traditionally, the difference between exogenous and endogenous cues has been
 attributed to time. Exogenous cues are faster acting than
-endogenous cues. There is also an element of volition: exogenous cues are 
+endogenous cues. There is also an element of volition: exogenous cues are
 automatic, whereas endogenous cues can be discounted.
 
 But an implicit assumption in the literature is that controlling for these
@@ -260,5 +260,5 @@ other factors, exogenous and endogenous cues can mean roughly the same thing
 when it comes to cueing a particular spatial location. Under the hood it is
 the same "spotlight of attention" in both cueing conditions.
 
-Of course, we know more about what neural states result in 
-attended versus unattended behaviors, and it 
+Of course, we know more about what neural states result in
+attended versus unattended behaviors, and it
