@@ -49,9 +49,14 @@ class SpatialCueingExperiment(Experiment):
         mask_size = 200
         mask_kwargs = {'win': self.window, 'size': [mask_size, mask_size]}
         gutter = 500  # distance between left right centroids
-        self.location_map = {'left': (-gutter/2, 0), 'right': (gutter/2, 0)}
-        self.masks = [DynamicMask(pos=self.location_map[d], **mask_kwargs)
-                      for d in ['left', 'right']]
+        self.location_map = {
+            'left': (-gutter/2, 0),
+            'right': (gutter/2, 0),
+            'up': (0, gutter/2),
+            'down': (0, -gutter/2)
+        }
+        self.masks = [DynamicMask(pos=p, **mask_kwargs)
+                      for p in self.location_map.values()]
 
         # Stimuli directory
         STIM_DIR = unipath.Path('stimuli')
