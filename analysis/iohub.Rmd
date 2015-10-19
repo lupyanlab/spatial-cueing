@@ -2,18 +2,19 @@
 title: "Spatial Cueing Experiments"
 author: "Pierce Edmiston"
 date: "April 17, 2015"
-output: html_document
+output:
+  html_document:
+    theme: flatly
 ---
+
 ```{r, config, echo = FALSE}
 library(knitr)
 library(gridExtra)
 opts_chunk$set(
-  cache = TRUE,
-  cache.path = 'spatial-cueing-cache/',
   message = FALSE,
   warning = FALSE,
   echo = FALSE,
-  fig.path = 'spatial-cueing/'
+  fig.path = 'iohub-figs/'
 )
 ```
 
