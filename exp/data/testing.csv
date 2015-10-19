@@ -1,6 +1,0 @@
-subj_id,sona_experiment_code,experimenter,cue_contrast,block,trial,mask_type,cue_type,cue_validity,cue_dir,target_loc,rt,response_type,is_correct
-testing,SPC,PME,word_arrow,0,0,mask,visual_word,valid,left,left,2233.67500305,timeout,0
-testing,SPC,PME,word_arrow,0,1,mask,visual_arrow,invalid,right,left,2233.64591599,timeout,0
-testing,SPC,PME,word_arrow,0,2,mask,visual_word,neutral,neutral,left,765.607833862,left,1
-testing,SPC,PME,word_arrow,0,3,mask,visual_word,invalid,right,left,2233.71601105,timeout,0
-testing,SPC,PME,word_arrow,0,4,mask,visual_word,invalid,left,right,2233.78586769,timeout,0
