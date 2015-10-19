@@ -7,8 +7,10 @@ times_in_seconds:  # times will be rounded to nearest number of frames
   response_window: 2.0  # from prompt onset
   inter_trial_interval: 0.4
 response_map:
-  f: left
-  j: right
+  left: left
+  right: right
+  up: up
+  down: down
 texts:
   instructions:
     1: >
