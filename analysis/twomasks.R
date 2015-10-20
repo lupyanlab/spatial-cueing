@@ -7,7 +7,7 @@ library(tidyr)
 source("R/loaders.R")
 source("R/recoders.R")
 
-spc <- compile("data/", pattern = "SPC", sep = ",") %>%
+spc <- compile("data/twomask", pattern = "SPC", sep = ",") %>%
   # drop practice trials
   filter(block != 0) %>%  
   mutate(
