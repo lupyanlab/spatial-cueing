@@ -129,7 +129,7 @@ class SpatialCueingExperiment(Experiment):
             else:
                 visual_cue.setText(trial.cue_dir)
         elif trial.cue_type == 'auditory_word':
-            sound_options = self.sounds[trial.cue_dir]
+            sound_options = self.sounds[trial.cue_dir].values()
             auditory_cue = random.choice(sound_options)
         else:
             msg = 'cue type %s not implemented' % trial.cue_type
