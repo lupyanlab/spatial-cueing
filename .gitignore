@@ -4,24 +4,19 @@
 # Project files
 doc/
 slides/
-
 # Snapshots
 archive/
-
 # Python files, psychopy files, iohub files
 *.pyc
 *.pickle
 .iohpid
-
-
 # Rmd generated files
 *-cache/
-
 # Vim files
 *.swp
 *~
-
 # R files
 .Rhistory
 .Rproj.user/
 .Rproj.user
+inst/doc
