@@ -1,31 +1,45 @@
+# Compiles the data from all versions of the spatial cueing experiment
+# and saves to .rda in the data/ directory.
+
 library(dplyr)
 library(purrr)
 library(car)
 
-#' Compile the raw data files into a data.frame.
-#' Assumes all data files have their own headers.
-#' @param data_directory, str
-#' @param pattern, str regular expression
+# compile functions ------------------------------------------------------------
+
 compile <- function(data_directory, pattern, sep = '\t') {
   fnames <- list.files(data_directory, pattern, full.names = TRUE)
   plyr::ldply(fnames, read.table, sep = sep, header = TRUE,
               row.names = NULL, stringsAsFactors = FALSE)
 }
 
-code_missing_cue_type_as_nocue <- function(cue_type) {
-  ifelse(cue_type == "", "nocue", cue_type)
+recode_missing_cue_type_as_nocue <- function(frame) {
+  frame %>% mutate(cue_type = ifelse(cue_type == "", "nocue", cue_type))
 }
 
-code_responses_as_binary <- function(response) {
-  recode(response, "'go'=1; 'nogo'=0", as.numeric.result = TRUE)
+recode_responses_as_binary <- function(frame) {
+  recode_str <- "'go'=1; 'nogo'=0"
+  frame %>% mutate(
+    response_b = recode(response, recode_str, as.numeric.result = TRUE)
+  )
 }
+
+recode_missing_target_loc_as_nocue <- function(frame) {
+  frame %>% mutate(
+    target_loc = ifelse(target_loc == "", "notarget", target_loc)
+  )
+}
+
+# go/no-go ---------------------------------------------------------------------
 
 get_spatial_cueing <- function(interval = 0.750, flicker = "on") {
   # compile data files matching correct_pattern and add columns for between
   # subjects variables interval and flicker
   compile_experiment <- function(regex_pattern, interval, flicker) {
-    spatial_cueing <- compile(data_directory = "data-raw/go-nogo", pattern = as.character(regex_pattern))
-    spatial_cueing <- mutate(spatial_cueing, interval = interval, flicker = flicker)
+    spatial_cueing <- compile(data_directory = "data-raw/go-nogo",
+                              pattern = as.character(regex_pattern))
+    spatial_cueing <- spatial_cueing %>%
+      mutate(interval = interval, flicker = flicker)
     spatial_cueing
   }
 
@@ -37,7 +51,6 @@ get_spatial_cueing <- function(interval = 0.750, flicker = "on") {
   correct_patterns <- pattern_matcher[(pattern_matcher$interval %in% interval &
                                        pattern_matcher$flicker %in% flicker), ]
 
-  print('Compiling raw data...')
   spatial_cueing <- correct_patterns %>%
     split(.$regex_pattern) %>%
     map(~ compile_experiment(.$regex_pattern, .$interval, .$flicker)) %>%
@@ -58,23 +71,85 @@ get_spatial_cueing <- function(interval = 0.750, flicker = "on") {
   colnames(spc6) <- new_colnames
   spc6$flicker <- "off"
 
-  spatial_cueing <- rbind_list(spatial_cueing, spc6)
+  spatial_cueing <- rbind_list(spatial_cueing, spc6) %>%
+    recode_missing_cue_type_as_nocue %>%
+    recode_responses_as_binary %>%
+    recode_missing_target_loc_as_nocue %>%
+    mutate(cue_validity = "valid")
 
-  print('Coding variables...')
-  spatial_cueing$cue_type <- code_missing_cue_type_as_nocue(spatial_cueing$cue_type)
-  spatial_cueing$response_b <- code_responses_as_binary(spatial_cueing$response)
-
-  print('Dropping practice trials...')
   cueing <- filter(spatial_cueing, part != "practice")
 
   cueing
 }
 
 go_nogo <- get_spatial_cueing(interval = c(0.750, 0.100), flicker = c("on", "off"))
-# devtools::use_data(go_nogo)
 
+# twomask ----------------------------------------------------------------------
 twomask <- compile("data-raw/twomask", pattern = "SPC", sep = ",")
-# devtools::use_data(twomask, overwrite = TRUE)
 
+# fourmask-longsoa -------------------------------------------------------------
 fourmask_longsoa <- compile("data-raw/fourmask-longsoa", pattern = "P", sep = ",")
-# devtools::use_data(fourmask_longsoa, overwrite = TRUE)
+
+# combine all experiments into a single data.frame -----------------------------
+
+go_nogo <- go_nogo %>%
+  rename(
+    cue_dir = cue_loc,
+    response_type = response,
+    trial = trial_ix,
+
+    # This needs to be adjusted! In the go/no-go experiment, interval
+    # was not the time between stimulus onsets. I *think* it was the
+    # difference between cue offset and target onset. It should be adjustable
+    # if you look back at the iohub experiment.
+    soa = interval
+  ) %>%
+  mutate(
+    experiment = "go_nogo",
+    mask_type = ifelse(flicker == "on", "mask", "nomask"),
+    cue_contrast = "auditory_peripheral",
+    block = 1
+  ) %>%
+  select(-(date:part), -flicker, -mask_flicker, -target_opacity, -cue_present,
+         -cue_pos_x, -cue_pos_y, -target_pos_x, -target_pos_y, -key,
+         -target_present, -target_duration, -response_b)
+
+twomask$experiment <- "twomask"
+fourmask_longsoa$experiment <- "fourmask_longsoa"
+
+longsoa_experiments <- rbind_list(twomask, fourmask_longsoa) %>%
+  mutate(soa = 0.75) %>%
+  select(-sona_experiment_code, -experimenter)
+
+spatial_cueing <- rbind_list(go_nogo,longsoa_experiments) %>%
+  select(
+    # between-subject conditions
+    experiment,
+    cue_contrast,
+    mask_type,
+
+    # lab identifiers
+    subj_id,
+
+    # trial identifiers
+    block,
+    trial,
+
+    # cue vars
+    cue_type,
+    cue_dir,
+    cue_validity,
+
+    # interval vars
+    soa,
+
+    # target vars
+    target_loc,
+
+    # response vars
+    response_type,
+    rt,
+    is_correct
+  )
+
+# devtools::use_data(spatial_cueing)
