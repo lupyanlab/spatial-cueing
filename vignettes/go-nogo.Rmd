@@ -1,26 +1,27 @@
 ---
-title: "Spatial Cueing Experiments"
+title: "Spatial cueing effects in a go/no-go task"
 author: "Pierce Edmiston"
-date: "April 17, 2015"
-output:
-  html_document:
-    theme: flatly
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Spatial cueing effects in a go/no-go task}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r, config, echo = FALSE}
-library(knitr)
 library(gridExtra)
-opts_chunk$set(
+knitr::opts_chunk$set(
   message = FALSE,
   warning = FALSE,
-  echo = FALSE,
-  fig.path = 'iohub-figs/'
+  echo = FALSE
 )
+
+devtools::load_all()
 ```
 
 ```{r, get-spatial-cueing-data}
-source("R/loaders.R")
-cueing <- get_spatial_cueing(interval = c(0.750, 0.100), flicker = c("on", "off"))
+cueing <- go_nogo
 ```
 
 # Methods
@@ -63,7 +64,6 @@ achieving heightened visual awareness.
 
 ```{r, fit-accuracy-mod}
 library(lme4)
-source("R/models.R")
 
 contrast_cols <- c("frame_v_nocue", "sound_v_nocue")
 cueing[,contrast_cols] <- create_cue_type_treatment_contrasts(cueing$cue_type)
@@ -118,7 +118,6 @@ cueing_effects_in_accuracies
 ```{r, cueing-effects-in-accuracies}
 library(ggplot2)
 library(scales)
-source("R/plots.R")
 
 cueing_effects_in_accuracies$line_group <- create_line_groups(cueing_effects_in_accuracies)
 cueing_effects_in_accuracies$flicker_label <- label_flicker(cueing_effects_in_accuracies$flicker)

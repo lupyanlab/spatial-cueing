@@ -1,13 +1,22 @@
+---
+title: "Spatial cueing with two masks"
+author: "Pierce Edmiston"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Spatial cueing with two masks}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
 library(dplyr)
 library(ggplot2)
 library(lme4)
 library(AICcmodavg)
 library(tidyr)
 
-source("R/loaders.R")
-source("R/recoders.R")
-
-spc <- compile("data/twomask", pattern = "SPC", sep = ",") %>%
+spc <- twomask %>%
   # drop practice trials
   filter(block != 0) %>%  
   mutate(
@@ -89,3 +98,4 @@ subj_means %>%
   select(subj_id, mask_type, cue_type, cueing_effect) %>%
   spread(cue_type, cueing_effect) %>%
   arrange(mask_type)
+```
