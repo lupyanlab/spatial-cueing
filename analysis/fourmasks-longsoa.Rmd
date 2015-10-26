@@ -1,0 +1,81 @@
+---
+title: "Four mask version with a long SOA"
+author: "Pierce Edmiston"
+output:
+  html_document:
+    theme: flatly
+---
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  warning = FALSE,
+  message = FALSE,
+  echo = FALSE,
+  fig.path = 'fourmasks-longsoa/'
+)
+```
+
+```{r}
+library(dplyr)
+library(tidyr)
+
+library(ggplot2)
+
+library(lme4)
+library(AICcmodavg)
+library(broom)
+
+source("R/loaders.R")
+source("R/recoders.R")
+
+spc <- compile("data/fourmask-longsoa", pattern = "P", sep = ",") %>%
+  # drop practice trials
+  filter(block != 0) %>%  
+  mutate(
+    # drop rts for incorrect trials
+    rt = ifelse(is_correct, rt, NA),
+    # drop correctness for timeout trials
+    is_correct = ifelse(response_type == "timeout", NA, is_correct)
+  ) %>%
+  recode_cue_type %>%
+  recode_cue_validity %>%
+  recode_mask_type
+```
+
+## Visual word versus visual arrow
+
+```{r}
+visual <- spc %>% filter(cue_contrast == "word_arrow")
+
+ggplot(visual, aes(x = cue_c + cue_effect_dodge, y = rt, color = cue_validity)) +
+  geom_point(position = position_jitter(width = 0.2, height = 0.0), alpha = 0.4, size = 1) +
+  scale_x_continuous("", breaks = c(-0.5, 0.5), labels = c("visual_word", "visual_arrow")) +
+  geom_point(stat = "summary", fun.y = mean, shape = 1, size = 4) +
+  coord_cartesian(ylim = c(0, 1000)) +
+  facet_wrap("mask_type")
+
+rt_mod <- lmer(rt ~ mask_c * cue_c * (cue_effect_lin + cue_effect_quad) + 
+              (cue_effect_lin + cue_effect_quad|subj_id),
+            data = visual)
+
+# Calculate cueing effects for each subject
+subj_means <- visual %>%
+  group_by(subj_id, cue_contrast, mask_type, cue_type, cue_validity) %>%
+  summarize(rt = mean(rt, na.rm = TRUE))
+
+subj_cueing_effects <- subj_means %>%
+  spread(cue_validity, rt) %>%
+  mutate(cueing_effect = invalid - valid) %>%
+  select(subj_id, mask_type, cue_type, cueing_effect) %>%
+  recode_cue_type %>%
+  recode_mask_type
+
+ggplot(subj_cueing_effects, aes(x = cue_type, y = cueing_effect, fill = mask_type)) +
+  geom_bar(stat = "summary", fun.y = mean, position = "dodge")
+```
+
+## Visual word versus auditory word
+
+```{r}
+modality <- spc %>% filter(cue_contrast == "visual_auditory")
+```
