@@ -1,3 +1,0 @@
-subj_id,sona_experiment_code,experimenter,cue_contrast,block,trial,mask_type,cue_type,cue_validity,cue_dir,target_loc,rt,response_type,is_correct
-Ptest,SPC,JR,word_arrow,0,0,mask,visual_word,valid,right,right,1395.39714798,right,1
-Ptest,SPC,JR,word_arrow,0,1,mask,visual_word,valid,left,left,2116.60771724,timeout,0
