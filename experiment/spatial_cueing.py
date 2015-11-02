@@ -18,8 +18,8 @@ class SpatialCueingExperiment(Experiment):
     """ Measure spatial cueing effects when targets are hard to see.
 
     On each trial, participants wait for a target to appear within
-    the bounds of two rectangular masks, presented to the left and right
-    of fixation. For some participants, the masks will be flashing
+    the bounds of four rectangular masks, presented left, right, above, and
+    below of fixation. For some participants, the masks will be flashing
     continuously over the course of the trial. For others, the masks
     will be static.
 
@@ -244,6 +244,11 @@ class SpatialCueingExperiment(Experiment):
         trial_data = OrderedDict()
         for key, value in zip(trial._fields, trial):
             trial_data[key] = value
+
+        # Add variables determined at runtime to trial data
+        trial_data['soa'] = n_interval_frames / float(fps)
+        trial_data['target_loc_x'] = x
+        trial_data['target_loc_y'] = y
 
         # Add response variables to trial data
         trial_data['rt'] = rt * 1000

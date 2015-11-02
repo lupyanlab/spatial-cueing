@@ -1,2 +1,0 @@
-subj_id,sona_experiment_code,experimenter,cue_contrast,block,trial,mask_type,cue_type,cue_validity,cue_dir,target_loc,rt,response_type,is_correct
-SPC217,SPC,NS,visual_auditory,0,0,nomask,visual_word,valid,right,right,2116.54626043,timeout,0

@@ -2,7 +2,7 @@ times_in_seconds:  # times will be rounded to nearest number of frames
   fixation_duration: 0.4
   fixation_offset_to_cue_onset: 0.2
   cue_duration: 0.2
-  cue_onset_to_target_onset: 0.75  # jittered by 50 ms in either direction
+  cue_onset_to_target_onset: 0.175  # jittered by 50 ms in either direction
   target_duration: 0.1
   response_window: 2.0  # from prompt onset
   inter_trial_interval: 0.4

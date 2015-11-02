@@ -14,12 +14,15 @@ def spatial_cueing_trial_list(cue_type, mask_type, **participant_kwargs):
         'mask_type': mask_type,
     })
 
+    seed = participant_kwargs.get('seed')
+    random.seed(seed)
+
     # Determine cue validity, starting with the smallest group
     # 66.6% valid, 25% invalid, 8.3% neutral
     trials = expand(trials, 'cue_validity', values=['invalid', 'neutral'],
-                    ratio=0.75)
+                    ratio=0.75, seed=seed)
 
-    trials = expand(trials, 'tmp_cue_valid', values=[1,0], ratio=0.7)
+    trials = expand(trials, 'tmp_cue_valid', values=[1,0], ratio=0.7, seed=seed)
     trials.loc[trials.tmp_cue_valid == 1, 'cue_validity'] = 'valid'
     del trials['tmp_cue_valid']
 
@@ -75,13 +78,13 @@ def spatial_cueing_trial_list(cue_type, mask_type, **participant_kwargs):
     # Assign block randomly
     block_size = 80
     trials = add_block(trials, size=block_size, id_col='cue_validity',
-                       start_at=1)
+                       start_at=1, seed=seed)
 
     # Join the practice trials
     trials = pandas.concat([practice_trials, trials])
 
     # Shuffle by block
-    trials = simple_shuffle(trials, block='block')
+    trials = simple_shuffle(trials, block='block', seed=seed)
     trials = trials.reset_index(drop=True)
 
     # Label trial number
@@ -90,6 +93,7 @@ def spatial_cueing_trial_list(cue_type, mask_type, **participant_kwargs):
     # Rearrange columns
     participant_keys = [
         'subj_id',
+        'seed',
         'sona_experiment_code',
         'experimenter',
         'cue_contrast',
@@ -109,6 +113,11 @@ def spatial_cueing_trial_list(cue_type, mask_type, **participant_kwargs):
     ]
     assert all([c in trials.columns for c in col_order])
     trials = trials[col_order]
+
+    # Fill columns decided at runtime
+    trials['soa'] = ''
+    trials['target_loc_x'] = ''
+    trials['target_loc_y'] = ''
 
     # Fill response columns
     trials['rt'] = ''
@@ -131,5 +140,5 @@ class SpatialCueingTrialList(TrialList):
 if __name__ == '__main__':
     cue_type = ['visual_arrow', 'visual_word']
     mask_type = ['mask', ]
-    trials = spatial_cueing_trial_list(cue_type, mask_type)
+    trials = spatial_cueing_trial_list(cue_type, mask_type, seed=100)
     trials.to_csv('sample_trials.csv', index=False)
