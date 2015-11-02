@@ -366,6 +366,7 @@ if __name__ == '__main__':
     participant.get_subj_info()
 
     trial_list_kwargs = participant.get_trial_list_kwargs()
+    random.seed(trial_list_kwargs['seed'])
     trial_list = SpatialCueingTrialList.from_kwargs(**trial_list_kwargs)
 
     experiment = SpatialCueingExperiment('experiment.yaml')
