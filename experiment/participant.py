@@ -3,7 +3,7 @@ from labtools.participant import Participant
 class SpatialCueingParticipant(Participant):
     def get_trial_list_kwargs(self):
         """ Get a subset of variables to pass to the trial list creator. """
-        keys_to_copy = ['subj_id', 'experimenter', 'sona_experiment_code',
+        keys_to_copy = ['subj_id', 'seed', 'experimenter', 'sona_experiment_code',
                         'cue_contrast', 'mask_type']
         kwargs = {k: self[k] for k in keys_to_copy}
 
