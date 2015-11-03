@@ -159,10 +159,6 @@ class SpatialCueingExperiment(Experiment):
         interval = self.times_in_seconds['cue_onset_to_target_onset'] - \
             self.times_in_seconds['cue_duration']
         n_interval_frames = to_n_frames(interval)
-        # Jitter the soa by a maximum of 50 ms in either direction
-        max_soa_jitter = int(fps * 0.05)
-        soa_jitter = random.choice(range(-max_soa_jitter, max_soa_jitter + 1))
-        n_interval_frames += soa_jitter
 
         n_target_frames = to_n_frames(self.times_in_seconds['target_duration'])
 
@@ -246,7 +242,7 @@ class SpatialCueingExperiment(Experiment):
             trial_data[key] = value
 
         # Add variables determined at runtime to trial data
-        trial_data['soa'] = n_interval_frames / float(fps)
+        trial_data['soa'] = self.times_in_seconds['cue_onset_to_target_onset']
         trial_data['target_loc_x'] = x
         trial_data['target_loc_y'] = y
 
