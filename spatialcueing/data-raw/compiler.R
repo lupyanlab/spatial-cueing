@@ -90,6 +90,9 @@ twomask <- compile("data-raw/twomask", pattern = "SPC", sep = ",")
 # fourmask-longsoa -------------------------------------------------------------
 fourmask_longsoa <- compile("data-raw/fourmask-longsoa", pattern = "P", sep = ",")
 
+# fourmask-shortsoa ------------------------------------------------------------
+fourmask_shortsoa <- compile("data-raw/fourmask-shortsoa", pattern = "SPC", sep = ",")
+
 # combine all experiments into a single data.frame -----------------------------
 
 go_nogo <- go_nogo %>%
@@ -108,6 +111,8 @@ go_nogo <- go_nogo %>%
     experiment = "go_nogo",
     mask_type = ifelse(flicker == "on", "mask", "nomask"),
     cue_contrast = "auditory_peripheral",
+    target_loc_x = NA,
+    target_loc_y = NA,
     block = 1
   ) %>%
   select(-(date:part), -flicker, -mask_flicker, -target_opacity, -cue_present,
@@ -116,12 +121,19 @@ go_nogo <- go_nogo %>%
 
 twomask$experiment <- "twomask"
 fourmask_longsoa$experiment <- "fourmask_longsoa"
+fourmask_shortsoa$experiment <- "fourmask_shortsoa"
 
 longsoa_experiments <- rbind_list(twomask, fourmask_longsoa) %>%
-  mutate(soa = 0.75) %>%
+  mutate(
+    soa = 0.75,
+    target_loc_x = NA,
+    target_loc_y = NA
+  )
+
+cue_location_experiments <- rbind_list(longsoa_experiments, fourmask_shortsoa) %>%
   select(-sona_experiment_code, -experimenter)
 
-spatial_cueing <- rbind_list(go_nogo,longsoa_experiments) %>%
+spatial_cueing <- rbind_list(go_nogo, cue_location_experiments) %>%
   select(
     # between-subject conditions
     experiment,
@@ -145,6 +157,8 @@ spatial_cueing <- rbind_list(go_nogo,longsoa_experiments) %>%
 
     # target vars
     target_loc,
+    target_loc_x,
+    target_loc_y,
 
     # response vars
     response_type,
@@ -152,4 +166,4 @@ spatial_cueing <- rbind_list(go_nogo,longsoa_experiments) %>%
     is_correct
   )
 
-# devtools::use_data(spatial_cueing)
+devtools::use_data(spatial_cueing)
